@@ -489,7 +489,7 @@ sticky-header {
 }
 
 sticky-header header {
-  background: rgb(var(--color-background));
+  background: #EEEEEE;
 }
 
 .section-header.animate header {
