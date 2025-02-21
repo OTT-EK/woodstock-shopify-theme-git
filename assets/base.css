@@ -489,7 +489,11 @@ sticky-header {
 }
 
 sticky-header header {
-  background: #EEEEEE;
+  background: #eeeeee;
+}
+
+sticky-header {
+  background: #eeeeee;
 }
 
 .section-header.animate header {
