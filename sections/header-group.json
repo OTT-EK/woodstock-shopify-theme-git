@@ -77,9 +77,10 @@
         },
         "7b2bd184-cb1b-47bf-8695-3f2bc023c78d": {
           "type": "store_information",
+          "disabled": true,
           "settings": {
-            "icon": "map",
-            "title": "Store information block",
+            "icon": "delivery",
+            "title": "Free shipping on purchases over 100€",
             "link": ""
           }
         },
@@ -159,7 +160,7 @@
         "customer_support_region_caption": "Caption",
         "customer_support_region_global_hotline": "Your hotline",
         "enable_transparent_homepage": false,
-        "text_color_transparent": "#fff"
+        "text_color_transparent": "#ffffff"
       }
     }
   },
