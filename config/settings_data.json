@@ -662,11 +662,11 @@
       "background-1": {
         "settings": {
           "text": "#121212",
-          "sale_off_price": "#ef4444",
+          "sale_off_price": "#ed1c24",
           "compare_at_price": "#94a3b8",
           "background": "#ffffff",
           "gradient_background": "",
-          "background_input": "#fafafa",
+          "background_input": "#eeeeee",
           "solid_button_label_primary": "#ffffff",
           "solid_button_background_primary": "#2563eb",
           "review_stars": "#fbbf24",
