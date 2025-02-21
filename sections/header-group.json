@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "header",
   "name": "Header Group",
@@ -12,17 +21,38 @@
             "title": "Megamenu - Product type column",
             "position": "first",
             "item_label": "Column heading",
+            "item_url": "",
             "image_ratio": "circle",
             "type_1": "Product type name",
+            "type_link_1": "",
             "type_2": "Product type name",
+            "type_link_2": "",
             "type_3": "Product type name",
+            "type_link_3": "",
             "type_4": "Product type name",
+            "type_link_4": "",
             "type_5": "",
+            "type_link_5": "",
             "type_6": "",
+            "type_link_6": "",
             "type_7": "",
+            "type_link_7": "",
             "type_8": "",
+            "type_link_8": "",
             "type_9": "",
-            "type_10": ""
+            "type_link_9": "",
+            "type_10": "",
+            "type_link_10": "",
+            "type_11": "",
+            "type_link_11": "",
+            "type_12": "",
+            "type_link_12": "",
+            "type_13": "",
+            "type_link_13": "",
+            "type_14": "",
+            "type_link_14": "",
+            "type_15": "",
+            "type_link_15": ""
           }
         },
         "ed4cddab-febc-4198-92ee-40d8b70c47f9": {
@@ -47,9 +77,10 @@
         },
         "7b2bd184-cb1b-47bf-8695-3f2bc023c78d": {
           "type": "store_information",
+          "disabled": true,
           "settings": {
-            "icon": "map",
-            "title": "Store information block",
+            "icon": "delivery",
+            "title": "Free shipping on purchases over 100€",
             "link": ""
           }
         },
@@ -57,14 +88,16 @@
           "type": "menu_label",
           "settings": {
             "title": "Menu label",
-            "icon": "sale"
+            "icon": "sale",
+            "link": ""
           }
         },
         "3753f6b7-733c-49d7-881c-f8fe4195e49f": {
           "type": "menu_label",
           "settings": {
             "title": "Menu label",
-            "icon": "delivery"
+            "icon": "delivery",
+            "link": ""
           }
         },
         "5252ef1e-142a-4211-a789-f6ff8a260759": {
@@ -108,18 +141,26 @@
       "settings": {
         "color_scheme": "background-1",
         "top_color_scheme": "inverse",
-        "logo_width": 90,
+        "logo": "shopify://shop_images/ott_logo_m.webp",
+        "logo_width": 200,
         "logo_position": "top-left",
         "menu": "main-menu",
+        "open_dropdown_menus_on": "hover",
+        "always_use_standard_menu": false,
         "show_go_to_link": true,
         "show_line_separator": true,
         "enable_sticky_header": true,
+        "sticky_header": "on_scroll_up",
         "enable_social_links": true,
         "mobile_logo_position": "center",
+        "show_country_language_selector_drawer_mobile": false,
+        "show_store_information_blocks_on_mobile": false,
         "enable_country_selector": true,
         "enable_language_selector": true,
         "customer_support_region_caption": "Caption",
-        "customer_support_region_global_hotline": "Your hotline"
+        "customer_support_region_global_hotline": "Your hotline",
+        "enable_transparent_homepage": false,
+        "text_color_transparent": "#ffffff"
       }
     }
   },
