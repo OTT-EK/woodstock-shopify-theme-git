@@ -588,7 +588,10 @@
         {%- render 'header-icons', has_supported_region: has_supported_region, supported_region_blocks: supported_region_blocks -%}
       {%- endif -%}
 
-      <div class="header__inline-menu small-hide medium-hide{% if section.settings.logo_position == 'top-left' and menu_labels.size > 0 %} w100 flex justify-space-between{% endif %}">
+      </div>
+      <div class="header__inline-menu" style="background-color: white;">
+      <div class="page-width">
+      <div class="small-hide medium-hide{% if section.settings.logo_position == 'top-left' and menu_labels.size > 0 %} w100 flex justify-space-between{% endif %}">
         {%- if section.settings.menu != blank and section.settings.logo_position != 'center-drawer' -%}
           <nav>
             <ul class="list-menu list-menu--inline" role="list">
@@ -676,6 +679,7 @@
       {%- unless section.settings.logo_position == 'top-left' -%}
         {%- render 'header-icons', has_supported_region: has_supported_region, supported_region_blocks: supported_region_blocks -%}
       {%- endunless -%}  
+    </div>
     </div>  
   </header>
 </{{ header_wrap_tag }}> 
