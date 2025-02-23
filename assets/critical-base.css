@@ -1480,7 +1480,7 @@ details[open] > .header__icon--menu .icon-open-state {
 }
 
 .header__menu-item--top {
-  padding: 2.7rem 1.5rem;
+  padding: 1.4rem 1.5rem;
   line-height: calc(1 + 0.3 / var(--font-heading-scale));
   font-weight: var(--font-heading-weight-semi-bold);
 } 
