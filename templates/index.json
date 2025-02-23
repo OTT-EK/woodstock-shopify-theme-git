@@ -150,6 +150,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "",
+            "custom_image": "shopify://shop_images/pallet-manifacturing-crop-290x596.jpg",
             "custom_title": ""
           }
         },
