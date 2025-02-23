@@ -87,16 +87,16 @@
         "e4604373-561e-4dd2-b5dd-ec3431202f97": {
           "type": "menu_label",
           "settings": {
-            "title": "Menu label",
-            "icon": "sale",
+            "title": "+370 655 15038",
+            "icon": "phone",
             "link": ""
           }
         },
         "3753f6b7-733c-49d7-881c-f8fe4195e49f": {
           "type": "menu_label",
           "settings": {
-            "title": "Menu label",
-            "icon": "delivery",
+            "title": "info@ottensten.eu",
+            "icon": "mail",
             "link": ""
           }
         },
