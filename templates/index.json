@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "518b8ced-997b-408e-84d5-64fe5082a6a1": {
@@ -17,6 +17,7 @@
           "settings": {
             "badge_label": "Badge label",
             "heading": "Heading",
+            "heading_size": "h0",
             "text": "Your text",
             "hide_text_on_mobile": false,
             "button_label": "Button label",
@@ -52,6 +53,7 @@
           "settings": {
             "badge_label": "Button label",
             "heading": "Heading",
+            "heading_size": "h0",
             "text": "Your text",
             "hide_text_on_mobile": false,
             "button_label": "Button label",
@@ -87,6 +89,7 @@
           "settings": {
             "badge_label": "Badge label",
             "heading": "Heading",
+            "heading_size": "h0",
             "text": "Your text",
             "hide_text_on_mobile": false,
             "button_label": "Button label",
@@ -170,13 +173,21 @@
             "collection": "",
             "custom_title": ""
           }
+        },
+        "featured_collection_bLAUKb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "custom_title": ""
+          }
         }
       },
       "block_order": [
         "template--18418624921901__1aded6ef-5727-4347-bf56-9fc610343e55-1680769155d946d1f5-0",
         "template--18418624921901__1aded6ef-5727-4347-bf56-9fc610343e55-1680769155d946d1f5-1",
         "template--18418624921901__1aded6ef-5727-4347-bf56-9fc610343e55-1680769155d946d1f5-2",
-        "template--18418624921901__1aded6ef-5727-4347-bf56-9fc610343e55-1680769155d946d1f5-3"
+        "template--18418624921901__1aded6ef-5727-4347-bf56-9fc610343e55-1680769155d946d1f5-3",
+        "featured_collection_bLAUKb"
       ],
       "settings": {
         "title": "Collections",
@@ -213,8 +224,10 @@
         "enable_section_box_layout": false,
         "color_scheme": "background-1",
         "image_position_desktop": "left",
+        "image_size": "large",
         "image_height": "adapt_product_list",
         "image_height_mobile": "34",
+        "hide_banner_mobile": false,
         "image_ratio": "adapt",
         "show_secondary_image": false,
         "show_vendor": false,
@@ -246,8 +259,10 @@
         "enable_section_box_layout": false,
         "color_scheme": "background-1",
         "image_position_desktop": "left",
+        "image_size": "large",
         "image_height": "adapt_product_list",
         "image_height_mobile": "34",
+        "hide_banner_mobile": false,
         "image_ratio": "adapt",
         "show_secondary_image": true,
         "show_vendor": true,
@@ -288,6 +303,8 @@
             "caption_color": "#0f172a",
             "button_foreground": "#ffffff",
             "button_background": "#0f172a",
+            "lightbox_button_color": "#000",
+            "lightbox_button_background": "#fff",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
@@ -313,6 +330,8 @@
             "caption_color": "#0f172a",
             "button_foreground": "#ffffff",
             "button_background": "#0f172a",
+            "lightbox_button_color": "#000",
+            "lightbox_button_background": "#fff",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
@@ -338,6 +357,8 @@
             "caption_color": "#0f172a",
             "button_foreground": "#ffffff",
             "button_background": "#0f172a",
+            "lightbox_button_color": "#000",
+            "lightbox_button_background": "#fff",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
@@ -363,6 +384,8 @@
             "caption_color": "#0f172a",
             "button_foreground": "#ffffff",
             "button_background": "#0f172a",
+            "lightbox_button_color": "#000",
+            "lightbox_button_background": "#fff",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
@@ -384,6 +407,7 @@
         "auto_fit": false,
         "disable_item_space": true,
         "enable_section_box_layout": false,
+        "enable_images_lightbox": false,
         "color_scheme": "background-1",
         "image_ratio": "square",
         "columns_mobile": "1",
@@ -407,8 +431,10 @@
         "enable_section_box_layout": false,
         "color_scheme": "background-1",
         "image_position_desktop": "right",
+        "image_size": "large",
         "image_height": "adapt_product_list",
         "image_height_mobile": "34",
+        "hide_banner_mobile": false,
         "image_ratio": "adapt",
         "show_secondary_image": true,
         "show_vendor": true,
@@ -498,7 +524,7 @@
         "b5dbae5f-3a02-4f0c-a754-d0807a553d10": {
           "type": "normal_text",
           "settings": {
-            "title": "<strong>Your text<\/strong>",
+            "title": "<strong>Your text</strong>",
             "link": "#",
             "use_outline_text": false,
             "text_stroke": 2,
@@ -508,7 +534,7 @@
         "2c6b1e7e-697e-408c-82ea-ca5536e7b21b": {
           "type": "normal_text",
           "settings": {
-            "title": "<strong>-<\/strong>",
+            "title": "<strong>-</strong>",
             "link": "",
             "use_outline_text": false,
             "text_stroke": 5,
@@ -518,7 +544,7 @@
         "69b6d134-b492-4f63-a0b5-8f014a2ba866": {
           "type": "normal_text",
           "settings": {
-            "title": "<strong>Your text<\/strong>",
+            "title": "<strong>Your text</strong>",
             "link": "#",
             "use_outline_text": false,
             "text_stroke": 5,
@@ -529,7 +555,7 @@
           "type": "normal_text",
           "disabled": true,
           "settings": {
-            "title": "<strong>-<\/strong>",
+            "title": "<strong>-</strong>",
             "link": "",
             "use_outline_text": false,
             "text_stroke": 5,
@@ -540,7 +566,7 @@
           "type": "normal_text",
           "disabled": true,
           "settings": {
-            "title": "<strong>Your text<\/strong>",
+            "title": "<strong>Your text</strong>",
             "link": "#",
             "use_outline_text": false,
             "text_stroke": 5,
@@ -550,7 +576,7 @@
         "af084915-733c-445f-9e15-21e9f0c9e0eb": {
           "type": "normal_text",
           "settings": {
-            "title": "<strong>-<\/strong>",
+            "title": "<strong>-</strong>",
             "link": "",
             "use_outline_text": false,
             "text_stroke": 5,
@@ -686,7 +712,7 @@
           "type": "quote",
           "settings": {
             "title": "Quote heading",
-            "content": "<p>Quote content<\/p>",
+            "content": "<p>Quote content</p>",
             "number_of_stars": 5,
             "user_full_name": "Full name",
             "hide_avatar": false,
@@ -697,7 +723,7 @@
           "type": "quote",
           "settings": {
             "title": "Quote heading",
-            "content": "<p>Quote content<\/p>",
+            "content": "<p>Quote content</p>",
             "number_of_stars": 5,
             "user_full_name": "Full name",
             "hide_avatar": false,
@@ -708,7 +734,7 @@
           "type": "quote",
           "settings": {
             "title": "Quote heading",
-            "content": "<p>Quote content<\/p>",
+            "content": "<p>Quote content</p>",
             "number_of_stars": 5,
             "user_full_name": "Full name",
             "hide_avatar": false,
@@ -719,7 +745,7 @@
           "type": "quote",
           "settings": {
             "title": "Quote heading",
-            "content": "<p>Quote content<\/p>",
+            "content": "<p>Quote content</p>",
             "number_of_stars": 5,
             "user_full_name": "Full name",
             "hide_avatar": false,
@@ -776,7 +802,7 @@
           "settings": {
             "heading": "Item heading",
             "icon": "truck",
-            "row_content": "<p>Item content<\/p>",
+            "row_content": "<p>Item content</p>",
             "page": ""
           }
         },
@@ -785,7 +811,7 @@
           "settings": {
             "heading": "Item heading",
             "icon": "tag",
-            "row_content": "<p>Item content<\/p>",
+            "row_content": "<p>Item content</p>",
             "page": ""
           }
         },
@@ -794,7 +820,7 @@
           "settings": {
             "heading": "Item heading",
             "icon": "receipt_refund",
-            "row_content": "<p>Item content<\/p>",
+            "row_content": "<p>Item content</p>",
             "page": ""
           }
         },
@@ -803,7 +829,7 @@
           "settings": {
             "heading": "Item heading",
             "icon": "sale",
-            "row_content": "<p>Item content<\/p>",
+            "row_content": "<p>Item content</p>",
             "page": ""
           }
         },
@@ -812,7 +838,7 @@
           "settings": {
             "heading": "Item heading",
             "icon": "shield_exclamation",
-            "row_content": "<p>Item content<\/p>",
+            "row_content": "<p>Item content</p>",
             "page": ""
           }
         },
@@ -821,7 +847,7 @@
           "settings": {
             "heading": "Item heading",
             "icon": "support",
-            "row_content": "<p>Item content<\/p>",
+            "row_content": "<p>Item content</p>",
             "page": ""
           }
         },
@@ -830,7 +856,7 @@
           "settings": {
             "heading": "Item heading",
             "icon": "fast_forward",
-            "row_content": "<p>Item content<\/p>",
+            "row_content": "<p>Item content</p>",
             "page": ""
           }
         },
@@ -839,7 +865,7 @@
           "settings": {
             "heading": "Item heading",
             "icon": "appliances",
-            "row_content": "<p>Item content<\/p>",
+            "row_content": "<p>Item content</p>",
             "page": ""
           }
         },
@@ -848,7 +874,7 @@
           "settings": {
             "heading": "Item heading",
             "icon": "emoji_happy",
-            "row_content": "<p>Item content<\/p>",
+            "row_content": "<p>Item content</p>",
             "page": ""
           }
         },
@@ -857,7 +883,7 @@
           "settings": {
             "heading": "Item heading",
             "icon": "gift",
-            "row_content": "<p>Item content<\/p>",
+            "row_content": "<p>Item content</p>",
             "page": ""
           }
         }
@@ -882,6 +908,7 @@
         "enable_section_box_layout": false,
         "color_scheme": "",
         "open_first_collapsible_row": false,
+        "open_all_collapsible_row": false,
         "hide_image_on_mobile": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
