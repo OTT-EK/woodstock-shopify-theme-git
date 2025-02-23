@@ -35,7 +35,7 @@
   endif
 -%}
 
-<{{ header_wrap_tag }} class="header-wrapper por{% if section.settings.enable_sticky_header %} db{% endif %} header-wrapper--border-bottom{% endif %}{% if section.settings.enable_sticky_header and section.settings.logo_position == 'top-left' %} toggle-nav{% endif %}"{% if has_transparent %} data-transparent="1"{% endif %} data-sticky-type="{{ section.settings.sticky_header }}">
+<{{ header_wrap_tag }} class="header-wrapper por{% if section.settings.enable_sticky_header %} db{% endif %} {% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}{% if section.settings.enable_sticky_header and section.settings.logo_position == 'top-left' %} toggle-nav{% endif %}"{% if has_transparent %} data-transparent="1"{% endif %} data-sticky-type="{{ section.settings.sticky_header }}">
   {%- if store_information_blocks.size > 0 or has_localization or section.settings.enable_social_links -%}
     <div class="header-top color-{{ section.settings.top_color_scheme }} isolate gradient">
       <div class="page-width">
