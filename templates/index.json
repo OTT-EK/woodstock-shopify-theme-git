@@ -93,6 +93,7 @@
         "template--18627972890925__518b8ced-997b-408e-84d5-64fe5082a6a1-168102112962a89f2d-0",
         "template--18627972890925__518b8ced-997b-408e-84d5-64fe5082a6a1-168102112962a89f2d-1"
       ],
+      "disabled": true,
       "settings": {
         "layout": "grid",
         "slide_height": "small",
