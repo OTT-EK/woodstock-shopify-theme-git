@@ -8,21 +8,21 @@
   }
 {% endschema %}
   <section>
-    <div class="grid">
-      <div class="grid__item grid__item--sidebar">
+    <div class="mantagrid">
+      <div class="mantagrid__item mantagrid__item--sidebar">
         <!-- Left Sidebar Content -->
       </div>
-      <div class="grid__item grid__item--main">
+      <div class="mantagrid__item mantagrid__item--main">
         <div class="content-box content-box--long">
           <!-- Extra Long Content Box -->
         </div>
         <div class="grid grid--two-columns">
-          <div class="grid__item grid__item--half">
+          <div class="mantagrid__item mantagrid__item--half">
             <div class="content-box">
               <!-- Half Size Content Box 1 -->
             </div>
           </div>
-          <div class="grid__item grid__item--half">
+          <div class="mantagrid__item mantagrid__item--half">
             <div class="content-box">
               <!-- Half Size Content Box 2 -->
             </div>
@@ -32,31 +32,31 @@
     </div>
   </section>
 <style>
-  .grid {
+  .mantagrid {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
   }
-  .grid__item--sidebar {
+  .mantagrid__item--sidebar {
     /* Sidebar styles */
   }
-  .grid__item--main {
+  .mantagrid__item--main {
     display: flex;
     flex-direction: column;
   }
-  .content-box {
+  .mantacontent-box {
     padding: 20px;
     border: 1px solid #ccc;
   }
-  .content-box--long {
+  .mantacontent-box--long {
     flex: 1;
   }
-  .grid--two-columns {
+  .mantagrid--two-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
-  .grid__item--half {
+  .mantagrid__item--half {
     /* Half size box styles */
   }
 </style>
