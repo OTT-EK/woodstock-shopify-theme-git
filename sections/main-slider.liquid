@@ -1,62 +1,53 @@
 {% schema %}
   {
-    "name": "Main home slider",
+    "name": "Main Slider",
     "settings": [],
     "presets": [
-      {"name": "Main home slider"}
+      {"name": "Main Slider"}
     ]
   }
 {% endschema %}
-  <section>
-    <div class="mantagrid">
-      <div class="mantagrid__item mantagrid__item--sidebar">
-        <!-- Left Sidebar Content -->
-      </div>
-      <div class="mantagrid__item mantagrid__item--main">
-        <div class="content-box content-box--long">
-          <!-- Extra Long Content Box -->
-        </div>
-        <div class="grid grid--two-columns">
-          <div class="mantagrid__item mantagrid__item--half">
-            <div class="content-box">
-              <!-- Half Size Content Box 1 -->
-            </div>
-          </div>
-          <div class="mantagrid__item mantagrid__item--half">
-            <div class="content-box">
-              <!-- Half Size Content Box 2 -->
-            </div>
-          </div>
-        </div>
-      </div>
+
+<div class="manta-grid-container">
+  <div class="manta-sidebar">
+    menu
+  </div>
+  <div class="manta-content">
+    <div class="manta-content-box manta-long-box">
+      a
     </div>
-  </section>
+    <div class="manta-content-box manta-half-box">
+      b
+    </div>
+    <div class="manta-content-box manta-half-box">
+      c
+    </div>
+  </div>
+</div>
+
 <style>
-  .mantagrid {
+  .manta-grid-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
   }
-  .mantagrid__item--sidebar {
-    /* Sidebar styles */
+  .manta-sidebar {
+    background-color: #f4f4f4;
+    padding: 20px;
   }
-  .mantagrid__item--main {
+  .manta-content {
     display: flex;
     flex-direction: column;
   }
-  .mantacontent-box {
+  .manta-content-box {
+    background-color: #ffffff;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
   }
-  .mantacontent-box--long {
+  .manta-long-box {
     flex: 1;
   }
-  .mantagrid--two-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-  .mantagrid__item--half {
-    /* Half size box styles */
+  .manta-half-box {
+    flex: 0 0 50%;
   }
 </style>
