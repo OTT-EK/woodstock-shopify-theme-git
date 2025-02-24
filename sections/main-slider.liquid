@@ -1,36 +1,36 @@
 {% schema %}
   {
-    "name": "main.slider",
+    "name": "Main home slider",
     "settings": [],
     "presets": [
-      {"name": "Main Slider"}
+      {"name": "Main home slider"}
     ]
   }
 {% endschema %}
-
-<div class="grid">
-  <div class="grid__item grid__item--sidebar">
-    <!-- Left Sidebar Content -->
-  </div>
-  <div class="grid__item grid__item--main">
-    <div class="content-box content-box--long">
-      <!-- Extra Long Content Box -->
-    </div>
-    <div class="grid grid--two-columns">
-      <div class="grid__item grid__item--half">
-        <div class="content-box">
-          <!-- Half Size Content Box 1 -->
+  <section>
+    <div class="grid">
+      <div class="grid__item grid__item--sidebar">
+        <!-- Left Sidebar Content -->
+      </div>
+      <div class="grid__item grid__item--main">
+        <div class="content-box content-box--long">
+          <!-- Extra Long Content Box -->
+        </div>
+        <div class="grid grid--two-columns">
+          <div class="grid__item grid__item--half">
+            <div class="content-box">
+              <!-- Half Size Content Box 1 -->
+            </div>
+          </div>
+          <div class="grid__item grid__item--half">
+            <div class="content-box">
+              <!-- Half Size Content Box 2 -->
+            </div>
+          </div>
         </div>
       </div>
-      <div class="grid__item grid__item--half">
-        <div class="content-box">
-          <!-- Half Size Content Box 2 -->
-        </div>
-      </div>
     </div>
-  </div>
-</div>
-
+  </section>
 <style>
   .grid {
     display: grid;
