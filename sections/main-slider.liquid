@@ -8,46 +8,80 @@
   }
 {% endschema %}
 
-<div class="manta-grid-container">
-  <div class="manta-sidebar">
-    menu
-  </div>
-  <div class="manta-content">
-    <div class="manta-content-box manta-long-box">
-      a
-    </div>
-    <div class="manta-content-box manta-half-box">
-      b
-    </div>
-    <div class="manta-content-box manta-half-box">
-      c
-    </div>
-  </div>
-</div>
-
 <style>
   .manta-grid-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 3fr;
     gap: 20px;
   }
+  
   .manta-sidebar {
-    background-color: #f4f4f4;
+    background: #f4f4f4;
     padding: 20px;
   }
+  
   .manta-content {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 20px;
   }
-  .manta-content-box {
-    background-color: #ffffff;
+  
+  .manta-content-box-large {
+    background: #ddd;
     padding: 20px;
-    border: 1px solid #ddd;
+    height: 200px;
   }
-  .manta-long-box {
-    flex: 1;
+  
+  .manta-content-box-small-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
-  .manta-half-box {
-    flex: 0 0 50%;
+  
+  .manta-content-box-small {
+    background: #ccc;
+    padding: 20px;
+    height: 100px;
+  }
+
+  @media (max-width: 1024px) {
+    .manta-grid-container {
+      grid-template-columns: 1fr;
+    }
+    .manta-sidebar {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .manta-content-box-small-container {
+      display: flex;
+      overflow-x: scroll;
+      white-space: nowrap;
+      gap: 10px;
+    }
+    .manta-content-box-small {
+      flex: 0 0 auto;
+      width: 45%;
+    }
   }
 </style>
+
+<div class="manta-grid-container">
+  <div class="manta-sidebar">
+    <p>Sidebar Content</p>
+  </div>
+  <div class="manta-content">
+    <div class="manta-content-box-large">
+      <p>Large Content Box</p>
+    </div>
+    <div class="manta-content-box-small-container">
+      <div class="manta-content-box-small">
+        <p>Small Box 1</p>
+      </div>
+      <div class="manta-content-box-small">
+        <p>Small Box 2</p>
+      </div>
+    </div>
+  </div>
+</div>
