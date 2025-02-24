@@ -9,6 +9,10 @@
  */
 {
   "sections": {
+    "main_slider_gGxNFp": {
+      "type": "main-slider",
+      "settings": {}
+    },
     "518b8ced-997b-408e-84d5-64fe5082a6a1": {
       "type": "slideshow",
       "blocks": {
@@ -89,6 +93,7 @@
         "template--18627972890925__518b8ced-997b-408e-84d5-64fe5082a6a1-168102112962a89f2d-0",
         "template--18627972890925__518b8ced-997b-408e-84d5-64fe5082a6a1-168102112962a89f2d-1"
       ],
+      "disabled": true,
       "settings": {
         "layout": "grid",
         "slide_height": "small",
@@ -882,6 +887,7 @@
     }
   },
   "order": [
+    "main_slider_gGxNFp",
     "518b8ced-997b-408e-84d5-64fe5082a6a1",
     "1aded6ef-5727-4347-bf56-9fc610343e55",
     "0d643863-a71b-4567-a11d-0b5594aa5fae",
