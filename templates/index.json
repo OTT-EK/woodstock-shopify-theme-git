@@ -127,8 +127,8 @@
         "6d524d43-1bde-474f-b4c0-f6b07a06c8be"
       ],
       "settings": {
-        "layout": "full_bleed",
-        "slide_height": "large",
+        "layout": "grid",
+        "slide_height": "small",
         "slide_height_mobile": "large-mobile",
         "auto_rotate": true,
         "change_slides_speed": 5,
@@ -304,8 +304,8 @@
             "caption_color": "#0f172a",
             "button_foreground": "#ffffff",
             "button_background": "#0f172a",
-            "lightbox_button_color": "#000",
-            "lightbox_button_background": "#fff",
+            "lightbox_button_color": "#000000",
+            "lightbox_button_background": "#ffffff",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
@@ -331,8 +331,8 @@
             "caption_color": "#0f172a",
             "button_foreground": "#ffffff",
             "button_background": "#0f172a",
-            "lightbox_button_color": "#000",
-            "lightbox_button_background": "#fff",
+            "lightbox_button_color": "#000000",
+            "lightbox_button_background": "#ffffff",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
@@ -358,8 +358,8 @@
             "caption_color": "#0f172a",
             "button_foreground": "#ffffff",
             "button_background": "#0f172a",
-            "lightbox_button_color": "#000",
-            "lightbox_button_background": "#fff",
+            "lightbox_button_color": "#000000",
+            "lightbox_button_background": "#ffffff",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
@@ -385,8 +385,8 @@
             "caption_color": "#0f172a",
             "button_foreground": "#ffffff",
             "button_background": "#0f172a",
-            "lightbox_button_color": "#000",
-            "lightbox_button_background": "#fff",
+            "lightbox_button_color": "#000000",
+            "lightbox_button_background": "#ffffff",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
