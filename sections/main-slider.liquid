@@ -1,7 +1,32 @@
 {% schema %}
   {
     "name": "Main Slider",
-    "settings": [],
+    "settings": [
+      {
+        "type": "url",
+        "label": "Featured slide",
+        "id": "manta_featuredslide_1"
+      }
+    ],
+    "blocks": [
+      {
+        "name" : "Slide",
+        "type": "url",
+        "settings: [
+          {
+            "type": "url",
+            "label": "Slides link",
+            "id": "manta_linkslide"
+          },
+          {
+            "type": "url",
+            "label": "Slides img",
+            "id": "manta_imgslide"
+          }
+        ]
+
+      }
+    ],
     "presets": [
       {"name": "Main Slider"}
     ]
