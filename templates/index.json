@@ -160,9 +160,9 @@
       "settings": {
         "title": "Collections",
         "subtitle": "",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "image_ratio": "adapt",
-        "columns_desktop": 4,
+        "columns_desktop": 5,
         "full_width": true,
         "enable_section_box_layout": false,
         "enable_desktop_slider": false,
