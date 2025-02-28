@@ -1,1 +1,16 @@
-{"parent":"index.json","context":{"market":"lt"},"sections":{"518b8ced-997b-408e-84d5-64fe5082a6a1":{"settings":{},"blocks":{"template--18627972890925__518b8ced-997b-408e-84d5-64fe5082a6a1-168102112962a89f2d-0":{"settings":{"heading":"Heading A"}}}}}}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "index.json",
+  "context": {
+    "market": "lt"
+  },
+  "sections": {}
+}
