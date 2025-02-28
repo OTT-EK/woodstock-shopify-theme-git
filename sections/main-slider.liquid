@@ -47,80 +47,658 @@
   }
 {% endschema %}
 
-<style>
-  .manta-grid-container {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 20px;
-  }
-  
-  .manta-sidebar {
-    background: #f4f4f4;
-    padding: 20px;
-  }
-  
-  .manta-content {
-    display: grid;
-    grid-template-rows: auto auto;
-    gap: 20px;
-  }
-  
-  .manta-content-box-large {
-    background: #ddd;
-    padding: 20px;
-    height: 200px;
-  }
-  
-  .manta-content-box-small-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-  
-  .manta-content-box-small {
-    background: #ccc;
-    padding: 20px;
-    height: 100px;
-  }
-
-  @media (max-width: 1024px) {
+  <style>
     .manta-grid-container {
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: 1fr 3fr; /* sidebar + content */
+      gap: 2px;
+      align-items: stretch;
     }
     .manta-sidebar {
-      display: none;
+      background: #313131;
+      color: #fff;
+      position: relative; /* needed for internal positioning */
+      padding: 0;
+      overflow: hidden;
+      border-radius: 0px 0px 0px 8px;
     }
-  }
+    .manta-sidebar-inner {
+      position: relative;
+      box-sizing: border-box;
+      height: 100%; /* fill the grid cell’s height */
+    }
+    .manta-menu {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      background-color: #313131;
+      transition: max-height 0.3s ease;
+    }
+    .manta-menu.collapsed {
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      right: 0;
+      max-height: none;
+      overflow: visible;
+      z-index: 1;
+      padding-bottom: 2.5rem; /* Add this line */
+      padding-top: 0.3rem;
+    }
 
-  @media (max-width: 768px) {
-    .manta-content-box-small-container {
+    /* COLLAPSED: partial view */
+    .manta-menu.expanded {
+      position: relative; 
+      max-height: calc(100% - 60px);
+      overflow: hidden;
+      padding-bottom: 2.5rem; /* Add this line */
+      padding-top: 0.3rem;
+    }
+
+    /* Menu items */
+    .manta-menu-item {
+      border-bottom: 1px solid #444;
+    }
+    .manta-menu-item a {
       display: flex;
-      overflow-x: scroll;
-      white-space: nowrap;
+      align-items: center;
       gap: 10px;
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 16px;
+      transition: background-color 0.2s;
+    }
+    .manta-menu-item a:hover {
+      background-color: #444;
+    }
+
+    /* Icons */
+    .manta-menu-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      display: inline-block;
+    }
+    .manta-menu-icon img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    .manta-menu-text {
+      flex: 1;
+      font-size: 0.95rem;
+    }
+
+    /* Toggle button always positioned at bottom and on top of menu items */
+    .manta-menu-toggle {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0;
+      padding: 8px 16px;
+      background: #444;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.2s;
+      z-index: 10;
+      box-sizing: border-box;
+    }
+    .manta-menu-toggle:hover {
+      background-color: #555;
+    }
+    .manta-content {
+      display: grid;
+      grid-template-rows: auto auto;
+      gap: 2px;
+    }
+    .manta-content-box-large {
+      position: relative;
+      overflow: hidden;
+      height: auto;
+      aspect-ratio: 16 / 7;
+    }
+    .manta-content-box-small-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
     }
     .manta-content-box-small {
-      flex: 0 0 auto;
-      width: 45%;
+      background: #ccc;
+      height: 100px;
     }
-  }
-</style>
+    .manta-odd-out-r::after {
+      border-radius: 0px 0px 8px 0px;
+    }
+    /* RESPONSIVE BREAKPOINTS */
+    @media (max-width: 1024px) {
+      .manta-grid-container {
+        grid-template-columns: 1fr;
+      }
+      .manta-sidebar {
+        display: none;
+      }
+    }
+    @media (max-width: 768px) {
+      .manta-content-box-small-container {
+        display: flex;
+        overflow-x: scroll;
+        gap: 2px;
+      }
+      .manta-slider-controls {
+        display: none !important;
+      }
+      .manta-content-box-small {
+        flex: 0 0 auto;
+        width: 75%;
+      }
+      .manta-content-box-large {
+        aspect-ratio: 4 / 3;
+      }
+    }
+    @media (max-width: 440px) {
+      .manta-content-box-small {
+        width: 95%;
+      }
+      .manta-cta-content {
+        min-width: 63.6%;
+      }
+      .manta-content-box-small.manta-cta-box::after {
+        width: 75% !important;
+      }
+    }
+    .manta-slider-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .manta-slides {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+    .manta-slide {
+      min-width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    .manta-slider-controls {
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.7);
+      transform-origin: center center;
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 5px;
+    }
+    .manta-slider-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #333;
+      outline: none;
+      width: 4.4rem;
+      height: 4.4rem;
+    }
+    .manta-dots {
+      display: flex;
+      gap: 1rem;
+      padding: 0 2rem;
+    }
+    .manta-dots span {
+      width: 10px;
+      height: 10px;
+      display: block;
+      border-radius: 50%;
+      background-color: #aaa;
+      cursor: pointer;
+    }
+    .manta-dots span.active {
+      background-color: #333;
+    }
+    .manta-pause-play-btn {
+      position: relative;
+      width: 4.4rem;
+      height: 4.4rem;
+      cursor: pointer;
+    }
+    .manta-progress-ring {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(-90deg);
+      width: 100%;
+    }
+    .manta-pause-icon,
+    .manta-play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 16px;
+      pointer-events: none;
+    }
+    .manta-right-line {
+      border-right: 1px solid #eeeeee;
+    }
+    .manta-both-line {
+      border-left: 1px solid #eeeeee;
+      border-right: 1px solid #eeeeee;
+    }
+    .manta-content-box-small.manta-cta-box {
+    position: relative; 
+    height: auto;        /* Let the box grow naturally */
+    overflow: visible;   /* Ensure text isn't cut off */
+    background-color: transparent;
+    }
+    .manta-content-box-small.manta-cta-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;  /* So it always stretches to match the parent's height */
+    width: 50%;
+    background: url('https://i.imgur.com/hKEmy7N.png') no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+    }
+    .manta-cta-content {
+    position: relative; 
+    /* Use a width if you want the left portion to be ~60% */
+    width: 60%;
+    height: 100%;
+    background-color: #313131;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+    /* The rest of your styling can remain similar: */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+    box-sizing: border-box;
+    color: #fff;
+    z-index: 2;    /* So it appears above the pseudo-element background */
+    }
+    .manta-cta-content h2 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+    }
+    .manta-cta-content p {
+      margin: 0 0 12px;
+      font-size: 0.9rem;
+      height: auto;
+      max-width: calc(100% - 12px);
+      padding-right: 2rem;
+      min-height: 1.7rem;
+    }
+    .manta-cta-content button {
+      display: inline-block;
+      width: auto;
+      background-color: #fff;
+      color: #313131;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 5px;
+    }
+    .manta-sidebar:has(.manta-menu.expanded) {
+      border-radius: 0 0 8px 8px;
+    }
+    @media (max-width: 316px) {
+      .manta-cta-content button {
+        font-size: 9px;
+        padding: 4px 8px;
+      }
+    }
+  </style>
 
-<div class="manta-grid-container page-width">
-  <div class="manta-sidebar">
-    <p>Sidebar Content</p>
-  </div>
-  <div class="manta-content">
-    <div class="manta-content-box-large">
-      <p>Large Content Box</p>
-    </div>
-    <div class="manta-content-box-small-container">
-      <div class="manta-content-box-small">
-        <p>Small Box 1</p>
+ <div class="manta-grid-container page-width">
+    <!-- SIDEBAR -->
+    <div class="manta-sidebar">
+      <div class="manta-sidebar-inner">
+        <ul class="manta-menu collapsed" id="mantaMenu">
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://ottensten.lt/armaturos-apdirbimo-irankiai" target="_SELF">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/armaturos%20risimo%20irankiai.svg" alt="Armatūros apdirbimo įrankiai">
+              </span>
+              <span class="manta-menu-text">Armatūros apdirbimo įrankiai</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://ottensten.lt/tvirtinimo-elementai" target="_SELF">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/tvirtinimo%20detales%20ir%20elementai.svg" alt="Tvirtinimo elementai">
+              </span>
+              <span class="manta-menu-text">Tvirtinimo elementai</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://ottensten.lt/sandarinimo-medziagos" target="_SELF">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/sandarinimo%20medziagos.svg" alt="Sandarinimo medžiagos">
+              </span>
+              <span class="manta-menu-text">Sandarinimo medžiagos</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://ottensten.lt/klijavimo-irankiai" target="_SELF">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/klijavimo%20irankiai.svg" alt="Klijai ir klijavimo įrankiai">
+              </span>
+              <span class="manta-menu-text">Klijai ir klijavimo įrankiai</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://ottensten.lt/stumokliniai-kompresoriai-ir-priedai" target="_SELF">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/stumokliniai%20kompresoriai.svg" alt="Stūmokliniai kompresoriai ir priedai">
+              </span>
+              <span class="manta-menu-text">Stūmokliniai kompresoriai ir priedai</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://ottensten.lt/baldines-jungtys-ir-medienos-uztaisai" target="_SELF">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/lamello-baldines-jungtys.svg" alt="Baldinės jungtys ir medienos užtaisai">
+              </span>
+              <span class="manta-menu-text">Baldinės jungtys ir medienos užtaisai</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://ottensten.lt/medsraigciai-vinys-kabes" target="_SELF">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/vinys%20kabes%20medsraigciai.svg" alt="Medsraigčiai, vinys, kabės">
+              </span>
+              <span class="manta-menu-text">Medsraigčiai, vinys, kabės</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://ottensten.lt/kalimo-irankiai" target="_SELF">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/kalimo%20irankiai-new.svg" alt="Kalimo įrankiai ir priedai">
+              </span>
+              <span class="manta-menu-text">Kalimo įrankiai ir priedai</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://ottensten.lt/gamybos-irengimai-1" target="_SELF">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/gamybos%20irengimai.svg" alt="Gamybos įrengimai">
+              </span>
+              <span class="manta-menu-text">Gamybos įrengimai</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://ottensten.lt/sukimo-grezimo-irankiai" target="_SELF">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/sukimo-grezimo%20irankiai.svg" alt="Sukimo, gręžimo įrankiai">
+              </span>
+              <span class="manta-menu-text">Sukimo, gręžimo įrankiai</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://ottensten.lt/irankiai-ir-priedai" target="_SELF">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/irankiai%20ir%20priedai.svg" alt="Įrankiai ir priedai">
+              </span>
+              <span class="manta-menu-text">Įrankiai ir priedai</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://ottensten.lt/langu-montavimo-medziagos" target="_SELF">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/langu%20montavimo%20medziagos.svg" alt="Langų montavimo medžiagos">
+              </span>
+              <span class="manta-menu-text">Langų montavimo medžiagos</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://ottensten.lt/kartoniniu-deziu-pakavimo-irankiai" target="_SELF">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/kartoniniu%20deziu%20pakavimo%20irankiai.svg" alt="Kartoninių dėžių pakavimo įrankiai">
+              </span>
+              <span class="manta-menu-text">Kartoninių dėžių pakavimo įrankiai</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://ottensten.lt/garsa-slopinancios-medziagos" target="_SELF">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/garsa%20izoliuojancios%20medziagos.svg" alt="Garsą slopinančios medžiagos">
+              </span>
+              <span class="manta-menu-text">Garsą slopinančios medžiagos</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://ottensten.lt/laikinos-pavirsiaus-apsaugos-medziagos" target="_SELF">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/laikinos%20pavirsiaus%20apsaugos%20medziagos.svg" alt="Laikinos paviršiaus apsaugos medžiagos">
+              </span>
+              <span class="manta-menu-text">Laikinos paviršiaus apsaugos medžiagos</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://ottensten.lt/elektros-instaliacijos-produktai" target="_SELF">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/elektros%20instaliacijos%20medziagos.svg" alt="Elektros instaliacijos produktai">
+              </span>
+              <span class="manta-menu-text">Elektros instaliacijos produktai</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://www.bwood.lt/" target="_BLANK">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/apdailos%20plokstes.svg" alt="Apdailos plokštės">
+              </span>
+              <span class="manta-menu-text">Apdailos plokštės</span>
+            </a>
+          </li>
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="https://firestop.lt/" target="_BLANK">
+              <span class="manta-menu-icon">
+                <img src="https://ottensten.lt/image/catalog/categories/priesgaisrines%20medziagos.svg" alt="Priešgaisrinės statybinės medžiagos">
+              </span>
+              <span class="manta-menu-text">Priešgaisrinės statybinės medžiagos</span>
+            </a>
+          </li>
+          <!-- Add more <li> items as needed -->
+        </ul>
+
+        <!-- Toggle button always fixed at bottom -->
+        <button id="mantaMenuToggle" class="manta-menu-toggle">
+          Show more
+        </button>
       </div>
-      <div class="manta-content-box-small">
-        <p>Small Box 2</p>
+    </div>
+    
+    <!-- MAIN CONTENT -->
+    <div>
+    <div class="manta-content">
+      <div class="manta-content-box-large">
+        <div class="manta-slider-container" id="landscapeSlider">
+          <div class="manta-slides">
+            <div class="manta-slide" style="background-image: url('https://i.imgur.com/GfhlXdY.jpeg');"></div>
+            <div class="manta-slide" style="background-image: url('https://i.imgur.com/GfhlXdY.jpeg');"></div>
+          </div>
+          <div class="manta-slider-controls">
+            <button class="manta-slider-btn manta-right-line prev">&#10094;</button>
+            <div class="manta-dots"></div>
+            <button class="manta-slider-btn manta-both-line next">&#10095;</button>
+            <div class="manta-pause-play-btn">
+              <svg class="manta-progress-ring" width="40" height="40">
+                <circle
+                  class="manta-progress-ring__circle"
+                  stroke="#000"
+                  stroke-width="3"
+                  fill="transparent"
+                  r="18"
+                  cx="20"
+                  cy="20"
+                />
+              </svg>
+              <span class="manta-pause-icon">&#10073;&#10073;</span>
+              <span class="manta-play-icon" style="display:none;">&#9658;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="manta-content-box-small-container">
+        <div class="manta-content-box-small manta-cta-box">
+          <div class="manta-cta-content">
+            <h2>Warmotech</h2>
+            <p>Langų išnešimo profiliai. Langų išnešimo profiliai. Langų išnešimo profiliai. Langų išnešimo profiliai. Langų išnešimo profiliai. Langų išnešimo profiliai.</p>
+            <button>Shop Now</button>
+          </div>
+        </div>
+        <div class="manta-content-box-small manta-cta-box manta-odd-out-r">
+          <div class="manta-cta-content">
+            <h2>Warmotech</h2>
+            <p>Langų išnešimo profiliai.</p>
+            <button>Shop Now</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<!-- SLIDER JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const slider = document.getElementById("landscapeSlider");
+      const slidesWrap = slider.querySelector(".manta-slides");
+      const slides = slider.querySelectorAll(".manta-slide");
+      const prevBtn = slider.querySelector(".manta-slider-btn.prev");
+      const nextBtn = slider.querySelector(".manta-slider-btn.next");
+      const dotsContainer = slider.querySelector(".manta-dots");
+      const pausePlayBtn = slider.querySelector(".manta-pause-play-btn");
+      const pauseIcon = slider.querySelector(".manta-pause-icon");
+      const playIcon = slider.querySelector(".manta-play-icon");
+
+      const progressRing = slider.querySelector(".manta-progress-ring__circle");
+      const circumference = 2 * Math.PI * progressRing.r.baseVal.value;
+      progressRing.style.strokeDasharray = circumference;
+      progressRing.style.strokeDashoffset = circumference;
+
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+      const slideDuration = 3000;
+      let isPlaying = true;
+      let progressStartTime = null;
+      let animationFrameId = null;
+
+      // Create dots
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement("span");
+        dot.addEventListener("click", () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+      }
+      const dots = dotsContainer.querySelectorAll("span");
+      dots[currentIndex].classList.add("active");
+
+      function updateSlidePosition() {
+        slidesWrap.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[currentIndex].classList.add("active");
+      }
+      function goToSlide(index) {
+        currentIndex = (index + totalSlides) % totalSlides;
+        updateSlidePosition();
+        resetProgressRing();
+      }
+      function nextSlide() {
+        goToSlide(currentIndex + 1);
+      }
+      function prevSlide() {
+        goToSlide(currentIndex - 1);
+      }
+      function resetProgressRing() {
+        progressRing.style.strokeDashoffset = circumference;
+        progressStartTime = null;
+      }
+      function animateRing(timestamp) {
+        if (!progressStartTime) progressStartTime = timestamp;
+        const elapsed = timestamp - progressStartTime;
+        const progress = Math.min(elapsed / slideDuration, 1);
+        const offset = circumference - (progress * circumference);
+        progressRing.style.strokeDashoffset = offset;
+        if (progress < 1) {
+          animationFrameId = requestAnimationFrame(animateRing);
+        } else {
+          nextSlide();
+          if (isPlaying) {
+            animationFrameId = requestAnimationFrame(animateRing);
+          }
+        }
+      }
+      function startProgressRing() {
+        resetProgressRing();
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = requestAnimationFrame(animateRing);
+      }
+      function pauseProgressRing() {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      }
+
+      nextBtn.addEventListener("click", function() {
+        nextSlide();
+        if (isPlaying) startProgressRing();
+      });
+      prevBtn.addEventListener("click", function() {
+        prevSlide();
+        if (isPlaying) startProgressRing();
+      });
+      pausePlayBtn.addEventListener("click", function() {
+        isPlaying = !isPlaying;
+        if (isPlaying) {
+          pauseIcon.style.display = "inline";
+          playIcon.style.display = "none";
+          startProgressRing();
+        } else {
+          pauseIcon.style.display = "none";
+          playIcon.style.display = "inline";
+          pauseProgressRing();
+        }
+      });
+
+      // Start auto-play
+      startProgressRing();
+    });
+  </script>
+
+  <!-- COLLAPSIBLE MENU JS (REVERSED LOGIC) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menu = document.getElementById("mantaMenu");
+      const toggleBtn = document.getElementById("mantaMenuToggle");
+      let expanded = true; // start expanded (default state)
+
+      toggleBtn.addEventListener("click", function() {
+        if (expanded) {
+          // Collapse the menu
+          menu.classList.remove("collapsed");
+          menu.classList.add("expanded");
+          toggleBtn.textContent = "Show Less";
+          expanded = false;
+        } else {
+          // Expand the menu
+          menu.classList.remove("expanded");
+          menu.classList.add("collapsed");
+          toggleBtn.textContent = "Show More";
+          expanded = true;
+        }
+      });
+    });
+  </script>
+

@@ -293,7 +293,7 @@
       height: auto;
       max-width: calc(100% - 12px);
       padding-right: 2rem;
-      min-height: 2.5rem;
+      min-height: 1.7rem;
     }
     .manta-cta-content button {
       display: inline-block;
@@ -309,6 +309,12 @@
     }
     .manta-sidebar:has(.manta-menu.expanded) {
       border-radius: 0 0 8px 8px;
+    }
+    @media (max-width: 316px) {
+      .manta-cta-content button {
+        font-size: 9px;
+        padding: 4px 8px;
+      }
     }
   </style>
 </head>
