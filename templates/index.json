@@ -11,9 +11,25 @@
   "sections": {
     "main_slider_gGxNFp": {
       "type": "main-slider",
+      "blocks": {
+        "url_FNHhdk": {
+          "type": "url",
+          "settings": {
+            "manta_q-menu-item-name": "Armatūros apdirbimo įrankiai",
+            "manta_q-menu-item-img": "shopify://shop_images/armaturos_risimo_irankiai_white.png",
+            "manta_q-menu-item-url": "shopify://products/toughbuilt-tb-c550-sawhorse-jobsite-table-2-sets"
+          }
+        }
+      },
+      "block_order": [
+        "url_FNHhdk"
+      ],
       "settings": {
         "manta_featuredbox_1": "",
-        "manta_featuredbox_2": ""
+        "manta_featuredbox_2": "",
+        "manta_slide_link_1": "",
+        "manta_slide_link_2": "",
+        "manta_slide_link_3": ""
       }
     },
     "1aded6ef-5727-4347-bf56-9fc610343e55": {
