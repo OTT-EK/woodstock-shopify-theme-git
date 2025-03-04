@@ -1,75 +1,76 @@
 {% schema %}
-  {
-    "name": "Featured section",
-    "settings": [
-      {
-        "type": "url",
-        "label": "Featured 1",
-        "id": "manta_featuredbox_1"
-      },
-      {
-            "type": "image_picker",
-            "label": "Img",
-            "id": "manta_featuredbox_img_1"
-      },
-      {
-        "type": "url",
-        "label": "Featured 2",
-        "id": "manta_featuredbox_2"
-      },
-      {
-            "type": "image_picker",
-            "label": "Img",
-            "id": "manta_featuredbox_img_2"
-      }
-    ],
-    "blocks": [
-      {
-        "name" : "Quick menu item",
-        "type": "page",
-        "settings": [
-          {
-            "type": "text",
-            "label": "Name",
-            "id": "manta_q-menu-item-name"
-          },
-          {
-            "type": "image_picker",
-            "label": "Icon",
-            "id": "manta_q-menu-item-img"
-          },
-          {
-            "type": "page",
-            "label": "Link",
-            "id": "manta_q-menu-item-page"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {"name": "Main Menu Slider"}
-    ]
-  }
-  {
-    "name": "Carousel slides",
-    "settings": [
-      {
-        "type": "url",
-        "label": "Slide link 1",
-        "id": "manta_slide_link_1"
-      },
-      {
-        "type": "image_picker",
-        "label": "Img Desktop",
-        "id": "manta_slider_img_1"
-      },
-      {
-        "type": "image_picker",
-        "label": "Img Mobile",
-        "id": "manta_slider_img_mob_1"
-      }
-    ]
-  }
+{
+  "name": "Featured Section",
+  "settings": [
+    {
+      "type": "url",
+      "label": "Featured 1",
+      "id": "manta_featuredbox_1"
+    },
+    {
+      "type": "image_picker",
+      "label": "Img",
+      "id": "manta_featuredbox_img_1"
+    },
+    {
+      "type": "url",
+      "label": "Featured 2",
+      "id": "manta_featuredbox_2"
+    },
+    {
+      "type": "image_picker",
+      "label": "Img",
+      "id": "manta_featuredbox_img_2"
+    },
+    {
+      "type": "header",
+      "content": "Carousel Slides"
+    },
+    {
+      "type": "url",
+      "label": "Slide link 1",
+      "id": "manta_slide_link_1"
+    },
+    {
+      "type": "image_picker",
+      "label": "Img Desktop",
+      "id": "manta_slider_img_1"
+    },
+    {
+      "type": "image_picker",
+      "label": "Img Mobile",
+      "id": "manta_slider_img_mob_1"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Quick menu item",
+      "type": "page",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Name",
+          "id": "manta_q-menu-item-name"
+        },
+        {
+          "type": "image_picker",
+          "label": "Icon",
+          "id": "manta_q-menu-item-img"
+        },
+        {
+          "type": "page",
+          "label": "Link",
+          "id": "manta_q-menu-item-page"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Menu Slider"
+    }
+  ]
+}
 {% endschema %}
 
   <style>
