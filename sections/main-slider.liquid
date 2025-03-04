@@ -257,6 +257,15 @@
       .manta-content-box-large {
         aspect-ratio: 4 / 3;
       }
+      .manta-slide.manta-mslide-1 {
+        background-image: url('{{ section.settings.manta_slider_img_1 | img_url: 'master' }}');
+      }
+      .manta-slide.manta-mslide-2 {
+        background-image: url('{{ section.settings.manta_slider_img_2 | img_url: 'master' }}');
+      }
+      .manta-slide.manta-mslide-3 {
+        background-image: url('{{ section.settings.manta_slider_img_3 | img_url: 'master' }}');
+      }
     }
     @media (max-width: 440px) {
       .manta-content-box-small {
@@ -288,13 +297,13 @@
       background-position: center;
     }
     .manta-slide.manta-mslide-1 {
-      background-image: url('https://cdn.shopify.com/s/files/1/0923/0997/9481/files/siga-banner-d_4c8a3123-ac06-4bb7-aece-164b31dbb128.jpg?v=1741094003');
+      background-image: url('{{ section.settings.manta_slider_img_mob_1 | img_url: 'master' }}');
     }
     .manta-slide.manta-mslide-2 {
-      background-image: url('https://cdn.shopify.com/s/files/1/0923/0997/9481/files/siga-banner-d_4c8a3123-ac06-4bb7-aece-164b31dbb128.jpg?v=1741094003');
+      background-image: url('{{ section.settings.manta_slider_img_mob_2 | img_url: 'master' }}');
     }
     .manta-slide.manta-mslide-3 {
-      background-image: url('https://cdn.shopify.com/s/files/1/0923/0997/9481/files/siga-banner-d_4c8a3123-ac06-4bb7-aece-164b31dbb128.jpg?v=1741094003');
+      background-image: url('{{ section.settings.manta_slider_img_mob_3 | img_url: 'master' }}');
     }
     .manta-slider-controls {
       position: absolute;
@@ -425,12 +434,12 @@
       background-color: #fff;
       color: #313131;
       border: none;
-      padding: 8px 16px;
+      padding: 6px 20px;
       cursor: pointer;
-      font-weight: bold;
       text-transform: uppercase;
       border-radius: 5px;
       text-decoration: none;
+      font-size: 12px;
     }
     .manta-sidebar:has(.manta-menu.expanded) {
       border-radius: 0 0 8px 8px;
@@ -476,9 +485,9 @@
       <div class="manta-content-box-large">
         <div class="manta-slider-container" id="landscapeSlider">
           <div class="manta-slides">
-            <div class="manta-slide manta-mslide-1"></div>
-            <div class="manta-slide manta-mslide-1"></div>
-            <div class="manta-slide manta-mslide-1"></div>
+            <a href=""><div class="manta-slide manta-mslide-1"></div></a>
+            <a href=""><div class="manta-slide manta-mslide-1"></div></a>
+            <a href=""><div class="manta-slide manta-mslide-1"></div></a>
           </div>
           <div class="manta-slider-controls">
             <button class="manta-slider-btn manta-right-line prev">&#10094;</button>
