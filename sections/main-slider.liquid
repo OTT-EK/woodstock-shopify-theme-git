@@ -438,150 +438,18 @@
     <div class="manta-sidebar">
       <div class="manta-sidebar-inner">
         <ul class="manta-menu collapsed" id="mantaMenu">
+        {% for block in section.blocks %}
           <li class="manta-menu-item manta-menu-parent">
-            <a href="https://ottensten.lt/armaturos-apdirbimo-irankiai" target="_SELF">
+            <a href="{{ block.settings.manta_q-menu-item-url }}" target="_SELF">
               <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/armaturos%20risimo%20irankiai.svg" alt="Armatūros apdirbimo įrankiai">
+                {% if block.settings.manta_q-menu-item-img != blank %}
+                  <img src="{{ block.settings.manta_q-menu-item-img | img_url: 'master' }}" alt="{{ block.settings.manta_q-menu-item-name }}">
+                {% endif %}
               </span>
-              <span class="manta-menu-text">Armatūros apdirbimo įrankiai</span>
+              <span class="manta-menu-text">{{ block.settings.manta_q-menu-item-name }}</span>
             </a>
           </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://ottensten.lt/tvirtinimo-elementai" target="_SELF">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/tvirtinimo%20detales%20ir%20elementai.svg" alt="Tvirtinimo elementai">
-              </span>
-              <span class="manta-menu-text">Tvirtinimo elementai</span>
-            </a>
-          </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://ottensten.lt/sandarinimo-medziagos" target="_SELF">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/sandarinimo%20medziagos.svg" alt="Sandarinimo medžiagos">
-              </span>
-              <span class="manta-menu-text">Sandarinimo medžiagos</span>
-            </a>
-          </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://ottensten.lt/klijavimo-irankiai" target="_SELF">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/klijavimo%20irankiai.svg" alt="Klijai ir klijavimo įrankiai">
-              </span>
-              <span class="manta-menu-text">Klijai ir klijavimo įrankiai</span>
-            </a>
-          </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://ottensten.lt/stumokliniai-kompresoriai-ir-priedai" target="_SELF">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/stumokliniai%20kompresoriai.svg" alt="Stūmokliniai kompresoriai ir priedai">
-              </span>
-              <span class="manta-menu-text">Stūmokliniai kompresoriai ir priedai</span>
-            </a>
-          </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://ottensten.lt/baldines-jungtys-ir-medienos-uztaisai" target="_SELF">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/lamello-baldines-jungtys.svg" alt="Baldinės jungtys ir medienos užtaisai">
-              </span>
-              <span class="manta-menu-text">Baldinės jungtys ir medienos užtaisai</span>
-            </a>
-          </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://ottensten.lt/medsraigciai-vinys-kabes" target="_SELF">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/vinys%20kabes%20medsraigciai.svg" alt="Medsraigčiai, vinys, kabės">
-              </span>
-              <span class="manta-menu-text">Medsraigčiai, vinys, kabės</span>
-            </a>
-          </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://ottensten.lt/kalimo-irankiai" target="_SELF">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/kalimo%20irankiai-new.svg" alt="Kalimo įrankiai ir priedai">
-              </span>
-              <span class="manta-menu-text">Kalimo įrankiai ir priedai</span>
-            </a>
-          </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://ottensten.lt/gamybos-irengimai-1" target="_SELF">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/gamybos%20irengimai.svg" alt="Gamybos įrengimai">
-              </span>
-              <span class="manta-menu-text">Gamybos įrengimai</span>
-            </a>
-          </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://ottensten.lt/sukimo-grezimo-irankiai" target="_SELF">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/sukimo-grezimo%20irankiai.svg" alt="Sukimo, gręžimo įrankiai">
-              </span>
-              <span class="manta-menu-text">Sukimo, gręžimo įrankiai</span>
-            </a>
-          </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://ottensten.lt/irankiai-ir-priedai" target="_SELF">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/irankiai%20ir%20priedai.svg" alt="Įrankiai ir priedai">
-              </span>
-              <span class="manta-menu-text">Įrankiai ir priedai</span>
-            </a>
-          </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://ottensten.lt/langu-montavimo-medziagos" target="_SELF">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/langu%20montavimo%20medziagos.svg" alt="Langų montavimo medžiagos">
-              </span>
-              <span class="manta-menu-text">Langų montavimo medžiagos</span>
-            </a>
-          </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://ottensten.lt/kartoniniu-deziu-pakavimo-irankiai" target="_SELF">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/kartoniniu%20deziu%20pakavimo%20irankiai.svg" alt="Kartoninių dėžių pakavimo įrankiai">
-              </span>
-              <span class="manta-menu-text">Kartoninių dėžių pakavimo įrankiai</span>
-            </a>
-          </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://ottensten.lt/garsa-slopinancios-medziagos" target="_SELF">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/garsa%20izoliuojancios%20medziagos.svg" alt="Garsą slopinančios medžiagos">
-              </span>
-              <span class="manta-menu-text">Garsą slopinančios medžiagos</span>
-            </a>
-          </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://ottensten.lt/laikinos-pavirsiaus-apsaugos-medziagos" target="_SELF">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/laikinos%20pavirsiaus%20apsaugos%20medziagos.svg" alt="Laikinos paviršiaus apsaugos medžiagos">
-              </span>
-              <span class="manta-menu-text">Laikinos paviršiaus apsaugos medžiagos</span>
-            </a>
-          </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://ottensten.lt/elektros-instaliacijos-produktai" target="_SELF">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/elektros%20instaliacijos%20medziagos.svg" alt="Elektros instaliacijos produktai">
-              </span>
-              <span class="manta-menu-text">Elektros instaliacijos produktai</span>
-            </a>
-          </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://www.bwood.lt/" target="_BLANK">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/apdailos%20plokstes.svg" alt="Apdailos plokštės">
-              </span>
-              <span class="manta-menu-text">Apdailos plokštės</span>
-            </a>
-          </li>
-          <li class="manta-menu-item manta-menu-parent">
-            <a href="https://firestop.lt/" target="_BLANK">
-              <span class="manta-menu-icon">
-                <img src="https://ottensten.lt/image/catalog/categories/priesgaisrines%20medziagos.svg" alt="Priešgaisrinės statybinės medžiagos">
-              </span>
-              <span class="manta-menu-text">Priešgaisrinės statybinės medžiagos</span>
-            </a>
-          </li>
+        {% endfor %}
           <!-- Add more <li> items as needed -->
         </ul>
 
