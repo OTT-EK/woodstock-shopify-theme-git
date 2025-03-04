@@ -1,6 +1,6 @@
 {% schema %}
   {
-    "name": "Main Slider",
+    "name": "Featured section",
     "settings": [
       {
         "type": "url",
@@ -9,7 +9,7 @@
       },
       {
             "type": "image_picker",
-            "label": "img",
+            "label": "Img",
             "id": "manta_featuredbox_img_1"
       },
       {
@@ -19,30 +19,55 @@
       },
       {
             "type": "image_picker",
-            "label": "img",
+            "label": "Img",
             "id": "manta_featuredbox_img_2"
       }
     ],
     "blocks": [
       {
-        "name" : "Slide",
-        "type": "url",
+        "name" : "Quick menu item",
+        "type": "page",
         "settings": [
           {
-            "type": "url",
-            "label": "Slides link",
-            "id": "manta_linkslide"
+            "type": "text",
+            "label": "Name",
+            "id": "manta_q-menu-item-name"
           },
           {
             "type": "image_picker",
-            "label": "Slides img",
-            "id": "manta_imgslide"
+            "label": "Icon",
+            "id": "manta_q-menu-item-img"
+          },
+          {
+            "type": "page",
+            "label": "Link",
+            "id": "manta_q-menu-item-page"
           }
         ]
       }
     ],
     "presets": [
-      {"name": "Main Slider"}
+      {"name": "Main Menu Slider"}
+    ]
+  }
+  {
+    "name": "Carousel slides",
+    "settings": [
+      {
+        "type": "url",
+        "label": "Slide link 1",
+        "id": "manta_slide_link_1"
+      },
+      {
+        "type": "image_picker",
+        "label": "Img Desktop",
+        "id": "manta_slider_img_1"
+      },
+      {
+        "type": "image_picker",
+        "label": "Img Mobile",
+        "id": "manta_slider_img_mob_1"
+      }
     ]
   }
 {% endschema %}
