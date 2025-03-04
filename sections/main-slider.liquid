@@ -366,7 +366,6 @@
       right: 0;
       bottom: 0;  /* So it always stretches to match the parent's height */
       width: 50%;
-      background: url('https://i.imgur.com/hKEmy7N.png') no-repeat center center;
       background-size: cover;
       z-index: 1;
     }
@@ -399,7 +398,7 @@
       padding-right: 2rem;
       min-height: 1.7rem;
     }
-    .manta-cta-content button {
+    .manta-cta-content a {
       display: inline-block;
       width: auto;
       background-color: #fff;
@@ -415,7 +414,7 @@
       border-radius: 0 0 8px 8px;
     }
     @media (max-width: 316px) {
-      .manta-cta-content button {
+      .manta-cta-content a {
         font-size: 9px;
         padding: 4px 8px;
       }
@@ -575,9 +574,9 @@
         </ul>
 
         <!-- Toggle button always fixed at bottom -->
-        <button id="mantaMenuToggle" class="manta-menu-toggle">
+        <a id="mantaMenuToggle" class="manta-menu-toggle">
           Show more
-        </button>
+        </a>
       </div>
     </div>
     
@@ -591,9 +590,9 @@
             <div class="manta-slide" style="background-image: url('https://i.imgur.com/GfhlXdY.jpeg');"></div>
           </div>
           <div class="manta-slider-controls">
-            <button class="manta-slider-btn manta-right-line prev">&#10094;</button>
+            <a class="manta-slider-btn manta-right-line prev">&#10094;</a>
             <div class="manta-dots"></div>
-            <button class="manta-slider-btn manta-both-line next">&#10095;</button>
+            <a class="manta-slider-btn manta-both-line next">&#10095;</a>
             <div class="manta-pause-play-btn">
               <svg class="manta-progress-ring" width="40" height="40">
                 <circle
@@ -614,18 +613,18 @@
       </div>
 
       <div class="manta-content-box-small-container">
-        <div class="manta-content-box-small manta-cta-box">
+        <div class="manta-content-box-small manta-cta-box" style="background-image: url('{{ section.settings.manta_featuredbox_img_1 | img_url: 'master' }}');">
           <div class="manta-cta-content">
             <h2>Warmotech</h2>
             <p>Langų išnešimo profiliai. Langų išnešimo profiliai. Langų išnešimo profiliai. Langų išnešimo profiliai. Langų išnešimo profiliai. Langų išnešimo profiliai.</p>
-            <button>Shop Now</button>
+            <a href="{{ section.settings.manta_featuredbox_1 }}">Shop Now</a>
           </div>
         </div>
-        <div class="manta-content-box-small manta-cta-box manta-odd-out-r">
+        <div class="manta-content-box-small manta-cta-box manta-odd-out-r" style="background-image: url('{{ section.settings.manta_featuredbox_img_2 | img_url: 'master' }}');">
           <div class="manta-cta-content">
             <h2>Warmotech</h2>
             <p>Langų išnešimo profiliai.</p>
-            <button>Shop Now</button>
+            <a href="{{ section.settings.manta_featuredbox_2 }}">Shop Now</a>
           </div>
         </div>
       </div>
