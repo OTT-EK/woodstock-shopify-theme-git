@@ -430,6 +430,7 @@
       font-weight: bold;
       text-transform: uppercase;
       border-radius: 5px;
+      text-decoration: none;
     }
     .manta-sidebar:has(.manta-menu.expanded) {
       border-radius: 0 0 8px 8px;
@@ -452,7 +453,7 @@
             <a href="{{ block.settings.manta_q-menu-item-url }}" target="_SELF">
               <span class="manta-menu-icon">
                 {% if block.settings.manta_q-menu-item-img != blank %}
-                  <img src="{{ block.settings.manta_q-menu-item-img | img_url: 'master' }}" alt="{{ block.settings.manta_q-menu-item-name }}">
+                  <img src="{{ block.settings.manta_q-menu-item-img | img_url: 'master' }}" alt="{{ block.settings.manta_q-menu-item-name }}" width="24" height="24">
                 {% endif %}
               </span>
               <span class="manta-menu-text">{{ block.settings.manta_q-menu-item-name }}</span>
