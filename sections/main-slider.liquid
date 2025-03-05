@@ -263,6 +263,11 @@
         background-image: url('{{ section.settings.manta_slider_img_mob_3 | img_url: 'master' }}');
       }
     }
+    @media (min-width: 768px) {
+    .manta-odd-out-r::after {
+      border-radius: 0px 0px 8px 0px;
+      }
+    }
     @media (max-width: 440px) {
       .manta-content-box-small {
         width: 95%;
@@ -372,9 +377,6 @@
       height: auto;        /* Let the box grow naturally */
       overflow: visible;   /* Ensure text isn't cut off */
       background-color: #313131;
-      border-radius: 0px 0px 8px 0px;
-    }
-    .manta-odd-out-r::after {
       border-radius: 0px 0px 8px 0px;
     }
     .manta-content-box-small.manta-cta-box.manta-picture-featured-1::after {
