@@ -263,16 +263,23 @@
         background-image: url('{{ section.settings.manta_slider_img_mob_3 | img_url: 'master' }}');
       }
     }
-    @media (min-width: 768px) {
-      .manta-picture-featured-2::after, .manta-content-box-small.manta-cta-box:nth-of-type(2) {
-        border-radius: 0px 0px 8px 0px;
-      }
+    .manta-picture-featured-2::after, .manta-content-box-small.manta-cta-box:nth-of-type(2) {
+      border-bottom-right-radius: 8px;
     }
     @media (max-width: 1024px) {
       .manta-cta-content:nth-of-type(1), .manta-content-box-small.manta-cta-box:nth-of-type(1) {
-        border-radius: 0px 0px 0px 8px;
+        border-bottom-left-radius: 8px;
       }
     }
+    @media (max-width: 768px) {
+      .manta-cta-content, .manta-content-box-small.manta-cta-box {
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+      }
+      .manta-picture-featured-2::after,.manta-picture-featured-1::after, .manta-content-box-small.manta-cta-box {
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 8px;
+      }
     }
     @media (max-width: 440px) {
       .manta-content-box-small {
