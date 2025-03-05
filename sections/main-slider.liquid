@@ -186,7 +186,6 @@
     }
     .manta-menu-text {
       flex: 1;
-      font-size: 0.95rem;
     }
 
     /* Toggle button always positioned at bottom and on top of menu items */
@@ -482,7 +481,7 @@
                   <img src="{{ block.settings.manta_q-menu-item-img | img_url: 'master' }}" alt="{{ block.settings.manta_q-menu-item-name }}" width="24" height="24">
                 {% endif %}
               </span>
-              <span class="manta-menu-text">{{ block.settings.manta_q-menu-item-name }}</span>
+              <span class="manta-menu-text text-small">{{ block.settings.manta_q-menu-item-name }}</span>
             </a>
           </li>
         {% endfor %}
