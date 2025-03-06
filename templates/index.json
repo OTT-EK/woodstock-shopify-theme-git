@@ -20,19 +20,19 @@
             "manta_q-menu-item-url": "shopify://products/toughbuilt-tb-c550-sawhorse-jobsite-table-2-sets"
           }
         },
-        "url_DA3pi3": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Air compressors and accessories",
-            "manta_q-menu-item-img": "shopify://shop_images/Compressors-2.png",
-            "manta_q-menu-item-url": ""
-          }
-        },
         "url_te66MB": {
           "type": "url",
           "settings": {
             "manta_q-menu-item-name": "Brackets",
             "manta_q-menu-item-img": "shopify://shop_images/brackets-w.png",
+            "manta_q-menu-item-url": ""
+          }
+        },
+        "url_DA3pi3": {
+          "type": "url",
+          "settings": {
+            "manta_q-menu-item-name": "Air compressors and accessories",
+            "manta_q-menu-item-img": "shopify://shop_images/Compressors-2.png",
             "manta_q-menu-item-url": ""
           }
         },
@@ -97,8 +97,8 @@
       },
       "block_order": [
         "url_FNHhdk",
-        "url_DA3pi3",
         "url_te66MB",
+        "url_DA3pi3",
         "url_AGUPR6",
         "url_rzVb6k",
         "url_N8rJiF",
