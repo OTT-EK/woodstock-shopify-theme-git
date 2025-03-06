@@ -23,7 +23,7 @@
         "url_DA3pi3": {
           "type": "url",
           "settings": {
-            "manta_q-menu-item-name": "Compressors",
+            "manta_q-menu-item-name": "Air compressors and accessories",
             "manta_q-menu-item-img": "shopify://shop_images/Compressors-2.png",
             "manta_q-menu-item-url": ""
           }
@@ -49,13 +49,6 @@
           "settings": {
             "manta_q-menu-item-name": "Adhesives and bonding tools",
             "manta_q-menu-item-img": "shopify://shop_images/heatgun-w.png",
-            "manta_q-menu-item-url": ""
-          }
-        },
-        "url_zqBH8Y": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Reciprocating compressors and accessories",
             "manta_q-menu-item-url": ""
           }
         },
@@ -108,7 +101,6 @@
         "url_te66MB",
         "url_AGUPR6",
         "url_rzVb6k",
-        "url_zqBH8Y",
         "url_N8rJiF",
         "url_hA6pWT",
         "url_hwW3Tw",
