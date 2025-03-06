@@ -20,10 +20,19 @@
             "manta_q-menu-item-url": "shopify://products/toughbuilt-tb-c550-sawhorse-jobsite-table-2-sets"
           }
         },
+        "url_DA3pi3": {
+          "type": "url",
+          "settings": {
+            "manta_q-menu-item-name": "Compressors",
+            "manta_q-menu-item-img": "shopify://shop_images/Compressors-2.png",
+            "manta_q-menu-item-url": ""
+          }
+        },
         "url_te66MB": {
           "type": "url",
           "settings": {
             "manta_q-menu-item-name": "Brackets",
+            "manta_q-menu-item-img": "shopify://shop_images/brackets-w.png",
             "manta_q-menu-item-url": ""
           }
         },
@@ -31,6 +40,7 @@
           "type": "url",
           "settings": {
             "manta_q-menu-item-name": "Sealing materials",
+            "manta_q-menu-item-img": "shopify://shop_images/sealing-w.png",
             "manta_q-menu-item-url": ""
           }
         },
@@ -38,6 +48,7 @@
           "type": "url",
           "settings": {
             "manta_q-menu-item-name": "Adhesives and bonding tools",
+            "manta_q-menu-item-img": "shopify://shop_images/heatgun-w.png",
             "manta_q-menu-item-url": ""
           }
         },
@@ -52,6 +63,13 @@
           "type": "url",
           "settings": {
             "manta_q-menu-item-name": "Upholstery connectors and wood fillers",
+            "manta_q-menu-item-url": ""
+          }
+        },
+        "url_hA6pWT": {
+          "type": "url",
+          "settings": {
+            "manta_q-menu-item-name": "",
             "manta_q-menu-item-url": ""
           }
         },
@@ -86,11 +104,13 @@
       },
       "block_order": [
         "url_FNHhdk",
+        "url_DA3pi3",
         "url_te66MB",
         "url_AGUPR6",
         "url_rzVb6k",
         "url_zqBH8Y",
         "url_N8rJiF",
+        "url_hA6pWT",
         "url_hwW3Tw",
         "url_nCxp9z",
         "url_eEQXU8",
