@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "footer",
   "name": "Footer Group",
@@ -21,13 +30,12 @@
         "sections--18627971875117__4e078c05-1639-42a5-afa3-cafcfb09f9ef-16843368904683bb0d-1": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Your description text<\/p>"
+            "text": "<p>Your description text</p>"
           }
         },
         "sections--18627971875117__4e078c05-1639-42a5-afa3-cafcfb09f9ef-16843368904683bb0d-2": {
           "type": "email_form",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -42,7 +50,9 @@
         "layout": "image_first",
         "desktop_content_position": "top",
         "desktop_content_alignment": "center",
+        "enable_section_box_layout": false,
         "color_scheme": "background-2",
+        "enable_parallax_scrolling_effect": true,
         "colors_text": "#ffffff",
         "colors_input": "#64748b",
         "overlay_color": "#1e40af",
@@ -62,8 +72,8 @@
             "phone": "Enter your phone number",
             "email": "Enter your email address",
             "footer_logo_enable": true,
-            "footer_logo": "shopify:\/\/shop_images\/woodstock-logo.png",
-            "footer_logo_width": 85,
+            "footer_logo": "shopify://shop_images/ott_logo-footer.png",
+            "footer_logo_width": 190,
             "footer_logo_alignment": "left"
           }
         },
@@ -97,11 +107,14 @@
       ],
       "settings": {
         "color_scheme": "background-2",
+        "color_scheme_bottom": "",
+        "auto_fit": false,
         "bottom_links": "footer",
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
         "payment_enable": true,
+        "payment_icons": "",
         "enable_follow_on_shop": true,
         "enable_collapse": true,
         "open_first_collapsible_row": true,
