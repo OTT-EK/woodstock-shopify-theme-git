@@ -200,7 +200,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "",
-            "custom_image": "shopify://shop_images/pallet-manifacturing-crop-290x596.jpg",
+            "custom_image": "shopify://shop_images/eshop-ecat-siga-2.jpg",
             "custom_title": ""
           }
         },
@@ -208,6 +208,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "",
+            "custom_image": "shopify://shop_images/eshop-ecat-max.jpg",
             "custom_title": ""
           }
         },
@@ -215,6 +216,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "",
+            "custom_image": "shopify://shop_images/eshop-ecat-s.jpg",
             "custom_title": ""
           }
         },
@@ -222,6 +224,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "",
+            "custom_image": "shopify://shop_images/eshop-ecat-p.jpg",
             "custom_title": ""
           }
         },
@@ -229,6 +232,7 @@
           "type": "featured_collection",
           "settings": {
             "collection": "",
+            "custom_image": "shopify://shop_images/eshop-ecat-bath.jpg",
             "custom_title": ""
           }
         }
