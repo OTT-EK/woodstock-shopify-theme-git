@@ -155,7 +155,7 @@
         "mobile_logo_position": "center",
         "show_country_language_selector_drawer_mobile": false,
         "show_store_information_blocks_on_mobile": false,
-        "enable_country_selector": true,
+        "enable_country_selector": false,
         "enable_language_selector": true,
         "customer_support_region_caption": "Caption",
         "customer_support_region_global_hotline": "Your hotline",
