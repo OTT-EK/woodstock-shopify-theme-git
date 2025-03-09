@@ -488,12 +488,13 @@
     }
   </style>
 
+{% section 'manta-mega-menu' %}
  <div class="manta-grid-container page-width">
     <!-- SIDEBAR -->
     <div class="manta-sidebar">
       <div class="manta-sidebar-inner">
         <ul class="manta-menu collapsed" id="mantaMenu">
-          {% for block in sections['manta-mega-menu'].blocks %}
+        {% for block in sections['manta-mega-menu'].blocks %}
           <li class="manta-menu-item manta-menu-parent">
             <a href="{{ block.settings.manta_c-menu-item-url }}" target="_SELF">
               <span class="manta-menu-icon">
