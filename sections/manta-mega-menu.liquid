@@ -1,0 +1,39 @@
+{% schema %}
+{
+  "name": "Category Menu",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Feautred items"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Menu item",
+      "type": "url",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Name",
+          "id": "manta_c-menu-item-name"
+        },
+        {
+          "type": "image_picker",
+          "label": "Icon",
+          "id": "manta_c-menu-item-img"
+        },
+        {
+          "type": "url",
+          "label": "Link",
+          "id": "manta_c-menu-item-url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category Mega Menu"
+    }
+  ]
+}
+{% endschema %}
