@@ -8,20 +8,9 @@
  * ------------------------------------------------------------
  */
 {
-  "parent": "index.json",
+  "parent": "footer-group.json",
   "context": {
     "market": "lt"
   },
-  "sections": {
-    "main_slider_gGxNFp": {
-      "settings": {},
-      "blocks": {
-        "url_FNHhdk": {
-          "settings": {
-            "manta_q-menu-item-name": "Armatūros apdirbimo įrankiai"
-          }
-        }
-      }
-    }
-  }
+  "sections": {}
 }
