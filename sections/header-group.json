@@ -162,27 +162,9 @@
         "enable_transparent_homepage": false,
         "text_color_transparent": "#ffffff"
       }
-    },
-    "manta_mega_menu_PbRGzM": {
-      "type": "manta-mega-menu",
-      "blocks": {
-        "url_7L3469": {
-          "type": "url",
-          "settings": {
-            "manta_c-menu-item-name": "Reinforcement machining tools",
-            "manta_c-menu-item-img": "shopify://shop_images/armaturos_risimo_irankiai_white.png",
-            "manta_c-menu-item-url": ""
-          }
-        }
-      },
-      "block_order": [
-        "url_7L3469"
-      ],
-      "settings": {}
     }
   },
   "order": [
-    "header",
-    "manta_mega_menu_PbRGzM"
+    "header"
   ]
 }
