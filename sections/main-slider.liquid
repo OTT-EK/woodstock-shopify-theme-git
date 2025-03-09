@@ -493,15 +493,15 @@
     <div class="manta-sidebar">
       <div class="manta-sidebar-inner">
         <ul class="manta-menu collapsed" id="mantaMenu">
-        {% for block in section.blocks %}
+          {% for block in sections['manta-mega-menu'].blocks %}
           <li class="manta-menu-item manta-menu-parent">
-            <a href="{{ block.settings.manta_q-menu-item-url }}" target="_SELF">
+            <a href="{{ block.settings.manta_c-menu-item-url }}" target="_SELF">
               <span class="manta-menu-icon">
-                {% if block.settings.manta_q-menu-item-img != blank %}
-                  <img src="{{ block.settings.manta_q-menu-item-img | img_url: 'master' }}" alt="{{ block.settings.manta_q-menu-item-name }}" width="24" height="24">
+                {% if block.settings.manta_c-menu-item-img != blank %}
+                  <img src="{{ block.settings.manta_c-menu-item-img | img_url: 'master' }}" alt="{{ block.settings.manta_c-menu-item-name }}" width="24" height="24">
                 {% endif %}
               </span>
-              <span class="manta-menu-text text-small">{{ block.settings.manta_q-menu-item-name }}</span>
+              <span class="manta-menu-text text-small">{{ block.settings.manta_c-menu-item-name }}</span>
             </a>
           </li>
         {% endfor %}
