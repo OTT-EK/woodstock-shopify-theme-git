@@ -30,8 +30,7 @@
           "type": "url",
           "settings": {
             "manta_q-menu-item-name": "Adhesives and bonding tools",
-            "manta_q-menu-item-img": "shopify://shop_images/heatgun-w.png",
-            "manta_q-menu-item-url": ""
+            "manta_q-menu-item-url": "shopify://collections/adhesives-and-bonding-tools"
           }
         },
         "url_DA3pi3": {
