@@ -211,23 +211,31 @@
                     {%- if section.settings.menu != blank -%}
                       <nav class="menu-drawer__navigation menu-drawer__block">
                         <ul class="menu-drawer__menu has-submenu list-menu menu-drawer__background" role="list">
-                          <li class="menu-drawer__menu-item list-menu__item">
-                            <details>
-                              <summary class="menu-drawer__menu-item link link--text">
+                          <li>
+                            <details id="Details-menu-drawer-categories">
+                              <summary class="menu-drawer__menu-item list-menu__item link link--text header__menu-item--top h6">
                                 Categories
                                 {% render 'icon-caret' %}
                               </summary>
-                              <ul class="menu-drawer__submenu list-menu">
-                                {% for link in section.settings.manta-category-menu.links %}
-                                  <li>
-                                    <a href="{{ link.url }}" class="menu-drawer__menu-item link link--text">
-                                      {{ link.title }}
-                                    </a>
-                                  </li>
-                                {% endfor %}
-                              </ul>
+                              <div id="menu-drawer-categories" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
+                                <div class="menu-drawer__inner-submenu menu-drawer__background">
+                                  <button class="menu-drawer__close-button link link--text" aria-expanded="true">
+                                    {% render 'icon-picker', icon: 'arrow_left', add_classes: 'icon-arrow' %}
+                                    Back
+                                  </button>
+                                  <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                    {% for link in section.settings.manta-category-menu.links %}
+                                      <li>
+                                        <a href="{{ link.url }}" class="menu-drawer__menu-item link link--text list-menu__item">
+                                          {{ link.title }}
+                                        </a>
+                                      </li>
+                                    {% endfor %}
+                                  </ul>
+                                </div>
+                              </div>
                             </details>
-                          </li>                          
+                          </li>                                                    
                           {%- for link in section.settings.menu.links -%}
                             {%-liquid
                               assign compare_index = ':' | append: link.title | append: '=' | downcase
