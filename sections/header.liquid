@@ -212,15 +212,26 @@
                       <nav class="menu-drawer__navigation menu-drawer__block">
                         <ul class="menu-drawer__menu has-submenu list-menu menu-drawer__background" role="list">
                           {%- if section.settings.manta_category_menu != blank -%}
-                            <li class="header__menu-item header__menu-item--dropdown">
-                              <a href="#" class="header__menu-link link link--text">Categories</a>
-                              <ul class="header__submenu list-unstyled">
-                                {%- for link in linklists[section.settings.manta_category_menu].links -%}
-                                  <li class="header__submenu-item">
-                                    <a href="{{ link.url }}" class="header__submenu-link link link--text">{{ link.title }}</a>
-                                  </li>
-                                {%- endfor -%}
-                              </ul>
+                            <li>
+                              <header-menu>
+                                <details id="Details-HeaderMenu-Categories" class="mega-menu">
+                                  <summary class="header__menu-item header__menu-item--top list-menu__item link h6" data-href="#" role="button" aria-expanded="false" aria-controls="HeaderMenu-MenuList-Categories">
+                                    <span class="header__active-menu-item underlined-link">Categories</span>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-caret light">
+                                      <path d="M12.6667 6L8 10.6667L3.33333 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                  </summary>
+                                  <ul id="HeaderMenu-MenuList-Categories" class="header__submenu list-menu list-menu--disclosure global-settings-popup gradient caption-large motion-reduce header__submenu--has-go-to-link" role="list" tabindex="-1">
+                                    {%- for link in linklists[section.settings.manta_category_menu].links -%}
+                                      <li>
+                                        <a href="{{ link.url }}" class="header__menu-item list-menu__item link focus-inset caption-large w100 font-body-semi-bold list-menu__item--level2">
+                                          <span class="link-effect-no-underline">{{ link.title }}</span>
+                                        </a>
+                                      </li>
+                                    {%- endfor -%}
+                                  </ul>
+                                </details>
+                              </header-menu>
                             </li>
                           {%- endif -%}
                           {%- for link in section.settings.menu.links -%}
