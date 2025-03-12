@@ -40,11 +40,12 @@
     margin-bottom: -1px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    margin-top: calc(0.4rem + 1px);
   }
   .manta-menu-item-adaptive {
     color: white !important;
     font-weight: 600;
-    padding: 1.2rem 2.8rem 1.2rem 2.8rem;
+    padding: 1rem 2.8rem 1rem 2.8rem;
   }
 </style>
 <{{ header_wrap_tag }} class="header-wrapper por{% if section.settings.enable_sticky_header %} db{% endif %} {% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}{% if section.settings.enable_sticky_header and section.settings.logo_position == 'top-left' %} toggle-nav{% endif %}"{% if has_transparent %} data-transparent="1"{% endif %} data-sticky-type="{{ section.settings.sticky_header }}" style="background-color: #eee;">
