@@ -211,18 +211,20 @@
                     {%- if section.settings.menu != blank -%}
                       <nav class="menu-drawer__navigation menu-drawer__block">
                         <ul class="menu-drawer__menu has-submenu list-menu menu-drawer__background" role="list">
-                          {%- if section.settings.manta_category_menu != blank -%}
-                            <li class="header__menu-item header__menu-item--dropdown">
-                              <a href="#" class="header__menu-link link link--text">{{ 'Categories' | t }}</a>
-                              <ul class="header__submenu list-unstyled">
-                                {%- for link in linklists[section.settings.manta_category_menu].links -%}
-                                  <li class="header__submenu-item">
-                                    <a href="{{ link.url }}" class="header__submenu-link link link--text">{{ link.title }}</a>
-                                  </li>
-                                {%- endfor -%}
-                              </ul>
-                            </li>
-                          {%- endif -%}
+                          <li><header-menu>
+                            <details id="Details-HeaderMenu-1" class="mega-menu">
+                              <summary class="header__menu-item header__menu-item--top list-menu__item link h6" data-href="/" role="button" aria-expanded="false" aria-controls="HeaderMenu-MenuList-1">
+                                <span class="header__active-menu-item underlined-link">Home</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-caret light">
+                                <path d="M12.6667 6L8 10.6667L3.33333 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg>  </summary><ul id="HeaderMenu-MenuList-1" class="header__submenu list-menu list-menu--disclosure global-settings-popup gradient caption-large motion-reduce header__submenu--has-go-to-link" role="list" tabindex="-1"><li><a href="/pages/contact" class="header__menu-item list-menu__item link focus-inset caption-large w100 font-body-semi-bold list-menu__item--level2">
+                                          <span class="link-effect-no-underline">Link 1</span>
+                                        </a></li><li><a href="/blogs/news" class="header__menu-item list-menu__item link focus-inset caption-large w100 font-body-semi-bold list-menu__item--level2">
+                                          <span class="link-effect-no-underline">Link 2</span>
+                                        </a></li><li class="header__goto-link center margin-top-1rem">
+                                      <a href="/" class="link link-effect-no-underline align-center justify-center font-body-semi-bold">
+                                        Go to Home<svg class="icon" aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+                                    </li></ul></details>
+                                                  </header-menu></li>
                           {%- for link in section.settings.menu.links -%}
                             {%-liquid
                               assign compare_index = ':' | append: link.title | append: '=' | downcase
