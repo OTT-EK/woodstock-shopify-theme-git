@@ -211,9 +211,18 @@
                     {%- if section.settings.menu != blank -%}
                       <nav class="menu-drawer__navigation menu-drawer__block">
                         <ul class="menu-drawer__menu has-submenu list-menu menu-drawer__background" role="list">
-                          <li>
-                            Categories
-                          </li>
+                          {%- if section.settings.manta_category_menu != blank -%}
+                            <li class="header__menu-item header__menu-item--dropdown">
+                              <a href="#" class="header__menu-link link link--text">Categories</a>
+                              <ul class="header__submenu list-unstyled">
+                                {%- for link in linklists[section.settings.manta_category_menu].links -%}
+                                  <li class="header__submenu-item">
+                                    <a href="{{ link.url }}" class="header__submenu-link link link--text">{{ link.title }}</a>
+                                  </li>
+                                {%- endfor -%}
+                              </ul>
+                            </li>
+                          {%- endif -%}
                           {%- for link in section.settings.menu.links -%}
                             {%-liquid
                               assign compare_index = ':' | append: link.title | append: '=' | downcase
