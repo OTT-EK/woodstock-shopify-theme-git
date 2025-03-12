@@ -50,6 +50,17 @@
   .manta-dsk-category-menu ul{
     margin-top: 1.5rem;
   }
+  .manta-mob-category-menu {
+    background-color: #272727;
+    border-radius: 1rem;
+    margin-bottom: 5px;
+  }
+  .manta-mob-category-menu summary {
+    color: white;
+  }
+  .manta-mob-icon {
+    color: #272727;
+  }
 </style>
 <{{ header_wrap_tag }} class="header-wrapper por{% if section.settings.enable_sticky_header %} db{% endif %} {% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}{% if section.settings.enable_sticky_header and section.settings.logo_position == 'top-left' %} toggle-nav{% endif %}"{% if has_transparent %} data-transparent="1"{% endif %} data-sticky-type="{{ section.settings.sticky_header }}" style="background-color: #eee;">
   {%- if store_information_blocks.size > 0 or has_localization or section.settings.enable_social_links -%}
@@ -227,11 +238,11 @@
                     {%- if section.settings.menu != blank -%}
                       <nav class="menu-drawer__navigation menu-drawer__block">
                         <ul class="menu-drawer__menu has-submenu list-menu menu-drawer__background" role="list">
-                          <li>
+                          <li class="manta-mob-category-menu">
                             <details id="Details-menu-drawer-categories">
                               <summary class="menu-drawer__menu-item list-menu__item link link--text header__menu-item--top h6 w100">
                                 Categories
-                                {% render 'icon-caret' %}
+                                {% render 'icon-caret', add_classes: 'manta-mob-icon' %}
                               </summary>
                               <div id="menu-drawer-categories" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
                                 <div class="menu-drawer__inner-submenu menu-drawer__background">
