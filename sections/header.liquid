@@ -211,13 +211,8 @@
                     {%- if section.settings.menu != blank -%}
                       <nav class="menu-drawer__navigation menu-drawer__block">
                         <ul class="menu-drawer__menu has-submenu list-menu menu-drawer__background" role="list">
-                          {%- if linklists[section.settings.manta_category_menu].links.size > 0 -%}
-                            <li>
-                              Categories
-                            </li>
-                          {%- endif -%}
                           <li>
-                            Categories 2
+                            Categories
                           </li>
                           {%- for link in section.settings.menu.links -%}
                             {%-liquid
@@ -603,6 +598,9 @@
         {%- if section.settings.menu != blank and section.settings.logo_position != 'center-drawer' -%}
           <nav>
             <ul class="list-menu list-menu--inline" role="list">
+                <li>
+                  Categories
+                </li>
               {%- for link in section.settings.menu.links -%}
                 <li>
                   {%-liquid
@@ -801,6 +799,7 @@
     {
       "type": "link_list",
       "id": "manta-category-menu",
+      "default": "en-category-menu",
       "label": "Category menu"
     },
     {
