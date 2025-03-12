@@ -211,7 +211,7 @@
                     {%- if section.settings.menu != blank -%}
                       <nav class="menu-drawer__navigation menu-drawer__block">
                         <ul class="menu-drawer__menu has-submenu list-menu menu-drawer__background" role="list">
-                          {%- if section.settings.manta_category_menu != blank -%}
+                          {%- if linklists[section.settings.manta_category_menu].links.size > 0 -%}
                             <li>
                               Categories
                             </li>
