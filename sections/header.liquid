@@ -216,6 +216,9 @@
                               Categories
                             </li>
                           {%- endif -%}
+                          <li>
+                            Categories 2
+                          </li>
                           {%- for link in section.settings.menu.links -%}
                             {%-liquid
                               assign compare_index = ':' | append: link.title | append: '=' | downcase
