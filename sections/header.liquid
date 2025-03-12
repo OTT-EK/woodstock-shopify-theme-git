@@ -34,7 +34,16 @@
     assign header_wrap_tag = 'div'  
   endif
 -%}
-
+<style>
+  .manta-dsk-category-menu {
+    background-color: #272727;
+    margin-bottom: -1px;
+  }
+  .manta-dsk-category-menu .header__menu-item {
+    color: white !important;
+    font-weight: 600;
+  }
+</style>
 <{{ header_wrap_tag }} class="header-wrapper por{% if section.settings.enable_sticky_header %} db{% endif %} {% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}{% if section.settings.enable_sticky_header and section.settings.logo_position == 'top-left' %} toggle-nav{% endif %}"{% if has_transparent %} data-transparent="1"{% endif %} data-sticky-type="{{ section.settings.sticky_header }}" style="background-color: #eee;">
   {%- if store_information_blocks.size > 0 or has_localization or section.settings.enable_social_links -%}
     <div class="header-top color-{{ section.settings.top_color_scheme }} isolate gradient">
@@ -624,8 +633,12 @@
                 <header-menu>
                   <details>
                     <summary class="header__menu-item link link--text">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
+                        <path d="M4 5L20 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M4 12L20 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M4 19L20 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
                       Categories
-                      {% render 'icon-caret' %}
                     </summary>
                     <ul class="header__submenu list-menu">
                       {% for link in section.settings.manta-category-menu.links %}

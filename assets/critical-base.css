@@ -1461,10 +1461,6 @@ details[open] > .header__icon--menu .icon-open-state {
     background: rgb(var(--color-background));
   }
 
-  .header__inline-menu nav {
-    margin-inline-start: -1.5rem;
-  }
-
   .header__inline-menu .header__menu-item--top.list-menu__item {
     max-width: 30rem;
   }
