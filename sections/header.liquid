@@ -598,9 +598,25 @@
         {%- if section.settings.menu != blank and section.settings.logo_position != 'center-drawer' -%}
           <nav>
             <ul class="list-menu list-menu--inline" role="list">
-                <li>
-                  Categories
-                </li>
+              <li class="header__menu-item list-menu__item">
+                <header-menu>
+                  <details>
+                    <summary class="header__menu-item link link--text">
+                      Categories
+                      {% render 'icon-caret' %}
+                    </summary>
+                    <ul class="header__submenu list-menu">
+                      {% for link in section.settings.manta-category-menu.links %}
+                        <li>
+                          <a href="{{ link.url }}" class="header__menu-item link link--text">
+                            {{ link.title }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </details>
+                </header-menu>
+              </li>              
               {%- for link in section.settings.menu.links -%}
                 <li>
                   {%-liquid
