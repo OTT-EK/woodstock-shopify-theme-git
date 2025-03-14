@@ -298,15 +298,6 @@
       background-size: cover;
       background-position: center;
     }
-    .manta-slide.manta-mslide-1 {
-      background-image: url('{{ section.settings.manta_slider_img_1 | img_url: 'master' }}');
-    }
-    .manta-slide.manta-mslide-2 {
-      background-image: url('{{ section.settings.manta_slider_img_2 | img_url: 'master' }}');
-    }
-    .manta-slide.manta-mslide-3 {
-      background-image: url('{{ section.settings.manta_slider_img_3 | img_url: 'master' }}');
-    }
     .manta-slider-controls {
       position: absolute;
       bottom: 5px;
@@ -456,7 +447,15 @@
       }
     }
   </style>
-
+  <style>
+    {% for block in section.blocks %}
+      .manta-slide.manta-mslide-{{ forloop.index }} {
+        background-image: url('{{ block.settings.manta_slider_img | img_url: "master" }}');
+        background-size: cover;
+        background-position: center;
+      }
+    {% endfor %}
+  </style>  
  <div class="manta-grid-container page-width">
     <!-- SIDEBAR -->
     <div class="manta-sidebar">
