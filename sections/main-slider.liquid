@@ -379,6 +379,30 @@
       overflow: visible;   /* Ensure text isn't cut off */
       background-color: #313131;
     }
+    .manta-content-box-small.manta-cta-box.manta-picture-featured-1::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;  /* So it always stretches to match the parent's height */
+      width: 50%;
+      background-size: cover;
+      background-image: url('{{ section.settings.manta_featuredbox_img_1 | img_url: 'master' }}');
+      z-index: 1;
+      background-position: center;
+    }
+    .manta-content-box-small.manta-cta-box.manta-picture-featured-2::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;  /* So it always stretches to match the parent's height */
+      width: 50%;
+      background-size: cover;
+      background-image: url('{{ section.settings.manta_featuredbox_img_2 | img_url: 'master' }}');
+      z-index: 1;
+      background-position: center;
+    }
     .manta-cta-content {
       position: relative; 
       /* Use a width if you want the left portion to be ~60% */
@@ -432,22 +456,7 @@
       }
     }
   </style>
-  <style>
-    {% for block in section.blocks %}
-      .manta-content-box-small.manta-cta-box.manta-picture-featured-{{ forloop.index }}::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0; /* Ensures it stretches to match the parent's height */
-        width: 50%;
-        background-size: cover;
-        background-image: url('{{ block.settings.manta_slider_img | img_url: "master" }}');
-        z-index: 1;
-        background-position: center;
-      }
-    {% endfor %}
-  </style>
+
  <div class="manta-grid-container page-width">
     <!-- SIDEBAR -->
     <div class="manta-sidebar">
