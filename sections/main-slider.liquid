@@ -7,6 +7,11 @@
       "content": "Feautred items"
     },
     {
+      "type": "link_list",
+      "id": "manta-category-menu-2",
+      "label": "Category menu"
+    },
+    {
       "type": "url",
       "label": "Featured 1",
       "id": "manta_featuredbox_1"
@@ -49,56 +54,6 @@
     {
       "type": "header",
       "content": "Carousel Slides"
-    },
-    {
-      "type": "url",
-      "label": "Slide link 1",
-      "id": "manta_slide_link_1"
-    },
-    {
-      "type": "image_picker",
-      "label": "Img Desktop",
-      "id": "manta_slider_img_1"
-    },
-    {
-      "type": "image_picker",
-      "label": "Img Mobile",
-      "id": "manta_slider_img_mob_1"
-    },
-    {
-      "type": "url",
-      "label": "Slide link 2",
-      "id": "manta_slide_link_2"
-    },
-    {
-      "type": "image_picker",
-      "label": "Img Desktop",
-      "id": "manta_slider_img_2"
-    },
-    {
-      "type": "image_picker",
-      "label": "Img Mobile",
-      "id": "manta_slider_img_mob_2"
-    },
-    {
-      "type": "url",
-      "label": "Slide link 3",
-      "id": "manta_slide_link_3"
-    },
-    {
-      "type": "image_picker",
-      "label": "Img Desktop",
-      "id": "manta_slider_img_3"
-    },
-    {
-      "type": "image_picker",
-      "label": "Img Mobile",
-      "id": "manta_slider_img_mob_3"
-    },
-    {
-      "type": "link_list",
-      "id": "manta-category-menu-2",
-      "label": "Category menu-2"
     }
   ],
   "blocks": [
@@ -107,19 +62,19 @@
       "type": "url",
       "settings": [
         {
-          "type": "text",
-          "label": "Name",
-          "id": "manta_q-menu-item-name"
+          "type": "url",
+          "label": "Slide link",
+          "id": "manta_slide_link"
         },
         {
           "type": "image_picker",
-          "label": "Icon",
-          "id": "manta_q-menu-item-img"
+          "label": "Img Desktop",
+          "id": "manta_slider_img"
         },
         {
-          "type": "url",
-          "label": "Link",
-          "id": "manta_q-menu-item-url"
+          "type": "image_picker",
+          "label": "Img Mobile",
+          "id": "manta_slider_img_mob"
         }
       ]
     }
@@ -424,30 +379,6 @@
       overflow: visible;   /* Ensure text isn't cut off */
       background-color: #313131;
     }
-    .manta-content-box-small.manta-cta-box.manta-picture-featured-1::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;  /* So it always stretches to match the parent's height */
-      width: 50%;
-      background-size: cover;
-      background-image: url('{{ section.settings.manta_featuredbox_img_1 | img_url: 'master' }}');
-      z-index: 1;
-      background-position: center;
-    }
-    .manta-content-box-small.manta-cta-box.manta-picture-featured-2::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;  /* So it always stretches to match the parent's height */
-      width: 50%;
-      background-size: cover;
-      background-image: url('{{ section.settings.manta_featuredbox_img_2 | img_url: 'master' }}');
-      z-index: 1;
-      background-position: center;
-    }
     .manta-cta-content {
       position: relative; 
       /* Use a width if you want the left portion to be ~60% */
@@ -501,7 +432,22 @@
       }
     }
   </style>
-
+  <style>
+    {% for block in section.blocks %}
+      .manta-content-box-small.manta-cta-box.manta-picture-featured-{{ forloop.index }}::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0; /* Ensures it stretches to match the parent's height */
+        width: 50%;
+        background-size: cover;
+        background-image: url('{{ block.settings.manta_slider_img | img_url: "master" }}');
+        z-index: 1;
+        background-position: center;
+      }
+    {% endfor %}
+  </style>
  <div class="manta-grid-container page-width">
     <!-- SIDEBAR -->
     <div class="manta-sidebar">
@@ -547,15 +493,11 @@
       <div class="manta-content-box-large">
         <div class="manta-slider-container" id="landscapeSlider">
           <div class="manta-slides">
-            {% if section.settings.manta_slider_img_1 != blank %}
-              <a href="{{ section.settings.manta_slide_link_1 }}" class="manta-slide manta-mslide-1"><p></p></a>
-            {% endif %}
-            {% if section.settings.manta_slider_img_2 != blank %}
-              <a href="{{ section.settings.manta_slide_link_2 }}" class="manta-slide manta-mslide-2"><p></p></a>
-            {% endif %}
-            {% if section.settings.manta_slider_img_3 != blank %}
-              <a href="{{ section.settings.manta_slide_link_3 }}" class="manta-slide manta-mslide-3"><p></p></a>
-            {% endif %}
+            {% for block in section.blocks %}
+              <a href="{{ block.settings.manta_slide_link }}" class="manta-slide manta-mslide-{{ forloop.index }}">
+                <p></p>
+              </a>
+            {% endfor %}            
           </div>
           <div class="manta-slider-controls">
             <button class="manta-slider-btn manta-right-line prev">
