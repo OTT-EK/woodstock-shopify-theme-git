@@ -112,7 +112,6 @@
                               <li class="disclosure__item" tabindex="-1">
                                 {% assign collection_handle = link.url | split: '/' | last %}
                                 {% assign collection = collections[collection_handle] %}
-                              
                                 <a class="link link--text disclosure__link text-small{% if link.current %} disclosure__link--active{% endif %}" href="{{ link.url }}"{% if link.current %} aria-current="true"{% endif %} data-value="{{ link.url }}" data-no-instant>
                                   <span class="menu-icon" style="display: inline-flex; align-items: center; margin-right: 8px;">
                                     {% if collection.metafields.custom.collection_icon != blank %}
