@@ -110,22 +110,10 @@
                           <ul id="HeaderCountryList" role="list" class="disclosure__list list-unstyled">
                             {%- for country in localization.available_countries -%}
                               <li class="disclosure__item" tabindex="-1">
-                                {% assign collection_handle = link.url | split: '/' | last %}
-                                {% assign collection = collections[collection_handle] %}
-                                <a class="link link--text disclosure__link text-small{% if link.current %} disclosure__link--active{% endif %}" href="{{ link.url }}"{% if link.current %} aria-current="true"{% endif %} data-value="{{ link.url }}" data-no-instant>
-                                  <span class="menu-icon" style="display: inline-flex; align-items: center; margin-right: 8px;">
-                                    {% if collection.metafields.custom.collection_icon != blank %}
-                                      <img src="{{ collection.metafields.custom.collection_icon | img_url: '32x32' }}" alt="{{ link.title }}" width="20" height="20" style="vertical-align: middle;">
-                                    {% else %}
-                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" color="#ffffff" fill="none" style="vertical-align: middle;">
-                                        <path d="M9.5 14.5L14.5 9.49995" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M16.8463 14.6095L19.4558 12C21.5147 9.94108 21.5147 6.60298 19.4558 4.54411C17.397 2.48524 14.0589 2.48524 12 4.54411L9.39045 7.15366M14.6095 16.8463L12 19.4558C9.94113 21.5147 6.60303 21.5147 4.54416 19.4558C2.48528 17.3969 2.48528 14.0588 4.54416 12L7.1537 9.39041" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                      </svg>
-                                    {% endif %}
-                                  </span>
-                                  <span class="menu-text">{{ link.title }}</span>
+                                <a class="link link--text disclosure__link text-small{% if country.iso_code == localization.country.iso_code %} disclosure__link--active{% endif %}" href="#"{% if country.iso_code == localization.country.iso_code %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}" data-no-instant>
+                                  {{ country.name }} <span class="localization-form__currency">({{ country.currency.iso_code }} {{ country.currency.symbol }})</span>
                                 </a>
-                              </li>                              
+                              </li>
                             {%- endfor -%}
                           </ul>
                         </div>
@@ -271,10 +259,22 @@
                                   <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                                     {% for link in section.settings.manta-category-menu.links %}
                                       <li>
-                                        <a href="{{ link.url }}" class="menu-drawer__menu-item link link--text list-menu__item w100">
-                                          {{ link.title }}
+                                        {% assign collection_handle = link.url | split: '/' | last %}
+                                        {% assign collection = collections[collection_handle] %}
+                                        <a href="{{ link.url }}" class="header__menu-item link link--text">
+                                          <span class="menu-icon">
+                                            {% if collection.metafields.custom.collection_icon != blank %}
+                                              <img src="{{ collection.metafields.custom.collection_icon | img_url: '32x32' }}" alt="{{ link.title }}" width="24" height="24">
+                                            {% else %}
+                                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" color="#ffffff" fill="none">
+                                                <path d="M9.5 14.5L14.5 9.49995" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M16.8463 14.6095L19.4558 12C21.5147 9.94108 21.5147 6.60298 19.4558 4.54411C17.397 2.48524 14.0589 2.48524 12 4.54411L9.39045 7.15366M14.6095 16.8463L12 19.4558C9.94113 21.5147 6.60303 21.5147 4.54416 19.4558C2.48528 17.3969 2.48528 14.0588 4.54416 12L7.1537 9.39041" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                              </svg>
+                                            {% endif %}
+                                          </span>
+                                          <span class="menu-text">{{ link.title }}</span>
                                         </a>
-                                      </li>
+                                      </li>                                      
                                     {% endfor %}
                                   </ul>
                                 </div>
