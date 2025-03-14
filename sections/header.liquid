@@ -672,14 +672,16 @@
               <li class="manta-dsk-category-menu">
                 <header-menu>
                   <details>
-                    <summary class="header__menu-item link link--text manta-menu-item-adaptive">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" color="#ffffff" fill="none">
+                    <summary class="header__menu-item link link--text manta-menu-item-adaptive" 
+                      style="display: flex; align-items: center; gap: 8px;">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" color="#ffffff" fill="none"
+                            style="display: block; vertical-align: middle;">
                         <path d="M4 5L20 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M4 12L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M4 19L20 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      Categories
-                    </summary>
+                      <span style="display: flex; align-items: center;">Categories</span>
+                    </summary>             
                     <ul class="header__submenu list-menu">
                       {% for link in section.settings.manta-category-menu.links %}
                         <li>
