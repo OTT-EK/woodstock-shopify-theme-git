@@ -15,166 +15,17 @@
         "url_FNHhdk": {
           "type": "url",
           "settings": {
-            "manta_q-menu-item-name": "Reinforcement machining tools",
-            "manta_q-menu-item-url": "shopify://collections/reinforcement-machining-tools"
-          }
-        },
-        "url_te66MB": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Brackets",
-            "manta_q-menu-item-url": "shopify://collections/brackets"
-          }
-        },
-        "url_rzVb6k": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Adhesives and bonding tools",
-            "manta_q-menu-item-url": "shopify://collections/adhesives-and-bonding-tools"
-          }
-        },
-        "url_DA3pi3": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Air compressors and accessories",
-            "manta_q-menu-item-img": "shopify://shop_images/Compressors-2.png",
-            "manta_q-menu-item-url": ""
-          }
-        },
-        "url_AGUPR6": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Sealing materials",
-            "manta_q-menu-item-img": "shopify://shop_images/sealing-w.png",
-            "manta_q-menu-item-url": ""
-          }
-        },
-        "url_N8rJiF": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Furniture joints and wood fillers",
-            "manta_q-menu-item-img": "shopify://shop_images/lamello-w.png",
-            "manta_q-menu-item-url": ""
-          }
-        },
-        "url_hwW3Tw": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Wood screws, nails, staples",
-            "manta_q-menu-item-img": "shopify://shop_images/screws-nails-w.png",
-            "manta_q-menu-item-url": ""
-          }
-        },
-        "url_nCxp9z": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Forging tools and accessories",
-            "manta_q-menu-item-img": "shopify://shop_images/forg-tools-w.png",
-            "manta_q-menu-item-url": ""
-          }
-        },
-        "url_eEQXU8": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Production equipment",
-            "manta_q-menu-item-img": "shopify://shop_images/production-eq-w.png",
-            "manta_q-menu-item-url": ""
-          }
-        },
-        "url_936QWi": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Twisting, drilling tools",
-            "manta_q-menu-item-img": "shopify://shop_images/ro-tools-w.png",
-            "manta_q-menu-item-url": ""
-          }
-        },
-        "url_E9fLUt": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Tools and accessories",
-            "manta_q-menu-item-img": "shopify://shop_images/tools-accessories-w.png",
-            "manta_q-menu-item-url": ""
-          }
-        },
-        "url_r43gmH": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Window installation materials",
-            "manta_q-menu-item-img": "shopify://shop_images/window-installation-materials-w.png",
-            "manta_q-menu-item-url": ""
-          }
-        },
-        "url_VcRFxx": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Cardboard packing tools",
-            "manta_q-menu-item-img": "shopify://shop_images/carboardtools-w.png",
-            "manta_q-menu-item-url": ""
-          }
-        },
-        "url_xNa4Ha": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Sound deadening materials",
-            "manta_q-menu-item-img": "shopify://shop_images/deadening-w.png",
-            "manta_q-menu-item-url": ""
-          }
-        },
-        "url_NQU7QE": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Temporary surface protection materials",
-            "manta_q-menu-item-img": "shopify://shop_images/surface-materials-w.png",
-            "manta_q-menu-item-url": ""
-          }
-        },
-        "url_KL9jdk": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Electrical installation products",
-            "manta_q-menu-item-img": "shopify://shop_images/electrical-installation-products.png",
-            "manta_q-menu-item-url": ""
-          }
-        },
-        "url_hjY9xp": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Finishing panels",
-            "manta_q-menu-item-img": "shopify://shop_images/finishing-panels-w.png",
-            "manta_q-menu-item-url": "https://bwood.lt/"
-          }
-        },
-        "url_YiCFfK": {
-          "type": "url",
-          "settings": {
-            "manta_q-menu-item-name": "Fire-resistant building materials",
-            "manta_q-menu-item-img": "shopify://shop_images/fire-shield-w.png",
-            "manta_q-menu-item-url": ""
+            "manta_slide_link": "shopify://products/toughbuilt-tb-c550-sawhorse-jobsite-table-2-sets",
+            "manta_slider_img": "shopify://shop_images/siga-banner-d_4c8a3123-ac06-4bb7-aece-164b31dbb128.jpg",
+            "manta_slider_img_mob": "shopify://shop_images/siga-banner-m_8bb0ed70-336c-4b96-9cbc-9262aa5efe0d.jpg"
           }
         }
       },
       "block_order": [
-        "url_FNHhdk",
-        "url_te66MB",
-        "url_rzVb6k",
-        "url_DA3pi3",
-        "url_AGUPR6",
-        "url_N8rJiF",
-        "url_hwW3Tw",
-        "url_nCxp9z",
-        "url_eEQXU8",
-        "url_936QWi",
-        "url_E9fLUt",
-        "url_r43gmH",
-        "url_VcRFxx",
-        "url_xNa4Ha",
-        "url_NQU7QE",
-        "url_KL9jdk",
-        "url_hjY9xp",
-        "url_YiCFfK"
+        "url_FNHhdk"
       ],
       "settings": {
+        "manta-category-menu-2": "en-category-menu",
         "manta_featuredbox_1": "",
         "manta_featuredbox_img_1": "shopify://shop_images/warmotech-displate.jpg",
         "manta_featuredbox_title_1": "WarmoTech",
@@ -182,13 +33,7 @@
         "manta_featuredbox_2": "",
         "manta_featuredbox_img_2": "shopify://shop_images/danacool9090.jpg",
         "manta_featuredbox_title_2": "DANALIM",
-        "manta_featuredbox_subtitle_2": "Glue can be used in winter.",
-        "manta_slide_link_1": "",
-        "manta_slider_img_1": "shopify://shop_images/siga-banner-d.jpg",
-        "manta_slider_img_mob_1": "shopify://shop_images/siga-banner-m.jpg",
-        "manta_slide_link_2": "",
-        "manta_slide_link_3": "",
-        "manta-category-menu-2": "en-category-menu"
+        "manta_featuredbox_subtitle_2": "Glue can be used in winter."
       }
     },
     "1aded6ef-5727-4347-bf56-9fc610343e55": {
