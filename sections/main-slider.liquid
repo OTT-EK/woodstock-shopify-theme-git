@@ -447,7 +447,7 @@
       }
       @media (max-width: 768px) {
       .manta-slide.manta-mslide-{{ forloop.index }} {
-        background-image: url('{{ section.settings.manta_slider_img_mob | img_url: 'master' }}') !important;
+        background-image: url('{{ block.settings.manta_slider_img_mob | img_url: 'master' }}') !important;
         }
       }
     {% endfor %}
