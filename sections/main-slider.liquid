@@ -94,6 +94,17 @@
       "type": "image_picker",
       "label": "Img Mobile",
       "id": "manta_slider_img_mob_3"
+    },
+    {
+      "type": "link_list",
+      "id": "manta-category-menu-2",
+      "label": "Category menu-2"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu-2",
+      "label": "t:sections.header.settings.menu.label-2"
     }
   ],
   "blocks": [
@@ -502,22 +513,16 @@
     <div class="manta-sidebar">
       <div class="manta-sidebar-inner">
         <ul class="manta-menu collapsed" id="mantaMenu">
-          {% for block in section.blocks %}
+          {% for link in section.settings.manta-category-menu-2.links %}
             <li class="manta-menu-item manta-menu-parent">
-              <a href="{{ block.settings.manta_q-menu-item-url }}" target="_SELF" style="display: flex; align-items: center; gap: 8px;">
+              <a href="{{ link.url }}" target="_SELF" style="display: flex; align-items: center; gap: 8px;">
                 <span class="manta-menu-icon" style="display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; flex-shrink: 0;">
-                  {% assign collection_handle = block.settings.manta_q-menu-item-url | split: '/' | last %}
+                  {% assign collection_handle = link.url | split: '/' | last %}
                   {% assign collection = collections[collection_handle] %}
                   
                   {% if collection.metafields.custom.collection_icon != blank %}
                     <img src="{{ collection.metafields.custom.collection_icon | img_url: '32x32' }}" 
-                         alt="{{ block.settings.manta_q-menu-item-name }}" 
-                         width="24" 
-                         height="24" 
-                         style="display: block; object-fit: contain; vertical-align: middle;">
-                  {% elsif block.settings.manta_q-menu-item-img != blank %}
-                    <img src="{{ block.settings.manta_q-menu-item-img | img_url: 'master' }}" 
-                         alt="{{ block.settings.manta_q-menu-item-name }}" 
+                         alt="{{ link.title }}" 
                          width="24" 
                          height="24" 
                          style="display: block; object-fit: contain; vertical-align: middle;">
@@ -528,10 +533,10 @@
                     </svg>
                   {% endif %}
                 </span>
-                <span class="manta-menu-text text-small" style="display: flex; align-items: center;">{{ block.settings.manta_q-menu-item-name }}</span>
+                <span class="manta-menu-text text-small" style="display: flex; align-items: center;">{{ link.title }}</span>
               </a>
             </li>                       
-          {% endfor %}          
+          {% endfor %}                   
           <!-- Add more <li> items as needed -->
         </ul>
 
