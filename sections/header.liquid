@@ -703,19 +703,7 @@
                         <summary class="header__menu-item header__menu-item--top list-menu__item link h6{% if link.url != blank and link.url != '#' and link.url != '' and link.current == false %} header__menu-item--link{% endif %}{% if has_highlight_block %} header__menu-item--top-highlight header__menu-item--top-highlight-inline por header__menu-item--highlight-{{ highlight_block.settings.style_on_desktop }}{% endif %}" data-href="{{ link.url }}"
                           {% if has_highlight_block %} style="--color-foreground:{{ highlight_color_foreground }};{% if highlight_block.settings.style_on_desktop == 'solid' %}--color-background:{{ highlight_block.settings.background_color.red }},{{ highlight_block.settings.background_color.green }},{{ highlight_block.settings.background_color.blue }};{% endif %}"{% endif %}
                         >
-                          <span class="{% if link.child_active or link.current %}header__active-menu-item underlined-link{% else %}link-effect-no-underline{% endif %}">
-                            {% assign collection_handle = link.url | split: '/' | last %}
-                            {% assign collection = collections[collection_handle] %}
-                            {% if collection and collection.metafields.custom.collection_icon != blank %}
-                              <img src="{{ collection.metafields.custom.collection_icon | img_url: '32x32' }}" alt="{{ link.title }}" width="24" height="24">
-                            {% else %}
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" color="#ffffff" fill="none">
-                                <path d="M9.5 14.5L14.5 9.49995" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M16.8463 14.6095L19.4558 12C21.5147 9.94108 21.5147 6.60298 19.4558 4.54411C17.397 2.48524 14.0589 2.48524 12 4.54411L9.39045 7.15366M14.6095 16.8463L12 19.4558C9.94113 21.5147 6.60303 21.5147 4.54416 19.4558C2.48528 17.3969 2.48528 14.0588 4.54416 12L7.1537 9.39041" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                              </svg>
-                            {% endif %}
-                            {{ link.title | escape }}
-                          </span>
+                          <span class="{% if link.child_active or link.current %}header__active-menu-item underlined-link{% else %}link-effect-no-underline{% endif %}">{{ link.title | escape }}</span>
                           {%-liquid
                             render 'icon-caret', add_classes: 'light'
                             if badges_str contains compare_index
@@ -734,19 +722,7 @@
                         target="_blank"
                       {% endif %}
                     >
-                      <span class="{% if link.current %}header__active-menu-item underlined-link{% else %}link-effect-no-underline{% endif %}">
-                        {% assign collection_handle = link.url | split: '/' | last %}
-                        {% assign collection = collections[collection_handle] %}
-                        {% if collection and collection.metafields.custom.collection_icon != blank %}
-                          <img src="{{ collection.metafields.custom.collection_icon | img_url: '32x32' }}" alt="{{ link.title }}" width="24" height="24">
-                        {% else %}
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" color="#ffffff" fill="none">
-                            <path d="M9.5 14.5L14.5 9.49995" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M16.8463 14.6095L19.4558 12C21.5147 9.94108 21.5147 6.60298 19.4558 4.54411C17.397 2.48524 14.0589 2.48524 12 4.54411L9.39045 7.15366M14.6095 16.8463L12 19.4558C9.94113 21.5147 6.60303 21.5147 4.54416 19.4558C2.48528 17.3969 2.48528 14.0588 4.54416 12L7.1537 9.39041" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
-                        {% endif %}
-                        {{ link.title | escape }}
-                      </span>
+                      <span class="{% if link.current %}header__active-menu-item underlined-link{% else %}link-effect-no-underline{% endif %}">{{ link.title | escape }}</span>
                       {%-liquid
                         if badges_str contains compare_index
                           assign blocks_index = badges_str | split: compare_index | last | split: ';' | first
