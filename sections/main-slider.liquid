@@ -495,20 +495,28 @@
         <ul class="manta-menu collapsed" id="mantaMenu">
           {% for block in section.blocks %}
             <li class="manta-menu-item manta-menu-parent">
-              <a href="{{ block.settings.manta_q-menu-item-url }}" target="_SELF">
-                <span class="manta-menu-icon">
+              <a href="{{ block.settings.manta_q-menu-item-url }}" target="_SELF" style="display: flex; align-items: center; gap: 8px;">
+                <span class="manta-menu-icon" style="display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; flex-shrink: 0;">
                   {% assign collection_handle = block.settings.manta_q-menu-item-url | split: '/' | last %}
                   {% assign collection = collections[collection_handle] %}
-          
+            
                   {% if collection.metafields.custom.collection_icon != blank %}
-                    <img src="{{ collection.metafields.custom.collection_icon | img_url: '32x32' }}" alt="{{ block.settings.manta_q-menu-item-name }}" width="24" height="24">
+                    <img src="{{ collection.metafields.custom.collection_icon | img_url: '32x32' }}" 
+                         alt="{{ block.settings.manta_q-menu-item-name }}" 
+                         width="24" 
+                         height="24" 
+                         style="display: block; object-fit: contain; vertical-align: middle;">
                   {% elsif block.settings.manta_q-menu-item-img != blank %}
-                    <img src="{{ block.settings.manta_q-menu-item-img | img_url: 'master' }}" alt="{{ block.settings.manta_q-menu-item-name }}" width="24" height="24">
+                    <img src="{{ block.settings.manta_q-menu-item-img | img_url: 'master' }}" 
+                         alt="{{ block.settings.manta_q-menu-item-name }}" 
+                         width="24" 
+                         height="24" 
+                         style="display: block; object-fit: contain; vertical-align: middle;">
                   {% endif %}
                 </span>
-                <span class="manta-menu-text text-small">{{ block.settings.manta_q-menu-item-name }}</span>
+                <span class="manta-menu-text text-small" style="display: flex; align-items: center;">{{ block.settings.manta_q-menu-item-name }}</span>
               </a>
-            </li>
+            </li>            
           {% endfor %}          
           <!-- Add more <li> items as needed -->
         </ul>
