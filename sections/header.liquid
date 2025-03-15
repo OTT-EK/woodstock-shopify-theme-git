@@ -95,6 +95,11 @@
   .menu-drawer__menu.list-menu.manta-category-menu-mob-adaptation li a span.menu-text {
     color: white;
   }
+  .menu-drawer__close-button.link.link--text.manta-category-btn-mob-adaptation {
+    color: white;
+    background-color: #272727;
+    border-bottom: unset;
+  }
 </style>
 <{{ header_wrap_tag }} class="header-wrapper por{% if section.settings.enable_sticky_header %} db{% endif %} {% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}{% if section.settings.enable_sticky_header and section.settings.logo_position == 'top-left' %} toggle-nav{% endif %}"{% if has_transparent %} data-transparent="1"{% endif %} data-sticky-type="{{ section.settings.sticky_header }}" style="background-color: #eee;">
   {%- if store_information_blocks.size > 0 or has_localization or section.settings.enable_social_links -%}
@@ -280,7 +285,7 @@
                               </summary>
                               <div id="menu-drawer-categories" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
                                 <div class="menu-drawer__inner-submenu menu-drawer__background">
-                                  <button class="menu-drawer__close-button link link--text" aria-expanded="true">
+                                  <button class="menu-drawer__close-button link link--text manta-category-btn-mob-adaptation" aria-expanded="true">
                                     {% render 'icon-picker', icon: 'arrow_left', add_classes: 'icon-arrow' %}
                                     Back
                                   </button>
