@@ -82,9 +82,15 @@
   .header__submenu.list-menu.manta-list-menu-adaptation li a {
     padding: 10px 16px;
   }
-  .header__submenu.list-menu.manta-list-menu-adaptation a span.menu-text {
+  .header__submenu.list-menu.manta-list-menu-adaptation li a span.menu-text {
     color: white;
     font-size: calc(1.4rem * var(--font-body-scale));
+  }
+  .menu-drawer__menu.list-menu.manta-category-menu-mob-adaptation {
+    background-color: #313131;
+  }
+  .menu-drawer__menu.list-menu.manta-category-menu-mob-adaptation li a span.menu-text {
+    color: white;
   }
 </style>
 <{{ header_wrap_tag }} class="header-wrapper por{% if section.settings.enable_sticky_header %} db{% endif %} {% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}{% if section.settings.enable_sticky_header and section.settings.logo_position == 'top-left' %} toggle-nav{% endif %}"{% if has_transparent %} data-transparent="1"{% endif %} data-sticky-type="{{ section.settings.sticky_header }}" style="background-color: #eee;">
@@ -275,7 +281,7 @@
                                     {% render 'icon-picker', icon: 'arrow_left', add_classes: 'icon-arrow' %}
                                     Back
                                   </button>
-                                  <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                  <ul class="menu-drawer__menu list-menu manta-category-menu-mob-adaptation" role="list" tabindex="-1">
                                     {% for link in section.settings.manta-category-menu.links %}
                                       <li class="menu-item">
                                         {% assign collection_handle = link.url | split: '/' | last %}
