@@ -27,25 +27,18 @@
             "manta_slider_img": "shopify://shop_images/siga-banner-d_4c8a3123-ac06-4bb7-aece-164b31dbb128.jpg",
             "manta_slider_img_mob": "shopify://shop_images/siga-banner-m_8bb0ed70-336c-4b96-9cbc-9262aa5efe0d.jpg"
           }
-        },
-        "url_LT9kHQ": {
-          "type": "url",
-          "settings": {
-            "manta_slide_link": ""
-          }
         }
       },
       "block_order": [
         "url_FNHhdk",
-        "url_aJBzLY",
-        "url_LT9kHQ"
+        "url_aJBzLY"
       ],
       "settings": {
         "manta-category-menu-2": "en-category-menu",
         "manta_featuredbox_1": "",
         "manta_featuredbox_img_1": "shopify://shop_images/warmotech-displate.jpg",
         "manta_featuredbox_title_1": "WarmoTech",
-        "manta_featuredbox_subtitle_1": "Bes window profiles.",
+        "manta_featuredbox_subtitle_1": "Best window profiles.",
         "manta_featuredbox_2": "",
         "manta_featuredbox_img_2": "shopify://shop_images/danacool9090.jpg",
         "manta_featuredbox_title_2": "DANALIM",
