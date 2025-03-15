@@ -75,6 +75,9 @@
   .header__submenu.list-menu.manta-list-menu-adaptation {
     padding: 0.4rem 0 1.4rem 0;
   }
+  .header__submenu.list-menu.manta-list-menu-adaptation li a {
+    padding: 10px 16px;
+  }
 </style>
 <{{ header_wrap_tag }} class="header-wrapper por{% if section.settings.enable_sticky_header %} db{% endif %} {% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}{% if section.settings.enable_sticky_header and section.settings.logo_position == 'top-left' %} toggle-nav{% endif %}"{% if has_transparent %} data-transparent="1"{% endif %} data-sticky-type="{{ section.settings.sticky_header }}" style="background-color: #eee;">
   {%- if store_information_blocks.size > 0 or has_localization or section.settings.enable_social_links -%}
