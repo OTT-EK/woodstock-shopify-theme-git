@@ -42,7 +42,11 @@
         "manta_featuredbox_2": "",
         "manta_featuredbox_img_2": "shopify://shop_images/danacool9090.jpg",
         "manta_featuredbox_title_2": "DANALIM",
-        "manta_featuredbox_subtitle_2": "Glue can be used in winter."
+        "manta_featuredbox_subtitle_2": "Glue can be used in winter.",
+        "manta_url_replacement_1": "https://bwood.lt",
+        "manta_url_replacement_img_1": "shopify://shop_images/finishing-panels-w.png",
+        "manta_url_replacement_2": "https://firestop.lt/",
+        "manta_url_replacement_img_2": "shopify://shop_images/fire-shield-w.png"
       }
     },
     "1aded6ef-5727-4347-bf56-9fc610343e55": {
