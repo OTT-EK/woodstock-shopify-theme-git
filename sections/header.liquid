@@ -67,10 +67,13 @@
   .manta-mob-icon {
     color: #272727;
   }
-  .manta-list-menu-scroll {
+  .manta-list-menu-adaptation {
     overflow-y: scroll;
     max-height: 60vh;
     background-color: #313131 !important;
+  }
+  .header__submenu.list-menu.manta-list-menu-adaptation {
+    padding: 0.4rem 0 1.4rem 0;
   }
 </style>
 <{{ header_wrap_tag }} class="header-wrapper por{% if section.settings.enable_sticky_header %} db{% endif %} {% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}{% if section.settings.enable_sticky_header and section.settings.logo_position == 'top-left' %} toggle-nav{% endif %}"{% if has_transparent %} data-transparent="1"{% endif %} data-sticky-type="{{ section.settings.sticky_header }}" style="background-color: #eee;">
@@ -687,7 +690,7 @@
                       </svg>
                       <span style="display: flex; align-items: center;">Categories</span>
                     </summary>             
-                    <ul class="header__submenu list-menu manta-list-menu-scroll">
+                    <ul class="header__submenu list-menu manta-list-menu-adaptation">
                       {% for link in section.settings.manta-category-menu.links %}
                         <li>
                           {% assign collection_handle = link.url | split: '/' | last %}
