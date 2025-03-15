@@ -67,6 +67,10 @@
   .manta-mob-icon {
     color: #272727;
   }
+  .manta-list-scroll {
+    overflow-y: scroll;
+    max-height: 60vh;
+  }
 </style>
 <{{ header_wrap_tag }} class="header-wrapper por{% if section.settings.enable_sticky_header %} db{% endif %} {% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}{% if section.settings.enable_sticky_header and section.settings.logo_position == 'top-left' %} toggle-nav{% endif %}"{% if has_transparent %} data-transparent="1"{% endif %} data-sticky-type="{{ section.settings.sticky_header }}" style="background-color: #eee;">
   {%- if store_information_blocks.size > 0 or has_localization or section.settings.enable_social_links -%}
@@ -243,7 +247,7 @@
                   <div class="menu-drawer__navigation-container h100 overflow-hidden">
                     {%- if section.settings.menu != blank -%}
                       <nav class="menu-drawer__navigation menu-drawer__block">
-                        <ul class="menu-drawer__menu has-submenu list-menu menu-drawer__background" role="list">
+                        <ul class="menu-drawer__menu has-submenu list-menu menu-drawer__background manta-list-scroll" role="list">
                           <li class="manta-mob-category-menu">
                             <details id="Details-menu-drawer-categories">
                               <summary class="menu-drawer__menu-item list-menu__item link link--text header__menu-item--top h6 w100">
