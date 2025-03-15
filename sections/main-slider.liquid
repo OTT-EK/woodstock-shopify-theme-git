@@ -516,11 +516,14 @@
           
                   <!-- Render SVG Icons Directly -->
                   {% if icon_extension == 'svg' %}
-                    {% capture svg_content %}
-                      {% include icon_url %}
-                    {% endcapture %}
-                    <span class="custom-svg-icon">{{ svg_content }}</span>
-                  
+                    <span class="custom-svg-icon">
+                      <img src="{{ icon_url | file_url }}" 
+                           alt="{{ link.title }}" 
+                           width="24" 
+                           height="24" 
+                           class="svg-icon">
+                    </span>
+          
                   <!-- Render Other Image Formats -->
                   {% elsif icon_url != '' %}
                     <img src="{{ icon_url | img_url: '32x32' }}" 
@@ -540,7 +543,7 @@
                 <span class="manta-menu-text text-small" style="display: flex; align-items: center;">{{ link.title }}</span>
               </a>
             </li>                       
-          {% endfor %}                                                                   
+          {% endfor %}                                                                             
           <!-- Add more <li> items as needed -->
         </ul>
 
