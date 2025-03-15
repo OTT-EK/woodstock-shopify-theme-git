@@ -446,8 +446,8 @@
         background-position: center;
       }
       @media (max-width: 768px) {
-      .manta-slide.manta-mslide-{{ forloop.index }} {
-        background-image: url('{{ block.settings.manta_slider_img_mob | img_url: 'master' }}') !important;
+        .manta-slide.manta-mslide-{{ forloop.index }} {
+          background-image: url('{{ block.settings.manta_slider_img_mob | img_url: 'master' }}') !important;
         }
       }
     {% endfor %}
@@ -498,10 +498,10 @@
         <div class="manta-slider-container" id="landscapeSlider">
           <div class="manta-slides">
             {% for block in section.blocks %}
-              <a href="{{ block.settings.manta_slide_link }}" class="manta-slide manta-mslide-{{ forloop.index }} manta_slider_img_mob-{{ forloop.index }}">
+              <a href="{{ block.settings.manta_slide_link }}" class="manta-slide manta-mslide-{{ forloop.index }}">
                 <p></p>
               </a>
-            {% endfor %}            
+            {% endfor %}
           </div>
           <div class="manta-slider-controls">
             <button class="manta-slider-btn manta-right-line prev">
