@@ -19,10 +19,26 @@
             "manta_slider_img": "shopify://shop_images/siga-banner-d_4c8a3123-ac06-4bb7-aece-164b31dbb128.jpg",
             "manta_slider_img_mob": "shopify://shop_images/siga-banner-m_8bb0ed70-336c-4b96-9cbc-9262aa5efe0d.jpg"
           }
+        },
+        "url_aJBzLY": {
+          "type": "url",
+          "settings": {
+            "manta_slide_link": "",
+            "manta_slider_img": "shopify://shop_images/siga-banner-d_4c8a3123-ac06-4bb7-aece-164b31dbb128.jpg",
+            "manta_slider_img_mob": "shopify://shop_images/siga-banner-m_8bb0ed70-336c-4b96-9cbc-9262aa5efe0d.jpg"
+          }
+        },
+        "url_LT9kHQ": {
+          "type": "url",
+          "settings": {
+            "manta_slide_link": ""
+          }
         }
       },
       "block_order": [
-        "url_FNHhdk"
+        "url_FNHhdk",
+        "url_aJBzLY",
+        "url_LT9kHQ"
       ],
       "settings": {
         "manta-category-menu-2": "en-category-menu",
