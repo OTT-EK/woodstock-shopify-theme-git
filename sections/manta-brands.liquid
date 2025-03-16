@@ -1,0 +1,104 @@
+{% schema %}
+{
+  "name": "Ottn Partner Brands",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "partner_logo",
+      "name": "Partner Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "manta_partner_logo",
+          "label": "Partner Logo",
+          "info": "Recommended: PNG or SVG format. Max file size 200KB. (Preferably SVG)."
+        },
+        {
+          "type": "url",
+          "id": "manta_partner_link",
+          "label": "Partner Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Manta Partner Brands",
+      "category": "Partners",
+      "blocks": [
+        {
+          "type": "partner_logo"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.manta-partner-slider {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  background: #f8f8f8;
+}
+
+.manta-partner-slider-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.manta-partner-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgb(var(--color-foreground),.06),0 1px 3px rgb(var(--color-foreground),.1);
+  transition: transform 0.3s ease-in-out;
+  min-width: 150px;
+  max-width: 200px;
+  height: auto;
+}
+
+.manta-partner-logo:hover {
+  transform: scale(1.05);
+}
+
+.manta-partner-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .manta-partner-slider-container {
+    justify-content: flex-start;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+}
+</style>
+
+<div class="manta-partner-slider">
+  <div class="manta-partner-slider-container">
+    {% for block in section.blocks %}
+      {% if block.settings.manta_partner_logo != blank %}
+        <a href="{{ block.settings.manta_partner_link }}" class="manta-partner-logo" target="_blank" rel="noopener noreferrer">
+          <img src="{{ block.settings.manta_partner_logo | img_url: 'master' }}" width="200" height="100" alt="Partner Logo">
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
