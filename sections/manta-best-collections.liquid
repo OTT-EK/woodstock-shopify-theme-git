@@ -68,11 +68,11 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
+  margin-top: 20px;
 }
 
 .manta-best-selling-collections .manta-collection-item {
   flex: 1 1 calc(16.66% - 16px);
-  max-width: calc(16.66% - 16px);
   text-align: center;
   padding: 10px;
   background: #f8f8f8;
@@ -111,9 +111,9 @@
       <div class="manta-collection-item">
         <a href="{{ block.settings.manta_collection_link.url }}">
           {% if block.settings.manta_custom_image != blank %}
-            <img src="{{ block.settings.manta_custom_image | image_url: width: 300, height: 300 }}" width="300" height="300" alt="{{ block.settings.manta_custom_title | escape }}">
+            <img src="{{ block.settings.manta_custom_image | img_url: "master" }}" alt="{{ block.settings.manta_custom_title | escape }}">
           {% else %}
-            <img src="{{ block.settings.manta_collection_link.image | image_url: width: 300, height: 300 }}" width="300" height="300" alt="{{ block.settings.manta_collection_link.title | escape }}">
+            <img src="{{ block.settings.manta_collection_link.image | img_url: "master" }}" alt="{{ block.settings.manta_collection_link.title | escape }}">
           {% endif %}
           <h3>{{ block.settings.manta_custom_title | default: block.settings.manta_collection_link.title }}</h3>
         </a>
