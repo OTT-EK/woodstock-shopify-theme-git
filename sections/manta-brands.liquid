@@ -1,4 +1,4 @@
-{% schema %}
+{% schema %} 
 {
   "name": "Ottn Partner Brands",
   "settings": [],
@@ -38,12 +38,13 @@
 
 <style>
 .manta-partner-slider {
+  position: relative;
   display: flex;
-  overflow: hidden;
   align-items: center;
   justify-content: center;
   padding: 20px 0;
   background: #f8f8f8;
+  overflow: hidden;
 }
 
 .manta-partner-slider-container {
@@ -52,8 +53,14 @@
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  overflow-x: auto;
-  scroll-behavior: smooth;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: manta-scroll 30s linear infinite;
+}
+
+@keyframes manta-scroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
 }
 
 .manta-partner-logo {
@@ -63,7 +70,7 @@
   padding: 10px;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 1px 2px rgb(var(--color-foreground),.06),0 1px 3px rgb(var(--color-foreground),.1);
+  box-shadow: 0 1px 2px rgb(var(--color-foreground),.06), 0 1px 3px rgb(var(--color-foreground),.1);
   transition: transform 0.3s ease-in-out;
   min-width: 150px;
   max-width: 200px;
@@ -81,24 +88,57 @@
   display: block;
 }
 
+.manta-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.manta-slider-arrow-left {
+  left: 10px;
+}
+
+.manta-slider-arrow-right {
+  right: 10px;
+}
+
 @media (max-width: 768px) {
   .manta-partner-slider-container {
     justify-content: flex-start;
     overflow-x: auto;
     gap: 10px;
     padding: 10px;
+    animation: none;
   }
 }
 </style>
 
 <div class="manta-partner-slider">
+  <button class="manta-slider-arrow manta-slider-arrow-left" onclick="mantaSlideLeft()">&#9664;</button>
   <div class="manta-partner-slider-container">
     {% for block in section.blocks %}
       {% if block.settings.manta_partner_logo != blank %}
         <a href="{{ block.settings.manta_partner_link }}" class="manta-partner-logo" target="_blank" rel="noopener noreferrer">
-          <img src="{{ block.settings.manta_partner_logo | img_url: 'master' }}" width="200" height="100" alt="Partner Logo">
+          <img src="{{ block.settings.manta_partner_logo | image_url: width:200, height:100 }}" width="200" height="100" alt="Partner Logo">
         </a>
       {% endif %}
     {% endfor %}
   </div>
+  <button class="manta-slider-arrow manta-slider-arrow-right" onclick="mantaSlideRight()">&#9654;</button>
 </div>
+
+<script>
+function mantaSlideLeft() {
+  document.querySelector('.manta-partner-slider-container').scrollBy({ left: -200, behavior: 'smooth' });
+}
+
+function mantaSlideRight() {
+  document.querySelector('.manta-partner-slider-container').scrollBy({ left: 200, behavior: 'smooth' });
+}
+</script>
