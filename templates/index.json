@@ -95,6 +95,7 @@
           "type": "collection",
           "settings": {
             "manta_collection_link": "frontpage",
+            "manta_custom_image": "shopify://shop_images/mouse-bar.png",
             "manta_custom_title": "Mouse Barriers"
           }
         }
