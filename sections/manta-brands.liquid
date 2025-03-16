@@ -41,11 +41,14 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
 <style>
+.manta-partners-container {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 0 2rem;
+}
 .manta-partners-slider {
   position: relative;
   padding: 20px 0;
-  background-color: #f8f8f8;
-  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -81,22 +84,24 @@
   right: 10px;
 }
 </style>
-<div class="manta-partners-container page-width">
-<div class="manta-partners-slider">
-  <button class="manta-partners-slider-arrow manta-partners-slider-arrow-left">&#9664;</button>
-  <div class="swiper manta-partners-slider-container">
-    <div class="swiper-wrapper">
-      {% for block in section.blocks %}
-        {% if block.settings.manta-partners-logo != blank %}
-          <div class="swiper-slide">
-            <a href="{{ block.settings.manta-partners-link }}" class="manta-partners-logo" target="_blank" rel="noopener noreferrer">
-              <img src="{{ block.settings.manta-partners-logo | img_url: "master" }}" width="200" height="100" alt="Partner Logo">
-            </a>
-          </div>
-        {% endif %}
-      {% endfor %}
+<div class="page-width">
+    <div class="manta-partners-container">
+    <div class="manta-partners-slider">
+        <button class="manta-partners-slider-arrow manta-partners-slider-arrow-left">&#9664;</button>
+        <div class="swiper manta-partners-slider-container">
+            <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+                {% if block.settings.manta-partners-logo != blank %}
+                <div class="swiper-slide">
+                    <a href="{{ block.settings.manta-partners-link }}" class="manta-partners-logo" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ block.settings.manta-partners-logo | img_url: "master" }}" width="200" height="100" alt="Partner Logo">
+                    </a>
+                </div>
+                {% endif %}
+            {% endfor %}
     </div>
   </div>
+</div>
   <button class="manta-partners-slider-arrow manta-partners-slider-arrow-right">&#9654;</button>
 </div>
 </div>
