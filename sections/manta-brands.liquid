@@ -1,6 +1,6 @@
 {% schema %} 
 {
-  "name": "Ottn Partner Brands",
+  "name": "Manta Partners Brands",
   "settings": [],
   "blocks": [
     {
@@ -9,13 +9,13 @@
       "settings": [
         {
           "type": "image_picker",
-          "id": "manta_partner_logo",
+          "id": "manta-partners-logo",
           "label": "Partner Logo",
           "info": "Recommended: PNG or SVG format. Max file size 200KB. (Preferably SVG)."
         },
         {
           "type": "url",
-          "id": "manta_partner_link",
+          "id": "manta-partners-link",
           "label": "Partner Link"
         }
       ]
@@ -24,7 +24,7 @@
   "max_blocks": 10,
   "presets": [
     {
-      "name": "Manta Partner Brands",
+      "name": "Manta Partners Brands",
       "category": "Partners",
       "blocks": [
         {
@@ -37,7 +37,7 @@
 {% endschema %}
 
 <style>
-.manta-partner-slider {
+.manta-partners-slider {
   position: relative;
   display: flex;
   align-items: center;
@@ -47,7 +47,7 @@
   overflow: hidden;
 }
 
-.manta-partner-slider-container {
+.manta-partners-slider-container {
   display: flex;
   gap: 20px;
   align-items: center;
@@ -58,7 +58,7 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.manta-partner-logo {
+.manta-partners-logo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,18 +72,18 @@
   height: auto;
 }
 
-.manta-partner-logo:hover {
+.manta-partners-logo:hover {
   transform: scale(1.05);
 }
 
-.manta-partner-logo img {
+.manta-partners-logo img {
   width: 100%;
   height: auto;
   object-fit: contain;
   display: block;
 }
 
-.manta-slider-arrow {
+.manta-partners-slider-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -95,16 +95,16 @@
   z-index: 10;
 }
 
-.manta-slider-arrow-left {
+.manta-partners-slider-arrow-left {
   left: 10px;
 }
 
-.manta-slider-arrow-right {
+.manta-partners-slider-arrow-right {
   right: 10px;
 }
 
 @media (max-width: 768px) {
-  .manta-partner-slider-container {
+  .manta-partners-slider-container {
     justify-content: flex-start;
     overflow-x: auto;
     gap: 10px;
@@ -113,38 +113,76 @@
 }
 </style>
 
-<div class="manta-partner-slider">
-  <button class="manta-slider-arrow manta-slider-arrow-left" onclick="mantaSlideLeft()">&#9664;</button>
-  <div class="manta-partner-slider-container">
+<div class="manta-partners-slider" onmouseover="mantaPartnersStopAutoScroll()" onmouseleave="mantaPartnersRestartAutoScroll()">
+  <button class="manta-partners-slider-arrow manta-partners-slider-arrow-left" onclick="mantaPartnersManualSlideLeft()">&#9664;</button>
+  <div class="manta-partners-slider-container">
     {% for block in section.blocks %}
-      {% if block.settings.manta_partner_logo != blank %}
-        <a href="{{ block.settings.manta_partner_link }}" class="manta-partner-logo" target="_blank" rel="noopener noreferrer">
-          <img src="{{ block.settings.manta_partner_logo | image_url: width:200, height:100 }}" width="200" height="100" alt="Partner Logo">
+      {% if block.settings.manta-partners-logo != blank %}
+        <a href="{{ block.settings.manta-partners-link }}" class="manta-partners-logo" target="_blank" rel="noopener noreferrer">
+          <img src="{{ block.settings.manta-partners-logo | image_url: width:200, height:100 }}" width="200" height="100" alt="Partner Logo">
         </a>
       {% endif %}
     {% endfor %}
   </div>
-  <button class="manta-slider-arrow manta-slider-arrow-right" onclick="mantaSlideRight()">&#9654;</button>
+  <button class="manta-partners-slider-arrow manta-partners-slider-arrow-right" onclick="mantaPartnersManualSlideRight()">&#9654;</button>
 </div>
 
 <script>
-let scrollInterval;
+let mantaPartnersScrollInterval;
+let mantaPartnersAutoScrollPaused = false;
 
-function startAutoScroll() {
-  scrollInterval = setInterval(() => {
-    mantaSlideRight();
-  }, 2000);
+function mantaPartnersStartAutoScroll() {
+  if (!mantaPartnersAutoScrollPaused) {
+    mantaPartnersScrollInterval = setInterval(() => {
+      mantaPartnersSlideRight();
+    }, 2000);
+  }
 }
 
-document.addEventListener("DOMContentLoaded", startAutoScroll);
+document.addEventListener("DOMContentLoaded", mantaPartnersStartAutoScroll);
 
-function mantaSlideLeft() {
-  const container = document.querySelector('.manta-partner-slider-container');
-  container.appendChild(container.firstElementChild);
+function mantaPartnersStopAutoScroll() {
+  mantaPartnersAutoScrollPaused = true;
+  clearInterval(mantaPartnersScrollInterval);
 }
 
-function mantaSlideRight() {
-  const container = document.querySelector('.manta-partner-slider-container');
-  container.prepend(container.lastElementChild);
+function mantaPartnersRestartAutoScroll() {
+  mantaPartnersAutoScrollPaused = false;
+  clearInterval(mantaPartnersScrollInterval);
+  setTimeout(mantaPartnersStartAutoScroll, 10000);
+}
+
+function mantaPartnersManualSlideLeft() {
+  mantaPartnersStopAutoScroll();
+  mantaPartnersRestartAutoScroll();
+  mantaPartnersSlideLeft();
+}
+
+function mantaPartnersManualSlideRight() {
+  mantaPartnersStopAutoScroll();
+  mantaPartnersRestartAutoScroll();
+  mantaPartnersSlideRight();
+}
+
+function mantaPartnersSlideLeft() {
+  const container = document.querySelector('.manta-partners-slider-container');
+  container.style.transition = 'transform 0.5s ease-in-out';
+  container.style.transform = 'translateX(200px)';
+  setTimeout(() => {
+    container.insertBefore(container.lastElementChild, container.firstElementChild);
+    container.style.transition = 'none';
+    container.style.transform = 'translateX(0)';
+  }, 500);
+}
+
+function mantaPartnersSlideRight() {
+  const container = document.querySelector('.manta-partners-slider-container');
+  container.style.transition = 'transform 0.5s ease-in-out';
+  container.style.transform = 'translateX(-200px)';
+  setTimeout(() => {
+    container.appendChild(container.firstElementChild);
+    container.style.transition = 'none';
+    container.style.transform = 'translateX(0)';
+  }, 500);
 }
 </script>
