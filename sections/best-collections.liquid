@@ -1,0 +1,122 @@
+{% schema %}
+{
+  "name": "Best Selling Collections",
+  "settings": [
+    {
+      "type": "text",
+      "id": "manta_section_title",
+      "label": "Section Title",
+      "default": "Best Selling Collections"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "manta_collection_link",
+          "label": "Select Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "manta_custom_image",
+          "label": "Custom Image"
+        },
+        {
+          "type": "text",
+          "id": "manta_custom_title",
+          "label": "Custom Title"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Best Selling Collections",
+      "category": "Collections",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.manta-best-selling-collections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.manta-best-selling-collections .manta-collection-item {
+  flex: 1 1 calc(16.66% - 16px);
+  max-width: calc(16.66% - 16px);
+  text-align: center;
+  padding: 10px;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+
+.manta-best-selling-collections img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 1024px) {
+  .manta-best-selling-collections .manta-collection-item {
+    flex: 1 1 calc(33.33% - 16px);
+    max-width: calc(33.33% - 16px);
+  }
+}
+
+@media (max-width: 768px) {
+  .manta-best-selling-collections {
+    flex-direction: column;
+    align-items: center;
+  }
+  .manta-best-selling-collections .manta-collection-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+</style>
+
+<div class="manta-best-selling-collections">
+  {% for block in section.blocks %}
+    {% if block.settings.manta_collection_link != blank %}
+      <div class="manta-collection-item">
+        <a href="{{ block.settings.manta_collection_link.url }}">
+          {% if block.settings.manta_custom_image != blank %}
+            <img src="{{ block.settings.manta_custom_image | image_url: width: 300, height: 300 }}" width="300" height="300" alt="{{ block.settings.manta_custom_title | escape }}">
+          {% else %}
+            <img src="{{ block.settings.manta_collection_link.image | image_url: width: 300, height: 300 }}" width="300" height="300" alt="{{ block.settings.manta_collection_link.title | escape }}">
+          {% endif %}
+          <h3>{{ block.settings.manta_custom_title | default: block.settings.manta_collection_link.title }}</h3>
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
