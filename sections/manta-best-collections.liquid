@@ -83,7 +83,7 @@
 }
 
 .manta-best-selling-collections .manta-collection-item:hover {
-  background:rgb(243, 243, 243);
+  background:rgb(240, 240, 240);
 }
 
 .manta-image-container {
@@ -116,7 +116,9 @@
     padding: 0 1.5rem;
   }
 }
-
+.manta-svg-image {
+  width: 50%;
+}
 </style>
 
 <div class="manta-best-selling-collections page-width">
@@ -126,9 +128,13 @@
         <a href="{{ block.settings.manta_collection_link.url }}">
           <div class="manta-image-container">
             {% if block.settings.manta_custom_image != blank %}
-              <img src="{{ block.settings.manta_custom_image | img_url: 'master' }}" width="250" height="250" alt="{{ block.settings.manta_custom_title | escape }}">
+              {% assign file_extension = block.settings.manta_custom_image | split: '.' | last %}
+              <img src="{{ block.settings.manta_custom_image | img_url: 'master' }}"
+                  width="250" height="250"
+                  alt="{{ block.settings.manta_custom_title | escape }}"
+                  class="{% if file_extension == 'svg' %}manta-svg-image{% endif %}">
             {% else %}
-              <img src="{{ block.settings.manta_collection_link.image | img_url: 'master' }}" width="250" height="250" alt="{{ block.settings.manta_collection_link.title | escape }}">
+              <img src="https://cdn.shopify.com/s/files/1/0923/0997/9481/files/image-not-found-01-stroke-rounded.svg?v=1742133303" class="manta-svg-image" width="250" height="250" alt="No image found">
             {% endif %}
           </div>
           <h2 class="h6 font-heading-bold">{{ block.settings.manta_custom_title | default: block.settings.manta_collection_link.title }}</h2>
