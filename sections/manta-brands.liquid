@@ -48,7 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   position: relative;
 }
 
@@ -56,7 +56,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(100% - 120px);
+  flex-grow: 1;
+  max-width: 90%;
 }
 
 .manta-partners-slider {
@@ -82,11 +83,12 @@
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  padding: 15px 20px;
+  padding: 12px;
   cursor: pointer;
   z-index: 10;
   border-radius: 5px;
   transition: background 0.3s;
+  flex-shrink: 0;
 }
 
 .manta-partners-slider-arrow:hover {
@@ -95,20 +97,11 @@
 
 .manta-partners-slider-arrow-left,
 .manta-partners-slider-arrow-right {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-}
-
-.manta-partners-slider-arrow-left {
-  left: 10px;
-}
-
-.manta-partners-slider-arrow-right {
-  right: 10px;
 }
 </style>
 
@@ -122,7 +115,7 @@
             {% if block.settings.manta-partners-logo != blank %}
               <div class="swiper-slide">
                 <a href="{{ block.settings.manta-partners-link }}" class="manta-partners-logo" target="_blank" rel="noopener noreferrer">
-                  <img src="{{ block.settings.manta-partners-logo | img_url: 'master'}}" alt="Partner Logo" width="200" height="100">
+                  <img src="{{ block.settings.manta-partners-logo | img_url: 'master' }}" alt="Partner Logo" width="200" height="100">
                 </a>
               </div>
             {% endif %}
