@@ -47,7 +47,7 @@
   padding: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 10px;
   position: relative;
 }
@@ -57,7 +57,7 @@
   align-items: center;
   justify-content: center;
   flex-grow: 1;
-  max-width: 90%;
+  max-width: calc(100% - 100px);
 }
 
 .manta-partners-slider {
@@ -80,34 +80,31 @@
 }
 
 .manta-partners-slider-arrow {
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  background: none;
   border: none;
-  padding: 12px;
   cursor: pointer;
   z-index: 10;
-  border-radius: 5px;
-  transition: background 0.3s;
   flex-shrink: 0;
 }
 
-.manta-partners-slider-arrow:hover {
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.manta-partners-slider-arrow-left,
-.manta-partners-slider-arrow-right {
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.manta-partners-slider-arrow svg {
+  width: 64px;
+  height: 64px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 </style>
 
 <div class="page-width">
   <div class="manta-partners-container">
-    <button class="manta-partners-slider-arrow manta-partners-slider-arrow-left">&#9664;</button>
+    <button class="manta-partners-slider-arrow manta-partners-slider-arrow-left">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" color="#000000" fill="none">
+        <path d="M15 6L9 12.0001L15 18" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
     <div class="manta-partners-slider-wrapper">
       <div class="swiper manta-partners-slider-container">
         <div class="swiper-wrapper">
@@ -115,7 +112,7 @@
             {% if block.settings.manta-partners-logo != blank %}
               <div class="swiper-slide">
                 <a href="{{ block.settings.manta-partners-link }}" class="manta-partners-logo" target="_blank" rel="noopener noreferrer">
-                  <img src="{{ block.settings.manta-partners-logo | img_url: 'master' }}" alt="Partner Logo" width="200" height="100">
+                  <img src="{{ block.settings.manta-partners-logo | img_url: 'master' }}" width="200" height="100" alt="Partner Logo">
                 </a>
               </div>
             {% endif %}
@@ -123,14 +120,18 @@
         </div>
       </div>
     </div>
-    <button class="manta-partners-slider-arrow manta-partners-slider-arrow-right">&#9654;</button>
+    <button class="manta-partners-slider-arrow manta-partners-slider-arrow-right">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" color="#000000" fill="none"> 
+        <path d="M9.00005 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
   </div>
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper(".manta-partners-slider-container", {
-    slidesPerView: 6,
+    slidesPerView: 'auto',
     spaceBetween: 20,
     loop: true,
     autoplay: {
@@ -155,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
         spaceBetween: 15
       },
       1024: {
-        slidesPerView: 6,
+        slidesPerView: 'auto',
         spaceBetween: 20
       }
     }
