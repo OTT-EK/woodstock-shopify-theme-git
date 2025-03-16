@@ -38,7 +38,7 @@
 
 <!-- SwiperJS Slider -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
 <style>
 .manta-partners-slider {
@@ -89,7 +89,7 @@
         {% if block.settings.manta-partners-logo != blank %}
           <div class="swiper-slide">
             <a href="{{ block.settings.manta-partners-link }}" class="manta-partners-logo" target="_blank" rel="noopener noreferrer">
-              <img src="{{ block.settings.manta-partners-logo | image_url: width:200, height:100 }}" alt="Partner Logo">
+              <img src="{{ block.settings.manta-partners-logo | img_url: "master" }}" width="200" height="100" alt="Partner Logo">
             </a>
           </div>
         {% endif %}
@@ -102,7 +102,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper(".manta-partners-slider-container", {
-    slidesPerView: "auto",
+    slidesPerView: 6,
     spaceBetween: 20,
     loop: true,
     autoplay: {
@@ -113,6 +113,24 @@ document.addEventListener("DOMContentLoaded", function () {
       nextEl: ".manta-partners-slider-arrow-right",
       prevEl: ".manta-partners-slider-arrow-left",
     },
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 10
+      },
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 15
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 15
+      },
+      1024: {
+        slidesPerView: 6,
+        spaceBetween: 20
+      }
+    }
   });
 });
 </script>
