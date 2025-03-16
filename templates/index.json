@@ -190,71 +190,71 @@
         "partner_logo_HMpPJN": {
           "type": "partner_logo",
           "settings": {
-            "manta_partner_logo": "shopify://shop_images/otn-4pro_logo.png",
-            "manta_partner_link": ""
+            "manta-partners-logo": "shopify://shop_images/otn-max-e_logo.png",
+            "manta-partners-link": ""
           }
         },
         "partner_logo_rteCtX": {
           "type": "partner_logo",
           "settings": {
-            "manta_partner_logo": "shopify://shop_images/otn-max-e_logo.png",
-            "manta_partner_link": ""
+            "manta-partners-logo": "shopify://shop_images/otn-schaefer_logo.png",
+            "manta-partners-link": ""
           }
         },
         "partner_logo_EXJPdJ": {
           "type": "partner_logo",
           "settings": {
-            "manta_partner_logo": "shopify://shop_images/otn-everwin_logo.png",
-            "manta_partner_link": ""
+            "manta-partners-logo": "shopify://shop_images/otn-everwin_logo.png",
+            "manta-partners-link": ""
           }
         },
         "partner_logo_FM89Fy": {
           "type": "partner_logo",
           "settings": {
-            "manta_partner_logo": "shopify://shop_images/otn-siga_logo.png",
-            "manta_partner_link": ""
+            "manta-partners-logo": "shopify://shop_images/otn-siga_logo.png",
+            "manta-partners-link": ""
           }
         },
         "partner_logo_eFiaFx": {
           "type": "partner_logo",
           "settings": {
-            "manta_partner_logo": "shopify://shop_images/otn-toughbuilt_logo.png",
-            "manta_partner_link": ""
+            "manta-partners-logo": "shopify://shop_images/otn-senco_logo.png",
+            "manta-partners-link": ""
           }
         },
         "partner_logo_NMWzCx": {
           "type": "partner_logo",
           "settings": {
-            "manta_partner_logo": "shopify://shop_images/otn-eurotec_logo.png",
-            "manta_partner_link": ""
+            "manta-partners-logo": "shopify://shop_images/otn-4pro_logo.png",
+            "manta-partners-link": ""
           }
         },
         "partner_logo_XyyJDq": {
           "type": "partner_logo",
           "settings": {
-            "manta_partner_logo": "shopify://shop_images/otn-danalim_logo.png",
-            "manta_partner_link": ""
+            "manta-partners-logo": "shopify://shop_images/otn-tox_logo.png",
+            "manta-partners-link": ""
           }
         },
         "partner_logo_NLKT8t": {
           "type": "partner_logo",
           "settings": {
-            "manta_partner_logo": "shopify://shop_images/otn-tox_logo.png",
-            "manta_partner_link": ""
+            "manta-partners-logo": "shopify://shop_images/otn-proline_logo.png",
+            "manta-partners-link": ""
           }
         },
         "partner_logo_xJb6gF": {
           "type": "partner_logo",
           "settings": {
-            "manta_partner_logo": "shopify://shop_images/otn-rapid_logo.png",
-            "manta_partner_link": ""
+            "manta-partners-logo": "shopify://shop_images/otn-omer_logo.png",
+            "manta-partners-link": ""
           }
         },
         "partner_logo_XPdtB8": {
           "type": "partner_logo",
           "settings": {
-            "manta_partner_logo": "shopify://shop_images/otn-lamello_logo.png",
-            "manta_partner_link": ""
+            "manta-partners-logo": "shopify://shop_images/otn-VSB_logo.png",
+            "manta-partners-link": ""
           }
         }
       },
