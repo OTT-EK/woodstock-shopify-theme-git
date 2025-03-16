@@ -49,6 +49,70 @@
         "manta_url_replacement_img_2": "shopify://shop_images/fireproof-construction-materials-w.svg"
       }
     },
+    "manta_best_collections_KM3JPm": {
+      "type": "manta-best-collections",
+      "blocks": {
+        "collection_gbFkbV": {
+          "type": "collection",
+          "settings": {
+            "manta_collection_link": "brackets",
+            "manta_custom_image": "shopify://shop_images/discount-tag-02-stroke-rounded_1.svg",
+            "manta_custom_title": "Sale / Clearance"
+          }
+        },
+        "collection_m7HNXA": {
+          "type": "collection",
+          "settings": {
+            "manta_collection_link": "frontpage",
+            "manta_custom_image": "shopify://shop_images/collated-nails-2.png",
+            "manta_custom_title": "Fastners"
+          }
+        },
+        "collection_mgKHUk": {
+          "type": "collection",
+          "settings": {
+            "manta_collection_link": "frontpage",
+            "manta_custom_image": "shopify://shop_images/c4.png",
+            "manta_custom_title": "Wood Screws"
+          }
+        },
+        "collection_xGTXmf": {
+          "type": "collection",
+          "settings": {
+            "manta_collection_link": "frontpage",
+            "manta_custom_image": "shopify://shop_images/TB-C550.png",
+            "manta_custom_title": "Thoughbuilt stands"
+          }
+        },
+        "collection_JMUai8": {
+          "type": "collection",
+          "settings": {
+            "manta_collection_link": "frontpage",
+            "manta_custom_image": "shopify://shop_images/fentrim-is23.png",
+            "manta_custom_title": "Sealing tapes"
+          }
+        },
+        "collection_FFEGCV": {
+          "type": "collection",
+          "settings": {
+            "manta_collection_link": "frontpage",
+            "manta_custom_image": "shopify://shop_images/mouse-bar.png",
+            "manta_custom_title": "Mouse Barriers"
+          }
+        }
+      },
+      "block_order": [
+        "collection_gbFkbV",
+        "collection_m7HNXA",
+        "collection_mgKHUk",
+        "collection_xGTXmf",
+        "collection_JMUai8",
+        "collection_FFEGCV"
+      ],
+      "settings": {
+        "manta_section_title": "Best Selling Collections"
+      }
+    },
     "1aded6ef-5727-4347-bf56-9fc610343e55": {
       "type": "collection-list",
       "blocks": {
@@ -245,6 +309,7 @@
   },
   "order": [
     "main_slider_gGxNFp",
+    "manta_best_collections_KM3JPm",
     "1aded6ef-5727-4347-bf56-9fc610343e55",
     "8f5a111c-95e5-4fe4-9470-893b0e7841d7"
   ]
