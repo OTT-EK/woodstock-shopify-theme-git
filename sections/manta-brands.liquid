@@ -35,94 +35,140 @@
   ]
 }
 {% endschema %}
-
-<!-- FlickityJS Slider (Better Alternative) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js" defer></script>
-
-<style>
-.manta-partners-container {
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  position: relative;
-  overflow: hidden;
-}
-
-.manta-partners-slider-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  max-width: calc(100% - 60px);
-}
-
-.manta-partners-slider {
-  position: relative;
-  padding: 20px 0;
-  overflow: hidden;
-  flex-grow: 1;
-}
-
-.manta-partners-slider-container {
-  width: 100%;
-  overflow: hidden;
-}
-
-.manta-partners-logo img {
-  width: 200px;
-  height: 100px;
-  object-fit: contain;
-  display: block;
-}
-
-.manta-partners-slider-arrow {
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 10;
-  flex-shrink: 0;
-}
-
-.manta-partners-slider-arrow svg {
-  width: 24px;
-  height: 24px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-</style>
-
-<div class="page-width">
-  <div class="manta-partners-container">
-    <button class="manta-partners-slider-arrow manta-partners-slider-arrow-left" data-flickity-prev>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
-        <path d="M15 6L9 12.0001L15 18" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </button>
-    <div class="manta-partners-slider-wrapper">
-      <div class="manta-partners-slider-container" data-flickity='{"cellAlign": "left", "contain": true, "groupCells": true, "autoPlay": 2000, "wrapAround": true}'>
-        {% for block in section.blocks %}
-          {% if block.settings.manta-partners-logo != blank %}
-            <div class="carousel-cell">
-              <a href="{{ block.settings.manta-partners-link }}" class="manta-partners-logo" target="_blank" rel="noopener noreferrer">
-                <img src="{{ block.settings.manta-partners-logo | img_url: 'master' }}" width="200" height="100" alt="Partner Logo">
-              </a>
-            </div>
-          {% endif %}
-        {% endfor %}
+<!-- SwiperJS -->
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    defer
+  ></script>
+  
+  <style>
+  .manta-partners-container {
+    /* Let the parent be a centered row with space for the arrows and slider */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    /* Remove overflow: hidden here if it’s causing cuts; 
+       let the Swiper container handle overflow if needed. */
+  }
+  
+  .manta-partners-slider-container {
+    /* Grow the slider to fill leftover space between arrows */
+    flex: 1;
+    /* Don’t force a fixed width; let breakpoints + slidesPerView manage layout */
+    margin: 0 20px; /* Gap between arrows and slider */
+  }
+  
+  .manta-partners-logo img {
+    /* Instead of fixed width/height, let it shrink if space is tight */
+    max-width: 200px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto; /* center the logo */
+  }
+  
+  /* Arrows: no overlap by giving them their own space in the flex container */
+  .manta-partners-slider-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  
+  .manta-partners-slider-arrow svg {
+    width: 48px;
+    height: 48px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  </style>
+  
+  <div class="page-width">
+    <div class="manta-partners-container">
+      <!-- Left Arrow -->
+      <button class="manta-partners-slider-arrow manta-partners-slider-arrow-left">
+        <!-- your SVG here -->
+      </button>
+  
+      <!-- Swiper Slider -->
+      <div class="swiper manta-partners-slider-container">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% if block.settings.manta-partners-logo != blank %}
+              <div class="swiper-slide">
+                <a href="{{ block.settings.manta-partners-link }}"
+                   class="manta-partners-logo"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  <img src="{{ block.settings.manta-partners-logo | img_url: 'master' }}"
+                       alt="Partner Logo">
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
+  
+      <!-- Right Arrow -->
+      <button class="manta-partners-slider-arrow manta-partners-slider-arrow-right">
+        <!-- your SVG here -->
+      </button>
     </div>
-    <button class="manta-partners-slider-arrow manta-partners-slider-arrow-right" data-flickity-next>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none"> 
-        <path d="M9.00005 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </button>
   </div>
-</div>
+  
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper(".manta-partners-slider-container", {
+      // Slide exactly one logo at a time
+      slidesPerView: 6,
+      slidesPerGroup: 1,
+      spaceBetween: 20,
+      loop: true,
+  
+      // Auto-slide every 1 second
+      autoplay: {
+        delay: 1000,
+        disableOnInteraction: false,
+      },
+  
+      // Move the arrows out of the slides so they don’t overlap
+      navigation: {
+        nextEl: ".manta-partners-slider-arrow-right",
+        prevEl: ".manta-partners-slider-arrow-left",
+      },
+  
+      // Responsive breakpoints
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        480: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 15,
+        },
+        1024: {
+          slidesPerView: 6,
+          spaceBetween: 20,
+        },
+      },
+    });
+  });
+  </script>
