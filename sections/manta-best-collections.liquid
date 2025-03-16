@@ -79,14 +79,20 @@
   border-radius: 8px;
 }
 
-.manta-best-selling-collections img {
-  max-width: 100%;
-  max-height: 30vh; /* Adjust this value as needed */
+.manta-image-container {
+  width: 100%;
+  height: 150px; /* Matches the fixed height given in the img tag */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.manta-image-container img {
   width: auto;
-  height: auto;
-  object-fit: contain; /* Ensures images fit while maintaining aspect ratio */
+  height: 100%;
+  object-fit: contain;
   display: block;
-  margin: 0 auto;
 }
 
 .manta-best-selling-collections a {
@@ -107,14 +113,17 @@
     {% if block.settings.manta_collection_link != blank %}
       <div class="manta-collection-item">
         <a href="{{ block.settings.manta_collection_link.url }}">
-          {% if block.settings.manta_custom_image != blank %}
-            <img src="{{ block.settings.manta_custom_image | img_url: "master" }}" height="300" width="300" alt="{{ block.settings.manta_custom_title | escape }}">
-          {% else %}
-            <img src="{{ block.settings.manta_collection_link.image | img_url: "master" }}" height="300" width="300" alt="{{ block.settings.manta_collection_link.title | escape }}">
-          {% endif %}
+          <div class="manta-image-container">
+            {% if block.settings.manta_custom_image != blank %}
+              <img src="{{ block.settings.manta_custom_image | img_url: 'master' }}" width="150" height="150" alt="{{ block.settings.manta_custom_title | escape }}">
+            {% else %}
+              <img src="{{ block.settings.manta_collection_link.image | img_url: 'master' }}" width="150" height="150" alt="{{ block.settings.manta_collection_link.title | escape }}">
+            {% endif %}
+          </div>
           <h2 class="h6 font-heading-bold">{{ block.settings.manta_custom_title | default: block.settings.manta_collection_link.title }}</h2>
         </a>
       </div>
     {% endif %}
   {% endfor %}
 </div>
+
