@@ -197,7 +197,7 @@
         "partner_logo_rteCtX": {
           "type": "partner_logo",
           "settings": {
-            "manta_partner_logo": "shopify://shop_images/otn-max_logo.png",
+            "manta_partner_logo": "shopify://shop_images/otn-max-e_logo.png",
             "manta_partner_link": ""
           }
         },
