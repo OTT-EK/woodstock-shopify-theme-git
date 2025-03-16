@@ -47,15 +47,16 @@
   padding: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
+  position: relative;
 }
 
 .manta-partners-slider-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: calc(100% - 120px);
 }
 
 .manta-partners-slider {
@@ -94,12 +95,20 @@
 
 .manta-partners-slider-arrow-left,
 .manta-partners-slider-arrow-right {
-  flex-shrink: 0;
   width: 50px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+}
+
+.manta-partners-slider-arrow-left {
+  left: 10px;
+}
+
+.manta-partners-slider-arrow-right {
+  right: 10px;
 }
 </style>
 
