@@ -105,7 +105,7 @@
           {% else %}
             <img src="{{ block.settings.manta_collection_link.image | img_url: "master" }}" height="300" width="300" alt="{{ block.settings.manta_collection_link.title | escape }}">
           {% endif %}
-          <h3>{{ block.settings.manta_custom_title | default: block.settings.manta_collection_link.title }}</h3>
+          <h2 class="h6 font-heading-bold">{{ block.settings.manta_custom_title | default: block.settings.manta_collection_link.title }}</h2>
         </a>
       </div>
     {% endif %}
