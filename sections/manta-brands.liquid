@@ -36,9 +36,9 @@
 }
 {% endschema %}
 
-<!-- SwiperJS Slider -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+<!-- FlickityJS Slider (Better Alternative) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js" defer></script>
 
 <style>
 .manta-partners-container {
@@ -58,7 +58,7 @@
   align-items: center;
   justify-content: center;
   flex-grow: 1;
-  max-width: calc(100% - 80px);
+  max-width: calc(100% - 60px);
 }
 
 .manta-partners-slider {
@@ -89,8 +89,8 @@
 }
 
 .manta-partners-slider-arrow svg {
-  width: 48px;
-  height: 48px;
+  width: 24px;
+  height: 24px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.5;
@@ -101,66 +101,28 @@
 
 <div class="page-width">
   <div class="manta-partners-container">
-    <button class="manta-partners-slider-arrow manta-partners-slider-arrow-left">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none">
+    <button class="manta-partners-slider-arrow manta-partners-slider-arrow-left" data-flickity-prev>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
         <path d="M15 6L9 12.0001L15 18" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
     </button>
     <div class="manta-partners-slider-wrapper">
-      <div class="swiper manta-partners-slider-container">
-        <div class="swiper-wrapper">
-          {% for block in section.blocks %}
-            {% if block.settings.manta-partners-logo != blank %}
-              <div class="swiper-slide">
-                <a href="{{ block.settings.manta-partners-link }}" class="manta-partners-logo" target="_blank" rel="noopener noreferrer">
-                  <img src="{{ block.settings.manta-partners-logo | img_url: 'master' }}" width="200" height="100" alt="Partner Logo">
-                </a>
-              </div>
-            {% endif %}
-          {% endfor %}
-        </div>
+      <div class="manta-partners-slider-container" data-flickity='{"cellAlign": "left", "contain": true, "groupCells": true, "autoPlay": 2000, "wrapAround": true}'>
+        {% for block in section.blocks %}
+          {% if block.settings.manta-partners-logo != blank %}
+            <div class="carousel-cell">
+              <a href="{{ block.settings.manta-partners-link }}" class="manta-partners-logo" target="_blank" rel="noopener noreferrer">
+                <img src="{{ block.settings.manta-partners-logo | img_url: 'master' }}" width="200" height="100" alt="Partner Logo">
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
       </div>
     </div>
-    <button class="manta-partners-slider-arrow manta-partners-slider-arrow-right">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"> 
+    <button class="manta-partners-slider-arrow manta-partners-slider-arrow-right" data-flickity-next>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none"> 
         <path d="M9.00005 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
     </button>
   </div>
 </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const swiper = new Swiper(".manta-partners-slider-container", {
-    slidesPerView: 6,
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-      delay: 2000,
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: ".manta-partners-slider-arrow-right",
-      prevEl: ".manta-partners-slider-arrow-left",
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 2,
-        spaceBetween: 10
-      },
-      480: {
-        slidesPerView: 3,
-        spaceBetween: 15
-      },
-      768: {
-        slidesPerView: 4,
-        spaceBetween: 15
-      },
-      1024: {
-        slidesPerView: 6,
-        spaceBetween: 20
-      }
-    }
-  });
-});
-</script>
