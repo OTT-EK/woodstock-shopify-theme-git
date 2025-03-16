@@ -72,6 +72,7 @@
           "type": "collection",
           "settings": {
             "manta_collection_link": "frontpage",
+            "manta_custom_image": "shopify://shop_images/c4.png",
             "manta_custom_title": "Wood Screws"
           }
         },
