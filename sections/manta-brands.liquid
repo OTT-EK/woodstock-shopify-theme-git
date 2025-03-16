@@ -50,6 +50,7 @@
   justify-content: space-between;
   gap: 10px;
   position: relative;
+  overflow: hidden;
 }
 
 .manta-partners-slider-wrapper {
@@ -57,7 +58,7 @@
   align-items: center;
   justify-content: center;
   flex-grow: 1;
-  max-width: calc(100% - 100px);
+  max-width: calc(100% - 80px);
 }
 
 .manta-partners-slider {
@@ -88,8 +89,8 @@
 }
 
 .manta-partners-slider-arrow svg {
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.5;
@@ -101,7 +102,7 @@
 <div class="page-width">
   <div class="manta-partners-container">
     <button class="manta-partners-slider-arrow manta-partners-slider-arrow-left">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" color="#000000" fill="none">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none">
         <path d="M15 6L9 12.0001L15 18" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
     </button>
@@ -121,7 +122,7 @@
       </div>
     </div>
     <button class="manta-partners-slider-arrow manta-partners-slider-arrow-right">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" color="#000000" fill="none"> 
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" color="#000000" fill="none"> 
         <path d="M9.00005 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
     </button>
@@ -131,7 +132,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper(".manta-partners-slider-container", {
-    slidesPerView: 'auto',
+    slidesPerView: 6,
     spaceBetween: 20,
     loop: true,
     autoplay: {
@@ -156,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
         spaceBetween: 15
       },
       1024: {
-        slidesPerView: 'auto',
+        slidesPerView: 6,
         spaceBetween: 20
       }
     }
