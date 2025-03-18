@@ -399,7 +399,7 @@
       bottom: 0;  /* So it always stretches to match the parent's height */
       width: 50%;
       background-size: cover;
-      background-image: url('{{ section.settings.manta_featuredbox_img_1 | img_url: 'master' }}');
+      background-image: url("{{ section.settings.manta_featuredbox_img_1 | img_url: 'master' }}");
       z-index: 1;
       background-position: center;
     }
@@ -411,7 +411,7 @@
       bottom: 0;  /* So it always stretches to match the parent's height */
       width: 50%;
       background-size: cover;
-      background-image: url('{{ section.settings.manta_featuredbox_img_2 | img_url: 'master' }}');
+      background-image: url("{{ section.settings.manta_featuredbox_img_2 | img_url: 'master' }}");
       z-index: 1;
       background-position: center;
     }
@@ -471,13 +471,13 @@
   <style>
     {% for block in section.blocks %}
       .manta-slide.manta-mslide-{{ forloop.index }} {
-        background-image: url('{{ block.settings.manta_slider_img | img_url: "master" }}');
+        background-image: url("{{ block.settings.manta_slider_img | img_url: "master" }}");
         background-size: cover;
         background-position: center;
       }
       @media (max-width: 768px) {
         .manta-slide.manta-mslide-{{ forloop.index }} {
-          background-image: url('{{ block.settings.manta_slider_img_mob | img_url: 'master' }}') !important;
+          background-image: url("{{ block.settings.manta_slider_img_mob | img_url: 'master' }}") !important;
         }
       }
     {% endfor %}
