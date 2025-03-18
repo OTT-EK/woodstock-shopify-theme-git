@@ -59,13 +59,13 @@
     <!-- Content -->
     <div class="manta-aboutus-content">
       <!-- Title -->
-      <h2 class="manta-aboutus-title">{{ section.settings.manta_aboutus_title }}</h2>
+      <h2 class="manta-aboutus-title h5">{{ section.settings.manta_aboutus_title }}</h2>
 
       <!-- Description -->
       <div class="manta-aboutus-description">
         {% if paragraphs.size > 0 %}
           <!-- Always show the first paragraph -->
-          <p class="manta-aboutus-first-paragraph">
+          <p class="manta-aboutus-first-paragraph subtitle--small">
             {{ paragraphs[0] }}
           </p>
 
@@ -73,7 +73,7 @@
           {% if paragraphs.size > 1 %}
             <div class="manta-aboutus-rest">
               {% for paragraph in paragraphs offset:1 %}
-                <p>{{ paragraph }}</p>
+                <p class="subtitle--small">{{ paragraph }}</p>
               {% endfor %}
             </div>
             <!-- Read More link shown only on mobile by CSS, toggled by JS -->
