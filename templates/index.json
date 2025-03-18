@@ -272,6 +272,16 @@
       ],
       "settings": {}
     },
+    "manta_about_us_t3jzAj": {
+      "type": "manta-about-us",
+      "settings": {
+        "manta_aboutus_image": "shopify://shop_images/OttenstenLoc.jpg",
+        "manta_aboutus_title": "Ottensten Group",
+        "manta_aboutus_description": "The OTTENSTEN group is a dynamic company and through a continuous development of products and increase of assortments the customers are ensured a much better and more efficient performance of their jobs. It is the everyday effort of the very competent employees to live up to a high business morality and to provide the best possible service to our customers.\n\nOur strengths are: MLP multi-level proposition targeting professionals, semi-professionals and DIY.\n\nOur own brands 4PRO, whose common feature is to convince new customers that in spite of their very attractive prices the tools maintain high quality and precision performance.",
+        "manta_aboutus_button_label": "Learn More",
+        "manta_aboutus_button_link": ""
+      }
+    },
     "8f5a111c-95e5-4fe4-9470-893b0e7841d7": {
       "type": "collapsible-content",
       "blocks": {
@@ -400,6 +410,7 @@
     "manta_best_collections_KM3JPm",
     "1aded6ef-5727-4347-bf56-9fc610343e55",
     "manta_brands_CVrn3p",
+    "manta_about_us_t3jzAj",
     "8f5a111c-95e5-4fe4-9470-893b0e7841d7"
   ]
 }
