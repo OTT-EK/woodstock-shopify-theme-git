@@ -92,7 +92,7 @@
   justify-content: center;
   overflow: hidden;
   padding: 1.4rem;
-  aspect-ratio: 1/1;
+  aspect-ratio: 4/3;
 }
 
 .manta-image-container img {
@@ -114,6 +114,11 @@
 @media (max-width: 768px) {
   .manta-best-selling-collections.page-width {
     padding: 0 1.5rem;
+  }
+}
+@media (max-width: 370px) {
+  .manta-best-selling-collections .manta-collection-item {
+    flex: 1 1 calc(50% - 16px);
   }
 }
 </style>
