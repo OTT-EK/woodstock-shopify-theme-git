@@ -180,6 +180,25 @@
         display: inline-block; /* show 'Read more' on mobile */
       }
     }
+    @media (max-width: 767px) {
+        .manta-aboutus-image {
+          /* Set the desired aspect ratio; 16/9 is just an example. */
+          aspect-ratio: 16/9;
+          /* Ensure no hidden overflows if image is bigger than container */
+          overflow: hidden;
+        }
+      
+        .manta-aboutus-image img {
+          /* Fill container without distorting the image */
+          width: 100%;
+          height: 100%;
+          object-fit: cover; 
+          /* object-position centers it; optional but often desirable */
+          object-position: center;
+          /* Remove any default sizing that might conflict */
+          max-width: none;
+        }
+      }      
     .manta-aboutus-title.h5 {
         font-weight: bold;
       }
