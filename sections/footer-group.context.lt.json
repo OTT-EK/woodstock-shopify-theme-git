@@ -8,15 +8,9 @@
  * ------------------------------------------------------------
  */
 {
-  "parent": "index.json",
+  "parent": "footer-group.json",
   "context": {
     "market": "lt"
   },
-  "sections": {
-    "main_slider_gGxNFp": {
-      "disabled": true,
-      "settings": {},
-      "blocks": {}
-    }
-  }
+  "sections": {}
 }
