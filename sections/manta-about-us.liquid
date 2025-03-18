@@ -45,9 +45,10 @@
   <div class="manta-aboutus-container">
     <!-- Image -->
     <div class="manta-aboutus-image">
+      {% assign manta_aboutus_image = section.settings.manta_aboutus_image %}
       {% if section.settings.manta_aboutus_image %}
         <img 
-          src="{{ section.settings.manta_aboutus_image | image_url: 'master' }}" 
+          src="{{ manta_aboutus_image | image_url: 'master' }}" 
           alt="{{ section.settings.manta_aboutus_title | escape }}"
           width="720"
           height="auto"
