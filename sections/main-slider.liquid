@@ -549,25 +549,28 @@
     <div>
     <div class="manta-content">
       <div class="manta-content-box-large">
-        <div class="manta-slider-container" id="landscapeSlider">
-          <div class="manta-slides">
+        <div class="manta-slider-container swiper" id="landscapeSlider">
+          <!-- Swiper wrapper -->
+          <div class="manta-slides swiper-wrapper">
             {% for block in section.blocks %}
-              <a href="{{ block.settings.manta_slide_link }}" class="manta-slide manta-mslide-{{ forloop.index }}">
+              <!-- Each slide: add .swiper-slide plus your existing .manta-slide classes -->
+              <a
+                href="{{ block.settings.manta_slide_link }}"
+                class="manta-slide swiper-slide manta-mslide-{{ forloop.index }}">
+                <!-- Content here (currently just empty <p> tags, which is fine) -->
                 <p></p>
               </a>
             {% endfor %}
           </div>
+        
+          <!-- Keep your custom controls exactly as before -->
           <div class="manta-slider-controls">
             <button class="manta-slider-btn manta-right-line prev">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" color="#000000" fill="none">
-                <path d="M15 6L9 12.0001L15 18" stroke="currentColor" stroke-width="1.1" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
+              <!-- Your SVG icon -->
             </button>
             <div class="manta-dots"></div>
             <button class="manta-slider-btn manta-both-line next">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" color="#000000" fill="none">
-                <path d="M9.00005 6L15 12L9 18" stroke="currentColor" stroke-width="1.1" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
+              <!-- Your SVG icon -->
             </button>
             <div class="manta-pause-play-btn">
               <svg class="manta-progress-ring" width="40" height="40">
@@ -581,19 +584,11 @@
                   cy="20"
                 />
               </svg>
-              <span class="manta-pause-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" color="#000000" fill="none">
-                  <path d="M9.5 9L9.5 15M14.5 9V15" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-              <span class="manta-play-icon" style="display:none;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" color="#000000" fill="none">
-                  <path d="M7.5241 19.0621C6.85783 19.4721 6 18.9928 6 18.2104V5.78956C6 5.00724 6.85783 4.52789 7.5241 4.93791L17.6161 11.1483C18.2506 11.5388 18.2506 12.4612 17.6161 12.8517L7.5241 19.0621Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
-                </svg>
-              </span>
+              <span class="manta-pause-icon"> ... </span>
+              <span class="manta-play-icon" style="display:none;"> ... </span>
             </div>
           </div>
-        </div>
+        </div>        
       </div>
       <div class="manta-content-box-small-container">
         <div class="manta-content-box-small manta-cta-box manta-picture-featured-1">
@@ -615,109 +610,87 @@
   </div>
 </div>
 <!-- SLIDER JS -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const slider = document.getElementById("landscapeSlider");
-      const slidesWrap = slider.querySelector(".manta-slides");
-      const slides = slider.querySelectorAll(".manta-slide");
-      const prevBtn = slider.querySelector(".manta-slider-btn.prev");
-      const nextBtn = slider.querySelector(".manta-slider-btn.next");
-      const dotsContainer = slider.querySelector(".manta-dots");
-      const pausePlayBtn = slider.querySelector(".manta-pause-play-btn");
-      const pauseIcon = slider.querySelector(".manta-pause-icon");
-      const playIcon = slider.querySelector(".manta-play-icon");
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Grab elements
+    const sliderEl = document.getElementById("landscapeSlider");
+    const prevBtn = sliderEl.querySelector(".manta-slider-btn.prev");
+    const nextBtn = sliderEl.querySelector(".manta-slider-btn.next");
+    const dotsContainer = sliderEl.querySelector(".manta-dots");
+    const pausePlayBtn = sliderEl.querySelector(".manta-pause-play-btn");
+    const pauseIcon = sliderEl.querySelector(".manta-pause-icon");
+    const playIcon = sliderEl.querySelector(".manta-play-icon");
+    const progressRing = sliderEl.querySelector(".manta-progress-ring__circle");
 
-      const progressRing = slider.querySelector(".manta-progress-ring__circle");
-      const circumference = 2 * Math.PI * progressRing.r.baseVal.value;
-      progressRing.style.strokeDasharray = circumference;
-      progressRing.style.strokeDashoffset = circumference;
+    // For the ring stroke math
+    const circumference = 2 * Math.PI * progressRing.r.baseVal.value;
+    progressRing.style.strokeDasharray = circumference;
+    progressRing.style.strokeDashoffset = circumference;
 
-      let currentIndex = 0;
-      const totalSlides = slides.length;
-      const slideDuration = 3000;
-      let isPlaying = true;
-      let progressStartTime = null;
-      let animationFrameId = null;
+    // Count total slides from your Liquid blocks or from DOM:
+    const totalSlides = sliderEl.querySelectorAll(".swiper-slide").length;
 
-      // Create dots
-      for (let i = 0; i < totalSlides; i++) {
-        const dot = document.createElement("span");
-        dot.addEventListener("click", () => goToSlide(i));
-        dotsContainer.appendChild(dot);
-      }
-      const dots = dotsContainer.querySelectorAll("span");
-      dots[currentIndex].classList.add("active");
-
-      function updateSlidePosition() {
-        slidesWrap.style.transform = `translateX(-${currentIndex * 100}%)`;
-        dots.forEach(dot => dot.classList.remove("active"));
-        dots[currentIndex].classList.add("active");
-      }
-      function goToSlide(index) {
-        currentIndex = (index + totalSlides) % totalSlides;
-        updateSlidePosition();
-        resetProgressRing();
-      }
-      function nextSlide() {
-        goToSlide(currentIndex + 1);
-      }
-      function prevSlide() {
-        goToSlide(currentIndex - 1);
-      }
-      function resetProgressRing() {
-        progressRing.style.strokeDashoffset = circumference;
-        progressStartTime = null;
-      }
-      function animateRing(timestamp) {
-        if (!progressStartTime) progressStartTime = timestamp;
-        const elapsed = timestamp - progressStartTime;
-        const progress = Math.min(elapsed / slideDuration, 1);
-        const offset = circumference - (progress * circumference);
-        progressRing.style.strokeDashoffset = offset;
-        if (progress < 1) {
-          animationFrameId = requestAnimationFrame(animateRing);
-        } else {
-          nextSlide();
-          if (isPlaying) {
-            animationFrameId = requestAnimationFrame(animateRing);
-          }
-        }
-      }
-      function startProgressRing() {
-        resetProgressRing();
-        cancelAnimationFrame(animationFrameId);
-        animationFrameId = requestAnimationFrame(animateRing);
-      }
-      function pauseProgressRing() {
-        cancelAnimationFrame(animationFrameId);
-        animationFrameId = null;
-      }
-
-      nextBtn.addEventListener("click", function() {
-        nextSlide();
-        if (isPlaying) startProgressRing();
+    // Create custom dots
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement("span");
+      dot.addEventListener("click", () => {
+        mySwiper.slideToLoop(i); 
+        // .slideToLoop() ensures correct index if loop is true
       });
-      prevBtn.addEventListener("click", function() {
-        prevSlide();
-        if (isPlaying) startProgressRing();
-      });
-      pausePlayBtn.addEventListener("click", function() {
-        isPlaying = !isPlaying;
-        if (isPlaying) {
-          pauseIcon.style.display = "inline";
-          playIcon.style.display = "none";
-          startProgressRing();
-        } else {
-          pauseIcon.style.display = "none";
-          playIcon.style.display = "inline";
-          pauseProgressRing();
-        }
-      });
+      dotsContainer.appendChild(dot);
+    }
+    const dotSpans = dotsContainer.querySelectorAll("span");
 
-      // Start auto-play
-      startProgressRing();
+    // Initialize Swiper
+    const mySwiper = new Swiper("#landscapeSlider.swiper", {
+      // Optionally loop the slides
+      loop: true,
+      speed: 600,
+      // Enable auto-play
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      on: {
+        init: function(swiper) {
+          // Mark the first dot as active
+          dotSpans[swiper.realIndex].classList.add("active");
+        },
+        slideChange: function(swiper) {
+          // Update the custom dots
+          dotSpans.forEach(dot => dot.classList.remove("active"));
+          dotSpans[swiper.realIndex].classList.add("active");
+          // Reset ring offset
+          progressRing.style.strokeDashoffset = circumference;
+        },
+        // Swiper 10/11 provides an 'autoplayTimeLeft' event,
+        // which we can use to animate the ring in real time:
+        autoplayTimeLeft(s, time, progress) {
+          // 'progress' is between 0..1
+          const offset = circumference - (progress * circumference);
+          progressRing.style.strokeDashoffset = offset;
+        },
+      },
     });
-  </script>
+
+    // ---- Hook up our custom Prev/Next buttons ----
+    nextBtn.addEventListener("click", () => mySwiper.slideNext());
+    prevBtn.addEventListener("click", () => mySwiper.slidePrev());
+
+    // ---- Pause/Play button for autoplay ----
+    pausePlayBtn.addEventListener("click", function() {
+      if (mySwiper.autoplay.running) {
+        mySwiper.autoplay.stop();
+        pauseIcon.style.display = "none";
+        playIcon.style.display = "inline";
+      } else {
+        mySwiper.autoplay.start();
+        pauseIcon.style.display = "inline";
+        playIcon.style.display = "none";
+      }
+    });
+  });
+</script>
 
   <!-- COLLAPSIBLE MENU JS (REVERSED LOGIC) -->
   <script>
