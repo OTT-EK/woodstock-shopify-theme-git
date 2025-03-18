@@ -48,7 +48,7 @@
       {% assign manta_aboutus_image = section.settings.manta_aboutus_image %}
       {% if section.settings.manta_aboutus_image %}
         <img 
-          src="{{ manta_aboutus_image | image_url: 'master' }}" 
+          src="{{ manta_aboutus_image | file_url }}" 
           alt="{{ section.settings.manta_aboutus_title | escape }}"
           width="720"
           height="300"
