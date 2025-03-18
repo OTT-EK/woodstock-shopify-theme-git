@@ -1,0 +1,170 @@
+{% schema %}
+{
+  "name": "Manta About Us Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "manta_aboutus_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "manta_aboutus_title",
+      "label": "Title",
+      "default": "UAB \"Ottensten\" Lietuva"
+    },
+    {
+      "type": "textarea",
+      "id": "manta_aboutus_description",
+      "label": "Bio Description",
+      "default": "Your company history and details.\nAdd multiple paragraphs to see the mobile 'Read more' functionality."
+    },
+    {
+      "type": "text",
+      "id": "manta_aboutus_button_label",
+      "label": "Button Name",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "manta_aboutus_button_link",
+      "label": "Button Link",
+      "default": "#"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Manta About Us",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% assign paragraphs = section.settings.manta_aboutus_description | newline_to_br | split: "<br />" %}
+<section class="manta-aboutus-section">
+  <div class="manta-aboutus-container">
+    <!-- Image -->
+    <div class="manta-aboutus-image">
+      {% if section.settings.manta_aboutus_image %}
+        <img 
+          src="{{ section.settings.manta_aboutus_image | img_url: '720x' }}" 
+          alt="{{ section.settings.manta_aboutus_title | escape }}"
+        >
+      {% endif %}
+    </div>
+
+    <!-- Content -->
+    <div class="manta-aboutus-content">
+      <!-- Title -->
+      <h2 class="manta-aboutus-title">{{ section.settings.manta_aboutus_title }}</h2>
+
+      <!-- Description -->
+      <div class="manta-aboutus-description">
+        {% if paragraphs.size > 0 %}
+          <!-- Always show the first paragraph -->
+          <p class="manta-aboutus-first-paragraph">
+            {{ paragraphs[0] }}
+          </p>
+
+          <!-- The rest of the paragraphs (initially hidden on mobile) -->
+          {% if paragraphs.size > 1 %}
+            <div class="manta-aboutus-rest">
+              {% for paragraph in paragraphs offset:1 %}
+                <p>{{ paragraph }}</p>
+              {% endfor %}
+            </div>
+            <!-- Read More link shown only on mobile by CSS, toggled by JS -->
+            <a href="javascript:void(0)" class="manta-aboutus-readmore" onclick="mantaAboutUsReadMoreToggle()">
+              Read more
+            </a>
+          {% endif %}
+        {% endif %}
+      </div>
+
+      <!-- Button -->
+      <a
+        class="manta-aboutus-button"
+        href="{{ section.settings.manta_aboutus_button_link }}"
+      >
+        {{ section.settings.manta_aboutus_button_label }}
+      </a>
+    </div>
+  </div>
+
+  <!-- Simple toggle script for mobile 'Read more' -->
+  <script>
+    function mantaAboutUsReadMoreToggle() {
+      const rest = document.querySelector('.manta-aboutus-rest');
+      const readMoreLink = document.querySelector('.manta-aboutus-readmore');
+      if (rest && readMoreLink) {
+        rest.style.display = 'block';
+        readMoreLink.style.display = 'none';
+      }
+    }
+  </script>
+
+  <style>
+    .manta-aboutus-section {
+      padding: 40px 0;
+    }
+    .manta-aboutus-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .manta-aboutus-image {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+    .manta-aboutus-image img {
+      max-width: 100%;
+      height: auto;
+    }
+    .manta-aboutus-content {
+      flex: 1 1 500px;
+    }
+    .manta-aboutus-title {
+      margin-bottom: 20px;
+    }
+    .manta-aboutus-description {
+      margin-bottom: 20px;
+      line-height: 1.6em;
+    }
+    .manta-aboutus-first-paragraph {
+      margin-bottom: 10px;
+    }
+    .manta-aboutus-rest {
+      display: block; /* shown by default for desktop */
+    }
+    .manta-aboutus-readmore {
+      display: none; /* hidden by default for desktop */
+      color: #007bff;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .manta-aboutus-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Mobile (up to 767px) */
+    @media (max-width: 767px) {
+      .manta-aboutus-container {
+        flex-direction: column;
+      }
+      .manta-aboutus-rest {
+        display: none; /* hide extended text on mobile until 'Read more' is clicked */
+      }
+      .manta-aboutus-readmore {
+        display: inline-block; /* show 'Read more' on mobile */
+      }
+    }
+  </style>
+</section>
