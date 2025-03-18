@@ -272,6 +272,16 @@
       ],
       "settings": {}
     },
+    "manta_about_us_t3jzAj": {
+      "type": "manta-about-us",
+      "settings": {
+        "manta_aboutus_image": "shopify://shop_images/OttenstenLoc.jpg",
+        "manta_aboutus_title": "Ottensten Group",
+        "manta_aboutus_description": "Your company history and details.\nAdd multiple paragraphs to see the mobile 'Read more' functionality.",
+        "manta_aboutus_button_label": "Learn More",
+        "manta_aboutus_button_link": ""
+      }
+    },
     "8f5a111c-95e5-4fe4-9470-893b0e7841d7": {
       "type": "collapsible-content",
       "blocks": {
@@ -400,6 +410,7 @@
     "manta_best_collections_KM3JPm",
     "1aded6ef-5727-4347-bf56-9fc610343e55",
     "manta_brands_CVrn3p",
+    "manta_about_us_t3jzAj",
     "8f5a111c-95e5-4fe4-9470-893b0e7841d7"
   ]
 }
