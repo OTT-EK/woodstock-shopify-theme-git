@@ -106,19 +106,24 @@
   text-decoration: none;
 }
 
-@media (max-width: 1024px) {
-  .manta-best-selling-collections .manta-collection-item {
-    flex: 1 1 calc(33.33% - 16px);
-  }
-}
 @media (max-width: 768px) {
   .manta-best-selling-collections.page-width {
     padding: 0 1.5rem;
   }
 }
-@media (max-width: 370px) {
+@media (max-width: 900px) {
+  .manta-best-selling-collections .manta-collection-item {
+    flex: 1 1 calc(33.33% - 16px);
+  }
+}
+@media (max-width: 419px) {
   .manta-best-selling-collections .manta-collection-item {
     flex: 1 1 calc(50% - 16px);
+  }
+}
+@media (max-width: 315px) {
+  .manta-best-selling-collections .manta-collection-item {
+    flex: 1 1 calc(100% - 16px);
   }
 }
 </style>
