@@ -42,7 +42,7 @@
 
 {% assign paragraphs = section.settings.manta_aboutus_description | newline_to_br | split: "<br />" %}
 <section class="manta-aboutus-section">
-  <div class="manta-aboutus-container">
+  <div class="manta-aboutus-container page-width">
     <!-- Image -->
     <div class="manta-aboutus-image">
       {% assign manta_aboutus_image = section.settings.manta_aboutus_image %}
@@ -113,7 +113,6 @@
     .manta-aboutus-container {
       display: flex;
       flex-wrap: wrap;
-      max-width: 1200px;
       margin: 0 auto;
       align-items: flex-start;
       gap: 20px;
@@ -125,6 +124,7 @@
     .manta-aboutus-image img {
       max-width: 100%;
       height: auto;
+      border-radius: 8px;
     }
     .manta-aboutus-content {
       flex: 1 1 500px;
@@ -144,16 +144,27 @@
     }
     .manta-aboutus-readmore {
       display: none; /* hidden by default for desktop */
-      color: #007bff;
+      color:rgb(37, 37, 37);
       text-decoration: underline;
       cursor: pointer;
     }
     .manta-aboutus-button {
       display: inline-block;
-      padding: 10px 20px;
-      background-color: #000;
+      width: auto;
+      background-color: #313131;
       color: #fff;
+      border: none;
+      padding: 6px 20px;
+      cursor: pointer;
+      text-transform: uppercase;
+      border-radius: 5px;
       text-decoration: none;
+      font-size: calc(1.2rem * var(--font-body-scale));
+      text-decoration: none;
+    }
+
+    .manta-aboutus-button:hover {
+      background-color: #272727;
     }
 
     /* Mobile (up to 767px) */
