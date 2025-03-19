@@ -1240,6 +1240,12 @@ button.shopify-payment-button__button--unbranded,
   height: auto;
 }
 
+@media (max-width: 768px) { 
+  .header__heading-logo {
+    width: 120px;
+  }
+}
+
 .back-button-menu {
   position: fixed;
   bottom: 1.5rem;
