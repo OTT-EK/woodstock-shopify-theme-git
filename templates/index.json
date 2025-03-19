@@ -177,8 +177,8 @@
         "show_view_all": false,
         "collection_card_show_title": true,
         "show_products_count": true,
-        "columns_tablet": "2",
-        "columns_mobile": "1",
+        "columns_tablet": "3",
+        "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 40,
         "padding_bottom": 40
