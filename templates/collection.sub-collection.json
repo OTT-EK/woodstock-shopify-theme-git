@@ -21,7 +21,7 @@
         "icon_border_shape": "square",
         "collection_icon_color_scheme": "background-1",
         "enable_transparent_header": false,
-        "text_color_transparent": "#fff"
+        "text_color_transparent": "#ffffff"
       }
     },
     "product-grid": {
@@ -95,10 +95,17 @@
         "padding_top": 40,
         "padding_bottom": 40
       }
+    },
+    "sub_collection_list_Tacbzq": {
+      "type": "sub-collection-list",
+      "settings": {
+        "info": "Displays the sub-collections (found in custom.sub_collection_list) as a grid with side menu."
+      }
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "product-grid",
+    "sub_collection_list_Tacbzq"
   ]
 }
