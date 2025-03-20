@@ -1,15 +1,7 @@
 {% comment %}
   Section: Sub-Collection List
-  Purpose: Renders a “grid” of sub-collections pulled from 
+  Purpose: Renders a “grid” of sub-collections pulled from
            `collection.metafields.custom.sub_collection_list`.
-
-  Requirements:
-   - The current collection must have:
-       - metafield: namespace = custom, key = collection_icon (Image type)
-       - metafield: namespace = custom, key = sub_collection_list 
-         (List of Collection references)
-   - Each sub-collection listed in sub_collection_list should have:
-       - metafield: namespace = custom, key = collection_image (Image type)
 {% endcomment %}
 
 <section 
@@ -19,7 +11,7 @@
     {%- assign subCollections = collection.metafields.custom.sub_collection_list.value 
           | default: null -%}
   
-    {%- comment %}
+    {% comment %}
       We only render if subCollections actually exists and is not empty
     {% endcomment %}
     {% if subCollections != blank and subCollections.size > 0 %}
@@ -34,7 +26,9 @@
             <div class="sub-collections__current-icon">
               <img 
                 src="{{ collection.metafields.custom.collection_icon | image_url: width: 64 }}" 
-                alt="{{ collection.title }}" />
+                alt="{{ collection.title }}" 
+                width="64" 
+                height="64" />
             </div>
           {% endif %}
           <h3 class="sub-collections__current-name">
@@ -74,7 +68,9 @@
                   <div class="sub-collections__image-wrapper">
                     <img 
                       src="{{ subCollObj.metafields.custom.collection_image | image_url: width: 600 }}"
-                      alt="{{ subCollObj.title | escape }}" />
+                      alt="{{ subCollObj.title | escape }}"
+                      width="600"
+                      height="auto" />
                   </div>
                 {% endif %}
   
@@ -111,10 +107,7 @@
         "label": "Note",
         "default": "Displays the sub-collections (found in custom.sub_collection_list) as a grid with side menu."
       }
-    ],
-    "blocks": [
-    ],
-    "max_blocks": 0
+    ]
   }
   {% endschema %}
   
