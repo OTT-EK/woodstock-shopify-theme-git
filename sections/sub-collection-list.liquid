@@ -1,0 +1,120 @@
+{% comment %}
+  Section: Sub-Collection List
+  Purpose: Renders a “grid” of sub-collections pulled from 
+           `collection.metafields.custom.sub_collection_list`.
+
+  Requirements:
+   - The current collection must have:
+       - metafield: namespace = custom, key = collection_icon (Image type)
+       - metafield: namespace = custom, key = sub_collection_list 
+         (List of Collection references)
+   - Each sub-collection listed in sub_collection_list should have:
+       - metafield: namespace = custom, key = collection_image (Image type)
+{% endcomment %}
+
+<section 
+    id="section-{{ section.id }}" 
+    class="section main-collection-product-grid-section sub-collections-section">
+  
+    {%- assign subCollections = collection.metafields.custom.sub_collection_list.value 
+          | default: null -%}
+  
+    {%- comment %}
+      We only render if subCollections actually exists and is not empty
+    {% endcomment %}
+    {% if subCollections != blank and subCollections.size > 0 %}
+  
+      <!-- Desktop-only side menu -->
+      <aside class="sub-collections__sidebar hidden-pocket hidden-lap">
+        <div class="sub-collections__sidebar-inner">
+  
+          <!-- Current Collection Icon & Name -->
+          {% if collection.metafields.custom.collection_icon and 
+                collection.metafields.custom.collection_icon != blank %}
+            <div class="sub-collections__current-icon">
+              <img 
+                src="{{ collection.metafields.custom.collection_icon | image_url: width: 64 }}" 
+                alt="{{ collection.title }}" />
+            </div>
+          {% endif %}
+          <h3 class="sub-collections__current-name">
+            {{ collection.title }}
+          </h3>
+  
+          <!-- Simple UL of sub-collection titles -->
+          <ul class="sub-collections__sidebar-list">
+            {% for subColl in subCollections %}
+              {% assign subCollObj = subColl %}
+              {% if subCollObj.title %}
+                <li>
+                  <a href="{{ subCollObj.url }}">
+                    {{ subCollObj.title }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </aside>
+  
+      <!-- Main grid of sub-collection images -->
+      <div class="sub-collections__grid-container page-width">
+        <div class="sub-collections__grid">
+          {% for subColl in subCollections %}
+            {% assign subCollObj = subColl %}
+            
+            <div class="sub-collections__grid-item">
+              <a 
+                class="sub-collections__link"
+                href="{{ subCollObj.url }}"
+                title="{{ subCollObj.title | escape }}">
+  
+                <!-- If the sub-collection has a custom.collection_image metafield, show it -->
+                {% if subCollObj.metafields.custom.collection_image != blank %}
+                  <div class="sub-collections__image-wrapper">
+                    <img 
+                      src="{{ subCollObj.metafields.custom.collection_image | image_url: width: 600 }}"
+                      alt="{{ subCollObj.title | escape }}" />
+                  </div>
+                {% endif %}
+  
+                <div class="sub-collections__title">
+                  {{ subCollObj.title }}
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+  
+    {% else %}
+      <!-- Fallback if no sub-collections are set -->
+      <div class="page-width">
+        <p class="no-subcollections">
+          No sub-collections found.
+        </p>
+      </div>
+    {% endif %}
+  </section>
+  
+  {% schema %}
+  {
+    "name": "Sub-Collection Grid",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Sub-Collections"
+      },
+      {
+        "type": "text",
+        "id": "info",
+        "label": "Note",
+        "default": "Displays the sub-collections (found in custom.sub_collection_list) as a grid with side menu."
+      }
+    ],
+    "blocks": [
+    ],
+    "max_blocks": 0
+  }
+  {% endschema %}
+  
