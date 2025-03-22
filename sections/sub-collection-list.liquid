@@ -14,7 +14,6 @@
 {% stylesheet %}
 .manta-sub-cat-layout.page-width {
   margin-top: 20px;
-  overflow-x: hidden;
 }
 .manta-sub-cat-layout {
   display: flex;
@@ -64,7 +63,7 @@
 .manta-sub-cat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1rem;
+  gap: 16px;
   flex: 1;
 }
 
@@ -108,6 +107,7 @@
   object-fit: contain;
   object-position: center;
   display: block;
+  padding: 1rem;
 }
 
 .manta-sub-cat-title {
@@ -116,15 +116,10 @@
   padding: 16px;
 }
 
-/* ✅ Force 2-column layout on all mobile widths and prevent horizontal overflow */
+/* ✅ Force 2-column layout on all mobile widths */
 @media screen and (max-width: 768px) {
   .manta-sub-cat-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .manta-sub-cat-layout {
-    flex-direction: column;
-    padding-left: 16px;
-    padding-right: 16px;
   }
 }
 {% endstylesheet %}
