@@ -12,11 +12,55 @@
 {% endschema %}
 
 {% stylesheet %}
-.manta-sub-cat-wrapper {
+.manta-sub-cat-layout {
+  display: flex;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+.manta-sub-cat-sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .manta-sub-cat-sidebar {
+    display: block;
+  }
+}
+
+.manta-sub-cat-sidebar h2 {
+  font-weight: bold;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+.manta-sub-cat-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.manta-sub-cat-sidebar li {
+  margin-bottom: 12px;
+}
+
+.manta-sub-cat-sidebar a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+.manta-sub-cat-sidebar a:hover {
+  text-decoration: underline;
+}
+
+.manta-sub-cat-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  padding: 40px 0;
+  flex: 1;
 }
 
 .manta-sub-cat-item {
@@ -62,34 +106,53 @@
 {% endstylesheet %}
 
 {% if collection.metafields.custom.sub_collection_list.value != blank %}
-  <div class="manta-sub-cat-wrapper">
-    {% for sub_collection in collection.metafields.custom.sub_collection_list.value %}
-      {% assign custom_image = sub_collection.metafields.custom.collection_image %}
+  {% assign sub_collections = collection.metafields.custom.sub_collection_list.value %}
 
-      <a href="{{ sub_collection.url }}" class="manta-sub-cat-item">
-        {% if custom_image %}
-          <img
-            src="{{ custom_image | img_url: 'medium' }}"
-            alt="{{ sub_collection.title }}"
-            class="manta-sub-cat-image"
-            width="300"
-            height="300"
-          >
-        {% elsif sub_collection.image %}
-          <img
-            src="{{ sub_collection.image | img_url: 'medium' }}"
-            alt="{{ sub_collection.title }}"
-            class="manta-sub-cat-image"
-            width="300"
-            height="300"
-          >
-        {% endif %}
+  <div class="manta-sub-cat-layout">
+    
+    <!-- Sidebar Menu (Desktop only) -->
+    <aside class="manta-sub-cat-sidebar">
+      <h2>Collection Name</h2>
+      <ul>
+        {% for sub_collection in sub_collections %}
+          <li>
+            <a href="{{ sub_collection.url }}">{{ sub_collection.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </aside>
 
-        <div class="manta-sub-cat-title">
-          {{ sub_collection.title }}
-        </div>
-      </a>
-    {% endfor %}
+    <!-- Grid of Sub-Collections -->
+    <div class="manta-sub-cat-grid">
+      {% for sub_collection in sub_collections %}
+        {% assign custom_image = sub_collection.metafields.custom.collection_image %}
+
+        <a href="{{ sub_collection.url }}" class="manta-sub-cat-item">
+          {% if custom_image %}
+            <img
+              src="{{ custom_image | img_url: 'medium' }}"
+              alt="{{ sub_collection.title }}"
+              class="manta-sub-cat-image"
+              width="300"
+              height="300"
+            >
+          {% elsif sub_collection.image %}
+            <img
+              src="{{ sub_collection.image | img_url: 'medium' }}"
+              alt="{{ sub_collection.title }}"
+              class="manta-sub-cat-image"
+              width="300"
+              height="300"
+            >
+          {% endif %}
+
+          <div class="manta-sub-cat-title">
+            {{ sub_collection.title }}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+
   </div>
 {% else %}
   <p>No sub-collections available for this category.</p>
