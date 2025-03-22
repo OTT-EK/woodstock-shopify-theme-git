@@ -62,20 +62,22 @@
 .manta-sub-cat-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.4rem;
   flex: 1;
 }
 
 .manta-sub-cat-item {
-  width: calc(25% - 1.1rem);
+  width: 25%;
   text-align: center;
-  border: 1px solid #eee;
-  border-radius: 8px;
   overflow: hidden;
   transition: box-shadow 0.2s ease;
   background: #fff;
   text-decoration: none;
   color: inherit;
+}
+
+.manta-sub-cat-outline {
+  border: 1px solid #eee;
+  border-radius: 8px;
 }
 
 .manta-sub-cat-item:hover {
@@ -136,7 +138,8 @@
       {% for sub_collection in sub_collections %}
         {% assign custom_image = sub_collection.metafields.custom.collection_image %}
 
-        <a href="{{ sub_collection.url }}" class="manta-sub-cat-item">
+        <a href="{{ sub_collection.url }}" class="manta-sub-cat-outline">
+          <div class="manta-sub-cat-item">
           <div class="manta-sub-cat-image-wrapper">
             {% if custom_image %}
               <img
@@ -156,7 +159,7 @@
               >
             {% endif %}
           </div>
-
+        </div>
           <div class="manta-sub-cat-title">
             {{ sub_collection.title }}
           </div>
