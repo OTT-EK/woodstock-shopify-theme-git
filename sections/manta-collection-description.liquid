@@ -1,38 +1,39 @@
 {% stylesheet %}
-       .manta-cl-description-section.page-width {
-          margin-top: 10vh;
-        }
+  .manta-cl-description-section.page-width {
+    margin-top: 10vh;
+  }
 
-        .manta-cl-description-content {
-          margin-bottom: 1rem;
-          overflow: hidden;
-          transition: max-height 0.4s ease;
-        }
+  .manta-cl-description-content {
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
 
-        .manta-cl-desc-collapsed {
-          position: relative;
-        }
+  .manta-cl-desc-collapsed {
+    position: relative;
+  }
 
-        /* The gradient fade from transparent to white (bottom fade) */
-        .manta-cl-desc-collapsed::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          height: 4rem; /* adjust as needed */
-          background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 80%);
-        }
+  /* The gradient fade from transparent to white (bottom fade) */
+  .manta-cl-desc-collapsed::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4rem; /* adjust as needed */
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 80%);
+  }
 
-        /* "Read more..." link styling */
-        .manta-cl-description-read-more {
-          display: inline-block;
-          cursor: pointer;
-          text-decoration: underline;
-          color: black;
-          margin-bottom: 1.5rem;
-        }
+  /* "Read more..." link styling */
+  .manta-cl-description-read-more {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: underline;
+    color: black;
+    margin-bottom: 1.5rem;
+  }
 {% endstylesheet %}
+
 {% assign show_full = section.settings.always_show_full %}
 
 <section class="manta-cl-description-section page-width">
@@ -41,7 +42,7 @@
 
     {% if show_full %}
       <!-- Always show the full description -->
-      <div class="manta-cl-description-content" style="max-height:none; overflow:visible;">
+      <div class="manta-cl-description-content" style="max-height: none; overflow: visible;">
         {{ collection.description }}
       </div>
     {% else %}
@@ -50,9 +51,9 @@
         {{ collection.description }}
       </div>
 
-      <!-- "Read more..." text link -->
+      <!-- "Read more..." text link pulled from schema setting -->
       <span class="manta-cl-description-read-more" id="manta-description-readmore-link">
-        Read more...
+        {{ section.settings.read_more_text }}
       </span>
 
       <!-- JavaScript to toggle expanded state with smooth transition -->
@@ -64,7 +65,7 @@
           // Convert 40vh to px
           var maxHeightPx = Math.round(window.innerHeight * 0.4);
 
-          // If the content is shorter than 40vh, show it all & hide the "Read more..." link
+          // If the content is shorter than 40vh, show all & hide "Read more..." link
           if (content.scrollHeight <= maxHeightPx) {
             content.classList.remove('manta-cl-desc-collapsed');
             content.style.maxHeight = 'none';
@@ -92,7 +93,6 @@
           });
         });
       </script>
-
     {% endif %}
   {% endif %}
 </section>
@@ -106,6 +106,12 @@
       "id": "always_show_full",
       "label": "Always show full description",
       "default": false
+    },
+    {
+      "type": "text",
+      "id": "read_more_text",
+      "label": "Read more link text",
+      "default": "Read more..."
     }
   ],
   "presets": [
