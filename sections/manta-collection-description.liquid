@@ -4,79 +4,79 @@
 }
 {% endstylesheet %}
 
+{% assign show_full = section.settings.always_show_full %}
+
 <section class="manta-cl-description-section page-width">
-    {% if collection %}
-      <h1 class="manta-cl-description-title">{{ collection.title }}</h1>
-  
-      {% assign full_description = collection.description | strip_newlines %}
-      {% assign paragraphs = full_description | split: '\n\n' %}
-      {% assign paragraph_count = paragraphs.size %}
-      {% assign char_count = full_description | size %}
-  
-      {% assign show_full = section.settings.always_show_full %}
-  
-      {% if show_full %}
-        <div class="manta-cl-description-content">
-          {{ collection.description }}
-        </div>
-      {% elsif paragraph_count <= 2 and char_count <= 700 %}
-        <div class="manta-cl-description-content">
-          {{ collection.description }}
-        </div>
-      {% else %}
-        {% assign sentences = collection.description | split: '.' %}
-        {% assign truncated_description = '' %}
-        {% assign current_length = 0 %}
-  
-        {% for sentence in sentences %}
-          {% assign sentence_plus_period = sentence | append: '.' %}
-          {% assign current_length = current_length | plus: sentence_plus_period | size %}
-          {% assign truncated_description = truncated_description | append: sentence_plus_period %}
-  
-          {% if current_length >= 1000 %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-  
-        <div class="manta-cl-description-content">
-          <div id="manta-cl-description-truncated">{{ truncated_description }}</div>
-          <div id="manta-cl-description-full" style="display: none;">{{ collection.description }}</div>
-          <button id="manta-cl-description-read-more-btn" onclick="mantaClToggleDescription()">Read more</button>
-        </div>
-  
-        <script>
-          function mantaClToggleDescription() {
-            var truncated = document.getElementById('manta-cl-description-truncated');
-            var full = document.getElementById('manta-cl-description-full');
-            var btn = document.getElementById('manta-cl-description-read-more-btn');
-  
-            if (full.style.display === 'none') {
-              truncated.style.display = 'none';
-              full.style.display = 'block';
-              btn.style.display = 'none';
-            }
+  {% if collection %}
+    <h1 class="manta-cl-description-title">{{ collection.title }}</h1>
+
+    {% if show_full %}
+      <!-- Always show the full description -->
+      <div class="manta-cl-description-content">
+        {{ collection.description }}
+      </div>
+    {% else %}
+      <!-- Collapsible description container -->
+      <div class="manta-cl-description-content collapsed" id="manta-description-container">
+        {{ collection.description }}
+      </div>
+
+      <!-- "Read more" button -->
+      <button class="manta-cl-description-read-more" id="manta-description-readmore-btn">
+        Read more
+      </button>
+
+      <!-- JavaScript to toggle expanded state -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var content  = document.getElementById('manta-description-container');
+          var btn      = document.getElementById('manta-description-readmore-btn');
+
+          // If container is shorter than 40vh, hide the button and remove the "collapsed" styling
+          var maxHeightPx = window.innerHeight * 0.4; // 40vh in px
+          if (content.scrollHeight <= maxHeightPx) {
+            btn.style.display = 'none';
+            content.classList.remove('collapsed');
+            content.style.maxHeight = 'none';
+          } else {
+            // Otherwise, set max-height and keep the fade
+            content.style.maxHeight = maxHeightPx + 'px';
           }
-        </script>
-      {% endif %}
+
+          // Handle "Read more" click
+          btn.addEventListener('click', function() {
+            content.style.maxHeight = 'none'; 
+            content.classList.remove('collapsed');
+            btn.style.display = 'none';
+          });
+        });
+      </script>
+
+      <!-- Styles for fade effect -->
+      <style>
+        .manta-cl-description-content {
+          /* basic spacing if needed */
+          margin-bottom: 1rem;
+          transition: max-height 0.3s ease;
+        }
+
+        .manta-cl-description-content.collapsed {
+          position: relative;
+          overflow: hidden;
+        }
+
+        /* The gradient fade from transparent to white (bottom fade) */
+        .manta-cl-description-content.collapsed::after {
+          content: "";
+          position: absolute;
+          left: 0; 
+          right: 0; 
+          bottom: 0;
+          height: 4rem; /* adjust as desired */
+          background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 80%);
+        }
+      </style>
+
     {% endif %}
-  </section>
-  
-  {% schema %}
-  {
-    "name": "Description table",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "always_show_full",
-        "label": "Always show full description",
-        "default": false
-      }
-    ],
-    "presets": [
-      {
-        "name": "Description table"
-      }
-    ]
-  }
-  {% endschema %}
-  
+  {% endif %}
+</section>
