@@ -143,7 +143,7 @@
           <div class="manta-sub-cat-image-wrapper">
             {% if custom_image %}
               <img
-                src="{{ custom_image | img_url: 'low' }}"
+                src="{{ custom_image | img_url: 'large' }}"
                 alt="{{ sub_collection.title }}"
                 class="manta-sub-cat-image"
                 width="500"
@@ -151,7 +151,7 @@
               >
             {% elsif sub_collection.image %}
               <img
-                src="{{ sub_collection.image | img_url: 'low' }}"
+                src="{{ sub_collection.image | img_url: 'large' }}"
                 alt="{{ sub_collection.title }}"
                 class="manta-sub-cat-image"
                 width="500"
