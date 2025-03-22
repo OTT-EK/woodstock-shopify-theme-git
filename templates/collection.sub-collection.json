@@ -68,7 +68,8 @@
     "manta_collection_description_ngYVXy": {
       "type": "manta-collection-description",
       "settings": {
-        "always_show_full": false
+        "always_show_full": false,
+        "read_more_text": "Read more ..."
       }
     }
   },
