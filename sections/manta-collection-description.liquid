@@ -21,41 +21,40 @@
         {{ collection.description }}
       </div>
 
-      <!-- "Read more" button -->
-      <button class="manta-cl-description-read-more" id="manta-description-readmore-btn">
-        Read more
-      </button>
+      <!-- "Read more..." text link -->
+      <span class="manta-cl-description-read-more" id="manta-description-readmore-link">
+        Read more...
+      </span>
 
       <!-- JavaScript to toggle expanded state -->
       <script>
         document.addEventListener('DOMContentLoaded', function() {
           var content  = document.getElementById('manta-description-container');
-          var btn      = document.getElementById('manta-description-readmore-btn');
-
-          // If container is shorter than 40vh, hide the button and remove the "collapsed" styling
+          var readMore = document.getElementById('manta-description-readmore-link');
           var maxHeightPx = window.innerHeight * 0.4; // 40vh in px
+
+          // If the container is shorter than 40vh, hide "Read more..." link and remove collapsed styling
           if (content.scrollHeight <= maxHeightPx) {
-            btn.style.display = 'none';
+            readMore.style.display = 'none';
             content.classList.remove('collapsed');
             content.style.maxHeight = 'none';
           } else {
-            // Otherwise, set max-height and keep the fade
+            // Otherwise, cap at 40vh and show the fade effect
             content.style.maxHeight = maxHeightPx + 'px';
           }
 
-          // Handle "Read more" click
-          btn.addEventListener('click', function() {
-            content.style.maxHeight = 'none'; 
+          // On "Read more..." click, expand
+          readMore.addEventListener('click', function() {
+            content.style.maxHeight = 'none';
             content.classList.remove('collapsed');
-            btn.style.display = 'none';
+            readMore.style.display = 'none';
           });
         });
       </script>
 
-      <!-- Styles for fade effect -->
+      <!-- Styles for fade effect and link appearance -->
       <style>
         .manta-cl-description-content {
-          /* basic spacing if needed */
           margin-bottom: 1rem;
           transition: max-height 0.3s ease;
         }
@@ -69,14 +68,22 @@
         .manta-cl-description-content.collapsed::after {
           content: "";
           position: absolute;
-          left: 0; 
-          right: 0; 
+          left: 0;
+          right: 0;
           bottom: 0;
-          height: 4rem; /* adjust as desired */
+          height: 4rem; /* adjust as needed */
           background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 80%);
         }
-      </style>
 
+        /* "Read more..." link styling */
+        .manta-cl-description-read-more {
+          display: inline-block; /* or block, if you prefer */
+          cursor: pointer;
+          text-decoration: underline;
+          color: black;
+          margin-bottom: 1.5rem;
+        }
+      </style>
     {% endif %}
   {% endif %}
 </section>
