@@ -162,12 +162,16 @@
                   src="{{ custom_image | img_url: 'large' }}"
                   alt="{{ sub_collection.title }}"
                   class="manta-sub-cat-image"
+                  width="500"
+                  height="500"
                 >
               {% elsif sub_collection.image %}
                 <img
-                  src="{{ sub_collection.image | img_url: 'large' }}"
+                  src="{{ sub_collection.image | image_url: 'large' }}"
                   alt="{{ sub_collection.title }}"
                   class="manta-sub-cat-image"
+                  width="500"
+                  height="500"
                 >
               {% endif %}
             </div>
