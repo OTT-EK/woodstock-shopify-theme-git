@@ -1,16 +1,24 @@
 {% assign sub_collections = collection.metafields.custom.sub_collection_list.value %}
 
-<script>
-  console.log("✅ Debug: Loaded Collection - {{ collection.title | escape }}");
-
-  {% if sub_collections == blank %}
-    console.error("❌ Error: sub_collection_list metafield is blank or missing.");
-  {% else %}
-    console.log("✅ sub_collection_list raw object:", {{ sub_collections | json }});
-    console.log("✅ sub_collection_list length: {{ sub_collections.size }}");
-    
-    {% for sub in sub_collections %}
-      console.log("➡️ Sub-collection {{ forloop.index }} - Title: {{ sub.title | escape }}, Handle: {{ sub.handle | escape }}, URL: {{ sub.url }}");
+{% if sub_collections and sub_collections.size > 0 %}
+  <div class="manta-sub-cat-wrapper">
+    {% for sub_collection in sub_collections %}
+      <a href="{{ sub_collection.url }}" class="manta-sub-cat-item">
+        {% if sub_collection.image %}
+          <img
+            src="{{ sub_collection.image | image_url: 'medium' }}"
+            alt="{{ sub_collection.title }}"
+            class="manta-sub-cat-image"
+            width="{{ sub_collection.image.width }}"
+            height="{{ sub_collection.image.height }}"
+          >
+        {% endif %}
+        <div class="manta-sub-cat-title">
+          {{ sub_collection.title }}
+        </div>
+      </a>
     {% endfor %}
-  {% endif %}
-</script>
+  </div>
+{% else %}
+  <p>No sub-collections available for this category.</p>
+{% endif %}
