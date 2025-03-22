@@ -77,7 +77,7 @@
 
         /* "Read more..." link styling */
         .manta-cl-description-read-more {
-          display: inline-block; /* or block, if you prefer */
+          display: inline-block;
           cursor: pointer;
           text-decoration: underline;
           color: black;
@@ -87,3 +87,22 @@
     {% endif %}
   {% endif %}
 </section>
+
+{% schema %}
+{
+  "name": "Description table",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "always_show_full",
+      "label": "Always show full description",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Description table"
+    }
+  ]
+}
+{% endschema %}
