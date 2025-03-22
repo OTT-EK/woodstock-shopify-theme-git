@@ -1,12 +1,83 @@
+{% schema %}
+{
+  "name": "Sub Collections Menu",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Sub Collections Menu"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+.manta-sub-cat-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 40px 0;
+}
+
+.manta-sub-cat-item {
+  width: calc(33.333% - 16px);
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+}
+
+.manta-sub-cat-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.manta-sub-cat-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.manta-sub-cat-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .manta-sub-cat-item {
+    width: calc(50% - 12px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .manta-sub-cat-item {
+    width: 100%;
+  }
+}
+{% endstylesheet %}
+
 {% if collection.metafields.custom.sub_collection_list.value != blank %}
   <div class="manta-sub-cat-wrapper">
     {% for sub_collection in collection.metafields.custom.sub_collection_list.value %}
-      <a href="{{ sub_collection.url }}" class="manta-sub-cat-item">
-        {% assign custom_image = sub_collection.metafields.custom.collection_image %}
+      {% assign custom_image = sub_collection.metafields.custom.collection_image %}
 
+      <a href="{{ sub_collection.url }}" class="manta-sub-cat-item">
         {% if custom_image %}
           <img
             src="{{ custom_image | image_url: 'medium' }}"
+            alt="{{ sub_collection.title }}"
+            class="manta-sub-cat-image"
+            width="300"
+            height="300"
+          >
+        {% elsif sub_collection.image %}
+          <img
+            src="{{ sub_collection.image | image_url: 'medium' }}"
             alt="{{ sub_collection.title }}"
             class="manta-sub-cat-image"
             width="300"
