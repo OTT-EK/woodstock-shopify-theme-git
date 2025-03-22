@@ -133,7 +133,7 @@
       {% for sub_collection in sub_collections %}
         {% assign custom_image = sub_collection.metafields.custom.collection_image %}
 
-        <a href="{{ sub_collection.url }}" class="manta-sub-cat-outline">
+        <a href="{{ sub_collection.url }}" class="manta-sub-cat-item">
           <div class="manta-sub-cat-image-wrapper">
             {% if custom_image %}
               <img
