@@ -12,6 +12,7 @@
 {% endschema %}
 
 {% stylesheet %}
+/* Container around entire layout */
 .manta-sub-cat-layout.page-width {
   margin-top: 20px;
 }
@@ -21,59 +22,55 @@
   padding: 40px 0;
 }
 
+/* Sidebar on large screens */
 .manta-sub-cat-sidebar {
   width: 200px;
   flex-shrink: 0;
   display: none;
 }
-
 @media screen and (min-width: 1024px) {
   .manta-sub-cat-sidebar {
     display: block;
   }
 }
-
 .manta-sub-cat-sidebar h2 {
   font-weight: bold;
   margin-bottom: 16px;
   font-size: 1.1rem;
 }
-
 .manta-sub-cat-sidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .manta-sub-cat-sidebar li {
   margin-bottom: 12px;
 }
-
 .manta-sub-cat-sidebar a {
   text-decoration: none;
   color: #111;
   font-weight: 500;
 }
-
 .manta-sub-cat-sidebar a:hover {
   text-decoration: underline;
 }
 
-/* ✅ NEW: Use CSS Grid for the item layout */
+/* Grid for sub-collection items */
 .manta-sub-cat-grid {
   display: grid;
+  /* Let each column shrink if needed, so we don’t overflow on narrower screens */
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 16px;
   flex: 1;
 }
 
+/* Sub-collection tile styling */
 .manta-sub-cat-item {
   text-align: center;
   text-decoration: none;
   color: inherit;
   transition: box-shadow 0.2s ease;
 }
-
 .manta-sub-cat-box {
   border: 1px solid #e1e1e1;
   border-radius: 12px;
@@ -85,11 +82,11 @@
   flex-direction: column;
   justify-content: space-between;
 }
-
 .manta-sub-cat-box:hover {
   border-color: #999;
 }
 
+/* Image wrapper: keeps a square aspect ratio */
 .manta-sub-cat-image-wrapper {
   position: relative;
   width: 100%;
@@ -98,6 +95,7 @@
   overflow: hidden;
 }
 
+/* The actual image is positioned absolutely inside the wrapper */
 .manta-sub-cat-image {
   position: absolute;
   top: 0;
@@ -110,22 +108,27 @@
   padding: 1rem;
 }
 
+/* Title inside each tile */
 .manta-sub-cat-title {
   font-size: 1.2rem;
   font-weight: bold;
   padding: 16px;
 }
 
-/* ✅ Force 2-column layout on all mobile widths */
+/* Force 2 columns on mobile, but let them shrink as needed */
 @media screen and (max-width: 768px) {
   .manta-sub-cat-grid {
-    grid-template-columns: repeat(2, 1fr);
+    /* exactly 2 columns, each can shrink to 0 if needed */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px; /* optional smaller gap on mobile */
   }
 }
+
+/* Tighten image padding if the screen is extremely narrow */
 @media screen and (max-width: 322px) {
   .manta-sub-cat-image {
-  padding: 0.1rem;
-}
+    padding: 0.25rem;
+  }
 }
 {% endstylesheet %}
 
@@ -159,16 +162,12 @@
                   src="{{ custom_image | img_url: 'large' }}"
                   alt="{{ sub_collection.title }}"
                   class="manta-sub-cat-image"
-                  width="500"
-                  height="500"
                 >
               {% elsif sub_collection.image %}
                 <img
                   src="{{ sub_collection.image | img_url: 'large' }}"
                   alt="{{ sub_collection.title }}"
                   class="manta-sub-cat-image"
-                  width="500"
-                  height="500"
                 >
               {% endif %}
             </div>
