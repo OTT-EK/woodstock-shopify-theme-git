@@ -59,16 +59,15 @@
   text-decoration: underline;
 }
 
+/* ✅ NEW: Use CSS Grid for the item layout */
 .manta-sub-cat-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 24px;
   flex: 1;
 }
 
 .manta-sub-cat-item {
-  flex: 1 1 calc(25% - 18px); /* 4 items per row with 24px gap */
-  box-sizing: border-box;
   text-align: center;
   text-decoration: none;
   color: inherit;
@@ -81,6 +80,10 @@
   overflow: hidden;
   background: #fff;
   transition: border-color 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .manta-sub-cat-box:hover {
@@ -90,7 +93,7 @@
 .manta-sub-cat-image-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 100%; /* Makes it a square */
+  padding-top: 100%; /* Square container */
   background: #fff;
   overflow: hidden;
 }
@@ -101,7 +104,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Show entire image */
+  object-fit: contain;
   object-position: center;
   display: block;
 }
@@ -112,15 +115,10 @@
   padding: 16px;
 }
 
-@media screen and (max-width: 1024px) {
-  .manta-sub-cat-item {
-    flex: 1 1 calc(33.333% - 16px); /* 3 per row */
-  }
-}
-
+/* Responsive tweaks */
 @media screen and (max-width: 768px) {
-  .manta-sub-cat-item {
-    flex: 1 1 calc(50% - 12px); /* 2 per row */
+  .manta-sub-cat-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   }
 }
 {% endstylesheet %}
