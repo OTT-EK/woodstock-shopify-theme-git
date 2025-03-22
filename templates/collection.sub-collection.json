@@ -64,11 +64,18 @@
         "padding_top": 40,
         "padding_bottom": 40
       }
+    },
+    "manta_collection_description_ngYVXy": {
+      "type": "manta-collection-description",
+      "settings": {
+        "always_show_full": false
+      }
     }
   },
   "order": [
     "banner",
     "sub_collection_list_Tacbzq",
-    "product-grid"
+    "product-grid",
+    "manta_collection_description_ngYVXy"
   ]
 }
