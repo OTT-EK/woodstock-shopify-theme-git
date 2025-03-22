@@ -2,15 +2,18 @@
   <div class="manta-sub-cat-wrapper">
     {% for sub_collection in collection.metafields.custom.sub_collection_list.value %}
       <a href="{{ sub_collection.url }}" class="manta-sub-cat-item">
-        {% if sub_collection.image %}
+        {% assign custom_image = sub_collection.metafields.custom.collection_image %}
+
+        {% if custom_image %}
           <img
-            src="{{ sub_collection.image | image_url: 'medium' }}"
+            src="{{ custom_image | image_url: 'medium' }}"
             alt="{{ sub_collection.title }}"
             class="manta-sub-cat-image"
-            width="{{ sub_collection.image.width }}"
-            height="{{ sub_collection.image.height }}"
+            width="300"
+            height="300"
           >
         {% endif %}
+
         <div class="manta-sub-cat-title">
           {{ sub_collection.title }}
         </div>
