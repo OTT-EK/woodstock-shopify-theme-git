@@ -79,10 +79,22 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.manta-sub-cat-image {
+.manta-sub-cat-image-wrapper {
+  position: relative;
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  padding-top: 100%; /* Makes it a square */
+  background: #fafafa;
+  overflow: hidden;
+}
+
+.manta-sub-cat-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Show entire image */
+  object-position: center;
   display: block;
 }
 
@@ -128,23 +140,21 @@
         {% assign custom_image = sub_collection.metafields.custom.collection_image %}
 
         <a href="{{ sub_collection.url }}" class="manta-sub-cat-item">
-          {% if custom_image %}
-            <img
-              src="{{ custom_image | img_url: 'medium' }}"
-              alt="{{ sub_collection.title }}"
-              class="manta-sub-cat-image"
-              width="500"
-              height="500"
-            >
-          {% elsif sub_collection.image %}
-            <img
-              src="{{ sub_collection.image | img_url: 'medium' }}"
-              alt="{{ sub_collection.title }}"
-              class="manta-sub-cat-image"
-              width="300"
-              height="300"
-            >
-          {% endif %}
+          <div class="manta-sub-cat-image-wrapper">
+            {% if custom_image %}
+              <img
+                src="{{ custom_image | img_url: 'medium' }}"
+                alt="{{ sub_collection.title }}"
+                class="manta-sub-cat-image"
+              >
+            {% elsif sub_collection.image %}
+              <img
+                src="{{ sub_collection.image | img_url: 'medium' }}"
+                alt="{{ sub_collection.title }}"
+                class="manta-sub-cat-image"
+              >
+            {% endif %}
+          </div>
 
           <div class="manta-sub-cat-title">
             {{ sub_collection.title }}
