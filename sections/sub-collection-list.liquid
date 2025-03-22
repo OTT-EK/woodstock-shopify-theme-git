@@ -1,119 +1,103 @@
-{% comment %}
-  Section: Sub-Collection List
-  Purpose: Renders a “grid” of sub-collections pulled from
-           `collection.metafields.custom.sub_collection_list`.
-{% endcomment %}
 
-<section 
-    id="section-{{ section.id }}" 
-    class="section main-collection-product-grid-section sub-collections-section">
-  
-    {%- assign subCollections = collection.metafields.custom.sub_collection_list.value 
-          | default: null -%}
-  
-    {% comment %}
-      We only render if subCollections actually exists and is not empty
-    {% endcomment %}
-    {% if subCollections != blank and subCollections.size > 0 %}
-  
-      <!-- Desktop-only side menu -->
-      <aside class="sub-collections__sidebar hidden-pocket hidden-lap">
-        <div class="sub-collections__sidebar-inner">
-  
-          <!-- Current Collection Icon & Name -->
-          {% if collection.metafields.custom.collection_icon and 
-                collection.metafields.custom.collection_icon != blank %}
-            <div class="sub-collections__current-icon">
-              <img 
-                src="{{ collection.metafields.custom.collection_icon | image_url: width: 64 }}" 
-                alt="{{ collection.title }}" 
-                width="64" 
-                height="64" />
-            </div>
-          {% endif %}
-          <h3 class="sub-collections__current-name">
-            {{ collection.title }}
-          </h3>
-  
-          <!-- Simple UL of sub-collection titles -->
-          <ul class="sub-collections__sidebar-list">
-            {% for subColl in subCollections %}
-              {% assign subCollObj = subColl %}
-              {% if subCollObj.title %}
-                <li>
-                  <a href="{{ subCollObj.url }}">
-                    {{ subCollObj.title }}
-                  </a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </div>
-      </aside>
-  
-      <!-- Main grid of sub-collection images -->
-      <div class="sub-collections__grid-container page-width">
-        <div class="sub-collections__grid">
+<section
+  id="section-{{ section.id }}"
+  class="sub-collections-section">
+
+  {%- assign subCollections = collection.metafields.custom.sub_collection_list -%}
+
+  {% comment %}
+    subCollections is now the list of referenced collections. 
+    We only proceed if it's not null/blank and has at least 1 item.
+  {% endcomment %}
+  {% if subCollections and subCollections.size > 0 %}
+
+    <!-- Desktop-only side menu -->
+    <aside class="sub-collections__sidebar hidden-pocket hidden-lap">
+      <div class="sub-collections__sidebar-inner">
+        
+        <!-- Current Collection Icon & Title -->
+        {% if collection.metafields.custom.collection_icon %}
+          <div class="sub-collections__current-icon">
+            <img 
+              src="{{ collection.metafields.custom.collection_icon | image_url: width: 64 }}"
+              alt="{{ collection.title | escape }}"
+              width="64"
+              height="64" />
+          </div>
+        {% endif %}
+        <h3 class="sub-collections__current-name">
+          {{ collection.title }}
+        </h3>
+
+        <!-- Simple UL of sub-collection titles -->
+        <ul class="sub-collections__sidebar-list">
           {% for subColl in subCollections %}
-            {% assign subCollObj = subColl %}
-            
-            <div class="sub-collections__grid-item">
-              <a 
-                class="sub-collections__link"
-                href="{{ subCollObj.url }}"
-                title="{{ subCollObj.title | escape }}">
-  
-                <!-- If the sub-collection has a custom.collection_image metafield, show it -->
-                {% if subCollObj.metafields.custom.collection_image != blank %}
-                  <div class="sub-collections__image-wrapper">
-                    <img 
-                      src="{{ subCollObj.metafields.custom.collection_image | image_url: width: 600 }}"
-                      alt="{{ subCollObj.title | escape }}"
-                      width="600"
-                      height="auto" />
-                  </div>
-                {% endif %}
-  
-                <div class="sub-collections__title">
-                  {{ subCollObj.title }}
-                </div>
+            <li>
+              <a href="{{ subColl.url }}">
+                {{ subColl.title }}
               </a>
-            </div>
+            </li>
           {% endfor %}
-        </div>
+        </ul>
       </div>
-  
-    {% else %}
-      <!-- Fallback if no sub-collections are set -->
-      <div class="page-width">
-        <p class="no-subcollections">
-          No sub-collections found.
-        </p>
+    </aside>
+
+    <!-- Main grid of sub-collection images -->
+    <div class="sub-collections__grid-container page-width">
+      <div class="sub-collections__grid">
+        {% for subColl in subCollections %}
+          <div class="sub-collections__grid-item">
+            <a
+              class="sub-collections__link"
+              href="{{ subColl.url }}"
+              title="{{ subColl.title | escape }}">
+
+              {% comment %}
+                If subColl has a "collection_image" metafield 
+                (i.e. subColl.metafields.custom.collection_image),
+                display it:
+              {% endcomment %}
+              {% if subColl.metafields.custom.collection_image %}
+                <div class="sub-collections__image-wrapper">
+                  <img 
+                    src="{{ subColl.metafields.custom.collection_image | image_url: width: 600 }}"
+                    alt="{{ subColl.title | escape }}"
+                    width="600"
+                    height="auto" />
+                </div>
+              {% endif %}
+              
+              <div class="sub-collections__title">
+                {{ subColl.title }}
+              </div>
+            </a>
+          </div>
+        {% endfor %}
       </div>
-    {% endif %}
-  </section>
-  
-  {% schema %}
-  {
-    "name": "Sub-Collection Grid",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Sub-Collections"
-      },
-      {
-        "type": "text",
-        "id": "info",
-        "label": "Note",
-        "default": "Displays the sub-collections (found in custom.sub_collection_list) as a grid with side menu."
-      }
-    ],
-    "presets": [
-      {
-        "name": "Manta Sub Collection Grid",
-        "category": "Custom"
-      }
-    ]
-  }
-  {% endschema %}
-  
+    </div>
+
+  {% else %}
+    <!-- Fallback if no sub-collections are found -->
+    <div class="page-width">
+      <p>No sub-collections found.</p>
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Sub-Collection Grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Sub-Collections"
+    },
+    {
+      "type": "text",
+      "id": "info",
+      "label": "Note",
+      "default": "Displays sub-collections found in custom.sub_collection_list."
+    }
+  ]
+}
+{% endschema %}
