@@ -1,84 +1,16 @@
-{% schema %}
-{
-  "name": "Sub Collections Menu",
-  "tag": "section",
-  "settings": [],
-  "presets": [
-    {
-      "name": "Sub Collections Menu"
-    }
-  ]
-}
-{% endschema %}
+{% assign sub_collections = collection.metafields.custom.sub_collection_list.value %}
 
-{% stylesheet %}
-.manta-sub-cat-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  padding: 40px 0;
-}
+<script>
+  console.log("✅ Debug: Loaded Collection - {{ collection.title | escape }}");
 
-.manta-sub-cat-item {
-  width: calc(33.333% - 16px);
-  text-align: center;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: box-shadow 0.2s ease;
-  background: #fff;
-}
-
-.manta-sub-cat-item:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.manta-sub-cat-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.manta-sub-cat-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 16px;
-}
-
-@media screen and (max-width: 768px) {
-  .manta-sub-cat-item {
-    width: calc(50% - 12px);
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .manta-sub-cat-item {
-    width: 100%;
-  }
-}
-{% endstylesheet %}
-
-<div class="manta-sub-cat-wrapper">
-  {% assign sub_collections = collection.metafields.custom.sub_collection_list.value %}
-
-  {% if sub_collections.size > 0 %}
-    {% for sub_collection in sub_collections %}
-      <a href="{{ sub_collection.url }}" class="manta-sub-cat-item">
-        {% if sub_collection.image %}
-          <img
-            src="{{ sub_collection.image | image_url: 'medium' }}"
-            alt="{{ sub_collection.title }}"
-            class="manta-sub-cat-image"
-            width="300"
-            height="200"
-          >
-        {% endif %}
-        <div class="manta-sub-cat-title">
-          {{ sub_collection.title }}
-        </div>
-      </a>
-    {% endfor %}
+  {% if sub_collections == blank %}
+    console.error("❌ Error: sub_collection_list metafield is blank or missing.");
   {% else %}
-    <p>No sub-collections available.</p>
+    console.log("✅ sub_collection_list raw object:", {{ sub_collections | json }});
+    console.log("✅ sub_collection_list length: {{ sub_collections.size }}");
+    
+    {% for sub in sub_collections %}
+      console.log("➡️ Sub-collection {{ forloop.index }} - Title: {{ sub.title | escape }}, Handle: {{ sub.handle | escape }}, URL: {{ sub.url }}");
+    {% endfor %}
   {% endif %}
-</div>
+</script>
