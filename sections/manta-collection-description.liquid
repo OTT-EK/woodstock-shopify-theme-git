@@ -11,7 +11,7 @@
       </div>
     {% else %}
       <!-- Collapsible description container -->
-      <div class="manta-cl-description-content collapsed" id="manta-description-container">
+      <div class="manta-cl-description-content manta-cl-desc-collapsed" id="manta-description-container">
         {{ collection.description }}
       </div>
 
@@ -26,12 +26,12 @@
           var content  = document.getElementById('manta-description-container');
           var readMore = document.getElementById('manta-description-readmore-link');
           
-          // Convert 40vh to px (for consistent transitions) 
+          // Convert 40vh to px
           var maxHeightPx = Math.round(window.innerHeight * 0.4);
 
           // If the content is shorter than 40vh, show it all & hide the "Read more..." link
           if (content.scrollHeight <= maxHeightPx) {
-            content.classList.remove('collapsed');
+            content.classList.remove('manta-cl-desc-collapsed');
             content.style.maxHeight = 'none';
             readMore.style.display = 'none';
           } else {
@@ -42,12 +42,12 @@
           // When user clicks "Read more..."
           readMore.addEventListener('click', function() {
             // 1) Remove gradient fade
-            content.classList.remove('collapsed');
+            content.classList.remove('manta-cl-desc-collapsed');
             // 2) Smoothly expand by setting maxHeight to scrollHeight
             content.style.maxHeight = content.scrollHeight + 'px';
 
-            // 3) Once transition ends, set to "none" so it can expand if more content is added or the window resizes
-            content.addEventListener('transitionend', function onTransitionEnd(e) {
+            // 3) Once transition ends, set to "none"
+            content.addEventListener('transitionend', function onTransitionEnd() {
               content.style.maxHeight = 'none';
               content.removeEventListener('transitionend', onTransitionEnd);
             });
@@ -62,22 +62,22 @@
       <style>
         .manta-cl-description-content {
           margin-bottom: 1rem;
-          overflow: hidden;       /* so content won't exceed the capped height */
-          transition: max-height 0.4s ease; /* controls the animation speed & easing */
+          overflow: hidden;
+          transition: max-height 0.4s ease;
         }
 
-        .manta-cl-description-content.collapsed {
+        .manta-cl-desc-collapsed {
           position: relative;
         }
 
         /* The gradient fade from transparent to white (bottom fade) */
-        .manta-cl-description-content.collapsed::after {
+        .manta-cl-desc-collapsed::after {
           content: "";
           position: absolute;
           left: 0;
           right: 0;
           bottom: 0;
-          height: 4rem; /* adjust as desired */
+          height: 4rem; /* adjust as needed */
           background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 80%);
         }
 
