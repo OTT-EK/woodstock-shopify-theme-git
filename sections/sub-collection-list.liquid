@@ -1,8 +1,6 @@
-{% assign sub_collections = collection.metafields.custom.sub_collection_list.value %}
-
-{% if sub_collections and sub_collections.size > 0 %}
+{% if collection.metafields.custom.sub_collection_list.value != blank %}
   <div class="manta-sub-cat-wrapper">
-    {% for sub_collection in sub_collections %}
+    {% for sub_collection in collection.metafields.custom.sub_collection_list.value %}
       <a href="{{ sub_collection.url }}" class="manta-sub-cat-item">
         {% if sub_collection.image %}
           <img
