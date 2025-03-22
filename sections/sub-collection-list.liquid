@@ -1,103 +1,84 @@
-
-<section
-  id="section-{{ section.id }}"
-  class="sub-collections-section">
-
-  {%- assign subCollections = collection.metafields.custom.sub_collection_list -%}
-
-  {% comment %}
-    subCollections is now the list of referenced collections. 
-    We only proceed if it's not null/blank and has at least 1 item.
-  {% endcomment %}
-  {% if subCollections and subCollections.size > 0 %}
-
-    <!-- Desktop-only side menu -->
-    <aside class="sub-collections__sidebar hidden-pocket hidden-lap">
-      <div class="sub-collections__sidebar-inner">
-        
-        <!-- Current Collection Icon & Title -->
-        {% if collection.metafields.custom.collection_icon %}
-          <div class="sub-collections__current-icon">
-            <img 
-              src="{{ collection.metafields.custom.collection_icon | image_url: width: 64 }}"
-              alt="{{ collection.title | escape }}"
-              width="64"
-              height="64" />
-          </div>
-        {% endif %}
-        <h3 class="sub-collections__current-name">
-          {{ collection.title }}
-        </h3>
-
-        <!-- Simple UL of sub-collection titles -->
-        <ul class="sub-collections__sidebar-list">
-          {% for subColl in subCollections %}
-            <li>
-              <a href="{{ subColl.url }}">
-                {{ subColl.title }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </aside>
-
-    <!-- Main grid of sub-collection images -->
-    <div class="sub-collections__grid-container page-width">
-      <div class="sub-collections__grid">
-        {% for subColl in subCollections %}
-          <div class="sub-collections__grid-item">
-            <a
-              class="sub-collections__link"
-              href="{{ subColl.url }}"
-              title="{{ subColl.title | escape }}">
-
-              {% comment %}
-                If subColl has a "collection_image" metafield 
-                (i.e. subColl.metafields.custom.collection_image),
-                display it:
-              {% endcomment %}
-              {% if subColl.metafields.custom.collection_image %}
-                <div class="sub-collections__image-wrapper">
-                  <img 
-                    src="{{ subColl.metafields.custom.collection_image | image_url: width: 600 }}"
-                    alt="{{ subColl.title | escape }}"
-                    width="600"
-                    height="auto" />
-                </div>
-              {% endif %}
-              
-              <div class="sub-collections__title">
-                {{ subColl.title }}
-              </div>
-            </a>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-
-  {% else %}
-    <!-- Fallback if no sub-collections are found -->
-    <div class="page-width">
-      <p>No sub-collections found.</p>
-    </div>
-  {% endif %}
-</section>
-
 {% schema %}
 {
-  "name": "Sub-Collection Grid",
-  "settings": [
+  "name": "Sub Collections Menu",
+  "tag": "section",
+  "settings": [],
+  "presets": [
     {
-      "type": "header",
-      "content": "Sub-Collections"
-    },
-    {
-      "type": "text",
-      "id": "info",
-      "label": "Note",
-      "default": "Displays sub-collections found in custom.sub_collection_list."
+      "name": "Sub Collections Menu"
     }
   ]
 }
 {% endschema %}
+
+{% stylesheet %}
+.manta-sub-cat-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 40px 0;
+}
+
+.manta-sub-cat-item {
+  width: calc(33.333% - 16px);
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+  background: #fff;
+}
+
+.manta-sub-cat-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.manta-sub-cat-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.manta-sub-cat-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .manta-sub-cat-item {
+    width: calc(50% - 12px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .manta-sub-cat-item {
+    width: 100%;
+  }
+}
+{% endstylesheet %}
+
+<div class="manta-sub-cat-wrapper">
+  {% assign sub_collections = collection.metafields.custom.sub_collection_list.value %}
+
+  {% if sub_collections.size > 0 %}
+    {% for sub_collection in sub_collections %}
+      <a href="{{ sub_collection.url }}" class="manta-sub-cat-item">
+        {% if sub_collection.image %}
+          <img
+            src="{{ sub_collection.image | image_url: 'medium' }}"
+            alt="{{ sub_collection.title }}"
+            class="manta-sub-cat-image"
+            width="300"
+            height="200"
+          >
+        {% endif %}
+        <div class="manta-sub-cat-title">
+          {{ sub_collection.title }}
+        </div>
+      </a>
+    {% endfor %}
+  {% else %}
+    <p>No sub-collections available.</p>
+  {% endif %}
+</div>
