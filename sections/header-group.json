@@ -102,6 +102,7 @@
         },
         "5252ef1e-142a-4211-a789-f6ff8a260759": {
           "type": "customer_supported_region",
+          "disabled": true,
           "settings": {
             "title": "Region name",
             "hotline": "Region hotline",
@@ -111,6 +112,7 @@
         },
         "4181066a-3c20-4052-bc03-87717a51b295": {
           "type": "customer_supported_region",
+          "disabled": true,
           "settings": {
             "title": "Region name",
             "hotline": "Region hotline",
@@ -120,6 +122,7 @@
         },
         "669b20fb-990d-4033-b56e-1c7ad1c00774": {
           "type": "customer_supported_region",
+          "disabled": true,
           "settings": {
             "title": "Region name",
             "hotline": "Region hotline",
