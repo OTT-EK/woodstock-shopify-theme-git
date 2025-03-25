@@ -1398,9 +1398,14 @@ button.shopify-payment-button__button--unbranded,
   inset-inline-start: 1.5rem;
 }
 
-.search.search--header .search__button {
-  width: 3rem !important;
-  height: 3rem !important;
+.manta_s_button {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  background-color: transparent;
+  border: 0;
+  color: currentColor;
+  cursor: pointer;
 }
 
 .search__input::placeholder {
