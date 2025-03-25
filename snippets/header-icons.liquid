@@ -4,16 +4,6 @@
       {%- render 'header-predictive-search', suffix_id: 'Inline' -%}  
     </div>
   {%- endif -%}
-
-  {%- liquid
-    if has_supported_region
-      if section.settings.logo_position == 'top-left' or section.settings.logo_position == 'middle-left-navigation-left'
-        render 'header-customer-support-desktop', supported_region_blocks: supported_region_blocks
-      endif
-    endif
-
-    render 'header-search-modal'
-  -%}
   
   {%- if shop.customer_accounts_enabled -%}
     <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link header__button-icon flex justify-center align-center{% if section.settings.mobile_logo_position == 'center' %} small-hide medium-hide{% endif %}">
