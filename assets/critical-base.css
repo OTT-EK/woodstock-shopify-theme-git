@@ -1389,15 +1389,18 @@ button.shopify-payment-button__button--unbranded,
   min-height: 4.5rem;
   background: rgb(var(--color-background-input));
   border-radius: 0.8rem;
-  padding: 0 5.5rem 0 2.7rem;
+  padding: 0 5.5rem 0 4.7rem;
   font-size: 1.6rem;
 }
 
 .search__button {
-  top: calc(50% - 2rem);
+  top: calc(50% - 1.5rem);
   inset-inline-start: 1.5rem;
-  width: 3rem;
-  height: 3rem;
+}
+
+.search.search--header .search__button {
+  width: 3rem !important;
+  height: 3rem !important;
 }
 
 .search__input::placeholder {
