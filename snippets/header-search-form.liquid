@@ -1,5 +1,5 @@
-<form action="{{ routes.search_url }}" method="get" role="search" class="search manta-search-s-header flex w100 por">
-  <input class="manta_search_s_input manta_search_s_input--header w100 color-foreground"
+<form action="{{ routes.search_url }}" method="get" role="search" class="search search--header flex w100 por">
+  <input class="search__input search__input--header w100 color-foreground"
     id="Search-In-{{ suffix_id }}"
     type="search"
     name="q"
@@ -18,7 +18,7 @@
   >
   <label class="field__label visually-hidden" for="Search-In-{{ suffix_id }}">{{ 'general.search.search' | t }}</label>
   <input type="hidden" name="options[prefix]" value="last">
-  <button class="manta_search_s_button manta_search_s_button--header manta_s_button light flex justify-center align-center overflow-hidden" aria-label="{{ 'general.search.search' | t }}" onclick="document.getElementById('Search-In-{{ suffix_id }}').focus();">
+  <button class="search__button search__button--header manta_s_button light flex justify-center align-center overflow-hidden" aria-label="{{ 'general.search.search' | t }}" onclick="document.getElementById('Search-In-{{ suffix_id }}').focus();">
     <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation" width="24" height="24">
       <use href="#icon-search">
     </svg>
