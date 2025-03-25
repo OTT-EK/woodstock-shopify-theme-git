@@ -1394,8 +1394,10 @@ button.shopify-payment-button__button--unbranded,
 }
 
 .search__button {
-  top: calc(50% - 2rem);
-  inset-inline-end: 1.5rem;
+  top: calc(50% - 1.5rem);
+  inset-inline-start: 1.5rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 .search__input::placeholder {
