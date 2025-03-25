@@ -1398,7 +1398,7 @@ button.shopify-payment-button__button--unbranded,
   inset-inline-end: 1.5rem;
 }
 
-.search_s_input {
+.manta_search_s_input {
   border: none;
   min-height: 4.5rem;
   background: rgb(var(--color-background-input));
@@ -1407,7 +1407,7 @@ button.shopify-payment-button__button--unbranded,
   font-size: 1.6rem;
 }
 
-.search_s_button {
+.manta_search_s_button {
   top: calc(50% - 1.5rem);
   inset-inline-start: 1.5rem;
 }
