@@ -188,12 +188,6 @@
         "padding_bottom": 40
       }
     },
-    "8124c74c-24a1-4cc3-9369-91db0fab3a14": {
-      "type": "spacer",
-      "settings": {
-        "height": 40
-      }
-    },
     "6099b098-2d24-4b53-9488-988cbaa630f3": {
       "type": "main-product-attributes",
       "blocks": {
@@ -234,11 +228,10 @@
         "padding_bottom": 80
       }
     },
-    "0fcf424c-972e-4afd-b20d-49aaed072495": {
+    "8124c74c-24a1-4cc3-9369-91db0fab3a14": {
       "type": "spacer",
-      "disabled": true,
       "settings": {
-        "height": 80
+        "height": 40
       }
     },
     "168088586605a49d77": {
@@ -290,9 +283,8 @@
   "order": [
     "main",
     "52bf00c5-c1a5-4bcd-9b87-204e690ab1d5",
-    "8124c74c-24a1-4cc3-9369-91db0fab3a14",
     "6099b098-2d24-4b53-9488-988cbaa630f3",
-    "0fcf424c-972e-4afd-b20d-49aaed072495",
+    "8124c74c-24a1-4cc3-9369-91db0fab3a14",
     "168088586605a49d77",
     "product-recommendations",
     "42ea5b86-e5b3-44b9-8a28-410eec1590ed"
