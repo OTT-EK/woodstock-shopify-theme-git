@@ -224,7 +224,7 @@
       ],
       "settings": {
         "show_description": false,
-        "title": "Heading",
+        "title": "Specification",
         "subtitle": "Subheading",
         "heading_size": "h2",
         "enable_section_box_layout": false,
