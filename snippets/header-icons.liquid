@@ -6,12 +6,6 @@
   {%- endif -%}
 
   {%- liquid
-    if has_supported_region
-      if section.settings.logo_position == 'top-left' or section.settings.logo_position == 'middle-left-navigation-left'
-        render 'header-customer-support-desktop', supported_region_blocks: supported_region_blocks
-      endif
-    endif
-
     render 'header-search-modal'
   -%}
   
