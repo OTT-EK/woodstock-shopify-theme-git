@@ -35,7 +35,7 @@
 {% endstylesheet %}
 
 {% assign show_full = section.settings.always_show_full %}
-
+{% if collection and collection.description != blank %}
 <section class="manta-cl-description-section page-width">
   {% if collection %}
     <div class="flex justify-space-between w100 align-center title__gap por">
@@ -98,6 +98,7 @@
     {% endif %}
   {% endif %}
 </section>
+{% endif %}
 
 {% schema %}
 {
