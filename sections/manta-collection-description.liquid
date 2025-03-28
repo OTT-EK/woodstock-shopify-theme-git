@@ -38,7 +38,10 @@
 
 <section class="manta-cl-description-section page-width">
   {% if collection %}
+    <div class="flex justify-space-between w100 align-center title__gap por">
     <h2 class="h2 font-heading-extra-bold margin0 lh1">{{ collection.title }}</h2>
+    <hr class="title__line flex-grow-1 margin0">
+    </div>
     {% if show_full %}
       <!-- Always show the full description -->
       <div class="manta-cl-description-content" style="max-height: none; overflow: visible;">
