@@ -36,7 +36,6 @@
 .manta-sub-cat-sidebar h2 {
   font-weight: bold;
   margin-bottom: 16px;
-  font-size: 1.1rem;
 }
 .manta-sub-cat-sidebar ul {
   list-style: none;
@@ -109,7 +108,7 @@
 
 /* Title inside each tile */
 .manta-sub-cat-title {
-  font-size: 1.2rem;
+  font-size: calc(1.2rem * var(--font-body-scale));
   font-weight: bold;
   padding: 16px;
 }
@@ -137,7 +136,7 @@
   <div class="manta-sub-cat-layout page-width">
     
     <!-- Sidebar Menu (Desktop only) -->
-    <aside class="manta-sub-cat-sidebar">
+    <aside class="manta-sub-cat-sidebar h5">
       <h2>{{ collection.title }}:</h2>
       <ul>
         {% for sub_collection in sub_collections %}
