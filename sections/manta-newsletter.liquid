@@ -1,89 +1,67 @@
 {{ 'manta-newsletter.css' | asset_url | stylesheet_tag }}
 
-<section class="manta-newsletter__wrapper section-padding
-  {% if section.settings['manta-newsletter-color_scheme'] != blank %}
-    color-{{ section.settings['manta-newsletter-color_scheme'] }}
-  {% endif %}"
-  style="
-    padding-top: {{ section.settings['manta-newsletter-padding_top'] }}px;
-    padding-bottom: {{ section.settings['manta-newsletter-padding_bottom'] }}px;
-  "
->
-  <div class="page-width">
-    <div class="manta-newsletter__content">
+<div class="manta-newsletter__grid">
+    <div class="manta-newsletter__text-content">
       {% for block in section.blocks %}
         {% case block.type %}
-
           {% when 'heading' %}
             <h2 class="manta-newsletter__heading {{ block.settings['manta-newsletter-heading_size'] }}">
               {{ block.settings['manta-newsletter-heading'] | escape }}
             </h2>
-
           {% when 'paragraph' %}
             <div class="manta-newsletter__text">
               {{ block.settings['manta-newsletter-text'] }}
             </div>
-
-          {% when 'email_form' %}
-            <div>
-              {% form 'customer', class: 'manta-newsletter__form' %}
-                <input type="hidden" name="contact[tags]" value="newsletter">
-
-                <div class="manta-newsletter__input-wrapper">
-                  <input
-                    id="NewsletterForm--{{ section.id }}"
-                    type="email"
-                    name="contact[email]"
-                    class="manta-newsletter__input"
-                    value="{{ form.email }}"
-                    aria-required="true"
-                    autocorrect="off"
-                    autocapitalize="off"
-                    autocomplete="email"
-                    {% if form.errors %}
-                      autofocus
-                      aria-invalid="true"
-                    {% elsif form.posted_successfully? %}
-                      aria-describedby="NewsletterSuccess--{{ section.id }}"
-                    {% endif %}
-                    placeholder="{{ 'newsletter.label' | t }}"
-                    required
-                  >
-                </div>
-
-                <button type="submit" class="manta-newsletter__button" name="commit" id="Subscribe-{{ section.id }}">
-                  {{ 'newsletter.button_label' | t }}
-                </button>
-
-                {% if form.errors %}
-                  <small
-                    class="form__message alert alert--error alert--small"
-                    id="Newsletter-error--{{ section.id }}"
-                  >
-                    {% render 'icon-error' %}
-                    {{ form.errors.translated_fields['email'] | capitalize }}
-                    {{ form.errors.messages['email'] }}
-                  </small>
-                {% endif %}
-
-                {% if form.posted_successfully? %}
-                  <h3
-                    class="newsletter-form__message--success form__message alert alert--success alert--small"
-                    id="NewsletterSuccess--{{ section.id }}"
-                    tabindex="-1"
-                  >
-                    {% render 'icon-success' %}
-                    {{ 'newsletter.success' | t }}
-                  </h3>
-                {% endif %}
-              {% endform %}
-            </div>
-
         {% endcase %}
       {% endfor %}
     </div>
+  
+    <div class="manta-newsletter__form-wrapper">
+      {% for block in section.blocks %}
+        {% if block.type == 'email_form' %}
+          {% form 'customer', class: 'manta-newsletter__form' %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            
+            <div class="manta-newsletter__input-wrapper">
+              <input
+                id="NewsletterForm--{{ section.id }}"
+                type="email"
+                name="contact[email]"
+                class="manta-newsletter__input"
+                value="{{ form.email }}"
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                autocomplete="email"
+                placeholder="{{ 'newsletter.label' | t }}"
+                required
+              >
+            </div>
+  
+            <button type="submit" class="manta-newsletter__button" name="commit" id="Subscribe-{{ section.id }}">
+              {{ 'newsletter.button_label' | t }}
+            </button>
+  
+            {% if form.errors %}
+              <small class="form__message alert alert--error alert--small" id="Newsletter-error--{{ section.id }}">
+                {% render 'icon-error' %}
+                {{ form.errors.translated_fields['email'] | capitalize }}
+                {{ form.errors.messages['email'] }}
+              </small>
+            {% endif %}
+  
+            {% if form.posted_successfully? %}
+              <h3 class="newsletter-form__message--success form__message alert alert--success alert--small" id="NewsletterSuccess--{{ section.id }}" tabindex="-1">
+                {% render 'icon-success' %}
+                {{ 'newsletter.success' | t }}
+              </h3>
+            {% endif %}
+          {% endform %}
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
-</section>
+  
 
 
 {% schema %}
