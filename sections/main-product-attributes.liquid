@@ -41,7 +41,7 @@
           endif
         -%}
 				
-				<{{ table_tag }} class="product-attributes__table grid grid--1-col grid--2-col-tablet grid--3-col-desktop{% if section.settings.show_description and product.description != blank %} element-margin-top{% endif %}{% if section.settings.table_color_scheme != section.settings.color_scheme %} color-{{ section.settings.table_color_scheme }} gradient product-attributes__table--padding{% endif %}" data-section="{{ section.id }}" data-url="{{ product.url }}">
+				<{{ table_tag }} class="product-attributes__table manta-z grid grid--1-col grid--2-col-tablet grid--3-col-desktop{% if section.settings.show_description and product.description != blank %} element-margin-top{% endif %}{% if section.settings.table_color_scheme != section.settings.color_scheme %} color-{{ section.settings.table_color_scheme }} gradient product-attributes__table--padding{% endif %}" data-section="{{ section.id }}" data-url="{{ product.url }}">
 					{%- for block in section.blocks -%}
             {%- if block.type != 'specifications' -%}
               <div class="grid__item" {{ block.shopify_attributes }}>
