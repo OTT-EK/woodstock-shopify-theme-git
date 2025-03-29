@@ -1,0 +1,204 @@
+{% comment %}
+  ------------------------
+  SIMPLE NEWSLETTER SECTION
+  ------------------------
+  With schema IDs prefixed by "manta-newsletter-"
+{% endcomment %}
+
+{{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
+{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
+{{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
+
+<section class="simple-newsletter section-padding
+  {% if section.settings['manta-newsletter-color_scheme'] != blank %}
+    color-{{ section.settings['manta-newsletter-color_scheme'] }}
+  {% endif %}"
+  style="
+    padding-top: {{ section.settings['manta-newsletter-padding_top'] }}px;
+    padding-bottom: {{ section.settings['manta-newsletter-padding_bottom'] }}px;
+  "
+>
+  <div class="page-width">
+    <div class="newsletter__content">
+      {% for block in section.blocks %}
+        {% case block.type %}
+
+          {% when 'heading' %}
+            <h2 class="newsletter__heading font-heading-extra-bold {{ block.settings['manta-newsletter-heading_size'] }}">
+              {{ block.settings['manta-newsletter-heading'] | escape }}
+            </h2>
+
+          {% when 'paragraph' %}
+            <div class="newsletter__text rte">
+              {{ block.settings['manta-newsletter-text'] }}
+            </div>
+
+          {% when 'email_form' %}
+            <div class="newsletter__box">
+              {% form 'customer', class: 'newsletter__email-form' %}
+                <input type="hidden" name="contact[tags]" value="newsletter">
+
+                <div class="newsletter__form-field-wrapper flex justify-space-between">
+                  <div class="field flex-grow-1">
+                    <input
+                      id="NewsletterForm--{{ section.id }}"
+                      type="email"
+                      name="contact[email]"
+                      class="newsletter__input field__input"
+                      value="{{ form.email }}"
+                      aria-required="true"
+                      autocorrect="off"
+                      autocapitalize="off"
+                      autocomplete="email"
+                      {% if form.errors %}
+                        autofocus
+                        aria-invalid="true"
+                      {% elsif form.posted_successfully? %}
+                        aria-describedby="NewsletterSuccess--{{ section.id }}"
+                      {% endif %}
+                      placeholder="{{ 'newsletter.label' | t }}"
+                      required
+                    >
+                  </div>
+
+                  <button type="submit" class="button newsletter__button" name="commit" id="Subscribe-{{ section.id }}">
+                    <span>{{ 'newsletter.button_label' | t }}</span>
+                  </button>
+                </div>
+
+                {% if form.errors %}
+                  <small
+                    class="form__message alert alert--error alert--small"
+                    id="Newsletter-error--{{ section.id }}"
+                  >
+                    {% render 'icon-error' %}
+                    {{ form.errors.translated_fields['email'] | capitalize }}
+                    {{ form.errors.messages['email'] }}
+                  </small>
+                {% endif %}
+
+                {% if form.posted_successfully? %}
+                  <h3
+                    class="newsletter-form__message--success form__message alert alert--success alert--small"
+                    id="NewsletterSuccess--{{ section.id }}"
+                    tabindex="-1"
+                  >
+                    {% render 'icon-success' %}
+                    {{ 'newsletter.success' | t }}
+                  </h3>
+                {% endif %}
+              {% endform %}
+            </div>
+
+          {% when 'social_icons' %}
+            <div class="newsletter__social-icons">
+              {% render 'social-media-icons', add_classes: 'newsletter__list-social' %}
+            </div>
+
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Simple Newsletter (Prefixed IDs)",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "manta-newsletter-color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "range",
+      "id": "manta-newsletter-padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "manta-newsletter-padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "manta-newsletter-heading",
+          "label": "Heading text",
+          "default": "Stay in the loop"
+        },
+        {
+          "type": "select",
+          "id": "manta-newsletter-heading_size",
+          "label": "Heading size",
+          "default": "h1",
+          "options": [
+            { "value": "h1", "label": "Large" },
+            { "value": "h2", "label": "Medium" },
+            { "value": "h3", "label": "Small" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "name": "Paragraph",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "manta-newsletter-text",
+          "label": "Paragraph text",
+          "default": "<p>Subscribe to receive the latest updates, special deals, and more.</p>"
+        }
+      ]
+    },
+    {
+      "type": "email_form",
+      "name": "Email form"
+    },
+    {
+      "type": "social_icons",
+      "name": "Social Icons"
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "heading" },
+      { "type": "paragraph" },
+      { "type": "email_form" }
+    ],
+    "settings": {
+      "manta-newsletter-padding_top": 40,
+      "manta-newsletter-padding_bottom": 40,
+      "manta-newsletter-color_scheme": "background-1"
+    }
+  },
+  "presets": [
+    {
+      "name": "Simple Newsletter (Prefixed)",
+      "blocks": [
+        { "type": "heading" },
+        { "type": "paragraph" },
+        { "type": "email_form" }
+      ]
+    }
+  ]
+}
+{% endschema %}
