@@ -38,7 +38,7 @@
     >
       <div class="card__inner w100 por">
         {%- if card_product.featured_media -%}
-          <div class="media media--hover-effect w100 media--{{ media_aspect_ratio }}{% if media_aspect_ratio == 'adapt' %} ratio{% endif %}"{% if media_aspect_ratio == 'adapt' %} style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"{% endif %}>
+          <div class="media media--hover-effect manta-target w100 media--{{ media_aspect_ratio }}{% if media_aspect_ratio == 'adapt' %} ratio{% endif %}"{% if media_aspect_ratio == 'adapt' %} style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"{% endif %}>
             {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
             {%- liquid
               assign srcset = ''
