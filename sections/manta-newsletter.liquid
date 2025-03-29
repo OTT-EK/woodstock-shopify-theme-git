@@ -1,15 +1,6 @@
-{% comment %}
-  ------------------------
-  SIMPLE NEWSLETTER SECTION
-  ------------------------
-  With schema IDs prefixed by "manta-newsletter-"
-{% endcomment %}
+{{ 'manta-newsletter.css' | asset_url | stylesheet_tag }}
 
-{{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
-{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
-{{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
-
-<section class="simple-newsletter section-padding
+<section class="manta-newsletter__wrapper section-padding
   {% if section.settings['manta-newsletter-color_scheme'] != blank %}
     color-{{ section.settings['manta-newsletter-color_scheme'] }}
   {% endif %}"
@@ -19,52 +10,50 @@
   "
 >
   <div class="page-width">
-    <div class="newsletter__content">
+    <div class="manta-newsletter__content">
       {% for block in section.blocks %}
         {% case block.type %}
 
           {% when 'heading' %}
-            <h2 class="newsletter__heading font-heading-extra-bold {{ block.settings['manta-newsletter-heading_size'] }}">
+            <h2 class="manta-newsletter__heading {{ block.settings['manta-newsletter-heading_size'] }}">
               {{ block.settings['manta-newsletter-heading'] | escape }}
             </h2>
 
           {% when 'paragraph' %}
-            <div class="newsletter__text rte">
+            <div class="manta-newsletter__text">
               {{ block.settings['manta-newsletter-text'] }}
             </div>
 
           {% when 'email_form' %}
-            <div class="newsletter__box">
-              {% form 'customer', class: 'newsletter__email-form' %}
+            <div>
+              {% form 'customer', class: 'manta-newsletter__form' %}
                 <input type="hidden" name="contact[tags]" value="newsletter">
 
-                <div class="newsletter__form-field-wrapper flex justify-space-between">
-                  <div class="field flex-grow-1">
-                    <input
-                      id="NewsletterForm--{{ section.id }}"
-                      type="email"
-                      name="contact[email]"
-                      class="newsletter__input field__input"
-                      value="{{ form.email }}"
-                      aria-required="true"
-                      autocorrect="off"
-                      autocapitalize="off"
-                      autocomplete="email"
-                      {% if form.errors %}
-                        autofocus
-                        aria-invalid="true"
-                      {% elsif form.posted_successfully? %}
-                        aria-describedby="NewsletterSuccess--{{ section.id }}"
-                      {% endif %}
-                      placeholder="{{ 'newsletter.label' | t }}"
-                      required
-                    >
-                  </div>
-
-                  <button type="submit" class="button newsletter__button" name="commit" id="Subscribe-{{ section.id }}">
-                    <span>{{ 'newsletter.button_label' | t }}</span>
-                  </button>
+                <div class="manta-newsletter__input-wrapper">
+                  <input
+                    id="NewsletterForm--{{ section.id }}"
+                    type="email"
+                    name="contact[email]"
+                    class="manta-newsletter__input"
+                    value="{{ form.email }}"
+                    aria-required="true"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    autocomplete="email"
+                    {% if form.errors %}
+                      autofocus
+                      aria-invalid="true"
+                    {% elsif form.posted_successfully? %}
+                      aria-describedby="NewsletterSuccess--{{ section.id }}"
+                    {% endif %}
+                    placeholder="{{ 'newsletter.label' | t }}"
+                    required
+                  >
                 </div>
+
+                <button type="submit" class="manta-newsletter__button" name="commit" id="Subscribe-{{ section.id }}">
+                  {{ 'newsletter.button_label' | t }}
+                </button>
 
                 {% if form.errors %}
                   <small
@@ -90,16 +79,12 @@
               {% endform %}
             </div>
 
-          {% when 'social_icons' %}
-            <div class="newsletter__social-icons">
-              {% render 'social-media-icons', add_classes: 'newsletter__list-social' %}
-            </div>
-
         {% endcase %}
       {% endfor %}
     </div>
   </div>
 </section>
+
 
 {% schema %}
 {
