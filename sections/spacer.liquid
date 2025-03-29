@@ -1,13 +1,19 @@
 <style>
-	#shopify-section-{{ section.id }} {
+  #manta-spacer-bg-{{ section.id }} {
     height: {{ section.settings.height | times: 0.75 | round: 0 }}px;
+    background-color: {{ section.settings.bg_color }};
   }
-	@media screen and (min-width: 750px) {
-		#shopify-section-{{ section.id }} {
-			height: {{ section.settings.height }}px;
-		}
-	}
+
+  @media screen and (min-width: 750px) {
+    #manta-spacer-bg-{{ section.id }} {
+      height: {{ section.settings.height }}px;
+    }
+  }
 </style>
+
+<section id="manta-spacer-bg-{{ section.id }}" class="spacer">
+</section>
+
 {% schema %}
 {
   "name": "t:sections.spacer.name",
@@ -23,6 +29,12 @@
       "unit": "px",
       "label": "t:sections.spacer.settings.height.label",
       "default": 36
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
     }
   ],
   "presets": [
