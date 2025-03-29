@@ -38,7 +38,7 @@
     >
       <div class="card__inner w100 por">
         {%- if card_product.featured_media -%}
-          <div class="media media--hover-effect manta-target w100 media--{{ media_aspect_ratio }}{% if media_aspect_ratio == 'adapt' %} ratio{% endif %}"{% if media_aspect_ratio == 'adapt' %} style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"{% endif %}>
+          <div class="media w100 media--{{ media_aspect_ratio }}{% if media_aspect_ratio == 'adapt' %} ratio{% endif %}"{% if media_aspect_ratio == 'adapt' %} style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"{% endif %}>
             {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
             {%- liquid
               assign srcset = ''
@@ -79,42 +79,6 @@
               {{ card_product.featured_media | image_url: width: 300 | image_tag: sizes: sizes, srcset: srcset, width: card_product.featured_media.width, height: card_product.featured_media.height, preload: true, class: 'motion-reduce', fetchpriority: 'high' }}
             {%- endunless -%}  
             
-            {%- if card_product.media[1] != nil and show_secondary_image -%}
-              {%- liquid
-                assign srcset = ''
-                if card_product.media[1].width >= 165
-                  assign product_image_url = card_product.media[1] | image_url: width: 165
-                  assign srcset = srcset | append: product_image_url | append: ' 165w,'
-                endif
-                if card_product.media[1].width >= 300
-                  assign product_image_url = card_product.media[1] | image_url: width: 300
-                  assign srcset = srcset | append: product_image_url | append: ' 300w,'
-                endif
-                if card_product.media[1].width >= 450
-                  assign product_image_url = card_product.media[1] | image_url: width: 450
-                  assign srcset = srcset | append: product_image_url | append: ' 450w,'
-                endif
-                if card_product.media[1].width >= 533
-                  assign product_image_url = card_product.media[1] | image_url: width: 533
-                  assign srcset = srcset | append: product_image_url | append: ' 533w,'
-                endif
-                if card_product.media[1].width >= 720
-                  assign product_image_url = card_product.media[1] | image_url: width: 720
-                  assign srcset = srcset | append: product_image_url | append: ' 720w,'
-                endif
-                if card_product.media[1].width >= 940
-                  assign product_image_url = card_product.media[1] | image_url: width: 940
-                  assign srcset = srcset | append: product_image_url | append: ' 940w,'
-                endif
-                if card_product.media[1].width >= 1066
-                  assign product_image_url = card_product.media[1] | image_url: width: 1066
-                  assign srcset = srcset | append: product_image_url | append: ' 1066w,'
-                endif
-                assign product_image_url = card_product.media[1] | image_url
-                assign srcset = srcset | append: product_image_url | append: ' ' | append: card_product.media[1].width | append: 'w'
-              -%}
-              {{ card_product.media[1] | image_url: width: 300 | image_tag: sizes: sizes, srcset: srcset, width: card_product.media[1].width, height: card_product.media[1].height, class: 'motion-reduce', loading: 'lazy' }}
-            {%- endif -%}
             {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
           </div>
         {%- else -%}
