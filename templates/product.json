@@ -149,6 +149,12 @@
         "padding_bottom": 0
       }
     },
+    "spacer_CjM6VU": {
+      "type": "spacer",
+      "settings": {
+        "height": 36
+      }
+    },
     "6099b098-2d24-4b53-9488-988cbaa630f3": {
       "type": "main-product-attributes",
       "blocks": {
@@ -243,6 +249,7 @@
   },
   "order": [
     "main",
+    "spacer_CjM6VU",
     "6099b098-2d24-4b53-9488-988cbaa630f3",
     "8124c74c-24a1-4cc3-9369-91db0fab3a14",
     "168088586605a49d77",
