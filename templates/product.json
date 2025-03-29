@@ -179,8 +179,8 @@
       ],
       "settings": {
         "show_description": false,
-        "title": "Specification",
-        "subtitle": "Description",
+        "title": "Description",
+        "subtitle": "Specifications",
         "heading_size": "h2",
         "enable_section_box_layout": false,
         "color_scheme": "background-2",
