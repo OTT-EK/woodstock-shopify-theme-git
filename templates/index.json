@@ -282,6 +282,38 @@
         "manta_aboutus_button_link": ""
       }
     },
+    "manta_newsletter_BzjWti": {
+      "type": "manta-newsletter",
+      "blocks": {
+        "heading_xfqdUV": {
+          "type": "heading",
+          "settings": {
+            "manta-newsletter-heading": "Stay in the loop",
+            "manta-newsletter-heading_size": "h1"
+          }
+        },
+        "paragraph_BefUHj": {
+          "type": "paragraph",
+          "settings": {
+            "manta-newsletter-text": "<p>Subscribe to receive the latest updates, special deals, and more.</p>"
+          }
+        },
+        "email_form_eEnmih": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_xfqdUV",
+        "paragraph_BefUHj",
+        "email_form_eEnmih"
+      ],
+      "settings": {
+        "manta-newsletter-color_scheme": "",
+        "manta-newsletter-padding_top": 40,
+        "manta-newsletter-padding_bottom": 40
+      }
+    },
     "8f5a111c-95e5-4fe4-9470-893b0e7841d7": {
       "type": "collapsible-content",
       "blocks": {
@@ -403,38 +435,6 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "manta_newsletter_BzjWti": {
-      "type": "manta-newsletter",
-      "blocks": {
-        "heading_xfqdUV": {
-          "type": "heading",
-          "settings": {
-            "manta-newsletter-heading": "Stay in the loop",
-            "manta-newsletter-heading_size": "h1"
-          }
-        },
-        "paragraph_BefUHj": {
-          "type": "paragraph",
-          "settings": {
-            "manta-newsletter-text": "<p>Subscribe to receive the latest updates, special deals, and more.</p>"
-          }
-        },
-        "email_form_eEnmih": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading_xfqdUV",
-        "paragraph_BefUHj",
-        "email_form_eEnmih"
-      ],
-      "settings": {
-        "manta-newsletter-color_scheme": "",
-        "manta-newsletter-padding_top": 40,
-        "manta-newsletter-padding_bottom": 40
-      }
     }
   },
   "order": [
@@ -443,7 +443,7 @@
     "1aded6ef-5727-4347-bf56-9fc610343e55",
     "manta_brands_CVrn3p",
     "manta_about_us_t3jzAj",
-    "8f5a111c-95e5-4fe4-9470-893b0e7841d7",
-    "manta_newsletter_BzjWti"
+    "manta_newsletter_BzjWti",
+    "8f5a111c-95e5-4fe4-9470-893b0e7841d7"
   ]
 }
