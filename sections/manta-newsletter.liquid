@@ -1,69 +1,70 @@
 {{ 'manta-newsletter.css' | asset_url | stylesheet_tag }}
 
-<div class="page-width">
-<div class="manta-newsletter__grid">
-    <div class="manta-newsletter__text-content">
-      {% for block in section.blocks %}
-        {% case block.type %}
-          {% when 'heading' %}
-            <h2 class="manta-newsletter__heading {{ block.settings['manta-newsletter-heading_size'] }}">
-              {{ block.settings['manta-newsletter-heading'] | escape }}
-            </h2>
-          {% when 'paragraph' %}
-            <div class="manta-newsletter__text">
-              {{ block.settings['manta-newsletter-text'] }}
-            </div>
-        {% endcase %}
-      {% endfor %}
-    </div>
-  
-    <div class="manta-newsletter__form-wrapper">
-      {% for block in section.blocks %}
-        {% if block.type == 'email_form' %}
-          {% form 'customer', class: 'manta-newsletter__form' %}
-            <input type="hidden" name="contact[tags]" value="newsletter">
-            
-            <div class="manta-newsletter__input-wrapper">
-              <input
-                id="NewsletterForm--{{ section.id }}"
-                type="email"
-                name="contact[email]"
-                class="manta-newsletter__input"
-                value="{{ form.email }}"
-                aria-required="true"
-                autocorrect="off"
-                autocapitalize="off"
-                autocomplete="email"
-                placeholder="{{ 'newsletter.label' | t }}"
-                required
-              >
-            </div>
-  
-            <button type="submit" class="manta-newsletter__button" name="commit" id="Subscribe-{{ section.id }}">
-              {{ 'newsletter.button_label' | t }}
-            </button>
-  
-            {% if form.errors %}
-              <small class="form__message alert alert--error alert--small" id="Newsletter-error--{{ section.id }}">
-                {% render 'icon-error' %}
-                {{ form.errors.translated_fields['email'] | capitalize }}
-                {{ form.errors.messages['email'] }}
-              </small>
-            {% endif %}
-  
-            {% if form.posted_successfully? %}
-              <h3 class="newsletter-form__message--success form__message alert alert--success alert--small" id="NewsletterSuccess--{{ section.id }}" tabindex="-1">
-                {% render 'icon-success' %}
-                {{ 'newsletter.success' | t }}
-              </h3>
-            {% endif %}
-          {% endform %}
-        {% endif %}
-      {% endfor %}
+<section class="manta-newsletter__wrapper section-padding
+  {% if section.settings.manta_newsletter_color_scheme != blank %}
+    color-{{ section.settings.manta_newsletter_color_scheme }}
+  {% endif %}"
+  style="
+    padding-top: {{ section.settings.manta_newsletter_padding_top }}px;
+    padding-bottom: {{ section.settings.manta_newsletter_padding_bottom }}px;
+  "
+>
+  <div class="page-width">
+    <div class="manta-newsletter__grid">
+
+      <div class="manta-newsletter__text-content">
+        <h2 class="manta-newsletter__heading {{ section.settings.manta_newsletter_heading_size }}">
+          {{ section.settings.manta_newsletter_heading | escape }}
+        </h2>
+        <div class="manta-newsletter__text">
+          {{ section.settings.manta_newsletter_text }}
+        </div>
+      </div>
+
+      <div class="manta-newsletter__form-wrapper">
+        {% form 'customer', class: 'manta-newsletter__form' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+
+          <div class="manta-newsletter__input-wrapper">
+            <input
+              id="NewsletterForm--{{ section.id }}"
+              type="email"
+              name="contact[email]"
+              class="manta-newsletter__input"
+              value="{{ form.email }}"
+              aria-required="true"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="email"
+              placeholder="{{ section.settings.manta_newsletter_input_placeholder | escape }}"
+              required
+            >
+          </div>
+
+          <button type="submit" class="manta-newsletter__button" name="commit" id="Subscribe-{{ section.id }}">
+            {{ section.settings.manta_newsletter_button_label }}
+          </button>
+
+          {% if form.errors %}
+            <small class="form__message alert alert--error alert--small" id="Newsletter-error--{{ section.id }}">
+              {% render 'icon-error' %}
+              {{ form.errors.translated_fields['email'] | capitalize }}
+              {{ form.errors.messages['email'] }}
+            </small>
+          {% endif %}
+
+          {% if form.posted_successfully? %}
+            <h3 class="newsletter-form__message--success form__message alert alert--success alert--small" id="NewsletterSuccess--{{ section.id }}" tabindex="-1">
+              {% render 'icon-success' %}
+              {{ 'newsletter.success' | t }}
+            </h3>
+          {% endif %}
+        {% endform %}
+      </div>
+
     </div>
   </div>
-</div>
-
+</section>
 
 {% schema %}
 {
@@ -72,13 +73,13 @@
   "settings": [
     {
       "type": "color_scheme",
-      "id": "manta-newsletter-color_scheme",
+      "id": "manta_newsletter_color_scheme",
       "label": "Color scheme",
       "default": "background-1"
     },
     {
       "type": "range",
-      "id": "manta-newsletter-padding_top",
+      "id": "manta_newsletter_padding_top",
       "label": "Padding top",
       "min": 0,
       "max": 100,
@@ -88,68 +89,53 @@
     },
     {
       "type": "range",
-      "id": "manta-newsletter-padding_bottom",
+      "id": "manta_newsletter_padding_bottom",
       "label": "Padding bottom",
       "min": 0,
       "max": 100,
       "step": 4,
       "unit": "px",
       "default": 40
-    }
-  ],
-  "blocks": [
+    },
     {
-      "type": "heading",
-      "name": "Heading",
-      "settings": [
-        {
-          "type": "text",
-          "id": "manta-newsletter-heading",
-          "label": "Heading text",
-          "default": "Stay in the loop"
-        },
-        {
-          "type": "select",
-          "id": "manta-newsletter-heading_size",
-          "label": "Heading size",
-          "default": "h1",
-          "options": [
-            { "value": "h1", "label": "Large" },
-            { "value": "h2", "label": "Medium" },
-            { "value": "h3", "label": "Small" }
-          ]
-        }
+      "type": "text",
+      "id": "manta_newsletter_heading",
+      "label": "Heading",
+      "default": "Užsisakyk naujienlaiškį"
+    },
+    {
+      "type": "select",
+      "id": "manta_newsletter_heading_size",
+      "label": "Heading size",
+      "default": "h2",
+      "options": [
+        { "value": "h1", "label": "Large" },
+        { "value": "h2", "label": "Medium" },
+        { "value": "h3", "label": "Small" }
       ]
     },
     {
-      "type": "paragraph",
-      "name": "Paragraph",
-      "settings": [
-        {
-          "type": "richtext",
-          "id": "manta-newsletter-text",
-          "label": "Paragraph text",
-          "default": "<p>Subscribe to receive the latest updates, special deals, and more.</p>"
-        }
-      ]
+      "type": "richtext",
+      "id": "manta_newsletter_text",
+      "label": "Subheading text",
+      "default": "<p>Sužinok apie akcijas ir naujienas pirmas!</p>"
     },
     {
-      "type": "email_form",
-      "name": "Email form"
+      "type": "text",
+      "id": "manta_newsletter_input_placeholder",
+      "label": "Input placeholder text",
+      "default": "El. paštas"
     },
     {
-      "type": "social_icons",
-      "name": "Social Icons"
+      "type": "text",
+      "id": "manta_newsletter_button_label",
+      "label": "Button label",
+      "default": "Užsakyti"
     }
   ],
   "presets": [
     {
-      "name": "Simple Newsletter",
-      "blocks": [
-        { "type": "heading" },
-        { "type": "paragraph" },
-        { "type": "email_form" }
-      ]
+      "name": "Simple Newsletter"
     }
   ]
 }
