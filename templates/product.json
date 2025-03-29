@@ -180,7 +180,7 @@
       "settings": {
         "show_description": false,
         "title": "Specification",
-        "subtitle": "Subheading",
+        "subtitle": "Description",
         "heading_size": "h2",
         "enable_section_box_layout": false,
         "color_scheme": "background-2",
