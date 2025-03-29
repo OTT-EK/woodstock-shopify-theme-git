@@ -282,50 +282,6 @@
         "manta_aboutus_button_link": ""
       }
     },
-    "newsletter_qTTeWy": {
-      "type": "newsletter",
-      "blocks": {
-        "heading_JUph6z": {
-          "type": "heading",
-          "settings": {
-            "heading": "Subscribe to our emails",
-            "heading_size": "h1"
-          }
-        },
-        "paragraph_jQkr3P": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
-          }
-        },
-        "email_form_GPwTYW": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading_JUph6z",
-        "paragraph_jQkr3P",
-        "email_form_GPwTYW"
-      ],
-      "settings": {
-        "grid_layout": "grid",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "enable_section_box_layout": false,
-        "color_scheme": "",
-        "enable_parallax_scrolling_effect": true,
-        "colors_text": "#fff",
-        "colors_input": "#64748B",
-        "overlay_color": "#1E40AF",
-        "mobile_content_alignment": "left",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "8f5a111c-95e5-4fe4-9470-893b0e7841d7": {
       "type": "collapsible-content",
       "blocks": {
@@ -447,6 +403,50 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "newsletter_8AdKjc": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_L7h463": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_7meEqN": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
+          }
+        },
+        "email_form_yE9djF": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_L7h463",
+        "paragraph_7meEqN",
+        "email_form_yE9djF"
+      ],
+      "settings": {
+        "grid_layout": "grid",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "enable_section_box_layout": false,
+        "color_scheme": "",
+        "enable_parallax_scrolling_effect": true,
+        "colors_text": "#fff",
+        "colors_input": "#64748B",
+        "overlay_color": "#1E40AF",
+        "mobile_content_alignment": "left",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -455,7 +455,7 @@
     "1aded6ef-5727-4347-bf56-9fc610343e55",
     "manta_brands_CVrn3p",
     "manta_about_us_t3jzAj",
-    "newsletter_qTTeWy",
-    "8f5a111c-95e5-4fe4-9470-893b0e7841d7"
+    "8f5a111c-95e5-4fe4-9470-893b0e7841d7",
+    "newsletter_8AdKjc"
   ]
 }
