@@ -1,5 +1,6 @@
 {{ 'manta-newsletter.css' | asset_url | stylesheet_tag }}
 
+<div class="page-width">
 <div class="manta-newsletter__grid">
     <div class="manta-newsletter__text-content">
       {% for block in section.blocks %}
@@ -61,7 +62,7 @@
       {% endfor %}
     </div>
   </div>
-  
+</div>
 
 
 {% schema %}
