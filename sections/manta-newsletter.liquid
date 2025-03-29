@@ -13,7 +13,7 @@
     <div class="manta-newsletter__grid">
 
       <div class="manta-newsletter__text-content">
-        <h2 class="manta-newsletter__heading {{ section.settings.manta_newsletter_heading_size }}">
+        <h2 class="manta-newsletter__heading">
           {{ section.settings.manta_newsletter_heading | escape }}
         </h2>
         <div class="manta-newsletter__text">
@@ -36,13 +36,13 @@
               autocorrect="off"
               autocapitalize="off"
               autocomplete="email"
-              placeholder="{{ section.settings.manta_newsletter_input_placeholder | escape }}"
+              placeholder="Enter your email"
               required
             >
           </div>
 
           <button type="submit" class="manta-newsletter__button" name="commit" id="Subscribe-{{ section.id }}">
-            {{ section.settings.manta_newsletter_button_label }}
+            Subscribe
           </button>
 
           {% if form.errors %}
@@ -56,12 +56,11 @@
           {% if form.posted_successfully? %}
             <h3 class="newsletter-form__message--success form__message alert alert--success alert--small" id="NewsletterSuccess--{{ section.id }}" tabindex="-1">
               {% render 'icon-success' %}
-              {{ 'newsletter.success' | t }}
+              Thank you for subscribing!
             </h3>
           {% endif %}
         {% endform %}
       </div>
-
     </div>
   </div>
 </section>
@@ -76,6 +75,18 @@
       "id": "manta_newsletter_color_scheme",
       "label": "Color scheme",
       "default": "background-1"
+    },
+    {
+      "type": "text",
+      "id": "manta_newsletter_heading",
+      "label": "Heading",
+      "default": "Stay in the loop"
+    },
+    {
+      "type": "richtext",
+      "id": "manta_newsletter_text",
+      "label": "Subheading",
+      "default": "<p>Be the first to know about new products and exclusive offers.</p>"
     },
     {
       "type": "range",
@@ -96,41 +107,6 @@
       "step": 4,
       "unit": "px",
       "default": 40
-    },
-    {
-      "type": "text",
-      "id": "manta_newsletter_heading",
-      "label": "Heading",
-      "default": "Užsisakyk naujienlaiškį"
-    },
-    {
-      "type": "select",
-      "id": "manta_newsletter_heading_size",
-      "label": "Heading size",
-      "default": "h2",
-      "options": [
-        { "value": "h1", "label": "Large" },
-        { "value": "h2", "label": "Medium" },
-        { "value": "h3", "label": "Small" }
-      ]
-    },
-    {
-      "type": "richtext",
-      "id": "manta_newsletter_text",
-      "label": "Subheading text",
-      "default": "<p>Sužinok apie akcijas ir naujienas pirmas!</p>"
-    },
-    {
-      "type": "text",
-      "id": "manta_newsletter_input_placeholder",
-      "label": "Input placeholder text",
-      "default": "El. paštas"
-    },
-    {
-      "type": "text",
-      "id": "manta_newsletter_button_label",
-      "label": "Button label",
-      "default": "Užsakyti"
     }
   ],
   "presets": [
