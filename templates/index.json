@@ -404,48 +404,36 @@
         "padding_bottom": 36
       }
     },
-    "newsletter_8AdKjc": {
-      "type": "newsletter",
+    "manta_newsletter_BzjWti": {
+      "type": "manta-newsletter",
       "blocks": {
-        "heading_L7h463": {
+        "heading_xfqdUV": {
           "type": "heading",
           "settings": {
-            "heading": "Subscribe to our emails",
-            "heading_size": "h1"
+            "manta-newsletter-heading": "Stay in the loop",
+            "manta-newsletter-heading_size": "h1"
           }
         },
-        "paragraph_7meEqN": {
+        "paragraph_BefUHj": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
+            "manta-newsletter-text": "<p>Subscribe to receive the latest updates, special deals, and more.</p>"
           }
         },
-        "email_form_yE9djF": {
+        "email_form_eEnmih": {
           "type": "email_form",
           "settings": {}
         }
       },
       "block_order": [
-        "heading_L7h463",
-        "paragraph_7meEqN",
-        "email_form_yE9djF"
+        "heading_xfqdUV",
+        "paragraph_BefUHj",
+        "email_form_eEnmih"
       ],
       "settings": {
-        "grid_layout": "grid",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "enable_section_box_layout": false,
-        "color_scheme": "",
-        "enable_parallax_scrolling_effect": true,
-        "colors_text": "#fff",
-        "colors_input": "#64748B",
-        "overlay_color": "#1E40AF",
-        "mobile_content_alignment": "left",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "manta-newsletter-color_scheme": "",
+        "manta-newsletter-padding_top": 40,
+        "manta-newsletter-padding_bottom": 40
       }
     }
   },
@@ -456,6 +444,6 @@
     "manta_brands_CVrn3p",
     "manta_about_us_t3jzAj",
     "8f5a111c-95e5-4fe4-9470-893b0e7841d7",
-    "newsletter_8AdKjc"
+    "manta_newsletter_BzjWti"
   ]
 }
