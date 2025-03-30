@@ -660,7 +660,7 @@
                         <path d="M4 12L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M4 19L20 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <span style="display: flex; align-items: center;">Categories 2</span>
+                      <span style="display: flex; align-items: center;">Categories{% unless request.page_type == 'index' %}Y{% endunless %}</span>
                     </summary>             
                     <ul class="header__submenu list-menu manta-list-menu-adaptation">
                       {% for link in section.settings.manta-category-menu.links %}
