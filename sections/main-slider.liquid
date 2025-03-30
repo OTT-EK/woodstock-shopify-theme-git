@@ -119,452 +119,443 @@
 }
 {% endschema %}
 
-  <style>
+<style>
+  /* =====================
+     CORE STYLES
+     ===================== */
+  .manta-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* sidebar + content */
+    gap: 2px;
+    align-items: stretch;
+  }
+  .manta-sidebar {
+    background: #313131;
+    color: #fff;
+    position: relative; /* needed for internal positioning */
+    padding: 0;
+    overflow: hidden;
+    border-radius: 0px 0px 0px 8px;
+    box-shadow: 0 1px 2px rgb(var(--color-foreground),.06),0 1px 3px rgb(var(--color-foreground),.1);
+  }
+  .manta-sidebar-inner {
+    position: relative;
+    box-sizing: border-box;
+    height: 100%; /* fill the grid cell’s height */
+  }
+  .manta-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #313131;
+    transition: max-height 0.3s ease;
+  }
+  .manta-menu.collapsed {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0;
+    max-height: none;
+    overflow: visible;
+    z-index: 1;
+    padding-bottom: 2.5rem;
+    padding-top: 0.3rem;
+  }
+  .manta-menu.expanded {
+    position: relative; 
+    max-height: calc(100% - 60px);
+    overflow: hidden;
+    padding-bottom: 6rem;
+    padding-top: 0.3rem;
+  }
+  .manta-menu-item {
+    border-bottom: 1px solid #444;
+  }
+  .manta-menu-item a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 16px;
+    transition: background-color 0.2s;
+  }
+  .manta-menu-item a:hover {
+    background-color: #444;
+  }
+  .manta-menu-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: inline-block;
+  }
+  .manta-menu-icon img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  .manta-menu-text {
+    flex: 1;
+  }
+  .manta-menu-toggle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 8px 16px;
+    background: #444;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    z-index: 3;
+    box-sizing: border-box;
+  }
+  .manta-menu-toggle:hover {
+    background-color: #555;
+  }
+  .manta-content {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 3px;
+  }
+  .manta-content-box-large {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    aspect-ratio: 16 / 7;
+  }
+  .manta-content-box-small-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .manta-content-box-small {
+    min-height: 15vh;
+    box-shadow: 0 1px 2px rgb(var(--color-foreground),.06),0 1px 3px rgb(var(--color-foreground),.1);
+  }
+  @media (max-width: 1024px) {
     .manta-grid-container {
-      display: grid;
-      grid-template-columns: 1fr 3fr; /* sidebar + content */
-      gap: 2px;
-      align-items: stretch;
+      grid-template-columns: 1fr;
     }
     .manta-sidebar {
-      background: #313131;
-      color: #fff;
-      position: relative; /* needed for internal positioning */
-      padding: 0;
-      overflow: hidden;
-      border-radius: 0px 0px 0px 8px;
-      box-shadow: 0 1px 2px rgb(var(--color-foreground),.06),0 1px 3px rgb(var(--color-foreground),.1);
+      display: none;
     }
-    .manta-sidebar-inner {
-      position: relative;
-      box-sizing: border-box;
-      height: 100%; /* fill the grid cell’s height */
-    }
-    .manta-menu {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      background-color: #313131;
-      transition: max-height 0.3s ease;
-    }
-    .manta-menu.collapsed {
-      position: absolute; 
-      top: 0; 
-      left: 0; 
-      right: 0;
-      max-height: none;
-      overflow: visible;
-      z-index: 1;
-      padding-bottom: 2.5rem; /* Add this line */
-      padding-top: 0.3rem;
-    }
-
-    /* COLLAPSED: partial view */
-    .manta-menu.expanded {
-      position: relative; 
-      max-height: calc(100% - 60px);
-      overflow: hidden;
-      padding-bottom: 6rem; /* Add this line */
-      padding-top: 0.3rem;
-    }
-
-    /* Menu items */
-    .manta-menu-item {
-      border-bottom: 1px solid #444;
-    }
-    .manta-menu-item a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: #fff;
-      padding: 10px 16px;
-      transition: background-color 0.2s;
-    }
-    .manta-menu-item a:hover {
-      background-color: #444;
-    }
-
-    /* Icons */
-    .manta-menu-icon {
-      width: 24px;
-      height: 24px;
-      flex-shrink: 0;
-      display: inline-block;
-    }
-    .manta-menu-icon img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-    .manta-menu-text {
-      flex: 1;
-    }
-
-    .manta-menu-toggle {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: 0;
-      padding: 8px 16px;
-      background: #444;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background-color 0.2s;
-      z-index: 3;
-      box-sizing: border-box;
-    }
-    .manta-menu-toggle:hover {
-      background-color: #555;
-    }
-    .manta-content {
-      display: grid;
-      grid-template-rows: auto auto;
-      gap: 3px;
-    }
-    .manta-content-box-large {
-      position: relative;
-      overflow: hidden;
-      height: auto;
-      aspect-ratio: 16 / 7;
-    }
+  }
+  @media (max-width: 768px) {
     .manta-content-box-small-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3px;
+      display: flex;
+      overflow-x: scroll;
+      gap: 10px;
+      margin-top: 10px;
+      margin-left: 1.5rem;
+    }
+    .manta-slider-controls.manta-slider-desktop {
+      box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+      display: none !important; /* HIDE DESKTOP CONTROLS BELOW 768PX */
     }
     .manta-content-box-small {
-      min-height: 15vh;
-      box-shadow: 0 1px 2px rgb(var(--color-foreground),.06),0 1px 3px rgb(var(--color-foreground),.1);
+      flex: 0 0 auto;
+      width: 84%;
     }
-    /* RESPONSIVE BREAKPOINTS */
-    @media (max-width: 1024px) {
-      .manta-grid-container {
-        grid-template-columns: 1fr;
-      }
-      .manta-sidebar {
-        display: none;
-      }
+    .manta-content-box-large {
+      aspect-ratio: 4 / 3;
     }
-    @media (max-width: 768px) {
-      .manta-content-box-small-container {
-        display: flex;
-        overflow-x: scroll;
-        gap: 10px;
-        margin-top: 10px;
-        margin-left: 1.5rem;
-      }
-      .manta-slider-controls.manta-slider-desktop {
-        box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
-        display: none !important;
-      }
-      .manta-content-box-small {
-        flex: 0 0 auto;
-        width: 84%;
-      }
-      .manta-content-box-large {
-        aspect-ratio: 4 / 3;
-      }
-      .manta-grid-container.page-width {
-        padding: 0 0;
-      }
+    .manta-grid-container.page-width {
+      padding: 0 0;
     }
-    .manta-picture-featured-2::after, .manta-content-box-small.manta-cta-box:nth-of-type(2) {
+  }
+  @media (min-width: 769px) {
+    .manta-slider-controls.manta-slider-mobile {
+      display: none !important; /* HIDE MOBILE CONTROLS ABOVE 768PX */
+    }
+  }
+  .manta-picture-featured-2::after, .manta-content-box-small.manta-cta-box:nth-of-type(2) {
+    border-bottom-right-radius: 8px;
+  }
+  @media (max-width: 1024px) {
+    .manta-cta-content:nth-of-type(1), .manta-content-box-small.manta-cta-box:nth-of-type(1) {
+      border-bottom-left-radius: 8px;
+    }
+  }
+  @media (max-width: 768px) {
+    .manta-cta-content, .manta-content-box-small.manta-cta-box {
+      border-bottom-left-radius: 8px;
+      border-top-left-radius: 8px;
+    }
+    .manta-picture-featured-2::after,.manta-picture-featured-1::after, .manta-content-box-small.manta-cta-box {
       border-bottom-right-radius: 8px;
+      border-top-right-radius: 8px;
     }
-    @media (max-width: 1024px) {
-      .manta-cta-content:nth-of-type(1), .manta-content-box-small.manta-cta-box:nth-of-type(1) {
-        border-bottom-left-radius: 8px;
-      }
-    }
-    @media (max-width: 768px) {
-      .manta-cta-content, .manta-content-box-small.manta-cta-box {
-        border-bottom-left-radius: 8px;
-        border-top-left-radius: 8px;
-      }
-      .manta-picture-featured-2::after,.manta-picture-featured-1::after, .manta-content-box-small.manta-cta-box {
-        border-bottom-right-radius: 8px;
-        border-top-right-radius: 8px;
-      }
-    }
-    @media (max-width: 440px) {
-      .manta-content-box-small {
-        width: 95%;
-      }
-      .manta-cta-content {
-        min-width: 63.6%;
-      }
-      .manta-content-box-small.manta-cta-box::after {
-        width: 75% !important;
-      }
-    }
-    .manta-slider-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    .manta-slides {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.5s ease;
-    }
-    .manta-slide {
-      min-width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-    }
-    .manta-slider-controls {
-      position: absolute;
-      bottom: 5px;
-      left: 50%;
-      transform: translateX(-50%) scale(0.9);
-      transform-origin: center center;
-      display: flex;
-      align-items: center;
-      background-color: white;
-      border-radius: 5px;
-      z-index: 2;
-    }
-    .manta-slider-btn {
-      background: none;
-      border: none;
-      font-size: 12px;
-      cursor: pointer;
-      color: #333;
-      outline: none;
-      width: 4.4rem;
-      height: 4.4rem;
-    }
-    .manta-dots {
-      display: flex;
-      gap: 1rem;
-      padding: 0 2rem;
-    }
-    .manta-dots span {
-      width: .7rem;
-      height: .7rem;
-      display: block;
-      border-radius: 50%;
-      background-color: #aaa;
-      cursor: pointer;
-    }
-    .manta-dots span.active {
-      background-color: #333;
-    }
-    .manta-pause-play-btn {
-      position: relative;
-      width: 4.4rem;
-      height: 4.4rem;
-      cursor: pointer;
-    }
-    .manta-progress-ring {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: rotate(-90deg);
-      width: 100%;
-    }
-    .manta-pause-icon,
-    .manta-play-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 5px;
-      pointer-events: none;
-    }
-    .manta-right-line {
-      border-right: 1px solid #eeeeee;
-    }
-    .manta-both-line {
-      border-left: 1px solid #eeeeee;
-      border-right: 1px solid #eeeeee;
-    }
-    .manta-content-box-small.manta-cta-box {
-      position: relative; 
-      height: auto;        /* Let the box grow naturally */
-      overflow: visible;   /* Ensure text isn't cut off */
-      background-color: #313131;
-    }
-    .manta-content-box-small.manta-cta-box.manta-picture-featured-1::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;  /* So it always stretches to match the parent's height */
-      width: 50%;
-      background-size: cover;
-      background-image: url("{{ section.settings.manta_featuredbox_img_1 | img_url: 'master' }}");
-      z-index: 1;
-      background-position: center;
-    }
-    .manta-content-box-small.manta-cta-box.manta-picture-featured-2::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;  /* So it always stretches to match the parent's height */
-      width: 50%;
-      background-size: cover;
-      background-image: url("{{ section.settings.manta_featuredbox_img_2 | img_url: 'master' }}");
-      z-index: 1;
-      background-position: center;
+  }
+  @media (max-width: 440px) {
+    .manta-content-box-small {
+      width: 95%;
     }
     .manta-cta-content {
-      position: relative; 
-      /* Use a width if you want the left portion to be ~60% */
-      width: 60%;
-      height: 100%;
-      background-color: #313131;
-      clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
-      /* The rest of your styling can remain similar: */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 1.6rem 1rem 1rem 1.6rem;
-      box-sizing: border-box;
-      color: #fff;
-      z-index: 2;    /* So it appears above the pseudo-element background */
-      text-decoration: none;
+      min-width: 63.6%;
     }
-    .manta-cta-content h2 {
-      margin: 0 0 8px;
-      color: white;
-      font-weight: bold;
+    .manta-content-box-small.manta-cta-box::after {
+      width: 75% !important;
     }
-    .manta-cta-content p {
-      margin: 0 0 12px;
-      height: auto;
-      max-width: calc(100% - 12px);
-      padding-right: 2rem;
-      min-height: 1.7rem;
+  }
+  .manta-slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .manta-slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+  }
+  .manta-slide {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .manta-slider-controls {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    transform-origin: center center;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    z-index: 2;
+  }
+  .manta-slider-btn {
+    background: none;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    color: #333;
+    outline: none;
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+  .manta-dots {
+    display: flex;
+    gap: 1rem;
+    padding: 0 2rem;
+  }
+  .manta-dots span {
+    width: .7rem;
+    height: .7rem;
+    display: block;
+    border-radius: 50%;
+    background-color: #aaa;
+    cursor: pointer;
+  }
+  .manta-dots span.active {
+    background-color: #333;
+  }
+  .manta-pause-play-btn {
+    position: relative;
+    width: 4.4rem;
+    height: 4.4rem;
+    cursor: pointer;
+  }
+  .manta-progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+    width: 100%;
+  }
+  .manta-pause-icon,
+  .manta-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5px;
+    pointer-events: none;
+  }
+  .manta-right-line {
+    border-right: 1px solid #eeeeee;
+  }
+  .manta-both-line {
+    border-left: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+  }
+  .manta-content-box-small.manta-cta-box {
+    position: relative; 
+    height: auto;        
+    overflow: visible;   
+    background-color: #313131;
+  }
+  .manta-content-box-small.manta-cta-box.manta-picture-featured-1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0; 
+    width: 50%;
+    background-size: cover;
+    background-image: url("{{ section.settings.manta_featuredbox_img_1 | img_url: 'master' }}");
+    z-index: 1;
+    background-position: center;
+  }
+  .manta-content-box-small.manta-cta-box.manta-picture-featured-2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    background-size: cover;
+    background-image: url("{{ section.settings.manta_featuredbox_img_2 | img_url: 'master' }}");
+    z-index: 1;
+    background-position: center;
+  }
+  .manta-cta-content {
+    position: relative; 
+    width: 60%;
+    height: 100%;
+    background-color: #313131;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1.6rem 1rem 1rem 1.6rem;
+    box-sizing: border-box;
+    color: #fff;
+    z-index: 2;
+    text-decoration: none;
+  }
+  .manta-cta-content h2 {
+    margin: 0 0 8px;
+    color: white;
+    font-weight: bold;
+  }
+  .manta-cta-content p {
+    margin: 0 0 12px;
+    height: auto;
+    max-width: calc(100% - 12px);
+    padding-right: 2rem;
+    min-height: 1.7rem;
+  }
+  .manta-cta-content span {
+    display: inline-block;
+    width: auto;
+    background-color: #fff;
+    color: #313131;
+    border: none;
+    padding: 6px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: calc(1.2rem * var(--font-body-scale));
+  }
+  .manta-sidebar:has(.manta-menu.expanded) {
+    border-radius: 0 0 8px 8px;
+  }
+  @media (max-width: 316px) {
+    .manta-cta-content a {
+      font-size: 9px;
+      padding: 4px 8px;
     }
-    .manta-cta-content span {
-      display: inline-block;
-      width: auto;
-      background-color: #fff;
-      color: #313131;
-      border: none;
-      padding: 6px 20px;
-      cursor: pointer;
-      text-transform: uppercase;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: calc(1.2rem * var(--font-body-scale));
-    }
-    .manta-sidebar:has(.manta-menu.expanded) {
-      border-radius: 0 0 8px 8px;
-    }
-    @media (max-width: 316px) {
-      .manta-cta-content a {
-        font-size: 9px;
-        padding: 4px 8px;
-      }
-    }
-  </style>
-  <style>
-    {% for block in section.blocks %}
-      .manta-slide.manta-mslide-{{ forloop.index }} {
-        background-image: url("{{ block.settings.manta_slider_img | img_url: "master" }}");
-        background-size: cover;
-        background-position: center;
-      }
-      @media (max-width: 768px) {
-        .manta-slide.manta-mslide-{{ forloop.index }} {
-          background-image: url("{{ block.settings.manta_slider_img_mob | img_url: 'master' }}") !important;
-        }
-      }
-    {% endfor %}
-  </style>  
- <div class="manta-grid-container page-width">
-    <!-- SIDEBAR -->
-    <div class="manta-sidebar">
-      <div class="manta-sidebar-inner">
-        <ul class="manta-menu collapsed" id="mantaMenu">
-          {% for link in section.settings.manta-category-menu-2.links %}
-            <li class="manta-menu-item manta-menu-parent">
-              <a href="{{ link.url }}" target="_SELF" style="display: flex; align-items: center; gap: 8px;">
-                <span class="manta-menu-icon" style="display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; flex-shrink: 0;">
-                  {% assign collection_handle = link.url | split: '/' | last %}
-                  {% assign collection = collections[collection_handle] %}
-                  
-                  {% assign manta_url_1 = section.settings.manta_url_replacement_1 %}
-                  {% assign manta_url_2 = section.settings.manta_url_replacement_2 %}
-                  {% assign manta_icon_1 = section.settings.manta_url_replacement_img_1 %}
-                  {% assign manta_icon_2 = section.settings.manta_url_replacement_img_2 %}
-          
-                  {% if collection.metafields.custom.collection_icon != blank %}
-                    <!-- Use collection metafield icon -->
-                    <img src="{{ collection.metafields.custom.collection_icon | img_url: '32x32' }}" 
-                         alt="{{ link.title }}" 
-                         width="24" 
-                         height="24" 
-                         style="display: block; object-fit: contain; vertical-align: middle;">
-                  
-                  {% elsif link.url == manta_url_1 and manta_icon_1 != blank %}
-                    <!-- Use replacement icon for manta_url_replacement_1 -->
-                    <img src="{{ manta_icon_1 | img_url: '32x32' }}" 
-                         alt="{{ link.title }}" 
-                         width="24" 
-                         height="24" 
-                         style="display: block; object-fit: contain; vertical-align: middle;">
-          
-                  {% elsif link.url == manta_url_2 and manta_icon_2 != blank %}
-                    <!-- Use replacement icon for manta_url_replacement_2 -->
-                    <img src="{{ manta_icon_2 | img_url: '32x32' }}" 
-                         alt="{{ link.title }}" 
-                         width="24" 
-                         height="24" 
-                         style="display: block; object-fit: contain; vertical-align: middle;">
-                  
-                  {% else %}
-                    <!-- Default SVG icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
-                      <path d="M9.5 14.5L14.5 9.49995" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      <path d="M16.8463 14.6095L19.4558 12C21.5147 9.94108 21.5147 6.60298 19.4558 4.54411C17.397 2.48524 14.0589 2.48524 12 4.54411L9.39045 7.15366M14.6095 16.8463L12 19.4558C9.94113 21.5147 6.60303 21.5147 4.54416 19.4558C2.48528 17.3969 2.48528 14.0588 4.54416 12L7.1537 9.39041" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  {% endif %}
-                </span>
-                <span class="manta-menu-text text-small" style="display: flex; align-items: center;">{{ link.title }}</span>
-              </a>
-            </li>                       
-          {% endfor %}                                               
-          <!-- Add more <li> items as needed -->
-        </ul>
+  }
 
-        <!-- Toggle button always fixed at bottom -->
-        <button id="mantaMenuToggle" class="manta-menu-toggle">
-          Show more
-        </button>
-      </div>
+  /* =====================
+     RESPONSIVE SLIDE IMAGES
+     ===================== */
+  {% for block in section.blocks %}
+    .manta-slide.manta-mslide-{{ forloop.index }} {
+      background-image: url("{{ block.settings.manta_slider_img | img_url: 'master' }}");
+      background-size: cover;
+      background-position: center;
+    }
+    @media (max-width: 768px) {
+      .manta-slide.manta-mslide-{{ forloop.index }} {
+        background-image: url("{{ block.settings.manta_slider_img_mob | img_url: 'master' }}") !important;
+      }
+    }
+  {% endfor %}
+</style>
+
+<div class="manta-grid-container page-width">
+  <!-- SIDEBAR -->
+  <div class="manta-sidebar">
+    <div class="manta-sidebar-inner">
+      <ul class="manta-menu collapsed" id="mantaMenu">
+        {% for link in section.settings.manta-category-menu-2.links %}
+          <li class="manta-menu-item manta-menu-parent">
+            <a href="{{ link.url }}" target="_SELF" style="display: flex; align-items: center; gap: 8px;">
+              <span class="manta-menu-icon" style="display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; flex-shrink: 0;">
+                {% assign collection_handle = link.url | split: '/' | last %}
+                {% assign collection = collections[collection_handle] %}
+                
+                {% assign manta_url_1 = section.settings.manta_url_replacement_1 %}
+                {% assign manta_url_2 = section.settings.manta_url_replacement_2 %}
+                {% assign manta_icon_1 = section.settings.manta_url_replacement_img_1 %}
+                {% assign manta_icon_2 = section.settings.manta_url_replacement_img_2 %}
+        
+                {% if collection.metafields.custom.collection_icon != blank %}
+                  <img src="{{ collection.metafields.custom.collection_icon | img_url: '32x32' }}" 
+                       alt="{{ link.title }}" 
+                       width="24" 
+                       height="24" 
+                       style="display: block; object-fit: contain; vertical-align: middle;">
+                {% elsif link.url == manta_url_1 and manta_icon_1 != blank %}
+                  <img src="{{ manta_icon_1 | img_url: '32x32' }}"
+                       alt="{{ link.title }}"
+                       width="24"
+                       height="24"
+                       style="display: block; object-fit: contain; vertical-align: middle;">
+                {% elsif link.url == manta_url_2 and manta_icon_2 != blank %}
+                  <img src="{{ manta_icon_2 | img_url: '32x32' }}"
+                       alt="{{ link.title }}"
+                       width="24"
+                       height="24"
+                       style="display: block; object-fit: contain; vertical-align: middle;">
+                {% else %}
+                  <!-- Default SVG icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
+                    <path d="M9.5 14.5L14.5 9.49995" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M16.8463 14.6095L19.4558 12C21.5147 9.94108 21.5147 6.60298 19.4558 4.54411C17.397 2.48524 14.0589 2.48524 12 4.54411L9.39045 7.15366M14.6095 16.8463L12 19.4558C9.94113 21.5147 6.60303 21.5147 4.54416 19.4558C2.48528 17.3969 2.48528 14.0588 4.54416 12L7.1537 9.39041" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                {% endif %}
+              </span>
+              <span class="manta-menu-text text-small" style="display: flex; align-items: center;">{{ link.title }}</span>
+            </a>
+          </li>                       
+        {% endfor %}
+      </ul>
+      <!-- Toggle button always fixed at bottom -->
+      <button id="mantaMenuToggle" class="manta-menu-toggle">
+        Show more
+      </button>
     </div>
-    
-    <!-- MAIN CONTENT -->
-    <div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div>
     <div class="manta-content">
       <div class="manta-content-box-large">
         <div class="manta-slider-container swiper" id="landscapeSlider">
           <!-- Swiper wrapper -->
           <div class="manta-slides swiper-wrapper">
             {% for block in section.blocks %}
-              <!-- Each slide: add .swiper-slide plus your existing .manta-slide classes -->
               <a
                 href="{{ block.settings.manta_slide_link }}"
                 class="manta-slide swiper-slide manta-mslide-{{ forloop.index }}">
-                <!-- Content here (currently just empty <p> tags, which is fine) -->
                 <p></p>
               </a>
             {% endfor %}
           </div>
-        
-          <!-- Keep your custom controls exactly as before -->
+
+          <!-- DESKTOP/TABLET CONTROLS -->
           <div class="manta-slider-controls manta-slider-desktop">
             <button class="manta-slider-btn manta-right-line prev">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" color="#000000" fill="none">
@@ -593,17 +584,55 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" color="#000000" fill="none">
                   <path d="M9.5 9L9.5 15M14.5 9V15" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-               </span>
+              </span>
               <span class="manta-play-icon" style="display:none;"> 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" color="#000000" fill="none">
                   <path d="M7.5241 19.0621C6.85783 19.4721 6 18.9928 6 18.2104V5.78956C6 5.00724 6.85783 4.52789 7.5241 4.93791L17.6161 11.1483C18.2506 11.5388 18.2506 12.4612 17.6161 12.8517L7.5241 19.0621Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
                 </svg>
-               </span>
+              </span>
             </div>
           </div>
-        </div>        
+        </div>
       </div>
-      <!-- Past the Mobile bsed slider controls here, but make sure its hidden on any greater screen width than mobile. AS the main slider controls will appear. -->
+
+      <!-- ===== MOBILE-ONLY SLIDER CONTROLS ===== -->
+      <div class="manta-slider-controls manta-slider-mobile">
+        <button class="manta-slider-btn manta-right-line prev">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" color="#000000" fill="none">
+            <path d="M15 6L9 12.0001L15 18" stroke="currentColor" stroke-width="1.1" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="manta-dots"></div>
+        <button class="manta-slider-btn manta-both-line next">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" color="#000000" fill="none">
+            <path d="M9.00005 6L15 12L9 18" stroke="currentColor" stroke-width="1.1" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="manta-pause-play-btn">
+          <svg class="manta-progress-ring" width="40" height="40">
+            <circle
+              class="manta-progress-ring__circle"
+              stroke="#000"
+              stroke-width="1.5"
+              fill="transparent"
+              r="18"
+              cx="20"
+              cy="20"
+            />
+          </svg>
+          <span class="manta-pause-icon"> 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" color="#000000" fill="none">
+              <path d="M9.5 9L9.5 15M14.5 9V15" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span class="manta-play-icon" style="display:none;"> 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" color="#000000" fill="none">
+              <path d="M7.5241 19.0621C6.85783 19.4721 6 18.9928 6 18.2104V5.78956C6 5.00724 6.85783 4.52789 7.5241 4.93791L17.6161 11.1483C18.2506 11.5388 18.2506 12.4612 17.6161 12.8517L7.5241 19.0621Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </div>
+      </div>
+
       <div class="manta-content-box-small-container">
         <div class="manta-content-box-small manta-cta-box manta-picture-featured-1">
           <a href="{{ section.settings.manta_featuredbox_1 }}" class="manta-cta-content">
@@ -623,111 +652,155 @@
     </div>
   </div>
 </div>
+
 <!-- SLIDER JS -->
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Grab elements
-    const sliderEl = document.getElementById("landscapeSlider");
-    const prevBtn = sliderEl.querySelector(".manta-slider-btn.prev");
-    const nextBtn = sliderEl.querySelector(".manta-slider-btn.next");
-    const dotsContainer = sliderEl.querySelector(".manta-dots");
-    const pausePlayBtn = sliderEl.querySelector(".manta-pause-play-btn");
-    const pauseIcon = sliderEl.querySelector(".manta-pause-icon");
-    const playIcon = sliderEl.querySelector(".manta-play-icon");
-    const progressRing = sliderEl.querySelector(".manta-progress-ring__circle");
+document.addEventListener("DOMContentLoaded", function() {
+  // Slider container
+  const sliderEl = document.getElementById("landscapeSlider");
 
-    // For the ring stroke math
-    const circumference = 2 * Math.PI * progressRing.r.baseVal.value;
-    progressRing.style.strokeDasharray = circumference;
-    progressRing.style.strokeDashoffset = circumference;
+  // --- Desktop controls ---
+  const prevBtnDesktop = sliderEl.querySelector(".manta-slider-desktop .prev");
+  const nextBtnDesktop = sliderEl.querySelector(".manta-slider-desktop .next");
+  const dotsContainerDesktop = sliderEl.querySelector(".manta-slider-desktop .manta-dots");
+  const pausePlayBtnDesktop = sliderEl.querySelector(".manta-slider-desktop .manta-pause-play-btn");
+  const pauseIconDesktop = sliderEl.querySelector(".manta-slider-desktop .manta-pause-icon");
+  const playIconDesktop = sliderEl.querySelector(".manta-slider-desktop .manta-play-icon");
+  const progressRingDesktop = sliderEl.querySelector(".manta-slider-desktop .manta-progress-ring__circle");
 
-    // Count total slides from your Liquid blocks or from DOM:
-    const totalSlides = sliderEl.querySelectorAll(".swiper-slide").length;
+  // --- Mobile controls ---
+  const mobileControls = document.querySelector(".manta-slider-controls.manta-slider-mobile");
+  const prevBtnMobile = mobileControls.querySelector(".prev");
+  const nextBtnMobile = mobileControls.querySelector(".next");
+  const dotsContainerMobile = mobileControls.querySelector(".manta-dots");
+  const pausePlayBtnMobile = mobileControls.querySelector(".manta-pause-play-btn");
+  const pauseIconMobile = mobileControls.querySelector(".manta-pause-icon");
+  const playIconMobile = mobileControls.querySelector(".manta-play-icon");
+  const progressRingMobile = mobileControls.querySelector(".manta-progress-ring__circle");
 
-    // Create custom dots
-    for (let i = 0; i < totalSlides; i++) {
-      const dot = document.createElement("span");
-      dot.addEventListener("click", () => {
-        mySwiper.slideToLoop(i); 
-        // .slideToLoop() ensures correct index if loop is true
-      });
-      dotsContainer.appendChild(dot);
-    }
-    const dotSpans = dotsContainer.querySelectorAll("span");
+  // For the ring stroke calculations (both sets share same radius)
+  const circleRadius = progressRingDesktop.r.baseVal.value;
+  const circumference = 2 * Math.PI * circleRadius;
+  progressRingDesktop.style.strokeDasharray = circumference;
+  progressRingDesktop.style.strokeDashoffset = circumference;
+  progressRingMobile.style.strokeDasharray = circumference;
+  progressRingMobile.style.strokeDashoffset = circumference;
 
-    // Initialize Swiper
-    const mySwiper = new Swiper("#landscapeSlider.swiper", {
-      // Optionally loop the slides
-      loop: true,
-      speed: 600,
-      // Enable auto-play
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      on: {
-        init: function(swiper) {
-          // Mark the first dot as active
-          dotSpans[swiper.realIndex].classList.add("active");
-        },
-        slideChange: function(swiper) {
-          // Update the custom dots
-          dotSpans.forEach(dot => dot.classList.remove("active"));
-          dotSpans[swiper.realIndex].classList.add("active");
-          // Reset ring offset
-          progressRing.style.strokeDashoffset = circumference;
-        },
-        // Swiper 10/11 provides an 'autoplayTimeLeft' event,
-        // which we can use to animate the ring in real time:
-        autoplayTimeLeft(s, time, progress) {
-          // 'progress' is between 0..1
-          const offset = circumference - (progress * circumference);
-          progressRing.style.strokeDashoffset = offset;
-        },
-      },
+  // Count total slides
+  const totalSlides = sliderEl.querySelectorAll(".swiper-slide").length;
+
+  // Create dots for Desktop
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      mySwiper.slideToLoop(i);
     });
+    dotsContainerDesktop.appendChild(dot);
+  }
+  const dotSpansDesktop = dotsContainerDesktop.querySelectorAll("span");
 
-    // ---- Hook up our custom Prev/Next buttons ----
-    nextBtn.addEventListener("click", () => mySwiper.slideNext());
-    prevBtn.addEventListener("click", () => mySwiper.slidePrev());
-
-    // ---- Pause/Play button for autoplay ----
-    pausePlayBtn.addEventListener("click", function() {
-      if (mySwiper.autoplay.running) {
-        mySwiper.autoplay.stop();
-        pauseIcon.style.display = "none";
-        playIcon.style.display = "inline";
-      } else {
-        mySwiper.autoplay.start();
-        pauseIcon.style.display = "inline";
-        playIcon.style.display = "none";
-      }
+  // Create dots for Mobile
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      mySwiper.slideToLoop(i);
     });
+    dotsContainerMobile.appendChild(dot);
+  }
+  const dotSpansMobile = dotsContainerMobile.querySelectorAll("span");
+
+  // Initialize Swiper
+  const mySwiper = new Swiper("#landscapeSlider.swiper", {
+    loop: true,
+    speed: 600,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    on: {
+      init: function(swiper) {
+        // Mark first dot in each set as active
+        dotSpansDesktop[swiper.realIndex].classList.add("active");
+        dotSpansMobile[swiper.realIndex].classList.add("active");
+      },
+      slideChange: function(swiper) {
+        // Update both sets of dots
+        dotSpansDesktop.forEach(dot => dot.classList.remove("active"));
+        dotSpansDesktop[swiper.realIndex].classList.add("active");
+
+        dotSpansMobile.forEach(dot => dot.classList.remove("active"));
+        dotSpansMobile[swiper.realIndex].classList.add("active");
+
+        // Reset ring offset for both sets
+        progressRingDesktop.style.strokeDashoffset = circumference;
+        progressRingMobile.style.strokeDashoffset = circumference;
+      },
+      autoplayTimeLeft(s, time, progress) {
+        // Animate ring for both sets
+        const offset = circumference - (progress * circumference);
+        progressRingDesktop.style.strokeDashoffset = offset;
+        progressRingMobile.style.strokeDashoffset = offset;
+      },
+    },
   });
+
+  // Desktop prev/next
+  nextBtnDesktop.addEventListener("click", () => mySwiper.slideNext());
+  prevBtnDesktop.addEventListener("click", () => mySwiper.slidePrev());
+
+  // Mobile prev/next
+  nextBtnMobile.addEventListener("click", () => mySwiper.slideNext());
+  prevBtnMobile.addEventListener("click", () => mySwiper.slidePrev());
+
+  // Desktop pause/play
+  pausePlayBtnDesktop.addEventListener("click", function() {
+    if (mySwiper.autoplay.running) {
+      mySwiper.autoplay.stop();
+      pauseIconDesktop.style.display = "none";
+      playIconDesktop.style.display = "inline";
+    } else {
+      mySwiper.autoplay.start();
+      pauseIconDesktop.style.display = "inline";
+      playIconDesktop.style.display = "none";
+    }
+  });
+
+  // Mobile pause/play
+  pausePlayBtnMobile.addEventListener("click", function() {
+    if (mySwiper.autoplay.running) {
+      mySwiper.autoplay.stop();
+      pauseIconMobile.style.display = "none";
+      playIconMobile.style.display = "inline";
+    } else {
+      mySwiper.autoplay.start();
+      pauseIconMobile.style.display = "inline";
+      playIconMobile.style.display = "none";
+    }
+  });
+});
 </script>
 
-  <!-- COLLAPSIBLE MENU JS (REVERSED LOGIC) -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const menu = document.getElementById("mantaMenu");
-      const toggleBtn = document.getElementById("mantaMenuToggle");
-      let expanded = true; // start expanded (default state)
+<!-- COLLAPSIBLE MENU JS -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const menu = document.getElementById("mantaMenu");
+  const toggleBtn = document.getElementById("mantaMenuToggle");
+  let expanded = true; // start expanded
 
-      toggleBtn.addEventListener("click", function() {
-        if (expanded) {
-          // Collapse the menu
-          menu.classList.remove("collapsed");
-          menu.classList.add("expanded");
-          toggleBtn.textContent = "Show Less";
-          expanded = false;
-        } else {
-          // Expand the menu
-          menu.classList.remove("expanded");
-          menu.classList.add("collapsed");
-          toggleBtn.textContent = "Show More";
-          expanded = true;
-        }
-      });
-    });
-  </script>
-
+  toggleBtn.addEventListener("click", function() {
+    if (expanded) {
+      // Collapse the menu
+      menu.classList.remove("collapsed");
+      menu.classList.add("expanded");
+      toggleBtn.textContent = "Show Less";
+      expanded = false;
+    } else {
+      // Expand the menu
+      menu.classList.remove("expanded");
+      menu.classList.add("collapsed");
+      toggleBtn.textContent = "Show More";
+      expanded = true;
+    }
+  });
+});
+</script>
