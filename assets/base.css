@@ -358,6 +358,9 @@ summary .icon-caret {
   text-decoration: none;
   font-size: calc(1.2rem * var(--font-body-scale));
   text-decoration: none;
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  font-weight: var(--font-body-weight);
 }
 
 .manta-dark-button:hover {
