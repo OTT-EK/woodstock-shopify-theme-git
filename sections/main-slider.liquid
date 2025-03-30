@@ -655,152 +655,139 @@
 
 <!-- SLIDER JS -->
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Slider container
-  const sliderEl = document.getElementById("landscapeSlider");
-
-  // --- Desktop controls ---
-  const prevBtnDesktop = sliderEl.querySelector(".manta-slider-desktop .prev");
-  const nextBtnDesktop = sliderEl.querySelector(".manta-slider-desktop .next");
-  const dotsContainerDesktop = sliderEl.querySelector(".manta-slider-desktop .manta-dots");
-  const pausePlayBtnDesktop = sliderEl.querySelector(".manta-slider-desktop .manta-pause-play-btn");
-  const pauseIconDesktop = sliderEl.querySelector(".manta-slider-desktop .manta-pause-icon");
-  const playIconDesktop = sliderEl.querySelector(".manta-slider-desktop .manta-play-icon");
-  const progressRingDesktop = sliderEl.querySelector(".manta-slider-desktop .manta-progress-ring__circle");
-
-  // --- Mobile controls ---
-  const mobileControls = document.querySelector(".manta-slider-controls.manta-slider-mobile");
-  const prevBtnMobile = mobileControls.querySelector(".prev");
-  const nextBtnMobile = mobileControls.querySelector(".next");
-  const dotsContainerMobile = mobileControls.querySelector(".manta-dots");
-  const pausePlayBtnMobile = mobileControls.querySelector(".manta-pause-play-btn");
-  const pauseIconMobile = mobileControls.querySelector(".manta-pause-icon");
-  const playIconMobile = mobileControls.querySelector(".manta-play-icon");
-  const progressRingMobile = mobileControls.querySelector(".manta-progress-ring__circle");
-
-  // For the ring stroke calculations (both sets share same radius)
-  const circleRadius = progressRingDesktop.r.baseVal.value;
-  const circumference = 2 * Math.PI * circleRadius;
-  progressRingDesktop.style.strokeDasharray = circumference;
-  progressRingDesktop.style.strokeDashoffset = circumference;
-  progressRingMobile.style.strokeDasharray = circumference;
-  progressRingMobile.style.strokeDashoffset = circumference;
-
-  // Count total slides
-  const totalSlides = sliderEl.querySelectorAll(".swiper-slide").length;
-
-  // Create dots for Desktop
-  for (let i = 0; i < totalSlides; i++) {
-    const dot = document.createElement("span");
-    dot.addEventListener("click", () => {
-      mySwiper.slideToLoop(i);
+  document.addEventListener("DOMContentLoaded", function() {
+    // Slider container
+    const sliderEl = document.getElementById("landscapeSlider");
+  
+    // --- Desktop controls ---
+    const prevBtnDesktop = sliderEl.querySelector(".manta-slider-desktop .prev");
+    const nextBtnDesktop = sliderEl.querySelector(".manta-slider-desktop .next");
+    const dotsContainerDesktop = sliderEl.querySelector(".manta-slider-desktop .manta-dots");
+    const pausePlayBtnDesktop = sliderEl.querySelector(".manta-slider-desktop .manta-pause-play-btn");
+    const pauseIconDesktop = sliderEl.querySelector(".manta-slider-desktop .manta-pause-icon");
+    const playIconDesktop = sliderEl.querySelector(".manta-slider-desktop .manta-play-icon");
+    const progressRingDesktop = sliderEl.querySelector(".manta-slider-desktop .manta-progress-ring__circle");
+  
+    // --- Mobile controls ---
+    const mobileControls = document.querySelector(".manta-slider-controls.manta-slider-mobile");
+    const prevBtnMobile = mobileControls.querySelector(".prev");
+    const nextBtnMobile = mobileControls.querySelector(".next");
+    const dotsContainerMobile = mobileControls.querySelector(".manta-dots");
+    const pausePlayBtnMobile = mobileControls.querySelector(".manta-pause-play-btn");
+    const pauseIconMobile = mobileControls.querySelector(".manta-pause-icon");
+    const playIconMobile = mobileControls.querySelector(".manta-play-icon");
+    const progressRingMobile = mobileControls.querySelector(".manta-progress-ring__circle");
+  
+    // For the ring stroke calculations (both sets share the same radius)
+    const circleRadius = progressRingDesktop.r.baseVal.value;
+    const circumference = 2 * Math.PI * circleRadius;
+    [progressRingDesktop, progressRingMobile].forEach(ring => {
+      ring.style.strokeDasharray = circumference;
+      ring.style.strokeDashoffset = circumference;
     });
-    dotsContainerDesktop.appendChild(dot);
-  }
-  const dotSpansDesktop = dotsContainerDesktop.querySelectorAll("span");
-
-  // Create dots for Mobile
-  for (let i = 0; i < totalSlides; i++) {
-    const dot = document.createElement("span");
-    dot.addEventListener("click", () => {
-      mySwiper.slideToLoop(i);
+  
+    // Count total slides
+    const totalSlides = sliderEl.querySelectorAll(".swiper-slide").length;
+  
+    // Create dots for Desktop
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement("span");
+      dot.addEventListener("click", () => {
+        mySwiper.slideToLoop(i);
+      });
+      dotsContainerDesktop.appendChild(dot);
+    }
+    const dotSpansDesktop = dotsContainerDesktop.querySelectorAll("span");
+  
+    // Create dots for Mobile
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement("span");
+      dot.addEventListener("click", () => {
+        mySwiper.slideToLoop(i);
+      });
+      dotsContainerMobile.appendChild(dot);
+    }
+    const dotSpansMobile = dotsContainerMobile.querySelectorAll("span");
+  
+    // --- Initialize Swiper ---
+    const mySwiper = new Swiper("#landscapeSlider.swiper", {
+      loop: true,
+      speed: 600,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      on: {
+        init: function(swiper) {
+          // Mark first dot in each set as active
+          dotSpansDesktop[swiper.realIndex].classList.add("active");
+          dotSpansMobile[swiper.realIndex].classList.add("active");
+          // Ensure icons match initial autoplay state
+          updateIcons();
+        },
+        slideChange: function(swiper) {
+          // Update both sets of dots
+          dotSpansDesktop.forEach(dot => dot.classList.remove("active"));
+          dotSpansDesktop[swiper.realIndex].classList.add("active");
+  
+          dotSpansMobile.forEach(dot => dot.classList.remove("active"));
+          dotSpansMobile[swiper.realIndex].classList.add("active");
+  
+          // Reset ring offset for both sets
+          progressRingDesktop.style.strokeDashoffset = circumference;
+          progressRingMobile.style.strokeDashoffset = circumference;
+        },
+        autoplayTimeLeft(s, time, progress) {
+          // Animate ring for both sets
+          const offset = circumference - (progress * circumference);
+          progressRingDesktop.style.strokeDashoffset = offset;
+          progressRingMobile.style.strokeDashoffset = offset;
+        },
+      },
     });
-    dotsContainerMobile.appendChild(dot);
-  }
-  const dotSpansMobile = dotsContainerMobile.querySelectorAll("span");
-
-  // Initialize Swiper
-  const mySwiper = new Swiper("#landscapeSlider.swiper", {
-    loop: true,
-    speed: 600,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    on: {
-      init: function(swiper) {
-        // Mark first dot in each set as active
-        dotSpansDesktop[swiper.realIndex].classList.add("active");
-        dotSpansMobile[swiper.realIndex].classList.add("active");
-      },
-      slideChange: function(swiper) {
-        // Update both sets of dots
-        dotSpansDesktop.forEach(dot => dot.classList.remove("active"));
-        dotSpansDesktop[swiper.realIndex].classList.add("active");
-
-        dotSpansMobile.forEach(dot => dot.classList.remove("active"));
-        dotSpansMobile[swiper.realIndex].classList.add("active");
-
-        // Reset ring offset for both sets
-        progressRingDesktop.style.strokeDashoffset = circumference;
-        progressRingMobile.style.strokeDashoffset = circumference;
-      },
-      autoplayTimeLeft(s, time, progress) {
-        // Animate ring for both sets
-        const offset = circumference - (progress * circumference);
-        progressRingDesktop.style.strokeDashoffset = offset;
-        progressRingMobile.style.strokeDashoffset = offset;
-      },
-    },
-  });
-
-  // Desktop prev/next
-  nextBtnDesktop.addEventListener("click", () => mySwiper.slideNext());
-  prevBtnDesktop.addEventListener("click", () => mySwiper.slidePrev());
-
-  // Mobile prev/next
-  nextBtnMobile.addEventListener("click", () => mySwiper.slideNext());
-  prevBtnMobile.addEventListener("click", () => mySwiper.slidePrev());
-
-  // Desktop pause/play
-  pausePlayBtnDesktop.addEventListener("click", function() {
-    if (mySwiper.autoplay.running) {
-      mySwiper.autoplay.stop();
-      pauseIconDesktop.style.display = "none";
-      playIconDesktop.style.display = "inline";
-    } else {
-      mySwiper.autoplay.start();
-      pauseIconDesktop.style.display = "inline";
-      playIconDesktop.style.display = "none";
+  
+    // ===== HELPER: Sync both pause/play icons with actual autoplay state =====
+    function updateIcons() {
+      if (mySwiper.autoplay.running) {
+        // Autoplay is playing
+        pauseIconDesktop.style.display = "inline";
+        playIconDesktop.style.display = "none";
+        pauseIconMobile.style.display = "inline";
+        playIconMobile.style.display = "none";
+      } else {
+        // Autoplay is paused
+        pauseIconDesktop.style.display = "none";
+        playIconDesktop.style.display = "inline";
+        pauseIconMobile.style.display = "none";
+        playIconMobile.style.display = "inline";
+      }
     }
-  });
-
-  // Mobile pause/play
-  pausePlayBtnMobile.addEventListener("click", function() {
-    if (mySwiper.autoplay.running) {
-      mySwiper.autoplay.stop();
-      pauseIconMobile.style.display = "none";
-      playIconMobile.style.display = "inline";
-    } else {
-      mySwiper.autoplay.start();
-      pauseIconMobile.style.display = "inline";
-      playIconMobile.style.display = "none";
+  
+    // ===== Click handlers that toggle autoplay then refresh icons =====
+    function toggleAutoplay() {
+      if (mySwiper.autoplay.running) {
+        mySwiper.autoplay.stop();
+      } else {
+        mySwiper.autoplay.start();
+      }
+      updateIcons(); // Make sure icons match the new autoplay state
     }
+  
+    // Desktop
+    pausePlayBtnDesktop.addEventListener("click", toggleAutoplay);
+    nextBtnDesktop.addEventListener("click", () => mySwiper.slideNext());
+    prevBtnDesktop.addEventListener("click", () => mySwiper.slidePrev());
+  
+    // Mobile
+    pausePlayBtnMobile.addEventListener("click", toggleAutoplay);
+    nextBtnMobile.addEventListener("click", () => mySwiper.slideNext());
+    prevBtnMobile.addEventListener("click", () => mySwiper.slidePrev());
+  
+    // ===== Sync icons on window resize =====
+    // So if you paused in mobile, then widen the screen to desktop,
+    // the desktop icons will also show 'paused'.
+    window.addEventListener("resize", updateIcons);
+  
   });
-});
-</script>
-
-<!-- COLLAPSIBLE MENU JS -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const menu = document.getElementById("mantaMenu");
-  const toggleBtn = document.getElementById("mantaMenuToggle");
-  let expanded = true; // start expanded
-
-  toggleBtn.addEventListener("click", function() {
-    if (expanded) {
-      // Collapse the menu
-      menu.classList.remove("collapsed");
-      menu.classList.add("expanded");
-      toggleBtn.textContent = "Show Less";
-      expanded = false;
-    } else {
-      // Expand the menu
-      menu.classList.remove("expanded");
-      menu.classList.add("collapsed");
-      toggleBtn.textContent = "Show More";
-      expanded = true;
-    }
-  });
-});
-</script>
+  </script>
+  
