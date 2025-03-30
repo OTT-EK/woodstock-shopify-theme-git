@@ -232,9 +232,6 @@
     grid-template-columns: 1fr 1fr;
     gap: 2px;
   }
-  .manta-mobile-controller-container {
-    display: none;
-  }
   .manta-content-box-small {
     min-height: 15vh;
     box-shadow: 0 1px 2px rgb(var(--color-foreground),.06),0 1px 3px rgb(var(--color-foreground),.1);
@@ -253,6 +250,7 @@
   }
   .manta-mobile-controller-container {
     display: flex;
+    display: none;
     justify-content: center;
     overflow: visible;
   }
@@ -285,6 +283,9 @@
     }
     .manta-slider-controls.manta-slider-desktop {
       display: none !important; /* HIDE DESKTOP CONTROLS BELOW 768PX */
+    }
+    .manta-mobile-controller-container {
+      display: flex;
     }
     .manta-content-box-small {
       flex: 0 0 auto;
