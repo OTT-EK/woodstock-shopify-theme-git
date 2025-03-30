@@ -57,6 +57,9 @@
 .manta-newsletter__text.subtitle--small p {
   margin-top: 0.2rem;
 }
+.manta-newsletter__heading h3 {
+  margin-top: 0.2rem;
+}
 
 /* === Desktop Layout === */
 @media screen and (min-width: 750px) {
