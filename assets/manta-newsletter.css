@@ -50,6 +50,9 @@
     border: none;
     width: 100%;
     background-color: #ffffff;
+    font-family: var(--font-body-family);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight);
   }
   
   /* === Desktop Layout === */
