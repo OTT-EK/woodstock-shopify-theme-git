@@ -330,16 +330,27 @@
     border-radius: 5px;
     z-index: 2;
   }
-  .manta-slider-controls.manta-slider-mobile {
-    transform-origin: center center;
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 5px;
-    z-index: 2;
-    justify-content: center;
-    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
-  }
+  @media (max-width: 768px) {
+    .manta-slider-controls.manta-slider-mobile {
+      position: absolute;
+      bottom: -1.8rem; /* Peeks out below the box */
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 5px;
+      z-index: 5; /* Above all */
+      justify-content: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+      padding: 0.2rem 0.4rem;
+    }
+  
+    /* Ensure .manta-content-box-large is relatively positioned */
+    .manta-content-box-large {
+      position: relative;
+    }
+  }  
   .manta-slider-btn {
     background: none;
     border: none;
