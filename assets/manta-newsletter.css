@@ -90,6 +90,7 @@
     flex-direction: row;
     align-items: center;
     gap: 1rem;
+    
   }
 
   .manta-newsletter__input-wrapper {
@@ -99,5 +100,9 @@
   .manta-dark-button {
     flex-shrink: 0;
     white-space: nowrap;
+  }
+
+  .manta-newsletter__form-wrapper {
+    margin-top: -10px;
   }
 }
