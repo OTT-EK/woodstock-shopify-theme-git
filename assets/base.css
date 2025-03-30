@@ -345,6 +345,25 @@ summary .icon-caret {
   background-color: rgb(var(--color-button-text));
 }
 
+.manta-dark-button {
+  display: inline-block;
+  width: auto;
+  background-color: #313131;
+  color: #fff;
+  border: none;
+  padding: 6px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: calc(1.2rem * var(--font-body-scale));
+  text-decoration: none;
+}
+
+.manta-dark-button:hover {
+  background-color: #272727;
+}
+
 /* Section heading */
 
 .title__buttons {
