@@ -1,82 +1,103 @@
 /* === MANTA NEWSLETTER === */
 
 .manta-newsletter__grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    background-color: #f8f8f8;
-    border-radius: 8px;
-    padding: 2.5rem;
-    box-shadow: 0 1px 2px rgb(var(--color-foreground),.06),0 1px 3px rgb(var(--color-foreground),.1);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 2.5rem;
+  box-shadow: 0 1px 2px rgb(var(--color-foreground),.06),0 1px 3px rgb(var(--color-foreground),.1);
+}
+@media (min-width: 750px) {
+  .manta-newsletter__grid {
+    padding: 3.5rem 3.5rem 2.8rem 3.5rem;
   }
-  @media (min-width: 750px) {
-    .manta-newsletter__grid {
-      padding: 3.5rem 3.5rem 2.8rem 3.5rem;
-    }
+}
+
+.manta-newsletter__text-content {
+  text-align: left;
+}
+
+.manta-newsletter__heading {
+  font-weight: 700;
+  margin: 0;
+}
+
+.manta-newsletter__text {
+  margin-top: 0;
+  color: #4b5563;
+}
+
+.manta-newsletter__form-wrapper {
+  width: 100%;
+}
+
+.manta-newsletter__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.manta-newsletter__input-wrapper {
+  flex: 1;
+}
+
+.manta-newsletter__input {
+  height: 3.13rem;
+  border-radius: 0.375rem;
+  padding: 0 1rem;
+  border: none;
+  width: 100%;
+  background-color: #ffffff;
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  font-weight: var(--font-body-weight);
+}
+
+/* === Desktop Layout === */
+@media screen and (min-width: 750px) {
+  .manta-newsletter__grid {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .manta-newsletter__text-content {
-    text-align: left;
+    flex: 1;
+    max-width: 50%;
   }
-  
-  .manta-newsletter__heading {
-    font-weight: 700;
-    margin: 0;
-  }
-  
-  .manta-newsletter__text {
-    margin-top: 0;
-    color: #4b5563;
-  }
-  
+
   .manta-newsletter__form-wrapper {
-    width: 100%;
+    flex: 1;
+    max-width: 50%;
   }
-  
+
   .manta-newsletter__form {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     gap: 1rem;
   }
-  
+
+  .manta-dark-button.manta-apex {
+    width: auto;
+  }
+}
+
+/* === Mobile Layout Fix: Keep input and button on same row === */
+@media screen and (max-width: 749px) {
+  .manta-newsletter__form {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
   .manta-newsletter__input-wrapper {
     flex: 1;
   }
-  
-  .manta-newsletter__input {
-    height: 3.13rem;
-    border-radius: 0.375rem;
-    padding: 0 1rem;
-    border: none;
-    width: 100%;
-    background-color: #ffffff;
-    font-family: var(--font-body-family);
-    font-style: var(--font-body-style);
-    font-weight: var(--font-body-weight);
+
+  .manta-dark-button {
+    flex-shrink: 0;
+    white-space: nowrap;
   }
-  
-  /* === Desktop Layout === */
-  @media screen and (max-width: 749px) {
-    .manta-newsletter__form {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 10px; /* space between input and button */
-      flex-wrap: nowrap;
-    }
-  
-    .manta-newsletter__input-wrapper {
-      flex: 1 1 auto;
-    }
-  
-    .manta-newsletter__input {
-      width: 100%;
-    }
-  
-    .manta-dark-button {
-      flex-shrink: 0;
-      white-space: nowrap;
-    }
-  }
-  
-  
+}
