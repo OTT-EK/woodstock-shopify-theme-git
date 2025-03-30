@@ -319,7 +319,7 @@
     background-size: cover;
     background-position: center;
   }
-  .manta-slider-controls {
+  .manta-slider-controls.manta-slider-desktop {
     position: absolute;
     bottom: 5px;
     left: 50%;
@@ -330,6 +330,15 @@
     background-color: white;
     border-radius: 5px;
     z-index: 2;
+  }
+  .manta-slider-controls.manta-slider-mobile {
+    transform-origin: center center;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    z-index: 2;
+    justify-content: center;
   }
   .manta-slider-btn {
     background: none;
