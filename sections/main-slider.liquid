@@ -331,20 +331,26 @@
     z-index: 2;
   }
   @media (max-width: 768px) {
+    .manta-content {
+      position: relative; /* make this the positioning anchor */
+    }
+  
     .manta-slider-controls.manta-slider-mobile {
       position: absolute;
-      bottom: -1.8rem; /* Peeks out below the box */
+      top: calc(100% - 1.8rem); /* adjust as needed to peek in */
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       align-items: center;
       background-color: white;
       border-radius: 5px;
-      z-index: 5; /* Above all */
+      z-index: 10;
       justify-content: center;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-      padding: 0.2rem 0.4rem;
+      padding: 0.3rem 0.4rem;
     }
+  }
+  
   
     /* Ensure .manta-content-box-large is relatively positioned */
     .manta-content-box-large {
