@@ -649,7 +649,7 @@
         {%- if section.settings.menu != blank and section.settings.logo_position != 'center-drawer' -%}
           <nav>
             <ul class="list-menu list-menu--inline" role="list">
-              <li class="manta-dsk-category-menu">
+              <li class="manta-dsk-category-menu" {% if request.page_type == 'index' %}style="pointer-events: none;"{% endif %}>
                 <header-menu>
                   <details>
                     <summary class="header__menu-item link link--text manta-menu-item-adaptive" 
