@@ -56,31 +56,27 @@
   }
   
   /* === Desktop Layout === */
-  @media screen and (min-width: 750px) {
-    .manta-newsletter__grid {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-  
-    .manta-newsletter__text-content {
-      flex: 1;
-      max-width: 50%;
-    }
-  
-    .manta-newsletter__form-wrapper {
-      flex: 1;
-      max-width: 50%;
-    }
-  
+  @media screen and (max-width: 749px) {
     .manta-newsletter__form {
+      display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 1rem;
+      gap: 10px; /* space between input and button */
+      flex-wrap: nowrap;
     }
   
-    .manta-dark-button.manta-apex {
-      width: auto;
+    .manta-newsletter__input-wrapper {
+      flex: 1 1 auto;
+    }
+  
+    .manta-newsletter__input {
+      width: 100%;
+    }
+  
+    .manta-dark-button {
+      flex-shrink: 0;
+      white-space: nowrap;
     }
   }
+  
   
