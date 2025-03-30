@@ -280,6 +280,20 @@
     }
   }
   @media (max-width: 768px) {
+    .manta-mobile-controller-container {
+      display: flex;
+      justify-content: center;
+    }
+    .manta-slider-controls.manta-slider-mobile {
+      transform-origin: center center;
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 5px;
+      z-index: 2;
+      justify-content: center;
+      box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+    }
     .manta-cta-content, .manta-content-box-small.manta-cta-box {
       border-bottom-left-radius: 8px;
       border-top-left-radius: 8px;
@@ -329,16 +343,6 @@
     background-color: white;
     border-radius: 5px;
     z-index: 2;
-  }
-  .manta-slider-controls.manta-slider-mobile {
-    transform-origin: center center;
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 5px;
-    z-index: 2;
-    justify-content: center;
-    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
   }
   .manta-slider-btn {
     background: none;
@@ -603,7 +607,7 @@
           </div>
         </div>
       </div>
-
+      <div class="manta-mobile-controller-container">
       <!-- ===== MOBILE-ONLY SLIDER CONTROLS ===== -->
       <div class="manta-slider-controls manta-slider-mobile">
         <button class="manta-slider-btn manta-right-line prev">
@@ -641,7 +645,7 @@
           </span>
         </div>
       </div>
-
+      </div>
       <div class="manta-content-box-small-container">
         <div class="manta-content-box-small manta-cta-box manta-picture-featured-1">
           <a href="{{ section.settings.manta_featuredbox_1 }}" class="manta-cta-content">
