@@ -232,7 +232,7 @@
                 {%- assign host = request.host | downcase -%}
                 {%- if host contains 'ottn.pl' -%}
                   {%- assign prefix = 'PL-Attribute:' -%}
-                {%- elsif host contains 'ott-lietuva.myshopify.com' -%}
+                {%- elsif host contains 'ottensten.lt' -%}
                   {%- assign prefix = 'LT-Attribute:' -%}
                 {%- elsif host contains 'ottensten.lv' -%}
                   {%- assign prefix = 'LV-Attribute:' -%}
@@ -268,7 +268,7 @@
                     {%- endif -%}
                   {%- endif -%}
                 {%- endfor -%}
-
+                
           </{{ table_tag }}>
 
           {%- if has_dynamic_attributes -%}
