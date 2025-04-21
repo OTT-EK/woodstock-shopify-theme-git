@@ -226,7 +226,7 @@
           "type": "partner_logo",
           "settings": {
             "manta-partners-logo": "shopify://shop_images/otn-4pro_logo.png",
-            "manta-partners-link": ""
+            "manta-partners-link": "shopify://collections/4pro"
           }
         },
         "partner_logo_XyyJDq": {
@@ -284,34 +284,12 @@
     },
     "manta_newsletter_BzjWti": {
       "type": "manta-newsletter",
-      "blocks": {
-        "heading_xfqdUV": {
-          "type": "heading",
-          "settings": {
-            "manta-newsletter-heading": "Stay in the loop",
-            "manta-newsletter-heading_size": "h1"
-          }
-        },
-        "paragraph_BefUHj": {
-          "type": "paragraph",
-          "settings": {
-            "manta-newsletter-text": "<p>Subscribe to receive the latest updates, special deals, and more.</p>"
-          }
-        },
-        "email_form_eEnmih": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading_xfqdUV",
-        "paragraph_BefUHj",
-        "email_form_eEnmih"
-      ],
       "settings": {
-        "manta-newsletter-color_scheme": "",
-        "manta-newsletter-padding_top": 40,
-        "manta-newsletter-padding_bottom": 40
+        "manta_newsletter_color_scheme": "",
+        "manta_newsletter_heading": "Stay in the loop",
+        "manta_newsletter_text": "<p>Be the first to know about new products and exclusive offers.</p>",
+        "manta_newsletter_padding_top": 40,
+        "manta_newsletter_padding_bottom": 40
       }
     },
     "8f5a111c-95e5-4fe4-9470-893b0e7841d7": {
