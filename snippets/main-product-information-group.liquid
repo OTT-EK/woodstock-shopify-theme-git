@@ -75,25 +75,6 @@
         </span>
       </div>
     {% endif %} 
-    {%- if block.settings.tags_enable and product.tags.size > 0 -%}
-      <div class="information flex">
-        <span class="information__label text-small db">{{ block.settings.tags_label }}:</span>
-        <div class="information__value font-body-semi-bold text-small">
-          <ul class="list-unstyled flex flex-wrap information__value__link-list">
-            {%- for tag in product.tags -%}
-              <li>
-                <a
-                  class="link information__value--link link-effect-no-underline{% if forloop.first %} first{% endif %}"
-                  href="{{ routes.all_products_collection_url }}/{{ tag | handleize }}"
-                >
-                  {{- tag -}}
-                </a>{%- unless forloop.last -%},{%- endunless -%}
-              </li>
-            {%- endfor -%}  
-          </ul>
-        </div>
-      </div>
-    {%- endif -%} 
     {%- if block.settings.collections_enable and product.collections.size > 0 -%}
       <div class="information flex">
         <span class="information__label text-small">{{ block.settings.collections_label }}:</span>
