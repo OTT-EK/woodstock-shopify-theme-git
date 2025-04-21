@@ -191,35 +191,35 @@
           "type": "partner_logo",
           "settings": {
             "manta-partners-logo": "shopify://shop_images/otn-max-e_logo.png",
-            "manta-partners-link": ""
+            "manta-partners-link": "shopify://collections/max"
           }
         },
         "partner_logo_rteCtX": {
           "type": "partner_logo",
           "settings": {
             "manta-partners-logo": "shopify://shop_images/otn-schaefer_logo.png",
-            "manta-partners-link": ""
+            "manta-partners-link": "shopify://collections/schafer-peters"
           }
         },
         "partner_logo_EXJPdJ": {
           "type": "partner_logo",
           "settings": {
             "manta-partners-logo": "shopify://shop_images/otn-everwin_logo.png",
-            "manta-partners-link": ""
+            "manta-partners-link": "shopify://collections/everwin"
           }
         },
         "partner_logo_FM89Fy": {
           "type": "partner_logo",
           "settings": {
             "manta-partners-logo": "shopify://shop_images/otn-siga_logo.png",
-            "manta-partners-link": ""
+            "manta-partners-link": "shopify://collections/siga"
           }
         },
         "partner_logo_eFiaFx": {
           "type": "partner_logo",
           "settings": {
             "manta-partners-logo": "shopify://shop_images/otn-senco_logo.png",
-            "manta-partners-link": ""
+            "manta-partners-link": "shopify://collections/senco"
           }
         },
         "partner_logo_NMWzCx": {
@@ -233,28 +233,28 @@
           "type": "partner_logo",
           "settings": {
             "manta-partners-logo": "shopify://shop_images/otn-tox_logo.png",
-            "manta-partners-link": ""
+            "manta-partners-link": "shopify://collections/tox"
           }
         },
         "partner_logo_NLKT8t": {
           "type": "partner_logo",
           "settings": {
             "manta-partners-logo": "shopify://shop_images/otn-proline_logo.png",
-            "manta-partners-link": ""
+            "manta-partners-link": "shopify://collections/proline"
           }
         },
         "partner_logo_xJb6gF": {
           "type": "partner_logo",
           "settings": {
             "manta-partners-logo": "shopify://shop_images/otn-omer_logo.png",
-            "manta-partners-link": ""
+            "manta-partners-link": "shopify://collections/omer"
           }
         },
         "partner_logo_XPdtB8": {
           "type": "partner_logo",
           "settings": {
             "manta-partners-logo": "shopify://shop_images/otn-VSB_logo.png",
-            "manta-partners-link": ""
+            "manta-partners-link": "shopify://collections/v-s-b"
           }
         }
       },
