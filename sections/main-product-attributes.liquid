@@ -261,7 +261,9 @@
                             {{ attribute_name | capitalize }}
                           </h3>
                           <div class="product-attributes__table-item__content text-medium margin-top-1rem product-attributes__tablet-item-light">
-                            {{ attribute_value }}
+                            <a href="{{ routes.all_products_collection_url }}/{{ tag | handleize }}" class="link link-effect-no-underline">
+                              {{ attribute_value }}
+                            </a>                          
                           </div>
                         </div>
                       </div>
