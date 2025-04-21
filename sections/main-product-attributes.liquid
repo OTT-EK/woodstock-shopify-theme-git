@@ -229,9 +229,20 @@
             {%- comment -%}  
               Now render any EN‑Attribute: tags (format: EN-Attribute:attribute;value)  
             {%- endcomment -%}
+            {%- assign shopper_country = request.country | upcase -%}
+            {%- case shopper_country -%}
+              {%- when 'LT' -%} {%- assign prefix = 'LT-Attribute:' -%}
+              {%- when 'EE' -%} {%- assign prefix = 'EE-Attribute:' -%}
+              {%- when 'LV' -%} {%- assign prefix = 'LV-Attribute:' -%}
+              {%- when 'PL' -%} {%- assign prefix = 'PL-Attribute:' -%}
+              {%- when 'UA' -%} {%- assign prefix = 'UA-Attribute:' -%}
+              {%- when 'DK' -%} {%- assign prefix = 'DK-Attribute:' -%}
+              {%- else -%}        {%- assign prefix = 'EN-Attribute:' -%}
+            {%- endcase -%}
+
             {%- for tag in product.tags -%}
-              {%- if tag contains 'EN-Attribute:' -%}
-                {%- assign raw = tag | remove_first: 'EN-Attribute:' -%}
+              {%- if tag starts_with prefix -%}
+                {%- assign raw = tag | remove_first: prefix -%}
                 {%- assign parts = raw | split: ';' -%}
                 {%- if parts.size >= 2 -%}
                   {%- assign attribute_name  = parts[0] | strip -%}
