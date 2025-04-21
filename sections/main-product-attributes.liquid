@@ -242,7 +242,8 @@
 
               {%- assign prefix_length = prefix | size -%}
               {%- for tag in product.tags -%}
-                {%- if tag | slice: 0, prefix_length == prefix -%}
+                {%- assign tag_start = tag | slice: 0, prefix_length -%}
+                {%- if tag_start == prefix -%}
                   {%- assign raw = tag | slice: prefix_length, tag.size -%}
                   {%- assign parts = raw | split: ';' -%}
                   {%- if parts.size >= 2 -%}
@@ -261,6 +262,7 @@
                   {%- endif -%}
                 {%- endif -%}
               {%- endfor -%}
+
 
           </{{ table_tag }}>
 
