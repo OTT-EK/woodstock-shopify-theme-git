@@ -240,9 +240,10 @@
                 {%- else -%}        {%- assign prefix = 'EN-Attribute:' -%}
               {%- endcase -%}
 
+              {%- assign prefix_length = prefix | size -%}
               {%- for tag in product.tags -%}
-                {%- if tag starts_with prefix -%}
-                  {%- assign raw = tag | remove_first: prefix -%}
+                {%- if tag | slice: 0, prefix_length == prefix -%}
+                  {%- assign raw = tag | slice: prefix_length, tag.size -%}
                   {%- assign parts = raw | split: ';' -%}
                   {%- if parts.size >= 2 -%}
                     {%- assign attribute_name  = parts[0] | strip -%}
