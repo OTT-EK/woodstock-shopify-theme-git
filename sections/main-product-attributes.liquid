@@ -226,41 +226,41 @@
               {%- endif -%}  
             {%- endfor -%}	
           
-            {%- comment -%}  
-              Now render any EN‑Attribute: tags (format: EN-Attribute:attribute;value)  
-            {%- endcomment -%}
-            {%- assign shopper_country = request.country | upcase -%}
-            {%- case shopper_country -%}
-              {%- when 'LT' -%} {%- assign prefix = 'LT-Attribute:' -%}
-              {%- when 'EE' -%} {%- assign prefix = 'EE-Attribute:' -%}
-              {%- when 'LV' -%} {%- assign prefix = 'LV-Attribute:' -%}
-              {%- when 'PL' -%} {%- assign prefix = 'PL-Attribute:' -%}
-              {%- when 'UA' -%} {%- assign prefix = 'UA-Attribute:' -%}
-              {%- when 'DK' -%} {%- assign prefix = 'DK-Attribute:' -%}
-              {%- else -%}        {%- assign prefix = 'EN-Attribute:' -%}
-            {%- endcase -%}
+              {%- comment -%}
+                Determine which prefix to render based on Shopify Markets country
+              {%- endcomment -%}
+              {%- assign shopper_country = request.country | upcase -%}
+              {%- case shopper_country -%}
+                {%- when 'LT' -%} {%- assign prefix = 'LT-Attribute:' -%}
+                {%- when 'EE' -%} {%- assign prefix = 'EE-Attribute:' -%}
+                {%- when 'LV' -%} {%- assign prefix = 'LV-Attribute:' -%}
+                {%- when 'PL' -%} {%- assign prefix = 'PL-Attribute:' -%}
+                {%- when 'UA' -%} {%- assign prefix = 'UA-Attribute:' -%}
+                {%- when 'DK' -%} {%- assign prefix = 'DK-Attribute:' -%}
+                {%- else -%}        {%- assign prefix = 'EN-Attribute:' -%}
+              {%- endcase -%}
 
-            {%- for tag in product.tags -%}
-              {%- if tag starts_with prefix -%}
-                {%- assign raw = tag | remove_first: prefix -%}
-                {%- assign parts = raw | split: ';' -%}
-                {%- if parts.size >= 2 -%}
-                  {%- assign attribute_name  = parts[0] | strip -%}
-                  {%- assign attribute_value = parts[1] | strip -%}
-                  <div class="grid__item">
-                    <div class="product-attributes__table-item flex flex-column">
-                      <h3 class="product-attributes__table-item__title margin0 font-heading-bold h5">
-                        {{ attribute_name | capitalize }}
-                      </h3>
-                      <div class="product-attributes__table-item__content text-medium margin-top-1rem product-attributes__tablet-item-light">
-                        {{ attribute_value }}
+              {%- for tag in product.tags -%}
+                {%- if tag starts_with prefix -%}
+                  {%- assign raw = tag | remove_first: prefix -%}
+                  {%- assign parts = raw | split: ';' -%}
+                  {%- if parts.size >= 2 -%}
+                    {%- assign attribute_name  = parts[0] | strip -%}
+                    {%- assign attribute_value = parts[1] | strip -%}
+                    <div class="grid__item">
+                      <div class="product-attributes__table-item flex flex-column">
+                        <h3 class="product-attributes__table-item__title margin0 font-heading-bold h5">
+                          {{ attribute_name | capitalize }}
+                        </h3>
+                        <div class="product-attributes__table-item__content text-medium margin-top-1rem product-attributes__tablet-item-light">
+                          {{ attribute_value }}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  {%- endif -%}
                 {%- endif -%}
-              {%- endif -%}
-            {%- endfor -%}
-          
+              {%- endfor -%}
+
           </{{ table_tag }}>
 
           {%- if has_dynamic_attributes -%}
