@@ -977,6 +977,7 @@ summary::-webkit-details-marker {
   max-height: 100%;
   width: auto;
   height: auto;
+  object-fit: contain;
 }
 
 .manta-yes {
