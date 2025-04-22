@@ -16,20 +16,7 @@
     Usage:
     {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
-<style>
-  .manta-yes.media.w100.media--adapt.ratio {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    aspect-ratio: 1/1;
-  }
-  .manta-yes.media.w100.media--adapt.ratio img {
-    position: unset !important;
-    height: auto !important;
-    width: auto !important;
-    max-height: 100% !important;
-  }
-</style>
+
 
 {%- if card_product and card_product != empty -%}
   {%- liquid

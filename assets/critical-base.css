@@ -963,11 +963,18 @@ summary::-webkit-details-marker {
 .media model-viewer {
   display: block;
   max-width: 100%;
-  position: absolute;
+  max-height: 100%;
   top: 0;
   inset-inline-start: 0;
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: auto;
+}
+
+.manta-yes {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  aspect-ratio: 1/1;
 }
 
 .media > img {
