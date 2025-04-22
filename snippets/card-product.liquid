@@ -16,7 +16,19 @@
     Usage:
     {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
-
+<style>
+  .manta-yes.media.w100.media--adapt.ratio {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .manta-yes .media > :not(.zoom):not(.deferred-media__poster-button), .media model-viewer {
+    position: unset;
+    height: auto;
+    width: auto;
+    max-height: 100%;
+  }
+</style>
 
 {%- if card_product and card_product != empty -%}
   {%- liquid
@@ -38,7 +50,7 @@
     >
       <div class="card__inner w100 por">
         {%- if card_product.featured_media -%}
-          <div class="media w100 media--{{ media_aspect_ratio }}{% if media_aspect_ratio == 'adapt' %} ratio{% endif %}"{% if media_aspect_ratio == 'adapt' %} style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"{% endif %}>
+          <div class="manta-yes media w100 media--{{ media_aspect_ratio }}{% if media_aspect_ratio == 'adapt' %} ratio{% endif %}"{% if media_aspect_ratio == 'adapt' %} style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"{% endif %}>
             {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
             {%- liquid
               assign srcset = ''
