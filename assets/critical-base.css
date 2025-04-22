@@ -978,8 +978,8 @@ summary::-webkit-details-marker {
 }
 
 .manta-yes-margin-tb {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
 .media > img {
