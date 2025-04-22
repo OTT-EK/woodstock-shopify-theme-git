@@ -58,7 +58,7 @@
             endcapture
             assign media_index = media_index | plus: 1
           -%}
-          <li id="Slide-Thumbnails-{{ section.id }}-0" class="manta-yes thumbnail-list__item slider__slide por{% if section.settings.hide_variants and variant_images contains featured_media.src %} thumbnail-list_item--variant{% endif %}" data-target="{{ section.id }}-{{ featured_media.id }}" data-media-position="{{ media_index }}">
+          <li id="Slide-Thumbnails-{{ section.id }}-0" class="thumbnail-list__item slider__slide por{% if section.settings.hide_variants and variant_images contains featured_media.src %} thumbnail-list_item--variant{% endif %}" data-target="{{ section.id }}-{{ featured_media.id }}" data-media-position="{{ media_index }}">
             {%- if featured_media.media_type == 'model' -%}
               <span class="thumbnail__badge" aria-hidden="true">
                 {%- render 'icon-3d-model' -%}
@@ -68,7 +68,7 @@
                 {%- render 'icon-play' -%}
               </span>
             {%- endif -%}
-            <button class="w100 h100 thumbnail global-media-settings--small media {% if section.settings.image_ratio == 'adapt' %}ratio{% else %}media--{{ section.settings.image_ratio }}{% endif %} {% if featured_media.preview_image.aspect_ratio > 1 %}thumbnail--wide{% else %}thumbnail--narrow{% endif %}"
+            <button class="manta-yes w100 h100 thumbnail global-media-settings--small media {% if section.settings.image_ratio == 'adapt' %}ratio{% else %}media--{{ section.settings.image_ratio }}{% endif %} {% if featured_media.preview_image.aspect_ratio > 1 %}thumbnail--wide{% else %}thumbnail--narrow{% endif %}"
               aria-label="{%- if featured_media.media_type == 'image' -%}{{ 'products.product.media.load_image' | t: index: media_index }}{%- elsif featured_media.media_type == 'model' -%}{{ 'products.product.media.load_model' | t: index: media_index }}{%- elsif featured_media.media_type == 'video' or featured_media.media_type == 'external_video' -%}{{ 'products.product.media.load_video' | t: index: media_index }}{%- endif -%}"
               aria-current="true"
               aria-controls="GalleryViewer-{{ section.id }}"
