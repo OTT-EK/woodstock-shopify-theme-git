@@ -79,7 +79,7 @@
         "collection_xGTXmf": {
           "type": "collection",
           "settings": {
-            "manta_collection_link": "frontpage",
+            "manta_collection_link": "sawhorse",
             "manta_custom_image": "shopify://shop_images/TB-C550.png",
             "manta_custom_title": "Thoughbuilt stands"
           }
@@ -87,7 +87,7 @@
         "collection_JMUai8": {
           "type": "collection",
           "settings": {
-            "manta_collection_link": "frontpage",
+            "manta_collection_link": "sealing-tapes",
             "manta_custom_image": "shopify://shop_images/fentrim-is23.png",
             "manta_custom_title": "Sealing tapes"
           }
@@ -95,7 +95,7 @@
         "collection_FFEGCV": {
           "type": "collection",
           "settings": {
-            "manta_collection_link": "frontpage",
+            "manta_collection_link": "mouse-barriers",
             "manta_custom_image": "shopify://shop_images/mouse-bar.png",
             "manta_custom_title": "Mouse Barriers"
           }
@@ -119,7 +119,7 @@
         "template--18418624921901__1aded6ef-5727-4347-bf56-9fc610343e55-1680769155d946d1f5-0": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
+            "collection": "exterior-sealing-material",
             "custom_image": "shopify://shop_images/eshop-ecat-siga-2.jpg",
             "custom_title": ""
           }
