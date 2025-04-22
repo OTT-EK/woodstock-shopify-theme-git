@@ -55,7 +55,7 @@
         "collection_gbFkbV": {
           "type": "collection",
           "settings": {
-            "manta_collection_link": "mounting-elements",
+            "manta_collection_link": "sale-clearance",
             "manta_custom_image": "shopify://shop_images/discount-tag-02-stroke-rounded_1.svg",
             "manta_custom_title": "Sale / Clearance"
           }
