@@ -977,6 +977,11 @@ summary::-webkit-details-marker {
   aspect-ratio: 1/1;
 }
 
+.manta-yes-margin-tb {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .media > img {
   object-fit: cover;
   object-position: center center;
