@@ -65,18 +65,18 @@
         "padding_bottom": 40
       }
     },
+    "spacer_xgfb97": {
+      "type": "spacer",
+      "settings": {
+        "height": 45,
+        "bg_color": "#ffffff"
+      }
+    },
     "manta_collection_description_ngYVXy": {
       "type": "manta-collection-description",
       "settings": {
         "always_show_full": false,
         "read_more_text": "Read more ..."
-      }
-    },
-    "spacer_xgfb97": {
-      "type": "spacer",
-      "settings": {
-        "height": 36,
-        "bg_color": "#ffffff"
       }
     }
   },
