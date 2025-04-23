@@ -973,9 +973,6 @@ summary::-webkit-details-marker {
 }
 
 .manta-yes {
-  justify-content: center;
-  align-items: center !important;
-  display: flex;
   aspect-ratio: 1/1;
 }
 
