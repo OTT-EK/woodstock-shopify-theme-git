@@ -972,8 +972,6 @@ summary::-webkit-details-marker {
 
 .manta-yes.media > *:not(.zoom):not(.deferred-media__poster-button),
 .manta-yes.media model-viewer {
-  position: unset;
-  max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 }
