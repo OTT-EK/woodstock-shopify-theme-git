@@ -71,12 +71,20 @@
         "always_show_full": false,
         "read_more_text": "Read more ..."
       }
+    },
+    "spacer_xgfb97": {
+      "type": "spacer",
+      "settings": {
+        "height": 36,
+        "bg_color": "#ffffff"
+      }
     }
   },
   "order": [
     "banner",
     "sub_collection_list_Tacbzq",
     "product-grid",
+    "spacer_xgfb97",
     "manta_collection_description_ngYVXy"
   ]
 }
