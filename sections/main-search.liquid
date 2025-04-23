@@ -249,7 +249,7 @@
                         <div class="template-search__article{% unless article.image != blank %} template-search__article--empty{% endunless %}">
                           {%- if article.image != blank -%}
                             <a class="template-search__article__media-wrapper" href="{{ article.url }}" aria-label="{{ article.image.alt | default: article.title | escape }}" tabindex="-1">
-                              <use-animate class="manta-yes media media--square">
+                              <use-animate class="media media--square">
                                 {{ article.image | image_url: width: 300 | image_tag: width: article.image.width, height: article.image.height, class: 'template-search__article__image motion-reduce', loading: 'lazy' }}
                               </use-animate>
                             </a> 

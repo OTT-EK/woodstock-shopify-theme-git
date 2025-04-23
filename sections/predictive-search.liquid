@@ -33,7 +33,7 @@
             <li>
               <a class="predictive-search__product predictive-search__item por full-unstyled-link" href="{{ product.url }}">
                 <div class="predictive-search__product__media-wrapper">
-                  <use-animate class="media media--square">
+                  <use-animate class="manta-yes media media--square">
                     {%- if product.featured_media != blank -%}
                       {{ product.featured_media | image_url: width: 150 | image_tag: width: product.featured_media.width, height: product.featured_media.height, class: 'predictive-search__product__image motion-reduce', loading: 'lazy' }}
                     {%- endif -%}
@@ -64,7 +64,7 @@
               <a class="predictive-search__collection predictive-search__item por{% unless collection.featured_image != blank %} predictive-search__item--empty{% endunless %} full-unstyled-link" href="{{ collection.url }}">
                 {%- if collection.featured_image != blank -%}
                   <div class="predictive-search__collection__media-wrapper" href="{{ collection.url }}" data-image-ratio="{{ collection.featured_image.aspect_ratio }}">
-                    <use-animate class="media media--square">
+                    <use-animate class="manta-yes media media--square">
                       {%- unless collection.featured_image.aspect_ratio > 1.5 -%}
                         {{ collection.featured_image | image_url: width: 150 | image_tag: width: collection.featured_image.width, height: collection.featured_image.height, class: 'predictive-search__product__image motion-reduce', loading: 'lazy' }}
                       {%- else -%}
@@ -100,7 +100,7 @@
               <a class="predictive-search__article predictive-search__item por{% unless article.image != blank %} predictive-search__item--empty{% endunless %} full-unstyled-link" href="{{ article.url }}">
                 {%- if article.image != blank -%}
                   <div class="predictive-search__article__media-wrapper">
-                    <use-animate class="media media--square">
+                    <use-animate class="manta-yes media media--square">
                       {{ article.image | image_url: width: 150 | image_tag: width: article.image.width, height: article.image.height, class: 'predictive-search__article__image motion-reduce', loading: 'lazy' }}
                     </use-animate>
                   </div> 
