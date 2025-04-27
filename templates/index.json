@@ -127,7 +127,7 @@
         "template--18418624921901__1aded6ef-5727-4347-bf56-9fc610343e55-1680769155d946d1f5-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
+            "collection": "reinforcement-machining-tools",
             "custom_image": "shopify://shop_images/eshop-ecat-max.jpg",
             "custom_title": ""
           }
@@ -135,7 +135,7 @@
         "template--18418624921901__1aded6ef-5727-4347-bf56-9fc610343e55-1680769155d946d1f5-2": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
+            "collection": "production-equipment",
             "custom_image": "shopify://shop_images/eshop-ecat-s.jpg",
             "custom_title": ""
           }
