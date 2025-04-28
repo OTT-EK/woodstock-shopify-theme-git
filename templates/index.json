@@ -63,7 +63,7 @@
         "collection_m7HNXA": {
           "type": "collection",
           "settings": {
-            "manta_collection_link": "frontpage",
+            "manta_collection_link": "nails-fastners",
             "manta_custom_image": "shopify://shop_images/collated-nails-2.png",
             "manta_custom_title": "Fastners"
           }
