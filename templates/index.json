@@ -15,7 +15,7 @@
         "url_FNHhdk": {
           "type": "url",
           "settings": {
-            "manta_slide_link": "https://ott-lietuva.myshopify.com/collections/exterior-sealing-materials",
+            "manta_slide_link": "shopify://collections/exterior-sealing-materials",
             "manta_slider_img": "shopify://shop_images/siga-banner-d_4c8a3123-ac06-4bb7-aece-164b31dbb128.jpg",
             "manta_slider_img_mob": "shopify://shop_images/siga-banner-m_8bb0ed70-336c-4b96-9cbc-9262aa5efe0d.jpg"
           }
