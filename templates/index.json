@@ -71,7 +71,7 @@
         "collection_mgKHUk": {
           "type": "collection",
           "settings": {
-            "manta_collection_link": "exterior-wood-screws",
+            "manta_collection_link": "wood-screws",
             "manta_custom_image": "shopify://shop_images/c4.png",
             "manta_custom_title": "Wood Screws"
           }
