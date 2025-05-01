@@ -1167,8 +1167,6 @@ button.shopify-payment-button__button--unbranded,
   padding: 0.5rem 1.8rem;
   font-size: calc(1.2rem * var(--font-body-scale));
   text-transform: uppercase;
-  font-family: var(--font-body-family);
-  font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
   background-image: linear-gradient(#fff, #fff);
   background-repeat: no-repeat;
