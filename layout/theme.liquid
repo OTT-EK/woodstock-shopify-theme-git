@@ -215,9 +215,6 @@
     
     {%- liquid
       sections 'footer-group'
-      if request.design_mode or template.name == 'collection' or template.name == 'search'
-        section 'background-color-swatches'
-      endif
       if request.design_mode and request.page_type == 'product'
         section 'quick-view'
         section 'quick-add-drawer'
