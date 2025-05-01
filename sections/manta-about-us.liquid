@@ -84,9 +84,11 @@
         {% endif %}
       </div>
 
-      <a href="{{ section.settings.manta_aboutus_button_link }}" class="button manta-bttw-slide-up">
+      <button class="button manta-bttw-slide-up" onclick="openMantaAboutUsExploreLink(event)">
+      <span>
         {{ section.settings.manta_aboutus_button_label }}
-    </a>
+      </span>
+    </button>
     </div>
   </div>
 
@@ -100,7 +102,7 @@
         readMoreLink.style.display = 'none';
       }
     }
-  </script> 
+  </script>
 
   <style>
     .manta-aboutus-section {
