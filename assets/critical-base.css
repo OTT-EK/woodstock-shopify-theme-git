@@ -1165,7 +1165,7 @@ button.shopify-payment-button__button--unbranded,
 /* Manta Button - white */
 .manta-btt-slide-up {
   padding: 0.5rem 1.8rem;
-  font-size: calc(1.25rem * var(--font-body-scale));
+  font-size: calc(var(--font-button-scale) * 1.4rem);
   font-weight: var(--font-body-weight);
   background-image: linear-gradient(#fff, #fff);
   background-repeat: no-repeat;
