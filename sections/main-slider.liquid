@@ -648,24 +648,18 @@
       </div>
       <div class="manta-content-box-small-container">
         <div class="manta-content-box-small manta-cta-box manta-picture-featured-1">
-          <a href="{{ section.settings.manta_featuredbox_1 }}"
-             class="manta-cta-content">
-            <h2 class="h5">{{ section.settings.manta_featuredbox_title_1 }}</h2>
-            <p class="subtitle--small">{{ section.settings.manta_featuredbox_subtitle_1 }}</p>
-            <span class="manta-btt-slide-up">
-              Shop now
-            </span>
-          </a>
+          <div class="manta-cta-content">
+            <a href="{{ section.settings.manta_featuredbox_1 }}"><h2 class="h5">{{ section.settings.manta_featuredbox_title_1 }}</h2></a>
+            <a href="{{ section.settings.manta_featuredbox_1 }}"><p class="subtitle--small">{{ section.settings.manta_featuredbox_subtitle_1 }}</p></a>
+            <span class="manta-btt-slide-up" id="mantaBtn1" onclick="openFirstLink(event)">Shop now</span>
+          </div>
         </div>
         <div class="manta-content-box-small manta-cta-box manta-picture-featured-2">
-          <a href="{{ section.settings.manta_featuredbox_2 }}"
-             class="manta-cta-content">
-            <h2 class="h5">{{ section.settings.manta_featuredbox_title_2 }}</h2>
-            <p class="subtitle--small">{{ section.settings.manta_featuredbox_subtitle_2 }}</p>
-            <span class="manta-btt-slide-up">
-              Shop now
-            </span>
-          </a>
+          <div class="manta-cta-content">
+            <a href="{{ section.settings.manta_featuredbox_2 }}"><h2 class="h5">{{ section.settings.manta_featuredbox_title_2 }}</h2></a>
+            <a href="{{ section.settings.manta_featuredbox_2 }}"><p class="subtitle--small">{{ section.settings.manta_featuredbox_subtitle_2 }}</p></a>
+            <span class="manta-btt-slide-up" id="mantaBtn2" onclick="openSecondLink(event)">Shop now</span>
+          </div>
         </div>
       </div>
     </div>
@@ -824,47 +818,26 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <script>
-  (function() {
-    // grab all your CTAs
-    document.querySelectorAll('.manta-cta-content').forEach(link => {
-      const btn = link.querySelector('.manta-btt-slide-up');
-      if (!btn) return;
+  function openFirstLink(e) {
+    // prevent the parent <a> from navigating immediately
+    e.preventDefault();
+    e.stopPropagation();
 
-      link.addEventListener('click', e => {
-        // if we've already kicked off, do nothing
-        if (link.classList.contains('clicked')) {
-          e.preventDefault();
-          return;
-        }
+    // kick off your CSS animation (hover state)
+    e.currentTarget.classList.add('trigger-hover');
 
-        e.preventDefault();
-        link.classList.add('clicked');
-        btn.classList.add('trigger-hover'); // start your CSS slide-up
+    // wait exactly 300 ms, then go
+    setTimeout(function() {
+      window.location.href = '{{ section.settings.manta_featuredbox_1 }}';
+    }, 300);
+  }
 
-        // figure out the real transition time (in ms)
-        const style = getComputedStyle(btn);
-        const rawDur = style.transitionDuration || '0s';
-        // could be "0.3s, 0.3s", so take the first
-        let ms = parseFloat(rawDur.split(',')[0].trim()) * 1000;
-
-        let done = false;
-        function go() {
-          if (done) return;
-          done = true;
-          window.location.href = link.href;
-        }
-
-        // 1) fire on the real transitionend
-        btn.addEventListener('transitionend', function onEnd(ev) {
-          if (ev.propertyName === 'background-size') {
-            btn.removeEventListener('transitionend', onEnd);
-            go();
-          }
-        });
-
-        // 2) fallback in case transitionend never fires
-        setTimeout(go, ms + 50);
-      });
-    });
-  })();
+  function openSecondLink(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    e.currentTarget.classList.add('trigger-hover');
+    setTimeout(function() {
+      window.location.href = '{{ section.settings.manta_featuredbox_2 }}';
+    }, 300);
+  }
 </script>
