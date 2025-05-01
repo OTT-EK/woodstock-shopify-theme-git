@@ -45,7 +45,7 @@
           "type": "link_list",
           "settings": {
             "heading": "Customers",
-            "menu": "footer"
+            "menu": "en-footer-menu-customers"
           }
         },
         "e1a58367-ad23-47c0-adf6-953cfbd41867": {
