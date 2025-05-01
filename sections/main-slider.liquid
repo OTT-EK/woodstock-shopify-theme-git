@@ -656,14 +656,14 @@
           <div class="manta-cta-content">
             <a href="{{ section.settings.manta_featuredbox_1 }}" class="manta-no-a"><h2 class="h5">{{ section.settings.manta_featuredbox_title_1 }}</h2></a>
             <a href="{{ section.settings.manta_featuredbox_1 }}" class="manta-no-a"><p class="subtitle--small">{{ section.settings.manta_featuredbox_subtitle_1 }}</p></a>
-            <span class="manta-btt-slide-up" id="mantaBtn1" onclick="openFirstLink(event)">Shop now</span>
+            <span class="manta-btt-slide-up" id="mantaBttn1" onclick="openMantaSlidersSecFirstLink(event)">Shop now</span>
           </div>
         </div>
         <div class="manta-content-box-small manta-cta-box manta-picture-featured-2">
           <div class="manta-cta-content">
             <a href="{{ section.settings.manta_featuredbox_2 }}" class="manta-no-a"><h2 class="h5">{{ section.settings.manta_featuredbox_title_2 }}</h2></a>
             <a href="{{ section.settings.manta_featuredbox_2 }}" class="manta-no-a"><p class="subtitle--small">{{ section.settings.manta_featuredbox_subtitle_2 }}</p></a>
-            <span class="manta-btt-slide-up" id="mantaBtn2" onclick="openSecondLink(event)">Shop now</span>
+            <span class="manta-btt-slide-up" id="mantaBttn2" onclick="openMantaSlidersSecSecondLink(event)">Shop now</span>
           </div>
         </div>
       </div>
@@ -823,7 +823,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <script>
-  function openFirstLink(e) {
+  function openMantaSlidersSecFirstLink(e) {
     // prevent the parent <a> from navigating immediately
     e.preventDefault();
     e.stopPropagation();
@@ -837,7 +837,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 300);
   }
 
-  function openSecondLink(e) {
+  function openMantaSlidersSecSecondLink(e) {
     e.preventDefault();
     e.stopPropagation();
     e.currentTarget.classList.add('trigger-hover');
