@@ -37,15 +37,17 @@
   {%- assign processed_count = 0 -%}
 
   {%- for col in to_process -%}
-    {%- if processed_count < 20 and visited_handles contains col.handle == false -%}
-      {%- assign visited_handles  = visited_handles | append: col.handle | append: "|" -%}
-      {%- assign total_products  = total_products  | plus: col.all_products_count -%}
-      {%- assign processed_count = processed_count | plus: 1 -%}
+    {%- if processed_count < 20 -%}
+      {%- unless visited_handles contains col.handle -%}
+        {%- assign visited_handles  = visited_handles | append: col.handle | append: "|" -%}
+        {%- assign total_products  = total_products  | plus: col.all_products_count -%}
+        {%- assign processed_count = processed_count | plus: 1 -%}
 
-      {%- if col.template_suffix == 'sub-collection' and processed_count < 20 -%}
-        {%- assign child_list = col.metafields.custom.sub_collection_list.value -%}
-        {%- assign to_process  = to_process | concat: child_list -%}
-      {%- endif -%}
+        {%- if col.template_suffix == 'sub-collection' and processed_count < 20 -%}
+          {%- assign child_list = col.metafields.custom.sub_collection_list.value -%}
+          {%- assign to_process  = to_process | concat: child_list -%}
+        {%- endif -%}
+      {%- endunless -%}
     {%- endif -%}
   {%- endfor -%}
 {%- else -%}
