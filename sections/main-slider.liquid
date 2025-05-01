@@ -828,36 +828,3 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
-
-<script>
-  (function() {
-    // grab every CTA link
-    const links = document.querySelectorAll('.manta-cta-content');
-    links.forEach(link => {
-      // find the inner button
-      const btn = link.querySelector('.manta-btt-slide-up');
-      if (!btn) return;
-
-      link.addEventListener('click', function(e) {
-        // if already clicked, let it navigate normally
-        if (link.classList.contains('clicked')) return;
-
-        e.preventDefault();               // stop instant navigation
-        link.classList.add('clicked');    // prevent double-fire
-        link.style.pointerEvents = 'none';// disable further taps
-
-        // trigger the slide-up animation
-        btn.classList.add('trigger-hover');
-
-        // when the CSS transition on background-size ends, navigate
-        const onEnd = ev => {
-          if (ev.propertyName === 'background-size') {
-            window.location.href = link.href;
-            btn.removeEventListener('transitionend', onEnd);
-          }
-        };
-        btn.addEventListener('transitionend', onEnd);
-      });
-    });
-  })();
-</script>
