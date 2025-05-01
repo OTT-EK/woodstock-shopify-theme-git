@@ -823,3 +823,43 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
+<style>
+  .manta-btt-slide-up.trigger-hover {
+    background-size: 100% 0%;
+    border-color: var(--fill-color);
+    color: var(--fill-color);
+    /* no pointer-events here */
+  }
+</style>
+
+<!-- just before </body> -->
+<script>
+  (function() {
+    document.querySelectorAll('.manta-cta-content').forEach(link => {
+      const btn = link.querySelector('.manta-btt-slide-up');
+      if (!btn) return;
+
+      link.addEventListener('click', e => {
+        // if we've already started the redirect sequence, stop here
+        if (link.classList.contains('clicked')) {
+          e.preventDefault();
+          return;
+        }
+
+        // first click: prevent immediate navigation
+        e.preventDefault();
+        link.classList.add('clicked');   // mark it
+        btn.classList.add('trigger-hover'); // start the CSS animation
+
+        // when the slide-up (background-size) transition ends, redirect
+        const onEnd = ev => {
+          if (ev.propertyName === 'background-size') {
+            window.location.href = link.href;
+            btn.removeEventListener('transitionend', onEnd);
+          }
+        };
+        btn.addEventListener('transitionend', onEnd);
+      });
+    });
+  })();
+</script>
