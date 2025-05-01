@@ -26,12 +26,15 @@
 
 {%- comment -%}
   Compute total_products:
+  • If no collection is passed, default to 0.
   • If this is a “sub-collection” template, walk its metafield list (and any nested sub-collections) up to 20 total collections, summing each all_products_count.
   • Otherwise just use the collection’s own all_products_count.
 {%- endcomment -%}
 
 {%- assign total_products = 0 -%}
-{%- if card_collection.template_suffix == 'sub-collection' -%}
+{%- if card_collection == blank -%}
+  {%- assign total_products = 0 -%}
+{%- elsif card_collection.template_suffix == 'sub-collection' -%}
   {%- assign visited_handles  = "" -%}
   {%- assign to_process      = card_collection.metafields.custom.sub_collection_list.value -%}
   {%- assign processed_count = 0 -%}
