@@ -823,16 +823,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
-<style>
-  .manta-btt-slide-up.trigger-hover {
-    background-size: 100% 0%;
-    border-color: var(--fill-color);
-    color: var(--fill-color);
-    /* no pointer-events here */
-  }
-</style>
-
-<!-- just before </body> -->
+<!-- put this just before your closing </body> -->
 <script>
   (function() {
     document.querySelectorAll('.manta-cta-content').forEach(link => {
@@ -840,18 +831,20 @@ document.addEventListener("DOMContentLoaded", function() {
       if (!btn) return;
 
       link.addEventListener('click', e => {
-        // if we've already started the redirect sequence, stop here
+        // if already triggered, let the link go through
         if (link.classList.contains('clicked')) {
           e.preventDefault();
           return;
         }
 
-        // first click: prevent immediate navigation
+        // first click: stop the immediate jump
         e.preventDefault();
-        link.classList.add('clicked');   // mark it
-        btn.classList.add('trigger-hover'); // start the CSS animation
+        link.classList.add('clicked');
 
-        // when the slide-up (background-size) transition ends, redirect
+        // kick off the bottom→top slide
+        btn.classList.add('trigger-hover');
+
+        // once the fill’s background-size transition ends, navigate
         const onEnd = ev => {
           if (ev.propertyName === 'background-size') {
             window.location.href = link.href;
