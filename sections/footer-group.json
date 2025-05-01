@@ -52,7 +52,7 @@
           "type": "link_list",
           "settings": {
             "heading": "Quick links",
-            "menu": "footer"
+            "menu": "en-footer-menu-about-us"
           }
         }
       },
