@@ -12,6 +12,12 @@
       "content": "Feautred item 1"
     },
     {
+      "type": "text",
+      "label": "Featured button name",
+      "id": "manta_featuredbox_bttn_1",
+      "default": "Shop now"
+    },
+    {
       "type": "url",
       "label": "Link",
       "id": "manta_featuredbox_1"
@@ -34,6 +40,12 @@
     {
       "type": "header",
       "content": "Feautred item 2"
+    },
+    {
+      "type": "text",
+      "label": "Featured button name",
+      "id": "manta_featuredbox_bttn_2",
+      "default": "Shop now"
     },
     {
       "type": "url",
@@ -656,14 +668,14 @@
           <div class="manta-cta-content">
             <a href="{{ section.settings.manta_featuredbox_1 }}" class="manta-no-a"><h2 class="h5">{{ section.settings.manta_featuredbox_title_1 }}</h2></a>
             <a href="{{ section.settings.manta_featuredbox_1 }}" class="manta-no-a"><p class="subtitle--small">{{ section.settings.manta_featuredbox_subtitle_1 }}</p></a>
-            <span class="manta-btt-slide-up" id="mantaBttn1" onclick="openMantaSlidersSecFirstLink(event)">Shop now</span>
+            <span class="manta-btt-slide-up" id="mantaBttn1" onclick="openMantaSlidersSecFirstLink(event)">{{ section.settings.manta_featuredbox_bttn_1 }}</span>
           </div>
         </div>
         <div class="manta-content-box-small manta-cta-box manta-picture-featured-2">
           <div class="manta-cta-content">
             <a href="{{ section.settings.manta_featuredbox_2 }}" class="manta-no-a"><h2 class="h5">{{ section.settings.manta_featuredbox_title_2 }}</h2></a>
             <a href="{{ section.settings.manta_featuredbox_2 }}" class="manta-no-a"><p class="subtitle--small">{{ section.settings.manta_featuredbox_subtitle_2 }}</p></a>
-            <span class="manta-btt-slide-up" id="mantaBttn2" onclick="openMantaSlidersSecSecondLink(event)">Shop now</span>
+            <span class="manta-btt-slide-up" id="mantaBttn2" onclick="openMantaSlidersSecSecondLink(event)">{{ section.settings.manta_featuredbox_bttn_2 }}</span>
           </div>
         </div>
       </div>
