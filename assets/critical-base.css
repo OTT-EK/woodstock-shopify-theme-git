@@ -1175,6 +1175,9 @@ button.shopify-payment-button__button--unbranded,
   overflow: hidden;
   transition: color 0.3s ease;
   text-transform: uppercase;
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  font-weight: var(--font-body-weight);
 }
 
 .manta-btt-slide-up::after {
