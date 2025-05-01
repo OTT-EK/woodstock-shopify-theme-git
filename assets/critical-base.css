@@ -1165,7 +1165,7 @@ button.shopify-payment-button__button--unbranded,
 /* Manta Button - white */
 .manta-btt-slide-up {
   position: relative;
-  padding: 6px 20px;
+  padding: 0.5rem 1.8rem;
   font-size: calc(1.2rem * var(--font-body-scale));
   text-transform: uppercase;
   font-family: var(--font-body-family);
@@ -1196,7 +1196,7 @@ button.shopify-payment-button__button--unbranded,
 /* Manta Button - white */
 .manta-bttw-slide-up {
   position: relative;
-  padding: 6px 20px;
+  padding: 0.8rem 2rem;
   font-size: calc(1.2rem * var(--font-body-scale));
   text-transform: uppercase;
   font-family: var(--font-body-family);
