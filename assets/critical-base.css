@@ -1187,7 +1187,7 @@ button.shopify-payment-button__button--unbranded,
   overflow: hidden;
 }
 
-.manta-btt-slide-up:hover {
+.manta-btt-slide-up:hover, .manta-btt-slide-up.trigger-hover {
   background-size: 100% 0%;
   border-color: #fff;
   color: #fff;
@@ -1219,7 +1219,7 @@ button.shopify-payment-button__button--unbranded,
   text-decoration: none;
 }
 
-.manta-bttw-slide-up:hover {
+.manta-bttw-slide-up:hover, .manta-bttw-slide-up.trigger-hover {
   background-size: 100% 0%;
   border-color: #313131;
   color: #313131;

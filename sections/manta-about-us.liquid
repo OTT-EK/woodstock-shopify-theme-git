@@ -85,12 +85,12 @@
       </div>
 
       <!-- Button -->
-      <a
+      <span
         class="manta-bttw-slide-up"
-        href="{{ section.settings.manta_aboutus_button_link }}"
+        onclick="openMantaAboutUsExploreLink(event)"
       >
         {{ section.settings.manta_aboutus_button_label }}
-      </a>
+      </span>
     </div>
   </div>
 
@@ -177,3 +177,22 @@
     }
   </style>
 </section>
+
+<script>
+  function openMantaAboutUsExploreLink(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const link = e.currentTarget;
+    if (link.classList.contains('clicked')) return;
+    link.classList.add('clicked');
+
+    // trigger your hover/slide CSS
+    link.classList.add('trigger-hover');
+
+    // after 0.3s, navigate to the Liquid-provided URL
+    setTimeout(function() {
+      window.location.href = '{{ section.settings.manta_aboutus_button_link }}';
+    }, 300);
+  }
+</script>
