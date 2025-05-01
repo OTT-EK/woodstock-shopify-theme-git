@@ -1164,8 +1164,6 @@ button.shopify-payment-button__button--unbranded,
 
 /* Manta Button - white */
 .manta-btt-slide-up {
-  --fill-color: #fff;
-  --bg-color: #313131;
   position: relative;
   padding: 6px 20px;
   font-size: calc(1.2rem * var(--font-body-scale));
@@ -1173,11 +1171,11 @@ button.shopify-payment-button__button--unbranded,
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
-  background-image: linear-gradient(var(--fill-color), var(--fill-color));
+  background-image: linear-gradient(#fff, #fff);
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100% 100%;
-  background-color: var(--bg-color);
+  background-color: #313131;
   border: 1px solid transparent;
   border-radius: 7px;
   color: black;
@@ -1191,8 +1189,39 @@ button.shopify-payment-button__button--unbranded,
 
 .manta-btt-slide-up:hover {
   background-size: 100% 0%;
-  border-color: var(--fill-color);
-  color: var(--fill-color);
+  border-color: #fff;
+  color: #fff;
+}
+
+/* Manta Button - white */
+.manta-bttw-slide-up {
+  position: relative;
+  padding: 6px 20px;
+  font-size: calc(1.2rem * var(--font-body-scale));
+  text-transform: uppercase;
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  font-weight: var(--font-body-weight);
+  background-image: linear-gradient(#313131, #313131);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% 100%;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  color: white;
+  cursor: pointer;
+  transition:
+    background-size 0.3s ease,
+    color           0.3s ease,
+    border-color    0.3s ease;
+  overflow: hidden;
+}
+
+.manta-bttw-slide-up:hover {
+  background-size: 100% 0%;
+  border-color: #313131;
+  color: #313131;
 }
 
 /* component-modal */
