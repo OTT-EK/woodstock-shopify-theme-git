@@ -1164,6 +1164,8 @@ button.shopify-payment-button__button--unbranded,
 
 /* Manta Button - white */
 .manta-btt-slide-up {
+  --fill-color: #fff;
+  --bg-color: #313131;
   position: relative;
   padding: 6px 20px;
   font-size: calc(1.2rem * var(--font-body-scale));
@@ -1171,49 +1173,26 @@ button.shopify-payment-button__button--unbranded,
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
-
-  /* 1px white border, transparent by default */
-  background-color: transparent;
-  color: black;
-  border: 1px solid #fff;
+  background-image: linear-gradient(var(--fill-color), var(--fill-color));
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% 100%;
+  background-color: var(--bg-color);
+  border: 1px solid transparent;
   border-radius: 5px;
-  box-sizing: border-box;            /* include border in width/height */
-
+  color: black;
   cursor: pointer;
+  transition:
+    background-size 0.3s ease,
+    color           0.3s ease,
+    border-color    0.3s ease;
   overflow: hidden;
-  transition: color 0.3s ease;
 }
 
-.manta-btt-slide-up::after {
-  content: '';
-  position: absolute;
-  /* expand 1px beyond each edge */
-  top: -1px;
-  left: -1px;
-  width: calc(100% + 2px);
-  height: calc(100% + 2px);
-
-  background-color: #fff;
-  /* radius = button radius + 1px to match the shape */
-  border-radius: 6px;
-
-  transform: translateY(0);           /* fully covering by default */
-  transition: transform 0.3s ease;
-  z-index: 1;
-}
-
-.manta-btt-slide-up:hover::after {
-  transform: translateY(-100%);       /* slide the fill up on hover */
-}
-
-.manta-btt-slide-up span {
-  position: relative;
-  z-index: 2;
-  transition: color 0.3s ease;
-}
-
-.manta-btt-slide-up:hover span {
-  color: #fff;
+.manta-btt-slide-up:hover {
+  background-size: 100% 0%;
+  border-color: var(--fill-color);
+  color: var(--fill-color);
 }
 
 /* component-modal */
