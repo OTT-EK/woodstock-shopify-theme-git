@@ -823,3 +823,48 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
+<script>
+  (function() {
+    // grab all your CTAs
+    document.querySelectorAll('.manta-cta-content').forEach(link => {
+      const btn = link.querySelector('.manta-btt-slide-up');
+      if (!btn) return;
+
+      link.addEventListener('click', e => {
+        // if we've already kicked off, do nothing
+        if (link.classList.contains('clicked')) {
+          e.preventDefault();
+          return;
+        }
+
+        e.preventDefault();
+        link.classList.add('clicked');
+        btn.classList.add('trigger-hover'); // start your CSS slide-up
+
+        // figure out the real transition time (in ms)
+        const style = getComputedStyle(btn);
+        const rawDur = style.transitionDuration || '0s';
+        // could be "0.3s, 0.3s", so take the first
+        let ms = parseFloat(rawDur.split(',')[0].trim()) * 1000;
+
+        let done = false;
+        function go() {
+          if (done) return;
+          done = true;
+          window.location.href = link.href;
+        }
+
+        // 1) fire on the real transitionend
+        btn.addEventListener('transitionend', function onEnd(ev) {
+          if (ev.propertyName === 'background-size') {
+            btn.removeEventListener('transitionend', onEnd);
+            go();
+          }
+        });
+
+        // 2) fallback in case transitionend never fires
+        setTimeout(go, ms + 50);
+      });
+    });
+  })();
+</script>
