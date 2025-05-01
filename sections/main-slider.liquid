@@ -464,19 +464,7 @@
     padding-right: 2rem;
     min-height: 1.7rem;
   }
-  .manta-cta-content span {
-    display: inline-block;
-    width: auto;
-    background-color: #fff;
-    color: #313131;
-    border: none;
-    padding: 6px 20px;
-    cursor: pointer;
-    text-transform: uppercase;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: calc(1.2rem * var(--font-body-scale));
-  }
+
   .manta-sidebar:has(.manta-menu.expanded) {
     border-radius: 0 0 8px 8px;
   }
@@ -663,14 +651,18 @@
           <a href="{{ section.settings.manta_featuredbox_1 }}" class="manta-cta-content">
             <h2 class="h5">{{ section.settings.manta_featuredbox_title_1 }}</h2>
             <p class="subtitle--small">{{ section.settings.manta_featuredbox_subtitle_1 }}</p>
-            <span>Shop Now</span>
+            <button class="manta-btt-slide-up">
+              <span>Shop now</span>
+            </button>
           </a>
         </div>
         <div class="manta-content-box-small manta-cta-box manta-picture-featured-2">
           <a href="{{ section.settings.manta_featuredbox_2 }}" class="manta-cta-content">
             <h2 class="h5">{{ section.settings.manta_featuredbox_title_2 }}</h2>
             <p class="subtitle--small">{{ section.settings.manta_featuredbox_subtitle_2 }}</p>
-            <span>Shop Now</span>
+            <button class="manta-btt-slide-up">
+              <span>Shop now</span>
+            </button>
           </a>
         </div>
       </div>

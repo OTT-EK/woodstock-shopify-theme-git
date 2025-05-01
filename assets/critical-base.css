@@ -1162,6 +1162,49 @@ button.shopify-payment-button__button--unbranded,
   pointer-events: none;
 }
 
+/* Manta Button - white */
+.manta-btt-slide-up {
+  position: relative;
+  padding: 6px 20px;
+  font-size: calc(1.2rem * var(--font-body-scale));
+  background-color: transparent;
+  color: black;                     /* white text on blue by default */
+  border: 1px solid #fff;       /* 1px blue border always */
+  border-radius: 5px;              /* rounded corners */
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.manta-btt-slide-up::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: calc(var(--buttons-radius) - 1px);
+  transform: translateY(0);        /* fully covering by default */
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.manta-btt-slide-up:hover::after {
+  transform: translateY(-100%);    /* slide the fill up on hover */
+}
+
+.manta-btt-slide-up span {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.manta-btt-slide-up:hover span {
+  color: #fff;                  /* blue text when transparent */
+}
+
 /* component-modal */
 .modal__toggle {
   list-style-type: none;
