@@ -1,5 +1,5 @@
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-{%- liquid
+{%-liquid
   assign collection_icons = section.blocks | where: "type", 'collection_icon'
   assign dynamic_sub_collection_size = 0
   assign banner_image = section.settings.title_background_image | default: settings.page_heading_collection_banner_image
@@ -50,11 +50,11 @@
     assign icon_size = 65
   endif
 -%}
-
-{%- if has_transparent -%}
-  {%- render 'header-assets-transparent', text_color_transparent: section.settings.text_color_transparent -%}
-{%- endif -%}
-
+{%-liquid
+  if has_transparent 
+    render 'header-assets-transparent', text_color_transparent: section.settings.text_color_transparent
+  endif
+-%}
 <style>
   .section-{{ section.id }} {
     --extra-height: {%- if total_item_size > 0 -%}4{%- else -%}0{%- endif -%}rem;
@@ -160,55 +160,11 @@
     <div class="page-width collection-icon-wrapper por">
       <div class="collection-icon color-{{ section.settings.collection_icon_color_scheme }}">
         <slider-component class="por slider-mobile-gutter slider-component-desktop slider-component-tablet slider-component-mobile">
-          <ul id="Slider-{{ section.id }}" class="collection-icon__slider grid grid--2-col grid--4-col-tablet grid--5-col-desktop slider" role="list" aria-label="{{ 'sections.collection_banner.slider' | t }}">
+          <ul id="Slider-{{ section.id }}" class="collection-icon__slider grid grid--2-col grid--4-col-tablet grid--5-col-desktop slider slider--desktop slider--tablet slider--mobile" role="list" aria-label="{{ 'sections.collection_banner.slider' | t }}">
 
-            {%- for link in dynamic_sub_collections -%}
-                  {%- assign col = link.object -%}
-                  {%- assign total_products_icon = 0 -%}
-                  {%- if col == blank -%}
-                    {%- assign total_products_icon = 0 -%}
-                  {%- elsif col.template_suffix == 'sub-collection' -%}
-                    {%- assign visited_handles_icon = '' -%}
-                    {%- assign to_process_icon = col.metafields.custom.sub_collection_list.value -%}
-                    {%- assign processed_count_icon = 0 -%}
-                    {%- for subcol_icon in to_process_icon -%}
-                      {%- if processed_count_icon < 20 -%}
-                        {%- unless visited_handles_icon contains subcol_icon.handle -%}
-                          {%- assign visited_handles_icon = visited_handles_icon | append: subcol_icon.handle | append: '|' -%}
-                          {%- assign total_products_icon = total_products_icon | plus: subcol_icon.all_products_count -%}
-                          {%- assign processed_count_icon = processed_count_icon | plus: 1 -%}
-                          {%- if subcol_icon.template_suffix == 'sub-collection' and processed_count_icon < 20 -%}
-                            {%- assign child_list_icon = subcol_icon.metafields.custom.sub_collection_list.value -%}
-                            {%- assign to_process_icon = to_process_icon | concat: child_list_icon -%}
-                          {%- endif -%}
-                        {%- endunless -%}
-                      {%- endif -%}
-                    {%- endfor -%}
-                  {%- else -%}
-                    {%- assign total_products_icon = col.all_products_count -%}
-                  {%- endif -%}
-                <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="grid__item slider__slide flex-grow-1">
-                      {%-liquid
-                        if subcollection_icons.size > 0 and sub_icons_str != ''
-                          assign compare_index = ':' | append: link.object.id | append: '='
-                          if sub_icons_str contains compare_index
-                            assign sub_icon_block_index = sub_icons_str | split: compare_index | last | split: ';' | first | plus: 0
-                            assign sub_icon_block = subcollection_icons[sub_icon_block_index]
-                            assign sub_icon = sub_icon_block.settings.icon
-                            assign sub_custom_icon = sub_icon_block.settings.custom_icon
-                            render 'main-collection-banner-icon', icon_collection: link, icon: sub_icon, custom_icon: sub_custom_icon, products_count: total_products_icon, icon_size: icon_size
-                          else
-                            render 'main-collection-banner-icon', icon_collection: link, products_count: total_products_icon, icon_size: icon_size, custom_icon: link.object.featured_image
-                          endif
-                        else
-                          render 'main-collection-banner-icon', icon_collection: link, products_count: total_products_icon, icon_size: icon_size, custom_icon: link.object.featured_image
-                        endif
-                      -%}
-                </li>
-            {%- endfor -%}
-
-            {%- for block in collection_icons -%}
-                {%- assign col = block.settings.collection -%}
+            {%- if dynamic_sub_collection_size > 0 -%}
+              {%- for link in dynamic_sub_collections -%}
+                {%- assign col = link.object -%}
                 {%- assign total_products_icon = 0 -%}
                 {%- if col == blank -%}
                   {%- assign total_products_icon = 0 -%}
@@ -232,19 +188,77 @@
                 {%- else -%}
                   {%- assign total_products_icon = col.all_products_count -%}
                 {%- endif -%}
+                <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="grid__item slider__slide flex-grow-1">
+                  {%-liquid
+                    if subcollection_icons.size > 0 and sub_icons_str != ''
+                      assign compare_index = ':' | append: col.id | append: '='
+                      if sub_icons_str contains compare_index
+                        assign sub_icon_block_index = sub_icons_str | split: compare_index | last | split: ';' | first | plus: 0
+                        assign sub_icon_block = subcollection_icons[sub_icon_block_index]
+                        assign sub_icon = sub_icon_block.settings.icon
+                        assign sub_custom_icon = sub_icon_block.settings.custom_icon
+                        render 'main-collection-banner-icon', icon_collection: link, icon: sub_icon, custom_icon: sub_custom_icon, products_count: total_products_icon, icon_size: icon_size
+                      else
+                        render 'main-collection-banner-icon', icon_collection: link, products_count: total_products_icon, icon_size: icon_size, custom_icon: link.object.featured_image
+                      endif
+                    else
+                      render 'main-collection-banner-icon', icon_collection: link, products_count: total_products_icon, icon_size: icon_size, custom_icon: link.object.featured_image
+                    endif
+                  -%}
+                </li>
+              {%- endfor -%}
+            {%- endif -%}
+
+            {%- for block in collection_icons -%}
+              {%- assign col = block.settings.collection -%}
+              {%- assign total_products_icon = 0 -%}
+              {%- if col == blank -%}
+                {%- assign total_products_icon = 0 -%}
+              {%- elsif col.template_suffix == 'sub-collection' -%}
+                {%- assign visited_handles_icon = '' -%}
+                {%- assign to_process_icon = col.metafields.custom.sub_collection_list.value -%}
+                {%- assign processed_count_icon = 0 -%}
+                {%- for subcol_icon in to_process_icon -%}
+                  {%- if processed_count_icon < 20 -%}
+                    {%- unless visited_handles_icon contains subcol_icon.handle -%}
+                      {%- assign visited_handles_icon = visited_handles_icon | append: subcol_icon.handle | append: '|' -%}
+                      {%- assign total_products_icon = total_products_icon | plus: subcol_icon.all_products_count -%}
+                      {%- assign processed_count_icon = processed_count_icon | plus: 1 -%}
+                      {%- if subcol_icon.template_suffix == 'sub-collection' and processed_count_icon < 20 -%}
+                        {%- assign child_list_icon = subcol_icon.metafields.custom.sub_collection_list.value -%}
+                        {%- assign to_process_icon = to_process_icon | concat: child_list_icon -%}
+                      {%- endif -%}
+                    {%- endunless -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- else -%}
+                {%- assign total_products_icon = col.all_products_count -%}
+              {%- endif -%}
               <li id="Slide-{{ section.id }}-{{ forloop.index | plus: dynamic_sub_collection_size }}" class="grid__item slider__slide flex-grow-1">
                 {%- render 'main-collection-banner-icon', icon_collection: block.settings.collection, icon: block.settings.icon, custom_icon: block.settings.custom_icon, products_count: total_products_icon, icon_size: icon_size -%}
               </li>
             {%- endfor -%}
-
           </ul>
           <div class="slider__controls slider-buttons no-js-hidden flex gradient collection-icon__slider-controls slider-counter small-hide">
-            <!-- controls markup unchanged -->
+            <div class="collection-icon__slider-controls__wrapper slider__control-wrapper flex align-center slider-counter__inner">
+              {%- if dynamic_sub_collection_size > 0 -%}
+                {%- for icon_collection in dynamic_sub_collections -%}
+                  <button type="button" class="slider-counter__link slider-counter__link--dots flex justify-center align-center" aria-label="{{ 'sections.collection_banner.load_collection_icon' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ total_item_size }}" aria-controls="Slider-{{ section.id }}">
+                    <span class="dot"></span>
+                  </button>
+                {%- endfor -%}
+              {%- endif -%}
+              {%- for block in collection_icons -%}
+                <button type="button" class="slider-counter__link slider-counter__link--dots flex justify-center align-center" aria-label="{{ 'sections.collection_banner.load_collection_icon' | t }} {{ forloop.index | plus: dynamic_sub_collection_size }} {{ 'general.slider.of' | t }} {{ total_item_size }}" aria-controls="Slider-{{ section.id }}">
+                  <span class="dot"></span>
+                </button>
+              {%- endfor -%}
+            </div>
           </div>
-          <button type="button" class="slider-button slider-button--prev" disabled aria-label="{{ 'general.slider.previous_slide' | t }}" aria-controls="Slider-{{ section.id }}" tabindex="-1"></button>
-          <button type="button" class="slider-button slider-button--next" aria-label="{{ 'general.slider.next_slide' | t }}" aria-controls="Slider-{{ section.id }}" tabindex="-1"></button>  
-        </slider-component>  
-      </div>  
+          <button type="button" class="slider-button slider-button--prev collection-icon__slider-button slider-button--transparent no-js-hidden" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}" aria-controls="Slider-{{ section.id }}" disabled="disabled" tabindex="-1"></button>
+          <button type="button" class="slider-button slider-button--next collection-icon__slider-button slider-button--transparent no-js-hidden" name="next" aria-label="{{ 'general.slider.next_slide' | t }}" aria-controls="Slider-{{ section.id }}" tabindex="-1"></button>
+        </slider-component>
+      </div>
     </div>
   {%- endif -%}
 </div>
