@@ -197,10 +197,10 @@
   .manta-menu-text {
     flex: 1;
   }
-  .manta-a-no {
-    text-decoration: none;
-    color: #fff;
-    width: 100%;
+  .manta-btt-slide-up.trigger-hover {
+    background-size: 100% 0%;
+    border-color: var(--fill-color);
+    color: var(--fill-color);
   }
   .manta-menu-toggle {
     position: absolute;
@@ -662,10 +662,10 @@
           </div>
         </div>
         <div class="manta-content-box-small manta-cta-box manta-picture-featured-2">
-          <a href="{{ section.settings.manta_featuredbox_2 }}" class="manta-cta-content">
+          <a href="{{ section.settings.manta_featuredbox_2 }}" class="manta-cta-content" id="mantaBtn">
             <h2 class="h5">{{ section.settings.manta_featuredbox_title_2 }}</h2>
             <p class="subtitle--small">{{ section.settings.manta_featuredbox_subtitle_2 }}</p>
-            <button class="manta-btt-slide-up" id="mantaBtn">
+            <button class="manta-btt-slide-up">
               Shop now
             </button>
           </a>
@@ -830,23 +830,29 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
   (function() {
     const link = document.getElementById('mantaBtn');
+    if (!link) return;
+
+    // find your slide-up button inside it
+    const btn = link.querySelector('.manta-btt-slide-up');
+    if (!btn) return;
 
     link.addEventListener('click', function(e) {
-      // if already triggered, let it proceed
-      if (link.classList.contains('trigger-hover')) return;
+      // if we've already triggered, let it go through normally
+      if (link.classList.contains('clicked')) return;
 
-      e.preventDefault();
-      // kick off the “hover” animation via class
-      link.classList.add('trigger-hover');
-      // disable further clicks
-      link.style.pointerEvents = 'none';
+      e.preventDefault();                 // stop immediate navigation
+      link.classList.add('clicked');      // guard against double-clicks
+      link.style.pointerEvents = 'none';  // disable further clicks
 
-      // wait for the background-size transition to end
-      link.addEventListener('transitionend', function onEnd(ev) {
+      // trigger the animation on the button
+      btn.classList.add('trigger-hover');
+
+      // when the button’s background-size transition ends…
+      btn.addEventListener('transitionend', function onEnd(ev) {
         if (ev.propertyName === 'background-size') {
-          // now navigate
+          // actually navigate to the href
           window.location.href = link.href;
-          link.removeEventListener('transitionend', onEnd);
+          btn.removeEventListener('transitionend', onEnd);
         }
       });
     });
