@@ -662,13 +662,13 @@
           </div>
         </div>
         <div class="manta-content-box-small manta-cta-box manta-picture-featured-2">
-          <div class="manta-cta-content">
-            <a href="{{ section.settings.manta_featuredbox_2 }}" class="manta-a-no"><h2 class="h5">{{ section.settings.manta_featuredbox_title_2 }}</h2></a>
-            <a href="{{ section.settings.manta_featuredbox_2 }}" class="manta-a-no"><p class="subtitle--small">{{ section.settings.manta_featuredbox_subtitle_2 }}</p></a>
-            <button class="manta-btt-slide-up">
+          <a href="{{ section.settings.manta_featuredbox_2 }}" class="manta-cta-content">
+            <h2 class="h5">{{ section.settings.manta_featuredbox_title_2 }}</h2>
+            <p class="subtitle--small">{{ section.settings.manta_featuredbox_subtitle_2 }}</p>
+            <button class="manta-btt-slide-up" id="mantaBtn">
               Shop now
             </button>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -825,4 +825,30 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+</script>
+
+<script>
+  (function() {
+    const link = document.getElementById('mantaBtn');
+
+    link.addEventListener('click', function(e) {
+      // if already triggered, let it proceed
+      if (link.classList.contains('trigger-hover')) return;
+
+      e.preventDefault();
+      // kick off the “hover” animation via class
+      link.classList.add('trigger-hover');
+      // disable further clicks
+      link.style.pointerEvents = 'none';
+
+      // wait for the background-size transition to end
+      link.addEventListener('transitionend', function onEnd(ev) {
+        if (ev.propertyName === 'background-size') {
+          // now navigate
+          window.location.href = link.href;
+          link.removeEventListener('transitionend', onEnd);
+        }
+      });
+    });
+  })();
 </script>
