@@ -1187,10 +1187,9 @@ button.shopify-payment-button__button--unbranded,
   overflow: hidden;
 }
 
-.manta-btt-slide-up:hover, .manta-btt-slide-up.trigger-hover {
-  background-size: 100% 0%;
-  border-color: #fff;
-  color: #fff;
+.manta-btt-slide-up.button:not(.ignore-effect):not(:disabled)::before{
+  background-color: unset;
+  color: white;
 }
 
 /* Manta Button - white */
