@@ -1179,7 +1179,7 @@ button.shopify-payment-button__button--unbranded,
   background-size: 100% 100%;
   background-color: var(--bg-color);
   border: 1px solid transparent;
-  border-radius: 5px;
+  border-radius: 7px;
   color: black;
   cursor: pointer;
   transition:
