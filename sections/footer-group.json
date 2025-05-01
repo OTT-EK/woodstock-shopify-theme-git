@@ -14,7 +14,8 @@
     "048623a6-08ae-48a7-aab7-6b7a6888bec3": {
       "type": "spacer",
       "settings": {
-        "height": 40
+        "height": 40,
+        "bg_color": "#ffffff"
       }
     },
     "footer": {
@@ -36,14 +37,14 @@
         "footer-0": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "heading": "About us",
             "menu": "footer"
           }
         },
         "footer-1": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "heading": "Customers",
             "menu": "footer"
           }
         },
