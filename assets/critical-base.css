@@ -1187,8 +1187,7 @@ button.shopify-payment-button__button--unbranded,
   overflow: hidden;
 }
 .manta-btt-slide-up.button {
-  background-color: white;
-  border: white;
+
 }
 
 .manta-btt-slide-up.button:not(.ignore-effect):not(:disabled)::before{
