@@ -823,7 +823,32 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
-<!-- put this just before your closing </body> -->
+
+<style>
+  /* in your global stylesheet */
+@keyframes fillSlideUp {
+  from { background-size: 100% 100%; }
+  to   { background-size: 100% 0%; }
+}
+
+.manta-btt-slide-up {
+  /* …all your existing base styles… */
+  background-image: linear-gradient(var(--fill-color), var(--fill-color));
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% 100%;
+
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* this class kicks off the keyframe animation */
+.manta-btt-slide-up.animate-fill {
+  animation: fillSlideUp 0.3s ease forwards;
+  border-color: var(--fill-color);
+  color: var(--fill-color);
+}
+
+</style>
 <script>
   (function() {
     document.querySelectorAll('.manta-cta-content').forEach(link => {
@@ -831,27 +856,20 @@ document.addEventListener("DOMContentLoaded", function() {
       if (!btn) return;
 
       link.addEventListener('click', e => {
-        // if already triggered, let the link go through
+        // if we’ve already started the animation, let it go through
         if (link.classList.contains('clicked')) {
           e.preventDefault();
           return;
         }
-
-        // first click: stop the immediate jump
         e.preventDefault();
         link.classList.add('clicked');
+        btn.classList.add('animate-fill');
 
-        // kick off the bottom→top slide
-        btn.classList.add('trigger-hover');
-
-        // once the fill’s background-size transition ends, navigate
-        const onEnd = ev => {
-          if (ev.propertyName === 'background-size') {
-            window.location.href = link.href;
-            btn.removeEventListener('transitionend', onEnd);
-          }
-        };
-        btn.addEventListener('transitionend', onEnd);
+        btn.addEventListener('animationend', function onAnim() {
+          // animation is guaranteed to fire when done
+          window.location.href = link.href;
+          btn.removeEventListener('animationend', onAnim);
+        });
       });
     });
   })();
