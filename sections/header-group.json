@@ -99,36 +99,6 @@
             "icon": "mail",
             "link": ""
           }
-        },
-        "5252ef1e-142a-4211-a789-f6ff8a260759": {
-          "type": "customer_supported_region",
-          "disabled": true,
-          "settings": {
-            "title": "Region name",
-            "hotline": "Region hotline",
-            "address": "Region physical address",
-            "email": "Region email"
-          }
-        },
-        "4181066a-3c20-4052-bc03-87717a51b295": {
-          "type": "customer_supported_region",
-          "disabled": true,
-          "settings": {
-            "title": "Region name",
-            "hotline": "Region hotline",
-            "address": "Region physical address",
-            "email": "Region email"
-          }
-        },
-        "669b20fb-990d-4033-b56e-1c7ad1c00774": {
-          "type": "customer_supported_region",
-          "disabled": true,
-          "settings": {
-            "title": "Region name",
-            "hotline": "Region hotline",
-            "address": "Region physical address",
-            "email": "Region email"
-          }
         }
       },
       "block_order": [
@@ -136,10 +106,7 @@
         "ed4cddab-febc-4198-92ee-40d8b70c47f9",
         "7b2bd184-cb1b-47bf-8695-3f2bc023c78d",
         "e4604373-561e-4dd2-b5dd-ec3431202f97",
-        "3753f6b7-733c-49d7-881c-f8fe4195e49f",
-        "5252ef1e-142a-4211-a789-f6ff8a260759",
-        "4181066a-3c20-4052-bc03-87717a51b295",
-        "669b20fb-990d-4033-b56e-1c7ad1c00774"
+        "3753f6b7-733c-49d7-881c-f8fe4195e49f"
       ],
       "settings": {
         "color_scheme": "background-1",
