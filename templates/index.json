@@ -23,9 +23,9 @@
         "url_aJBzLY": {
           "type": "url",
           "settings": {
-            "manta_slide_link": "https://ott-lietuva.myshopify.com/collections/wood-screws-nails-staples",
-            "manta_slider_img": "shopify://shop_images/banner-DESK-nails-screw-every.jpg",
-            "manta_slider_img_mob": "shopify://shop_images/banner-1-nails-screw-every.jpg"
+            "manta_slide_link": "https://ott-lietuva.myshopify.com/collections/breathable-roofing-boards",
+            "manta_slider_img": "shopify://shop_images/winwin-bygtjek-desktop-banner.jpg",
+            "manta_slider_img_mob": "shopify://shop_images/winwin-bygtjek-Mobile-banner.jpg"
           }
         }
       },
@@ -35,10 +35,12 @@
       ],
       "settings": {
         "manta-category-menu-2": "en-category-menu",
+        "manta_featuredbox_bttn_1": "Shop now",
         "manta_featuredbox_1": "https://ott-lietuva.myshopify.com/collections/window-installation-profiles",
         "manta_featuredbox_img_1": "shopify://shop_images/warmotech-displate.jpg",
         "manta_featuredbox_title_1": "WarmoTech",
         "manta_featuredbox_subtitle_1": "Best window profiles.",
+        "manta_featuredbox_bttn_2": "Shop now",
         "manta_featuredbox_2": "https://ott-lietuva.myshopify.com/products/dana-lim-cool-tack-286-neutral-glue-white-290-ml-up-to-15oc?_pos=19&_sid=0f88b318b&_ss=r",
         "manta_featuredbox_img_2": "shopify://shop_images/danacool9090.jpg",
         "manta_featuredbox_title_2": "DANA LIM",
