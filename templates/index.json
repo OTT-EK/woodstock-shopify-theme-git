@@ -27,20 +27,11 @@
             "manta_slider_img": "shopify://shop_images/winwin-bygtjek-desktop-banner.jpg",
             "manta_slider_img_mob": "shopify://shop_images/winwin-bygtjek-Mobile-banner-EN-2.jpg"
           }
-        },
-        "url_BQMcCV": {
-          "type": "url",
-          "settings": {
-            "manta_slide_link": "https://ott-lietuva.myshopify.com/collections/rebar-tying-tools",
-            "manta_slider_img": "shopify://shop_images/max-RB443T-desktop-banner.jpg",
-            "manta_slider_img_mob": "shopify://shop_images/max-RB443T-mobile-banner.jpg"
-          }
         }
       },
       "block_order": [
         "url_FNHhdk",
-        "url_aJBzLY",
-        "url_BQMcCV"
+        "url_aJBzLY"
       ],
       "settings": {
         "manta-category-menu-2": "en-category-menu",
