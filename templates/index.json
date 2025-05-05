@@ -27,11 +27,20 @@
             "manta_slider_img": "shopify://shop_images/winwin-bygtjek-desktop-banner.jpg",
             "manta_slider_img_mob": "shopify://shop_images/winwin-bygtjek-Mobile-banner-EN-2.jpg"
           }
+        },
+        "url_7qGLt6": {
+          "type": "url",
+          "settings": {
+            "manta_slide_link": "https://ott-lietuva.myshopify.com/collections/fire-resistant-membranes",
+            "manta_slider_img": "shopify://shop_images/wincotech-proxl-desktop-banner.jpg",
+            "manta_slider_img_mob": "shopify://shop_images/wincotech-proxl-mobile-banner.jpg"
+          }
         }
       },
       "block_order": [
         "url_FNHhdk",
-        "url_aJBzLY"
+        "url_aJBzLY",
+        "url_7qGLt6"
       ],
       "settings": {
         "manta-category-menu-2": "en-category-menu",
