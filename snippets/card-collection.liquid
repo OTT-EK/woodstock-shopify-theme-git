@@ -67,7 +67,7 @@
           <a class="full-unstyled-link" href="{{ card_collection.url }}" aria-label="{{ card_collection.title | escape }}">
         {%- endunless -%}
         {%- if featured_image -%}
-          <use-animate class="media media--hover-effect{% if media_aspect_ratio != 'circle' %} card-radius-collection{% endif %} w100 media--hover-effect media--{{ media_aspect_ratio }}{% if media_aspect_ratio == 'adapt' %} ratio{% endif %}"{% if media_aspect_ratio == 'adapt' %} style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"{% endif %}>
+          <use-animate class="manta-img-uo media media--hover-effect{% if media_aspect_ratio != 'circle' %} card-radius-collection{% endif %} w100 media--hover-effect media--{{ media_aspect_ratio }}{% if media_aspect_ratio == 'adapt' %} ratio{% endif %}"{% if media_aspect_ratio == 'adapt' %} style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"{% endif %}>
             {{ featured_image | image_url: width: featured_image.width | image_tag: sizes: sizes, width: featured_image.width, height: featured_image.height, widths: '165,330,535,750,1000,1500,3000', class: 'motion-reduce', loading: 'lazy' }}
           </use-animate>
         {%- elsif card_collection == blank -%}

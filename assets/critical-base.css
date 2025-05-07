@@ -976,6 +976,10 @@ summary::-webkit-details-marker {
   aspect-ratio: 1/1;
 }
 
+.manta-img-uo {
+  object-fit: cover !important;
+}
+
 .manta-yes-margin-tb {
   margin-top: 0.5rem !important;
   margin-bottom: 0.5rem !important;
