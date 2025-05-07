@@ -143,6 +143,14 @@
             "custom_title": ""
           }
         },
+        "featured_collection_bLAUKb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "custom_image": "shopify://shop_images/Skaermbillede_2024-12-13_kl._07.50.52.png",
+            "custom_title": ""
+          }
+        },
         "template--18418624921901__1aded6ef-5727-4347-bf56-9fc610343e55-1680769155d946d1f5-2": {
           "type": "featured_collection",
           "settings": {
@@ -158,22 +166,14 @@
             "custom_image": "shopify://shop_images/eshop-ecat-p.jpg",
             "custom_title": ""
           }
-        },
-        "featured_collection_bLAUKb": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "custom_image": "shopify://shop_images/Skaermbillede_2024-12-13_kl._07.50.52.png",
-            "custom_title": ""
-          }
         }
       },
       "block_order": [
         "template--18418624921901__1aded6ef-5727-4347-bf56-9fc610343e55-1680769155d946d1f5-0",
         "template--18418624921901__1aded6ef-5727-4347-bf56-9fc610343e55-1680769155d946d1f5-1",
+        "featured_collection_bLAUKb",
         "template--18418624921901__1aded6ef-5727-4347-bf56-9fc610343e55-1680769155d946d1f5-2",
-        "template--18418624921901__1aded6ef-5727-4347-bf56-9fc610343e55-1680769155d946d1f5-3",
-        "featured_collection_bLAUKb"
+        "template--18418624921901__1aded6ef-5727-4347-bf56-9fc610343e55-1680769155d946d1f5-3"
       ],
       "settings": {
         "title": "Collections",
