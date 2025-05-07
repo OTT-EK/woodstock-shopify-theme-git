@@ -976,7 +976,7 @@ summary::-webkit-details-marker {
   aspect-ratio: 1/1;
 }
 
-.manta-img-uo img {
+.manta-img-uo.media--portrait img {
   object-fit: cover !important;
 }
 
