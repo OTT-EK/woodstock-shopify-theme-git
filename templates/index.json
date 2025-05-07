@@ -154,7 +154,7 @@
         "featured_collection_bLAUKb": {
           "type": "featured_collection",
           "settings": {
-            "collection": "",
+            "collection": "pallet-production",
             "custom_image": "shopify://shop_images/Skaermbillede_2024-12-13_kl._07.50.52.png",
             "custom_title": ""
           }
