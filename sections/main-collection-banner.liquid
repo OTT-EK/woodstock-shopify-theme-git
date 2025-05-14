@@ -184,7 +184,11 @@
       endif
     endfor
   endif
-  assign icon_size = section.settings.icon_size == 'large' ? 65 : 34
+  if section.settings.icon_size == 'large'
+    assign icon_size = 65
+  else
+    assign icon_size = 34
+  endif
 -%}
 {%- liquid
   if has_transparent 
