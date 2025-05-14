@@ -193,35 +193,56 @@
         <slider-component class="por slider-mobile-gutter slider-component-desktop slider-component-tablet slider-component-mobile">
 
           <ul id="Slider-{{ section.id }}" class="collection-icon__slider grid grid--2-col grid--4-col-tablet grid--5-col-desktop slider slider--desktop slider--tablet slider--mobile" role="list" aria-label="{{ 'sections.collection_banner.slider' | t }}">
+
             {%- comment %} Dynamic sub-collection slides {% endcomment %}
             {%- for link in dynamic_sub_collections -%}
               {%- assign col = link.object -%}
               {%- assign total_products_icon = 0 -%}
 
               {%- if col and col.template_suffix == 'sub-collection' -%}
-                {% comment %} traverse up to 3 levels {% endcomment %}
+                {% comment %} Calculate up to 3 levels of sub-collections {% endcomment %}
+                {%- assign lvl1 = col.metafields.custom.sub_collection_list.value -%}
+                {%- assign lvl2 = '' | split: ',' -%}
+                {%- assign lvl3 = '' | split: ',' -%}
                 {%- assign handles = '' -%}
-                {%- assign processed = 0 -%}
-                {%- assign queue = col.metafields.custom.sub_collection_list.value -%}
-                {%- assign level = 0 -%}
-                {%- while queue.size > 0 and processed < 20 and level < 3 -%}
-                  {%- assign next_queue = '' | split: ',' -%}
-                  {%- for c in queue -%}
-                    {%- unless handles contains c.handle -%}
-                      {%- assign handles = handles | append: c.handle | append: '|' -%}
-                      {%- assign total_products_icon = total_products_icon | plus: c.all_products_count -%}
-                      {%- assign processed = processed | plus: 1 -%}
-                      {%- if c.template_suffix == 'sub-collection' -%}
-                        {%- assign next_queue = next_queue | concat: c.metafields.custom.sub_collection_list.value -%}
-                      {%- endif -%}
+                {%- assign processed_count = 0 -%}
+
+                {%- for c1 in lvl1 -%}
+                  {%- if processed_count < 20 -%}
+                    {%- unless handles contains c1.handle -%}
+                      {%- assign handles = handles | append: c1.handle | append: '|' -%}
+                      {%- assign total_products_icon = total_products_icon | plus: c1.all_products_count -%}
+                      {%- assign processed_count = processed_count | plus: 1 -%}
                     {%- endunless -%}
-                    {%- if processed >= 20 -%}
-                      {%- break -%}
+                    {%- if c1.template_suffix == 'sub-collection' -%}
+                      {%- assign lvl2 = lvl2 | concat: c1.metafields.custom.sub_collection_list.value -%}
                     {%- endif -%}
-                  {%- endfor -%}
-                  {%- assign queue = next_queue -%}
-                  {%- assign level = level | plus: 1 -%}
-                {%- endwhile -%}
+                  {%- endif -%}
+                {%- endfor -%}
+
+                {%- for c2 in lvl2 -%}
+                  {%- if processed_count < 20 -%}
+                    {%- unless handles contains c2.handle -%}
+                      {%- assign handles = handles | append: c2.handle | append: '|' -%}
+                      {%- assign total_products_icon = total_products_icon | plus: c2.all_products_count -%}
+                      {%- assign processed_count = processed_count | plus: 1 -%}
+                    {%- endunless -%}
+                    {%- if c2.template_suffix == 'sub-collection' -%}
+                      {%- assign lvl3 = lvl3 | concat: c2.metafields.custom.sub_collection_list.value -%}
+                    {%- endif -%}
+                  {%- endif -%}
+                {%- endfor -%}
+
+                {%- for c3 in lvl3 -%}
+                  {%- if processed_count < 20 -%}
+                    {%- unless handles contains c3.handle -%}
+                      {%- assign handles = handles | append: c3.handle | append: '|' -%}
+                      {%- assign total_products_icon = total_products_icon | plus: c3.all_products_count -%}
+                      {%- assign processed_count = processed_count | plus: 1 -%}
+                    {%- endunless -%}
+                  {%- endif -%}
+                {%- endfor -%}
+
               {%- else -%}
                 {%- assign total_products_icon = col.all_products_count -%}
               {%- endif -%}
@@ -243,30 +264,51 @@
             {%- for block in collection_icons -%}
               {%- assign col = block.settings.collection -%}
               {%- assign total_products_icon = 0 -%}
+
               {%- if col and col.template_suffix == 'sub-collection' -%}
-                {% comment %} same 3-level logic as above {% endcomment %}
+                {% comment %} Calculate up to 3 levels of sub-collections {% endcomment %}
+                {%- assign lvl1 = col.metafields.custom.sub_collection_list.value -%}
+                {%- assign lvl2 = '' | split: ',' -%}
+                {%- assign lvl3 = '' | split: ',' -%}
                 {%- assign handles = '' -%}
-                {%- assign processed = 0 -%}
-                {%- assign queue = col.metafields.custom.sub_collection_list.value -%}
-                {%- assign level = 0 -%}
-                {%- while queue.size > 0 and processed < 20 and level < 3 -%}
-                  {%- assign next_queue = '' | split: ',' -%}
-                  {%- for c in queue -%}
-                    {%- unless handles contains c.handle -%}
-                      {%- assign handles = handles | append: c.handle | append: '|' -%}
-                      {%- assign total_products_icon = total_products_icon | plus: c.all_products_count -%}
-                      {%- assign processed = processed | plus: 1 -%}
-                      {%- if c.template_suffix == 'sub-collection' -%}
-                        {%- assign next_queue = next_queue | concat: c.metafields.custom.sub_collection_list.value -%}
-                      {%- endif -%}
+                {%- assign processed_count = 0 -%}
+
+                {%- for c1 in lvl1 -%}
+                  {%- if processed_count < 20 -%}
+                    {%- unless handles contains c1.handle -%}
+                      {%- assign handles = handles | append: c1.handle | append: '|' -%}
+                      {%- assign total_products_icon = total_products_icon | plus: c1.all_products_count -%}
+                      {%- assign processed_count = processed_count | plus: 1 -%}
                     {%- endunless -%}
-                    {%- if processed >= 20 -%}
-                      {%- break -%}
+                    {%- if c1.template_suffix == 'sub-collection' -%}
+                      {%- assign lvl2 = lvl2 | concat: c1.metafields.custom.sub_collection_list.value -%}
                     {%- endif -%}
-                  {%- endfor -%}
-                  {%- assign queue = next_queue -%}
-                  {%- assign level = level | plus: 1 -%}
-                {%- endwhile -%}
+                  {%- endif -%}
+                {%- endfor -%}
+
+                {%- for c2 in lvl2 -%}
+                  {%- if processed_count < 20 -%}
+                    {%- unless handles contains c2.handle -%}
+                      {%- assign handles = handles | append: c2.handle | append: '|' -%}
+                      {%- assign total_products_icon = total_products_icon | plus: c2.all_products_count -%}
+                      {%- assign processed_count = processed_count | plus: 1 -%}
+                    {%- endunless -%}
+                    {%- if c2.template_suffix == 'sub-collection' -%}
+                      {%- assign lvl3 = lvl3 | concat: c2.metafields.custom.sub_collection_list.value -%}
+                    {%- endif -%}
+                  {%- endif -%}
+                {%- endfor -%}
+
+                {%- for c3 in lvl3 -%}
+                  {%- if processed_count < 20 -%}
+                    {%- unless handles contains c3.handle -%}
+                      {%- assign handles = handles | append: c3.handle | append: '|' -%}
+                      {%- assign total_products_icon = total_products_icon | plus: c3.all_products_count -%}
+                      {%- assign processed_count = processed_count | plus: 1 -%}
+                    {%- endunless -%}
+                  {%- endif -%}
+                {%- endfor -%}
+
               {%- else -%}
                 {%- assign total_products_icon = col.all_products_count -%}
               {%- endif -%}
@@ -275,6 +317,7 @@
                 {%- render 'main-collection-banner-icon', icon_collection: block.settings.collection, icon: block.settings.icon, custom_icon: block.settings.custom_icon, products_count: total_products_icon, icon_size: icon_size -%}
               </li>
             {%- endfor -%}
+
           </ul>
 
           <div class="slider__controls slider-buttons no-js-hidden flex gradient collection-icon__slider-controls slider-counter small-hide">
@@ -295,7 +338,6 @@
     </div>
   {%- endif -%}
 </div>
-
 {% schema %}
 {
   "name": "t:sections.main-collection-icon.name",
