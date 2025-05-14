@@ -219,12 +219,12 @@
                 {%- assign to_process_icon = col.metafields.custom.sub_collection_list.value -%}
                 {%- assign processed_count_icon = 0 -%}
                 {%- for subcol_icon in to_process_icon -%}
-                  {%- if processed_count_icon < 20 -%}
+                  {%- if processed_count_icon < 40 -%}
                     {%- unless visited_handles_icon contains subcol_icon.handle -%}
                       {%- assign visited_handles_icon = visited_handles_icon | append: subcol_icon.handle | append: '|' -%}
                       {%- assign total_products_icon = total_products_icon | plus: subcol_icon.all_products_count -%}
                       {%- assign processed_count_icon = processed_count_icon | plus: 1 -%}
-                      {%- if subcol_icon.template_suffix == 'sub-collection' and processed_count_icon < 20 -%}
+                      {%- if subcol_icon.template_suffix == 'sub-collection' and processed_count_icon < 40 -%}
                         {%- assign child_list_icon = subcol_icon.metafields.custom.sub_collection_list.value -%}
                         {%- assign to_process_icon = to_process_icon | concat: child_list_icon -%}
                       {%- endif -%}
