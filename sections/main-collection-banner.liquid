@@ -170,7 +170,6 @@
     assign has_transparent = true
   endif
   assign subcollection_icons = section.blocks | where: "type", 'subcollection_icon'
-  {%- comment -%} Remove default array literal to avoid syntax error {%- endcomment -%}
   assign dynamic_sub_collections = collection.metafields.custom.dynamic_sub_collection_list.value
   assign dynamic_sub_collection_size = dynamic_sub_collections.size
   assign total_item_size = collection_icons.size | plus: dynamic_sub_collection_size
