@@ -309,45 +309,36 @@
         "template--20124663021869__8f5a111c-95e5-4fe4-9470-893b0e7841d7-collapsible_row-1": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Item heading",
+            "heading": "What are the shipping options and conditions, including free shipping?",
             "icon": "truck",
-            "row_content": "<p>Item content</p>",
+            "row_content": "<p><strong>In-store pickup</strong> is free at any of the three branches (Vilnius, Kaunas, Klaipėda); present your order number and ID.<br/><br/><strong>Free standard delivery</strong> within Lithuania for orders over €100.<br/><br/>Standard courier delivery via DPD (1–2 business days, subject to stock availability), and large or oversized items via PARNASO<br/><br/></p>",
             "page": ""
           }
         },
         "template--20124663021869__8f5a111c-95e5-4fe4-9470-893b0e7841d7-collapsible_row-2": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Item heading",
-            "icon": "tag",
-            "row_content": "<p>Item content</p>",
+            "heading": "Where are physical stores located and what are their opening hours?",
+            "icon": "office_building",
+            "row_content": "<p><strong>Vilnius:</strong> Vikingų g. 5, LT-02189 (Mon–Thu 8:00–17:00, Fri 8:00–16:00)</p><p><br/><strong>Kaunas:</strong> Draugystės g. 13A, LT-51225 (Mon–Fri 7:00–16:00)</p><p><strong><br/>Klaipėda:</strong> Tilžės g. 60-7, LT-91108 (Mon–Thu 8:00–17:00, Fri 8:00–16:00)</p>",
             "page": ""
           }
         },
         "template--20124663021869__8f5a111c-95e5-4fe4-9470-893b0e7841d7-collapsible_row-3": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Item heading",
-            "icon": "receipt_refund",
-            "row_content": "<p>Item content</p>",
-            "page": ""
-          }
-        },
-        "template--20124663021869__8f5a111c-95e5-4fe4-9470-893b0e7841d7-collapsible_row-4": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Item heading",
-            "icon": "sale",
-            "row_content": "<p>Item content</p>",
+            "heading": "How do I contact customer support?",
+            "icon": "support",
+            "row_content": "<p>You can reach customer support by phone at <strong>+370 685 11600</strong> or email at <a><strong>parduotuve@ottensten.lt</strong></a>. For issues with online orders (e.g., missing confirmation), you may also write to <a><strong>eprektyba@ottensten.lt</strong></a></p>",
             "page": ""
           }
         },
         "f720c224-680e-4598-aa51-f0d9c079f489": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Item heading",
-            "icon": "shield_exclamation",
-            "row_content": "<p>Item content</p>",
+            "heading": "What are the warranty and return policies when purchasing at Ottensten?",
+            "icon": "shield_check",
+            "row_content": "<p><strong>Warranty</strong>: Follow the manufacturer’s instructions. Warranty is void if products are damaged, misused, returned without proof of purchase, or worn by normal use. Warranty repairs are completed within 14–21 days, or up to 45 days if parts must be imported.</p><p><strong>Returns</strong>: You may return products within 14 working days of receipt (except factory-defective items) in original, undamaged packaging, indicating item name, order number, and reason for return. Return shipping is at your expense; refunds exclude original shipping costs and are made to your bank account unless otherwise agreed.</p>",
             "page": ""
           }
         },
@@ -359,60 +350,19 @@
             "row_content": "<p>Item content</p>",
             "page": ""
           }
-        },
-        "2eea5e15-b56a-47c8-82c0-c2d5701c3ede": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Item heading",
-            "icon": "fast_forward",
-            "row_content": "<p>Item content</p>",
-            "page": ""
-          }
-        },
-        "ba6c83bd-c48c-41e2-8afc-c4173cbd13e0": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Item heading",
-            "icon": "appliances",
-            "row_content": "<p>Item content</p>",
-            "page": ""
-          }
-        },
-        "fba1d2c3-405d-49d9-a03e-67e586739972": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Item heading",
-            "icon": "emoji_happy",
-            "row_content": "<p>Item content</p>",
-            "page": ""
-          }
-        },
-        "210ff76b-2c6d-432b-b50f-0e868e35febe": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Item heading",
-            "icon": "gift",
-            "row_content": "<p>Item content</p>",
-            "page": ""
-          }
         }
       },
       "block_order": [
         "template--20124663021869__8f5a111c-95e5-4fe4-9470-893b0e7841d7-collapsible_row-1",
         "template--20124663021869__8f5a111c-95e5-4fe4-9470-893b0e7841d7-collapsible_row-2",
         "template--20124663021869__8f5a111c-95e5-4fe4-9470-893b0e7841d7-collapsible_row-3",
-        "template--20124663021869__8f5a111c-95e5-4fe4-9470-893b0e7841d7-collapsible_row-4",
         "f720c224-680e-4598-aa51-f0d9c079f489",
-        "4cfd744b-0b74-49a5-9769-1546d3204450",
-        "2eea5e15-b56a-47c8-82c0-c2d5701c3ede",
-        "ba6c83bd-c48c-41e2-8afc-c4173cbd13e0",
-        "fba1d2c3-405d-49d9-a03e-67e586739972",
-        "210ff76b-2c6d-432b-b50f-0e868e35febe"
+        "4cfd744b-0b74-49a5-9769-1546d3204450"
       ],
       "settings": {
         "section_width": "grid",
-        "title": "Section heading",
-        "subtitle": "",
+        "title": "Have a question?",
+        "subtitle": "Common Asked Questions",
         "heading_size": "h1",
         "enable_section_box_layout": false,
         "color_scheme": "",
