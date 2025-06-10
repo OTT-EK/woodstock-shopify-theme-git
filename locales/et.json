@@ -3469,7 +3469,7 @@
     "product": {
       "add_to_cart": "Lisa ostukorvi",
       "choose_options": "Vali valikud",
-      "choose_product_options": "Valige toote {{ product_name }} valikud",
+      "choose_product_options": "Valige toote {{ product_name }} lisad",
       "description": "Kirjeldus",
       "pre_order": "Eeltelli",
       "on_sale": "Allahindlus",
