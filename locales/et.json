@@ -985,7 +985,87 @@
         "collapse_component_information": {
           "one": "Peida %{count} üksus",
           "other": "Peida %{count} üksust"
-        }
+        },
+        "title": "Tellimuse kokkuvõte",
+        "group_title_label": "Osa grupist \"%{group_title}\"",
+        "number_items": {
+          "one": "%{count} üksus",
+          "other": "%{count} eset"
+        },
+        "view_all_items": {
+          "one": "Kuva %{count} üksust",
+          "other": "Kuva kõik %{count} üksused"
+        },
+        "more_items_modal": {
+          "search_item": "Otsi",
+          "clear_search": "Tühjenda otsing",
+          "empty_results": "Otsingule \"%{searchText}\" ei leitud tulemusi. Kontrollige õigekirja või kasutage mõnda muud sõna või fraasi.",
+          "number_items_shown": "%{shownNumber}/%{totalNumber} üksusest"
+        },
+        "order_name_label": "Tellimus %{name}",
+        "shopping_cart_label": "Ostukorv",
+        "discount_title": "Allahindlus",
+        "discount_title_stacking": {
+          "one": "Allahindlus",
+          "other": "Allahindlused"
+        },
+        "discount_order_stacking": {
+          "one": "Tellimuse allahindlus",
+          "other": "Tellimuse allahindlused"
+        },
+        "discount_label": "Sooduskood",
+        "discount_not_found": "Sisestatud koodile vastavat kehtivat allahindlust ei leitud",
+        "discount_placeholder": "Sooduskood",
+        "discount_code_applied": "Sooduskood rakendatud",
+        "discount_code_allocations_mismatch": "Teie sooduskood <strong style=\"text-transform:uppercase\">%{code}</strong> on muutunud. Vaadake oma ostukorv üle ja proovige uuesti.",
+        "gift_card_applied": "Kinkekaart rakendatud",
+        "enter_shipping_address": "Sisestage saatmisaadress",
+        "gift_card_title": "Kinkekaart",
+        "gift_card_label": "Kinkekaart",
+        "gift_card_placeholder": "Kinkekaart",
+        "gift_card_and_discount_title": "Sooduskood või kinkekaart",
+        "gift_card_and_discount_label": "Sooduskood või kinkekaart",
+        "gift_card_and_discount_placeholder": "Sooduskood või kinkekaart",
+        "remove_gift_card_label": "Selge kinkekaart",
+        "remove_discount_label": "Eemalda allahindlus",
+        "return_restocking_fee_label": "Varude täiendamise tasu",
+        "return_shipping_fee_label": "Tagastus saatmine",
+        "free_shipping_discount_label": "Tasuta saatmine",
+        "applied_free_shipping_discount_label": "Rakendatud",
+        "apply_discount_button_label": "Kandideeri",
+        "applied_discount_message": "%{amount} allahindlust tellimuse koguhinnast",
+        "discount_has_been_applied": "Allahindlus on rakendatud",
+        "discount_has_been_removed": "Allahindlus on eemaldatud",
+        "gift_card_has_been_applied": "Kinkekaart on rakendatud",
+        "gift_card_has_been_removed": "Kinkekaart on eemaldatud",
+        "gift_card_subscriptions_notice": "Kinkekaardid kehtivad ainult teie esimese makse puhul",
+        "discount_already_applied": "Sellele tellimusele on rakendatud allahindlust. Te ei saa teist allahindlust lisada.",
+        "cart_does_not_meet_discount_requirements_notice": "Sooduskood <strong style=\"text-transform:uppercase\">%{code}</strong> ei kehti teie ostukorvis olevate toodete jaoks",
+        "discount_requires_customer_notice": "Sooduskoodi <strong style=\"text-transform:uppercase\">%{code}</strong> rakendamiseks sisesta oma saatmisinfo",
+        "customer_does_not_meet_discount_requirements_notice": "Sooduskood <strong style=\"text-transform:uppercase\">%{code}</strong> pole teile praegu saadaval",
+        "eligible_customer_missing_notice": "Sooduskoodi <strong style=\"text-transform:uppercase\">%{code}</strong> saamiseks on vaja sobilikku klienti",
+        "shipping_information_does_not_meet_discount_requirements_notice": "Sooduskood <strong style=\"text-transform:uppercase\">%{code}</strong> pole teie saatmisaadressile saadaval",
+        "customer_already_used_once_per_customer_discount_notice": "Sooduskoodi <strong style=\"text-transform:uppercase\">%{code}</strong> on juba kasutatud",
+        "subtotal_label": "Vahesumma",
+        "subtotal_label_with_quantity": {
+          "one": "Vahesumma · %{count} toode",
+          "other": "Vahesumma · %{count} eset"
+        },
+        "shipping_label": "Saatmine",
+        "pickup_label": "Kauplusest järeletulemine",
+        "no_pickup_location": "Pealevõtmiskohti pole saadaval.",
+        "pickup_unavailable_banner_title": {
+          "one": "Teie tootega pole ühtegi poodi saadaval",
+          "other": "Teie toodetega pole ühtegi poodi saadaval"
+        },
+        "pickup_unavailable_banner_body": {
+          "ship_to_address": "Saada aadressile",
+          "ship_to_address_instead_html": "%{link} asemel"
+        },
+        "tip_label": "Jootraha",
+        "calculating_shipping": "Arvutamine…",
+        "calculating": "Arvutamine…",
+        "shipping_default_value": "Arvutatakse järgmises etapis"
       },
       "billing": {
         "billing_address_title": "Arve saaja",
@@ -1138,6 +1218,77 @@
           "description": "Te ei saa meilt enam ostukorvi meeldetuletusi."
         },
         "accept_shop_pay_marketing_checkbox_label": "Registreeru selle poe uudiste ja pakkumiste saamiseks"
+      },
+      "stock": {
+        "unshippable_product": {
+          "header": {
+            "one": "%{count} eseme jaoks pole kohaletoimetamine saadaval",
+            "other": "%{count} eseme puhul pole kohaletoimetamine saadaval"
+          },
+          "message": {
+            "one": "See toode eemaldatakse teie ostukorvist, kuna teie aadressile pole saadaval ühtegi kättetoimetamisviisi.",
+            "other": "Need tooted eemaldatakse teie ostukorvist, kuna teie aadressile pole saadaval ühtegi kättetoimetamisviisi."
+          },
+          "status_column_header": "Kohaletoimetamist ei toimu"
+        },
+        "price_update": {
+          "title": "Hinnavärskendus",
+          "description": "Nende toodete hinnad on muutunud ja on teie ostukorvis uuendatud."
+        },
+        "price_and_quantity_update": {
+          "title": "Hinna ja koguse uuendus",
+          "description": "Nende toodete hinnad ja saadaolevad kogused on muutunud ning on teie ostukorvis uuendatud."
+        },
+        "out_of_stock": {
+          "description": "Need tooted pole enam saadaval ja on teie ostukorvist eemaldatud.",
+          "items_unavailable": "Mõned tooted pole enam saadaval ja on teie ostukorvist eemaldatud."
+        }
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "Pole saadaval toode",
+          "other": "Saadaval mitteolevad tooted"
+        },
+        "products_not_available": {
+          "one": "See toode eemaldatakse teie ostukorvist, kuna see pole teie riigis/regioonis saadaval.",
+          "other": "Need tooted eemaldatakse teie ostukorvist, kuna need pole teie riigis/regioonis saadaval."
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "See toode pole teie riigis/regioonis saadaval.",
+          "other": "Need tooted pole teie riigis/regioonis saadaval."
+        },
+        "unavailable_label": "Pole saadaval"
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "some_products_one": "See toode ei ole sihtkohta %{location_name} kohaletoimetamiseks saadaval.",
+          "some_products_other": "Need tooted ei ole asukohas %{location_name} kohaletoimetamiseks saadaval.",
+          "all_products_one": "Teie ostukorvis olev toode ei ole asukohas %{location_name} kohaletoimetamiseks saadaval.",
+          "all_products_other": "Teie ostukorvis olevad tooted ei ole %{location_name}-sse kohaletoimetamiseks saadaval."
+        },
+        "missing_country_fallback": "sinu riik",
+        "indeterminate_location_fallback": "teie asukoht",
+        "cart_updated": "Teie ostukorv on uuendatud.",
+        "change_address_only": "Jätkamiseks muutke kättetoimetamise aadressi.",
+        "change_address_or_remove": "Muutke kättetoimetamise aadressi või %{remove_action}.",
+        "remove_items_action": {
+          "one": "eemalda kättesaamatu üksus",
+          "other": "eemalda kättesaamatud üksused"
+        },
+        "empty_cart_action": "tühjenda ostukorv ja vii poodi tagasi"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "%{count} eseme jaoks pole kohaletoimetamine saadaval",
+            "other": "%{count} eseme puhul pole kohaletoimetamine saadaval"
+          },
+          "message": {
+            "one": "See toode eemaldatakse teie ostukorvist, kuna teie aadressile pole saadaval ühtegi kättetoimetamisviisi.",
+            "other": "Need tooted eemaldatakse teie ostukorvist, kuna teie aadressile pole saadaval ühtegi kättetoimetamisviisi."
+          },
+          "label": "Kohaletoimetamist ei toimu"
+        }
       }
     },
     "addresses": {
