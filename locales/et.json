@@ -1673,12 +1673,127 @@
         },
         "saved_address_option_link": "Kasutage salvestatud aadressi",
         "saved_address_modal_title": "Kasuta minu salvestatud aadressi"
+      },
+      "wallets": {
+        "errors": {
+          "unavailable": {
+            "instructions": "{{walletName}} ga tekkis probleem. Proovige uuesti poodi tagasi või makske teisel viisil.",
+            "unavailable_for_country": "{{walletName}} ei ole riigis {{countryName}} saadaval. Ostu sooritamiseks valige teine ​​makseviis."
+          },
+          "unavailable_terminal": {
+            "instructions": "{{walletName}} pole teie tellimuse jaoks hetkel saadaval. Ostu jätkamiseks valige mõni muu makseviis."
+          },
+          "generic": "Makseviisiga {{walletName}} tekkis probleem. Proovige uuesti või kasutage mõnda muud makseviisi.",
+          "discount_code": "Selle sooduskoodi rakendamine ebaõnnestus. Palun vaadake oma kood üle ja proovige uuesti.",
+          "terminal": "Makseviisiga {{walletName}} tekkis probleem. Palun kasutage mõnda muud makseviisi.",
+          "detour": {
+            "stock_problems": "Mõned tooted pole enam saadaval. Sulgege {{walletName}} ja proovige uuesti.",
+            "price_change": "Mõnede toodete hinnad on muutunud. Sulgege {{walletName}} et oma tellimus üle vaadata ja uuesti proovida.",
+            "queue": "Teid on kassasse ootejärjekorda pandud. Jätkamiseks sulgege {{walletName}} .",
+            "currency_change": "Te ei saa {{walletName}} puhul teist aadressi kasutada. Kasutage algset aadressi või proovige teist makseviisi."
+          },
+          "unsupported": {
+            "address": "Kaupmees ei saa sellele aadressile kohale toimetada",
+            "wallet_is_unavailable": "Selle aadressiga ei saa {{walletName}} kasutada. Ostu lõpuleviimiseks valige teine ​​aadress või sulgege {{walletName}}",
+            "postal_code": "Seda asukohta ei toetata"
+          },
+          "outdated": {
+            "shipping_method": "Teie tellimuse saatmisvõimalused on muutunud. Vaadake oma valik üle.",
+            "payment_terms": "Maksetingimused on muutunud. Palun vaadake oma tellimus üle."
+          },
+          "invalid": {
+            "shipping_address": "Sisestage kehtiv saatmisaadress",
+            "billing_address": "Sisestage kehtiv arveldusaadress",
+            "shipping_option": "Valige kehtiv saatmisviis",
+            "email": "Sisestage kehtiv e-posti aadress",
+            "zone": "Sisestage kehtiv osariik/provints",
+            "billing_zone": "Sisestage kehtiv arveldusaadress osariigis/provintsis",
+            "emirate": "Sisestage kehtiv emiraat",
+            "postal_code": "Sisestage kehtiv postiindeks",
+            "phone": "Sisestage kehtiv telefoninumber",
+            "billing_phone": "Sisestage kehtiv arveldusaadressi telefoninumber",
+            "reduction_code": "Sisestage kehtiv sooduskood või kinkekaart",
+            "billing_must_match_shipping": "Peab vastama saatmisaadressile",
+            "billing_zip": "Sisestage kehtiv arveldusaadress ja postiindeks"
+          },
+          "missing": {
+            "first_name": "Sisesta eesnimi",
+            "billing_first_name": "Sisestage arveldusaadressi eesnimi",
+            "last_name": "Sisesta perekonnanimi",
+            "address1": "Sisestage aadress",
+            "billing_address1": "Sisestage arveldusaadress",
+            "address2": "Sisenege korterisse, sviiti vms.",
+            "billing_address2": "Sisestage arveldusaadress – korter, sviit jne.",
+            "city": "Sisesta linn",
+            "billing_city": "Sisestage arveldusaadressi linn",
+            "province": "Valige osariik/provints",
+            "billing_province": "Valige arveldusaadress osariigiks/provintsiks",
+            "country": "Valige riik/regioon",
+            "zip": "Sisestage postiindeks",
+            "billing_zip": "Sisestage arveldusaadress ja postiindeks",
+            "phone": "Sisestage telefoninumber",
+            "contact_info": "Sisestage kontaktandmed"
+          },
+          "formatting": {
+            "name_contains_emojis": "Kustuta emotikon oma nimest",
+            "postal_code_contains_emoji": "Kustuta emotikon oma postiindeksist",
+            "first_name_too_long": "Eesnimi sisaldab liiga palju tähti",
+            "last_name_too_long": "Perekonnanimi sisaldab liiga palju tähti",
+            "address_too_long": "Aadressirida on liiga pikk"
+          },
+          "select_different_shipping_address_to_resolve_errors": "Teie saatmisaadress on kehtetu. Valige teine ​​aadress või kasutage uut aadressi."
+        },
+        "scrim": {
+          "continue_purchase_in_window": "Jätka ostu sooritamist {{walletName}} aknas",
+          "and_return_to_checkout": "ja naase kassasse",
+          "cancel": "Tühista"
+        }
+      },
+      "note": {
+        "length_exceeds_maximum": "Vähendage märkme suurust 5000 tähemärgini või vähemani."
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_be_greater_than_zero": "Kinkekaardi hind peab olema suurem kui 0.",
+            "gift_card_price_must_not_exceed_limit": "Kinkekaardi hind ei tohi ületada %{gift_card_limit}.",
+            "subtotal_limit_reached": "Reaüksuste maksimaalne väärtus on saavutatud."
+          }
+        }
+      },
+      "units": {
+        "centiliter": "kl",
+        "ounce": "untsi",
+        "pound": "nael",
+        "gallon": "naine",
+        "inch": "sisse",
+        "foot": "jalga",
+        "yard": "jardi",
+        "item": "ese"
+      },
+      "memberships": {
+        "delivery_promise_unfulfillable": "Aadressi praeguse liikmelisuse jaoks ei toetata."
+      },
+      "editor": {
+        "navigation": {
+          "store_logo_accessibility_label": "Navigeeri veebipoodi"
+        }
       }
     },
     "addresses": {
       "emirate": "Emiraat",
       "governorate": "Kubermangu",
-      "confirm": "Kas olete kindel, et soovite selle aadressi kustutada?"
+      "confirm": "Kas olete kindel, et soovite selle aadressi kustutada?",
+      "zip_code": "Postiindeks",
+      "postal_code": "Postiindeks",
+      "postcode": "Postiindeks",
+      "pincode": "Postiindeks",
+      "region": "Piirkond",
+      "prefecture": "Prefektuur",
+      "province": "Provints",
+      "state": "Riik",
+      "state_and_territory": "Osariik/territoorium",
+      "county": "Maakond"
     },
     "collections": {
       "sorting": {
@@ -1814,6 +1929,26 @@
           "unpaid": "Tasumata"
         }
       }
+    },
+    "pagination": {
+      "previous": "Eelmine",
+      "next": "Järgmine"
+    },
+    "links": {
+      "powered_by_shopify": "Shopify toega",
+      "learn_more": "Lisateave"
+    },
+    "feed": {
+      "more": "Rohkem"
+    },
+    "attributes": {
+      "email": "e-post",
+      "password": "parool",
+      "password_confirmation": "Parooli kinnitus",
+      "first_name": "eesnimi",
+      "last_name": "perekonnanimi",
+      "body": "keha",
+      "signature": "Aadress"
     }
   },
   "customer_accounts": {
