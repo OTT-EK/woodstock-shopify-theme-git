@@ -3298,8 +3298,8 @@
     },
     "featured_collection": {
       "view_all": "Kuva kõik",
-      "view_all_label": "Vaata kõiki tooteid kollektsioonis {{ collection_name }}",
-      "slider": "Liuguri"
+      "view_all_label": "Vaata kõiki tooteid kategoorias {{ collection_name }}",
+      "slider": "Nimekiri"
     },
     "gallery": {
       "list": "Galerii üksused",
