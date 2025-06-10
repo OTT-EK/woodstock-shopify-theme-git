@@ -3617,23 +3617,23 @@
     "button_label": "Telli"
   },
   "accessibility": {
-    "skip_to_text": "Jäta sisukord vahele",
-    "skip_to_product_info": "Jäta tooteinfo vahele",
-    "skip_to_product_grid": "Jäta tootevõrk vahele",
-    "close": "Sule",
+    "skip_to_text": "Liigu kohe sisu juurde",
+    "skip_to_product_info": "Liigu kohe toote info juurde",
+    "skip_to_product_grid": "Liigu tootevaliku juurde",
+    "close": "Sulge",
     "unit_price_separator": "iga",
     "vendor": "Müüja:",
     "error": "Viga",
     "refresh_page": "Valiku tegemine toob kaasa kogu lehe värskendamise.",
     "link_messages": {
       "new_window": "Avaneb uues aknas.",
-      "external": "Avab välise veebisaidi."
+      "external": "Avab lehevälise veebisaidi."
     },
     "loading": "Laadimine...",
     "total_reviews": "arvustuste koguarv",
     "star_reviews_info": "{{ rating_value }} tärni {{ rating_max }} tärnist",
     "collapsible_content_title": "Kokkupandav sisu",
     "complementary_products": "Täiendavad tooted",
-    "navigation_toggle": "Navigeerimislüliti kleepuvas päises"
+    "navigation_toggle": "Navigeerimislüliti päises"
   }
 }
