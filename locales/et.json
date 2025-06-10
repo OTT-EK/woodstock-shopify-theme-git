@@ -487,5 +487,113 @@
         "order_updates_subscribe_to_email_or_phone_notifications": "Saate saatmisvärskendusi e-posti või tekstisõnumi teel"
       }
     }
+  },
+  "customer_accounts": {
+    "payment_methods": {
+      "payment_delete": {
+        "payment_method_selector_no_alternative_payment": "Asendusmeetodit pole",
+        "replace_method_with_new_method_description": "Teie {{currentPaymentMethodName}} kustutatakse ja asendatakse teie makseviisiga {{newPaymentMethodName}} .",
+        "error_when_deleting": "Vabandame, aga midagi läks valesti ja me ei saanud seda makseviisi kustutada. Palun proovige hiljem uuesti või värskendage lehte.",
+        "delete_and_replace_button": "Kustuta ja asenda",
+        "delete_and_replace_button_accessibility_label": "Kustuta {{currentPaymentMethodName}} ja asenda see väärtusega {{newPaymentMethodName}} .",
+        "deleted_successfully": "Makseviis edukalt kustutatud.",
+        "loading_available_payment_methods_accessibility_label": "Laaditakse saadaolevaid makseviise"
+      },
+      "add_payment_method": {
+        "title": "Lisa makseviis",
+        "payment_method_added_confirmation": "Makseviis on lisatud",
+        "billing_address": {
+          "title": "Arveldusaadress",
+          "add_billing_address_button": "Lisa uus",
+          "add_billing_address_button_accessibility_label": "Lisa uus arveldusaadress",
+          "choose_billing_address_from_list_button": "Vali nimekirjast",
+          "choose_billing_address_from_list_button_accessibility_label": "Valige loendist arveldusaadress",
+          "missing_billing_address_error_message": "Palun täpsustage arveldusaadress",
+          "default_checkbox": "Määra vaikemakseviisiks"
+        }
+      },
+      "three_d_secure": {
+        "title": "3D-turvaline"
+      }
+    },
+    "payment_method_brands": {
+      "visa": "Viisa",
+      "americanexpress": "American Expressi",
+      "discover": "Avasta",
+      "hipercard": "Hüperkaart",
+      "shoppay": "Ostle Pay",
+      "storecredit": "Poe krediit",
+      "bogus": "Võlts"
+    },
+    "shop_policies": {
+      "legal_notice": "Õiguslik teade",
+      "privacy_policy": "Privaatsuspoliitika",
+      "refund_policy": "Tagasimaksepoliitika",
+      "shipping_policy": "Saatmispoliitika",
+      "subscription_policy": "Tühistamispoliitika",
+      "terms_of_sale": "Müügitingimused"
+    },
+    "ui_components": {
+      "clear": "Selge",
+      "clipboardCopied": "Kopeeritud",
+      "clipboardFailedToCopy": "Kopeerimine ebaõnnestus",
+      "closeNotification": "Sule",
+      "expandNotification": "Vaata lähemalt",
+      "closeModal": "Sule",
+      "submit": "Esita",
+      "processing": "Töötlemine…",
+      "increase": "Suurenda {{type}}",
+      "decrease": "Vähenda {{type}}",
+      "minimumReached": "Minimaalne summa {{value}} on saavutatud",
+      "maximumReached": "Maksimaalne summa {{value}} on saavutatud",
+      "january": "Jaanuar",
+      "february": "Veebruar",
+      "march": "Märts",
+      "april": "Aprill",
+      "may": "Mai",
+      "june": "Juuni",
+      "july": "Juuli",
+      "october": "Oktoober",
+      "december": "Detsember",
+      "monday": "Esmaspäev",
+      "tuesday": "Teisipäev",
+      "wednesday": "Kolmapäev",
+      "thursday": "Neljapäev",
+      "friday": "Reede",
+      "saturday": "Laupäev",
+      "sunday": "Pühapäev",
+      "tuesdayAbbreviation": "Teisipäev",
+      "wednesdayAbbreviation": "Meie",
+      "thursdayAbbreviation": "N",
+      "fridayAbbreviation": "R",
+      "sundayAbbreviation": "P",
+      "showNextMonth": "Näita järgmist kuud, {{month}} {{year}}",
+      "showPreviousMonth": "Näita eelmist kuud, {{month}} {{year}}",
+      "rangeStart": "Vahemiku algus",
+      "inRange": "Leviala piires",
+      "rangeEnd": "Vahemiku lõpp",
+      "autocompleteOptionsAvailable": {
+        "one": "{{count}} toodet saadaval",
+        "other": "{{count}} eset saadaval"
+      },
+      "removeItem": "Eemalda {{label}}",
+      "removeTag": "Eemalda silt",
+      "month": {
+        "one": "kuu",
+        "other": "kuud"
+      },
+      "mapClusterTitle": {
+        "one": "{{number}} markeri kobar",
+        "other": "{{number}} markerite kobar"
+      },
+      "expandSheet": "Laienda",
+      "qrCode": "QR-kood",
+      "addFile": "Lisa fail",
+      "dropzoneInvalidFileType": "Failitüüpi ei toetata",
+      "dropzoneDraggedOver": "Lohista fail üleslaadimiseks"
+    },
+    "profile_preview_bar": {
+      "customize_button": "Kohanda"
+    }
   }
 }
