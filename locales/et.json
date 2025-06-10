@@ -1633,7 +1633,11 @@
       },
       "title": "Otsingutulemused",
       "search_for": "Otsi „ {{ terms }} ”",
-      "suggestions": "Soovitused"
+      "suggestions": "Soovitused",
+      "no_results": "Otsingule „ {{ terms }} ” ei leitud tulemusi. Kontrollige õigekirja või kasutage mõnda muud sõna või fraasi.",
+      "no_products": "Päringule „ {{ terms }} ” ei leitud tooteid. Kontrollige õigekirja või kasutage mõnda muud sõna või fraasi.",
+      "no_articles": "„ {{ terms }} ” kohta ei leitud artikleid. Kontrollige õigekirja või kasutage mõnda muud sõna või fraasi.",
+      "no_pages": "Otsisõnale „ {{ terms }} ” ei leitud ühtegi lehekülge. Kontrollige õigekirja või kasutage mõnda muud sõna või fraasi."
     },
     "cart": {
       "cart": "Ostukorv"
@@ -1860,6 +1864,132 @@
       "login_form_password_placeholder": "Teie parool",
       "login_form_error": "Vale parool!",
       "login_form_submit": "Sisesta"
+    }
+  },
+  "blogs": {
+    "article": {
+      "next": "Järgmine",
+      "tags_all": "Kõik",
+      "continue": "Jätka"
+    }
+  },
+  "onboarding": {
+    "product_title": "Näidis toote pealkirjast",
+    "collection_title": "Teie kollektsiooni nimi"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Lisa ostukorvi",
+      "choose_options": "Vali valikud",
+      "choose_product_options": "Valige toote {{ product_name }} valikud",
+      "description": "Kirjeldus",
+      "pre_order": "Eeltelli",
+      "on_sale": "Allahindlus",
+      "product_variants": "Tootevariandid",
+      "media": {
+        "gallery_viewer": "Galeriivaataja",
+        "load_image": "Laadi pilt {{ index }} galeriivaatesse",
+        "load_model": "Laadi 3D-mudel {{ index }} galeriivaatesse",
+        "load_video": "Esita videot {{ index }} galeriivaates",
+        "image_available": "Pilt {{ index }} on nüüd galeriivaates saadaval",
+        "open_media": "Ava meedia {{ index }} modaalses aknas",
+        "play_model": "Esita 3D-vaaturit",
+        "play_video": "Esita videot"
+      },
+      "quantity": {
+        "label": "Kogus",
+        "input_label": "Kogus tootele {{ product }}",
+        "increase": "Suurenda toote {{ product }} kogust",
+        "decrease": "Vähenda toote {{ product }} kogust",
+        "minimum_of": "Minimaalne kogus {{ quantity }}",
+        "maximum_of": "Maksimaalne kogus {{ quantity }}",
+        "multiples_of": "{{ quantity }} sammud",
+        "min_of": "Minimaalne kogus {{ quantity }}",
+        "max_of": "Maksimaalne kogus {{ quantity }}",
+        "in_cart_html": "<strong class=\"quantity-cart\">{{ quantity }}</strong> ostukorvis",
+        "note": "Kuva kogusereeglid"
+      },
+      "volume_pricing": {
+        "title": "Mahuhinnakujundus",
+        "note": "Hulgihinnakujundus on saadaval",
+        "minimum": "{{ quantity }} +",
+        "price_at_each": "{{ price }} /tk"
+      },
+      "pickup_availability": {
+        "view_store_info": "Kuva poe teave",
+        "check_other_stores": "Kontrolli saadavust teistes kauplustes",
+        "pick_up_available": "Järeletulemine on võimalik",
+        "pick_up_available_at_html": "Järeletulek võimalik asukohas <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "Järeletulemine asukohas <span class=\"color-foreground\">{{ location_name }}</span> hetkel ei ole võimalik",
+        "unavailable": "Järeletulemise saadavust ei õnnestunud laadida",
+        "refresh": "Värskenda"
+      },
+      "price": {
+        "from_price_html": "Alates {{ price }}",
+        "regular_price": "Tavaline hind",
+        "sale_price": "Allahindlushind",
+        "unit_price": "Ühikuhind"
+      },
+      "share": "Jaga seda toodet",
+      "sold_out": "Välja müüdud",
+      "unavailable": "Pole saadaval",
+      "vendor": "Müüja",
+      "video_exit_message": "{{ title }} avab täisekraanivideo samas aknas.",
+      "view_full_details": "Vaata kõiki üksikasju",
+      "xr_button": "Vaata oma ruumis",
+      "xr_button_label": "Kuva oma ruumis, laadib üksuse liitreaalsuse aknasse",
+      "include_taxes": "Käibemaks on hinna sees.",
+      "shipping_policy_html": "Saatmiskulud arvutatakse <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">kassas</a> .",
+      "value_unavailable": "{{ option_value }} - Pole saadaval",
+      "variant_sold_out_or_unavailable": "Variant on välja müüdud või pole saadaval",
+      "inventory_in_stock": "Laos",
+      "inventory_in_stock_show_count": "{{ quantity }} laos",
+      "inventory_low_stock": "Madal laoseis",
+      "inventory_low_stock_show_count": "Madal laoseis: {{ quantity }} alles",
+      "inventory_out_of_stock": "Laost otsas",
+      "inventory_out_of_stock_continue_selling": "Laos",
+      "quick_view": "Toote kiire vaatamine",
+      "quick_view_button": "Kiirvaade",
+      "view_product": "Vaata toodet",
+      "number_of_reviews": {
+        "one": "{{ count }} arvustus",
+        "other": "{{ count }} arvustust"
+      },
+      "by_vendor_html": "{{ vendor }} <span>poolt</span>"
+    },
+    "modal": {
+      "label": "Meediagalerii"
+    },
+    "facets": {
+      "apply": "Kandideeri",
+      "clear": "Selge",
+      "clear_all": "Eemalda kõik",
+      "from": "Alates",
+      "filter_and_sort": "Filtreeri ja sorteeri",
+      "filters_selected": {
+        "one": "{{ count }} valitud",
+        "other": "{{ count }} valitud"
+      },
+      "filter_selected_accessibility": "{{ type }} (valitud filtreid {{ count }} )",
+      "show_more": "Näita rohkem",
+      "show_less": "Näita vähem",
+      "max_price": "Kõrgeim {{ price }}",
+      "product_count": {
+        "one": "{{ product_count }} {{ count }}",
+        "other": "{{ product_count }} toodet {{ count }}"
+      },
+      "product_count_simple": {
+        "one": "{{ count }}",
+        "other": "{{ count }} toodet"
+      },
+      "reset": "Lähtesta",
+      "sort_button": "Sorteeri",
+      "sort_by_label": "Sorteeri:",
+      "to": "Kuni",
+      "clear_filter": "Eemalda filter",
+      "show_filter": "Näita filtrit",
+      "hide_filter": "Peida filter",
+      "categories_block_label": "Kategooriad"
     }
   }
 }
