@@ -485,6 +485,181 @@
         "order_updates_description_missing": "Te ei saa saatmisteabe värskendusi.",
         "order_updates_subscribe_to_email_notifications": "Saate saatmisvärskendusi e-posti teel",
         "order_updates_subscribe_to_email_or_phone_notifications": "Saate saatmisvärskendusi e-posti või tekstisõnumi teel"
+      },
+      "shop_policies": {
+        "purchase_options_cancellation_policy": "Tühistamispoliitika"
+      },
+      "mor_policies": {
+        "terms_and_conditions": "Registreeritud kaupmehe tingimused",
+        "privacy_policy": "Registreeritud kaupmehe privaatsuspoliitika"
+      },
+      "markets": {
+        "invalid_market_manager_error": "Enne makse sooritamist vaadake üle oma kontaktandmed"
+      },
+      "notifications": {
+        "title": "Teavitused"
+      },
+      "order_payment_collection": {
+        "custom_line_item_description": "Tellimuse %{order_name} eest makstav summa",
+        "changes_summary": {
+          "added": {
+            "one": "Lisatud",
+            "other": "Lisatud %{count}"
+          },
+          "removed": "Eemaldatud",
+          "subtracted": "Eemaldatud %{count}",
+          "returned": "Tagastatud %{count}",
+          "return_line_item_removed": "Eemaldas tagastusest %{count}"
+        },
+        "additional_payment_requested": "Vaja on tasuda %{total_outstanding}",
+        "checkout_review_and_pay": "Teie tellimust %{order_name} uuendati. Vaadake need muudatused üle ja seejärel kinnitage tellimus, makstes.",
+        "order_updated_on": "Teie tellimust uuendati kuupäeval %{last_edited_at}.",
+        "order_review_and_pay": "Teie tellimust uuendati. Vaadake see üle ja makske tellimuse kinnitamiseks.",
+        "pay_now": "Maksa kohe"
+      },
+      "change_currency": {
+        "currency_button_label": "%{valuuta} (%{valuuta_sümbol})",
+        "credit_card_will_be_charged_html": "Teie krediitkaardilt võetakse maha %{amount}",
+        "payment_total_label": "Makse kokku",
+        "conversion_rate": "1 %{valuuta_koodist} = %{määr} %{valuuta_koodile}",
+        "change_currency_link": "Muuda valuutaks %{currency_name}",
+        "card_provider_fx_charges_warning": "Teie kaardipakkuja võib %{currency_code} tehingute eest tasu võtta.",
+        "currency_not_supported_by_shop": "Valitud valuuta pole enam saadaval. Kõik hinnad on nüüd valuutas %{currency_code}."
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "Teie ostukorvi on uuendatud vastavalt teie saatmisriigile.",
+        "cart_and_currency_updated_based_on_country": "Teie ostukorvi ja valuutat on teie saatmisriigi põhjal uuendatud."
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "Teie riik/regioon on uuendatud. Sisestage oma saatmisaadress, et jätkata kassasse minekut."
+      },
+      "tips": {
+        "title": "Lisa jootraha",
+        "description": "Näita oma toetust meeskonnale aadressil %{shop_name}",
+        "presets_description": "Valige jootraha protsent",
+        "custom_label": "Kohandatud ots",
+        "add_tip": "Lisa jootraha",
+        "update_tip": "Värskenda näpunäidet",
+        "message": "Tänan teid, me hindame seda.",
+        "no_tip_label": "Puudub"
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "zero": "Osta %{product_name}",
+          "one": "Osta %{product_name} ja %{count} muud toodet",
+          "other": "Osta %{product_name} ja %{count} muud toodet"
+        }
+      },
+      "subscriptions": {
+        "recurring_total_intervals": {
+          "day": {
+            "one": "päev",
+            "other": "%{count} päeva"
+          },
+          "week": {
+            "one": "nädal",
+            "other": "%{count} nädalat"
+          },
+          "month": {
+            "one": "kuu",
+            "other": "%{count} kuud"
+          },
+          "year": {
+            "one": "aasta",
+            "other": "%{count} aastat"
+          }
+        },
+        "recurring_totals": "%{total_price} iga %{interval} järel",
+        "recurring_totals_with_initial_order_shipping_discount": "Esimene makse %{total_price_with_discount}, seejärel %{recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "Esimene makse %{total_price}",
+            "other": "Esimesed %{count} maksed %{total_price} iga"
+          },
+          "following_cycles": ", seejärel %{total_price} iga %{interval} järel"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", seejärel %{count} makse summas %{total_price}",
+            "other": ", seejärel %{count} makset hinnaga %{total_price} tükk"
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "page_title": "Makseviisid",
+        "title": "Makseviisid",
+        "update_card_button_label": "Kaardi värskendamine",
+        "delete_customer_mandate": {
+          "generic_error": "Teie taotluse töötlemisel tekkis probleem.",
+          "success_message": "Teie makseviis on edukalt kustutatud"
+        }
+      },
+      "throttle": {
+        "too_many_attempts": {
+          "message": "Liiga palju katseid",
+          "description": "Palun proovige mõne minuti pärast uuesti"
+        },
+        "line_to_check_out": "Oled kassasse järjekorras",
+        "cart_summary_heading": "Teie ostukorv",
+        "merchandise": {
+          "available": "Saadaval",
+          "sold_out": "Välja müüdud"
+        },
+        "inventory": {
+          "partial_inventory_banner": "Osa teie ostukorvist on välja müüdud ja seda ei saa kassas osta.",
+          "sold_out": {
+            "heading": "Teie ostukorv on välja müüdud",
+            "storefront_body": "Jätkamiseks mine poodi tagasi",
+            "no_storefront_body": "Kahjuks pole toode, mida soovite osta, enam saadaval.",
+            "link": "Tagasi poodi"
+          }
+        },
+        "title": "Järjekord",
+        "time_to_checkout_title": "Aeg kassasse minna - {{shopName}}",
+        "estimated_wait_time": {
+          "calculating": "Eeldatava ooteaja arvutamine",
+          "less_than_one": "Eeldatav ooteaeg: Vähem kui minut",
+          "one": "Eeldatav ooteaeg: {{count}} minut",
+          "other": "Eeldatav ooteaeg: {{count}} minutit"
+        },
+        "last_checked": "(Viimati kontrollitud: {{time}} )",
+        "footer": {
+          "heading": "Ärge värskendage seda lehte, see uuendub automaatselt.",
+          "body": "Ostukorvis olevad tooted ei ole broneeritud enne, kui olete kassasse vormistanud."
+        }
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "Teie taotluse töötlemisel tekkis probleem, võtke ühendust poe omanikuga."
+      },
+      "no_address_location": {
+        "title": "Asukoht ilma aadressita",
+        "header": "Teil pole selle asukoha jaoks tarneaadressi",
+        "alt_header": "Puudub saatmisaadress",
+        "message": "Võtke meiega ühendust, et lisada selle asukoha aadress ja vormistamine lõpule viia.",
+        "email_us_button_label": "Saatke meile e-kiri"
+      },
+      "order_errors": {
+        "creation_failure": "Teie tellimuse loomisel tekkis probleem. Proovige uuesti või võtke meiega ühendust lisateabe saamiseks.",
+        "network_failure": "Teie tellimust ei saanud võrguvea tõttu esitada. Kontrollige oma ühendust ja proovige uuesti.",
+        "inventory_reservation_failure": "Mõned tooted pole enam saadaval."
+      },
+      "session_errors": {
+        "session_not_unique": "Teie tellimuse töötlemisel tekkis probleem. Poodi naasmiseks värskendage seda lehte.",
+        "session_already_finished": "See tellimus on juba esitatud. Uue tellimuse alustamiseks võite poodi tagasi pöörduda."
+      },
+      "artifact_errors": {
+        "artifact_dissatisfaction_without_violation": "Teie tellimuse töötlemisel tekkis probleem. Proovige mõne minuti pärast uuesti."
+      },
+      "pickup_point": {
+        "location_is_currently_closed": "Suletud",
+        "business_hours": "Lahtiolekuajad",
+        "no_business_hours": "Lahtiolekuajad pole saadaval",
+        "open_twenty_four_hours": "Avatud ööpäevaringselt",
+        "title": "Pealevõtmispunkt",
+        "or": "või",
+        "search_button": "Otsi",
+        "address_label": "Aadress",
+        "selector_tabs": "Pealevõtupunkti valija"
       }
     }
   },
@@ -594,6 +769,139 @@
     },
     "profile_preview_bar": {
       "customize_button": "Kohanda"
+    }
+  },
+  "templates": {
+    "search": {
+      "no_collections": "„ {{ terms }} ” jaoks ei leitud ühtegi kollektsiooni. Kontrollige õigekirja või kasutage mõnda muud sõna või fraasi.",
+      "page": "Leht",
+      "products": "Tooted",
+      "article": "Artiklid",
+      "results_with_count": {
+        "one": "{{ count }}",
+        "other": "{{ count }} tulemust"
+      },
+      "results_with_count_and_term": {
+        "one": "Päringule „ {{ terms }} ” leiti {{ count }} }} tulemust",
+        "other": "Päringule „ {{ terms }} ” leiti {{ count }} tulemust"
+      },
+      "title": "Otsingutulemused",
+      "search_for": "Otsi „ {{ terms }} ”",
+      "suggestions": "Soovitused"
+    },
+    "cart": {
+      "cart": "Ostukorv"
+    },
+    "contact": {
+      "form": {
+        "title": "Kontaktvorm",
+        "name": "Nimi",
+        "email": "E-post",
+        "phone": "Telefoninumber",
+        "comment": "Kommentaar",
+        "send": "Saada",
+        "post_success": "Täname teid meiega ühenduse võtmise eest. Võtame teiega esimesel võimalusel ühendust.",
+        "error_heading": "Palun kohanda järgmist:"
+      },
+      "address": {
+        "heading": "Meie aadress"
+      },
+      "opening_hour": {
+        "heading": "Lahtiolekuajad"
+      }
+    },
+    "404": {
+      "title": "Lehte ei leitud"
+    },
+    "compare": {
+      "header_icon": "Toodete võrdlus",
+      "add_button": "Lisa {{ product_title }} võrdlusloendisse",
+      "add_to_compare": "Lisa võrdlusse",
+      "popup": "Toodete võrdluse hüpikaken",
+      "empty": "Võrdlusloendis pole ühtegi toodet.",
+      "warning": "Palun vali võrdlemiseks vähemalt 2 toodet.",
+      "success": "Lisatud võrdlusloendisse.",
+      "remove": "Eemalda"
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Konto",
+      "details": "Konto andmed",
+      "view_addresses": "Kuva aadressid",
+      "return": "Tagasi konto andmete juurde",
+      "welcome_html": "Tere tulemast tagasi, <strong>{{ first_name }}</strong> !"
+    },
+    "account_fallback": "Konto",
+    "activate_account": {
+      "title": "Aktiveeri konto",
+      "subtext": "Konto aktiveerimiseks looge parool.",
+      "password": "Parool",
+      "password_confirm": "Kinnita parool",
+      "submit": "Aktiveeri konto",
+      "cancel": "Keeldu kutse"
+    },
+    "addresses": {
+      "title": "Aadressid",
+      "default": "Vaikimisi",
+      "add_new": "Lisa uus aadress",
+      "edit_address": "Muuda aadressi",
+      "first_name": "Eesnimi",
+      "last_name": "Perekonnanimi",
+      "company": "Ettevõte",
+      "address1": "Aadress 1",
+      "address2": "Aadress 2",
+      "city": "Linn",
+      "country": "Riik/regioon",
+      "province": "Provints",
+      "zip": "Postiindeks",
+      "phone": "Telefon",
+      "set_default": "Määra vaike-aadressiks",
+      "add": "Lisa aadress",
+      "update": "Aadressi värskendamine",
+      "cancel": "Tühista",
+      "edit": "Redigeeri",
+      "delete": "Kustuta",
+      "delete_confirm": "Kas olete kindel, et soovite selle aadressi kustutada?"
+    },
+    "log_in": "Logi sisse",
+    "back_to_login": "Tagasi sisselogimislehele",
+    "log_out": "Logi välja",
+    "login_page": {
+      "cancel": "Tühista",
+      "create_account": "Loo konto",
+      "email": "E-post",
+      "forgot_password": "Unustasid parooli?",
+      "guest_continue": "Jätka",
+      "guest_title": "Jätka külalisena",
+      "password": "Parool",
+      "title": "Sisselogimine",
+      "sign_in": "Logi sisse",
+      "submit": "Esita"
+    },
+    "order": {
+      "title": "Tellimus {{ name }}",
+      "date_html": "Paigutuse kuupäev: {{ date }}",
+      "cancelled_html": "Tellimus tühistati {{ date }}",
+      "cancelled_reason": "Põhjus: {{ reason }}",
+      "billing_address": "Arveldusaadress",
+      "payment_status": "Makse staatus",
+      "shipping_address": "Saatmisaadress",
+      "fulfillment_status": "Täitmise staatus",
+      "discount": "Allahindlus",
+      "shipping": "Saatmine",
+      "tax": "Maks",
+      "product": "Toode",
+      "price": "Hind",
+      "quantity": "Kogus",
+      "total": "Kokku",
+      "fulfilled_at_html": "Täidetud {{ date }}",
+      "track_shipment": "Saadetise jälgimine",
+      "tracking_url": "Jälgimislink",
+      "tracking_company": "Vedaja",
+      "tracking_number": "Jälgimisnumber",
+      "subtotal": "Vahesumma",
+      "total_duties": "Kohustused"
     }
   }
 }
