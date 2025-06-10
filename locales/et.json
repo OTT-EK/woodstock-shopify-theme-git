@@ -3345,7 +3345,7 @@
   "general": {
     "password_page": {
       "login_form_heading": "Sisene poodi parooliga:",
-      "login_password_button": "Sisesta parooliga",
+      "login_password_button": "Sisesta parool",
       "login_form_password_label": "Parool",
       "login_form_password_placeholder": "Teie parool",
       "login_form_error": "Vale parool!",
