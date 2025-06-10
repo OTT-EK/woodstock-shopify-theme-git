@@ -129,17 +129,134 @@
             "local_pickup_no_delivery_strategy_available": "Kohalikku kättetoimetamise strateegiat ei leitud.",
             "origin_location_id_required": "JAEMÜÜGI kättetoimetamismeetodi taotlemisel on nõutav päritolukoha ID.",
             "invalid_origin_location_id": "Alguskoha ID-le vastavat asukohta ei leitud.",
-            "origin_location_id_not_allowed": "Taotletud kättetoimetamisviisid ei toeta lähtekoha ID-d."
+            "origin_location_id_not_allowed": "Taotletud kättetoimetamisviisid ei toeta lähtekoha ID-d.",
+            "auto_fulfill_not_allowed": "Sellel seansil pole volitust täitmiskäitumise tühistamiseks.",
+            "auto_fulfill_required": "Automaatne täitmine on nõutav, kui taotletakse JAEMÜÜGI kättetoimetamismeetodit.",
+            "prefetch_shipping_rates_used": "Eelnevalt laaditud saatmishinnad ei tohiks kunagi hindu tagastada.",
+            "fulfillment_constraints_not_satisfied": "Üks või mitu täitmise piirangut ei olnud täidetud.",
+            "must_fulfill_from_constraint_not_satisfied": "Täitmispiirangud ei ole täidetud, kuna esemeid ei saa nõutud asukohtadest täita.",
+            "must_fulfill_from_same_location_constraint_not_satisfied": "Täitmispiirangud ei ole täidetud, kuna esemeid ei saa samast asukohast täita.",
+            "delivery_strategy_conditions_not_satisfied": "Selle asukoha jaoks on saadaval kättetoimetamisstrateegiad, kuid nende tingimused pole täidetud.",
+            "out_of_stock_at_origin_location": "Päritolukohas laos puudub.",
+            "invalid_signature": "Vigane allahindluse allkiri."
           },
           "captcha": {
             "token_invalid": "Esitatud captcha token oli kehtetu. Jätkamiseks sisestage uus captcha.",
-            "token_not_valid_for_session": "Esitatud captchat ei saa selle ostu sooritamisel kasutada."
+            "token_not_valid_for_session": "Esitatud captchat ei saa selle ostu sooritamisel kasutada.",
+            "metadata_missing": "Selle ostu sooritamiseks on vaja captcha sisestada.",
+            "metadata_mismatch": "Esitatud captcha pakkuja ja tüüp ei vasta oodatud väärtustele.",
+            "token_missing": "Selle ostu sooritamiseks tuleb sisestada captcha token.",
+            "job_enqueue_failed": "Captcha valideerimistöö järjekorda lisamine ebaõnnestus.",
+            "job_already_queued": "Selle captcha tokeni jaoks on captcha valideerimine juba järjekorras.",
+            "token_expired": "Esitatud captcha token on aegunud. Jätkamiseks sisestage uus captcha."
           },
           "fx_reconciliation_override": {
             "shop_currency_mismatch": "Saadud summa peab olema poe valuutas."
           },
           "checkout_source": {
             "revoked": "See kassa pole enam saadaval."
+          },
+          "discount": {
+            "discounts_not_allowed_for_b2b": "B2B-poodides allahindlused ei ole lubatud.",
+            "custom_discount_not_honoured": "Pakutud kliendisoodustust ei arvestatud.",
+            "unsupported_expectation": "Esitatud allahindluse rida sisaldas ootust, mida poliitika ei osanud tõlgendada.",
+            "additional_requested_discount_code_discarded": "{{code}} on kehtiv, aga ei ole kohaldatav. Kontrolli allahindluse tingimusi.",
+            "additional_requested_discount_discarded": "Teie allahindlus kehtib, aga ei ole kohaldatav. Kontrollige allahindluse tingimusi.",
+            "allocations_mismatch": "Teie sooduskood on muutunud. Vaadake oma ostukorv üle ja proovige uuesti.",
+            "discount_title_too_long": "Allahindluse pealkiri ei tohi olla pikem kui 255 tähemärki."
+          },
+          "tax": {
+            "new_tax_must_be_accepted": "Teie tellimusega seotud maksud on muutunud. Vaadake üle ja proovige uuesti.",
+            "unresolvable_tax_terms": "Praeguse läbirääkimiste olukorra tõttu on kavandatud tingimused lahendamatud.",
+            "delivery_price_is_abstract": "Seotud tarnehind on abstraktne.",
+            "tax_inclusivity_mismatch": "Läbirääkimised konkreetse totalTaxAndDutyAmount või totalAmountIncludedInTarget väärtusega.",
+            "tax_exemption_not_supported": "Praegusel läbirääkimiste sessioonil maksuvabastusi ei toetata.",
+            "delivery_tax_exemption_not_supported": "Tarneliinide maksuvabastused pole praegu toetatud.",
+            "proposed_allocations_required": "Puudub väli „kavandatud eraldised”.",
+            "merchandise_terms_must_be_defined": "Kaubaterminid tuleb defineerida.",
+            "delivery_terms_must_be_defined": "Tarnetingimused tuleb kindlaks määrata.",
+            "merchandise_discount_terms_must_be_defined": "Kauba allahindluse tingimused tuleb määratleda.",
+            "delivery_discount_terms_must_be_defined": "Kohaletoimetamise allahindluse tingimused tuleb määratleda.",
+            "allocated_required": "Puudub väli „eraldatud”.",
+            "value_required": "Puudub väli „väärtus”.",
+            "line_splits_not_supported": "Väli „kauba read” tuleb müüjapakkumises jagada nii, et igal real oleks omaette rida."
+          },
+          "payment": {
+            "manual_payments_not_allowed_for_b2b": "B2B-poodides ei ole käsitsimaksed lubatud.",
+            "positive_amount_expected": "Makstav summa peab olema suurem kui 0.",
+            "total_amount_mismatch": "Tasumisele kuuluv summa ei vasta maksete kogusummale.",
+            "subscription_terms_not_accepted": "Tellimistingimused pole aktsepteeritud.",
+            "missing_session_id": "Puudub krediitkaardi seansi teave.",
+            "gateway_not_supported": "Maksevärav ei toeta makseviisi salvestamist.",
+            "credit_card_last_name_required": "'perekonnanimi' ei tohi olla null.",
+            "credit_card_update_failed": "Krediitkaardi värskendamine ebaõnnestus.",
+            "installments_amount_invalid": "Järelmaksutehingu summa on sobimatu.",
+            "installments_test_mode_not_allowed": "Testirežiim pole lubatud.",
+            "installments_gift_card_not_allowed": "Järelmaksuga ei saa kinkekaarte kasutada.",
+            "installments_unsupported_currency": "Järelmaksud seda valuutat ei toeta.",
+            "installments_unsupported_shipping": "Järelmaksuga saatmist sellele aadressile ei toetata.",
+            "installments_unsupported_billing": "Järelmaksud ei toeta seda arveldusaadressi.",
+            "installments_unsupported_subscriptions": "Järelmaksud ei toeta tellimusi.",
+            "installments_ineligible_line_item": "Selle ostu puhul on ühe reaüksuse järelmaks keelatud.",
+            "shop_cash_not_found": "Poe sularaha ei leitud.",
+            "shop_cash_not_allowed": "Sularahas ostlemine ilma Shop Pay'ta ei ole lubatud.",
+            "shop_cash_unsupported_checkout_source": "Shop Cash ei toeta seda kassafunktsiooni.",
+            "shop_cash_gift_card_not_allowed": "Shop Cash ei võimalda kinkekaartide ostmist.",
+            "shop_cash_not_enabled": "Selle poe jaoks pole ostu sularahas maksmine lubatud.",
+            "shop_cash_not_available": "Sularahaga ostu sooritamine selles kassas ei ole toetatud.",
+            "shop_cash_unsupported_subscriptions": "Shop Cash ei toeta tellimusi.",
+            "shop_cash_unsupported_shipping": "Shop Cash ei toeta kaupa, millele pole saatmiskulud tagatud.",
+            "invalid_address_type": "Esitatud aadressi tüüp ei sobi selle makseviisi jaoks.",
+            "missing_retail_attributions": "Käsitsi sisestatud krediitkaardimaksete puhul on nõutavad jaemüügi atribuudid.",
+            "unexpected_retail_attributions": "Krediitkaardiga maksmiseks ootamatult esitati jaemüügi atribuudid.",
+            "invalid_card_source": "Sellel seansil pole selle kaardiallika kasutamiseks luba.",
+            "wallet_content_missing": "Rahakoti sisu puudub.",
+            "payment_instrument_not_found": "Makseviisi ei leitud",
+            "unauthorized_capture_method": "Makse jäädvustamise meetodi seadistamine pole lubatud.",
+            "saved_payment_methods_not_allowed": "Salvestatud makseviisid pole lubatud.",
+            "saved_payment_methods_not_enabled": "Salvestatud makseviisid pole selle poe jaoks lubatud.",
+            "saved_payment_methods_cvv_verification_disabled": "Valitud makseviis nõuab CVV-kinnitust, mis pole selle poe jaoks lubatud. Valige teine ​​makseviis.",
+            "store_credit_not_enabled": "Selle poe jaoks pole poekrediit lubatud.",
+            "store_credit_account_not_found": "Poe krediidikontot ei leitud.",
+            "store_credit_account_mismatch": "Poe krediidikonto andmed ei vasta ostja isikule.",
+            "store_credit_mismatched_currency": "Poe krediidikonto valuuta ei vasta kassas olevale valuutale.",
+            "store_credit_insufficient_funds": "Poe krediidikontol pole piisavalt vahendeid.",
+            "store_credit_buying_gift_card": "Kinkekaardi ostmiseks ei saa poekrediiti kasutada.",
+            "gift_cards_not_allowed_for_b2b": "Kinkekaarte ei aktsepteerita B2B-poodides.",
+            "method_required": "Makseviisi tuleb pakkuda.",
+            "paypal_express_address_invalid": "PayPal tagastas kehtetu aadressi.",
+            "shop_cash_unsupported_currency": "Shop Cash ei toeta seda valuutat.",
+            "market_manager_blocks_wallet_payments": "Turuhaldur ei toeta seda makseviisi."
+          },
+          "tip": {
+            "not_accepted_by_shop": "Pood ei võta vastu jootraha.",
+            "only_one_tip_line_allowed": "Mitme jootraha rea ​​​​mitmeid ei toetata.",
+            "tips_not_allowed_for_b2b": "B2B-poodides ei ole jootraha lubatud.",
+            "currency_change_reset": "Jootraha on valuutamuutuse tõttu lähtestatud.",
+            "tips_not_allowed_for_deferred_purchase_options": "Edasilükatud ostuvõimaluste puhul jootraha veel ei toetata."
+          },
+          "sale_attribution": {
+            "draft_order_not_exist": "Seda tellimuse mustandit praeguses poes ei eksisteeri.",
+            "staff_member_not_exist": "Praeguses poes seda töötajat ei ole.",
+            "location_not_exist": "See asukoht praeguses poes puudub.",
+            "point_of_sale_device_not_exist": "Seda müügikoha seadet praeguses poes ei eksisteeri.",
+            "unresolvable_target_merchandise_lines": "Kavandatud müügiotsused on praeguse läbirääkimiste konteksti arvestades lahendamatud."
+          },
+          "non_negotiable": {
+            "missing_non_negotiable_terms": "Teie ostja pakkumine peaks sisaldama mittekaubeldavaid tingimusi.",
+            "invalid_signature": "{{target_terms}} allkiri on kehtetu."
+          },
+          "inventory": {
+            "missing_quantity_value": "Ostja laoseisu ridadel puudub koguse väli.",
+            "changing_behavior_not_allowed": "Sellel kliendil pole luba varude käitumist muuta.",
+            "only_one_inventory_behavior_allowed": "Praegu on iga kassa puhul lubatud ainult üks laoseisu toimimine."
+          },
+          "optional_duties": {
+            "optional_duties_not_permitted": "Selle kassas ei ole kohustuste täitmisest keeldumine lubatud."
+          },
+          "attribution": {
+            "retail_attribution_not_allowed": "Jaemüügi omistamine pole selle kassas lubatud.",
+            "retail_attribution_required": "Selle kassa jaoks on vaja jaemüügi omistamist."
           }
         },
         "full_price": "Täishind:",
@@ -1561,7 +1678,21 @@
         "delete_and_replace_button": "Kustuta ja asenda",
         "delete_and_replace_button_accessibility_label": "Kustuta {{currentPaymentMethodName}} ja asenda see väärtusega {{newPaymentMethodName}} .",
         "deleted_successfully": "Makseviis edukalt kustutatud.",
-        "loading_available_payment_methods_accessibility_label": "Laaditakse saadaolevaid makseviise"
+        "loading_available_payment_methods_accessibility_label": "Laaditakse saadaolevaid makseviise",
+        "title": "Kustuta makseviis",
+        "description_without_replacement": "See makseviis ei ole tulevaste ostude puhul enam saadaval.",
+        "description_with_replacement": "Selle makseviisi kustutamine mõjutab eelnevalt autoriseeritud makseid. Soovi korral saate selle asendada teise makseviisiga, et jätkata eelseisvate tellimuste saamist.",
+        "warning_message_with_replacement": {
+          "with_pending_orders_and_subscriptions": "Selle makseviisi kustutamine mõjutab eelnevalt autoriseeritud makseid. Kui te ei vali alternatiivset makseviisi, debiteeritakse olemasolevate tellimuste tasumata saldod ikkagi sellelt makseviisilt. Alternatiivse makseviisi valimine võimaldab teil eelseisvaid tellimusi katkestusteta vastu võtta.",
+          "with_pending_orders": "Selle makseviisi kustutamine eemaldab selle teie kontolt ja see ei ole enam tulevaste ostude jaoks saadaval. Kui te ei vali alternatiivset makseviisi, debiteeritakse sellelt ikkagi olemasolevate tellimuste tasumata saldod.",
+          "with_subscriptions": "Selle makseviisi kustutamine mõjutab eelnevalt autoriseeritud makseid. Asendage see alternatiivse makseviisiga, et jätkata eelseisvate tellimuste saamist."
+        },
+        "warning_message_without_replacement": {
+          "with_pending_orders_and_subscriptions": "Selle makseviisi kustutamine mõjutab eelnevalt autoriseeritud makseid. Sellelt makseviisilt võetakse endiselt tasu olemasolevate tellimuste jääkide eest, kuid te ei saa enam tulevasi tellimusi. Lisage alternatiivne makseviis, et tellimusi ka edaspidi saada.",
+          "with_pending_orders": "Selle makseviisi kustutamine eemaldab selle teie kontolt ja see ei ole enam tulevaste ostude jaoks saadaval. Sellelt võetakse endiselt tasu olemasolevate tellimuste jääkide eest.",
+          "with_subscriptions": "Selle makseviisi kustutamine mõjutab eelnevalt autoriseeritud makseid. Lisage alternatiivne makseviis, et jätkata eelseisvate tellimuste saamist."
+        },
+        "payment_method_selector_placeholder": "Valige asendusmakseviis (valikuline)"
       },
       "add_payment_method": {
         "title": "Lisa makseviis",
@@ -1597,7 +1728,127 @@
       "card_update_consent": "See makseviis salvestatakse tulevaste ostude jaoks.",
       "card_update_consent_subscriptions": "See makseviis salvestatakse tulevaste ostude jaoks ja seda saab kasutada korduvate või edasilükatud ostude puhul.",
       "digital_wallet_title": "Digitaalne rahakott",
-      "credit_or_debit_card_title": "Krediit- või deebetkaart"
+      "credit_or_debit_card_title": "Krediit- või deebetkaart",
+      "google_pay": {
+        "iframe_title_accessibility_label": "Lisa Google Pay makseviis",
+        "loading_accessibility_message": "Google Pay laadimine",
+        "loading": "Google Pay laadimine",
+        "errors": {
+          "generic": "Google Payga tekkis probleem. Proovige uuesti või kasutage mõnda muud makseviisi.",
+          "missing_billing_address": "Google Pay nõuab arveldusaadressi. Palun lisage see oma kontole."
+        }
+      },
+      "pay_pal": {
+        "iframe_title_accessibility_label": "Lisa PayPali makseviis",
+        "loading_accessibility_message": "PayPali laadimine"
+      },
+      "apple_pay": {
+        "loading": "Apple Pay laadimine",
+        "errors": {
+          "generic": "Apple Payga tekkis probleem. Proovige uuesti või kasutage mõnda muud makseviisi.",
+          "not_available": "Apple Pay pole selle seadmega saadaval.",
+          "missing_billing_address": "Apple Pay nõuab arveldusaadressi. Palun lisage see oma kontole."
+        }
+      },
+      "store_credit": {
+        "label": "Poe krediit",
+        "accesibility_label": "Poe krediit - {{formattedBalance}}",
+        "expirable_amounts_button": "Kuva aeguvad summad",
+        "expirable_amounts_label": "Aegumistähtajaga summad",
+        "details_modal": {
+          "title": "Aegumistähtajaga poekrediit",
+          "balance_label": "Tasakaal",
+          "expiration_date_label": "Aegumiskuupäev",
+          "amount_label": "Summa",
+          "date_label": "Kuupäev",
+          "event_label": "Sündmus",
+          "events": {
+            "adjustment": "Reguleerimine",
+            "order_payment": "Tellimuse maksmine",
+            "order_refund": "Tellimuse tagasimakse",
+            "payment_failure": "Makse ebaõnnestumine",
+            "payment_returned": "Makse tagastatud",
+            "order_cancellation": "Tellimuse tühistamine",
+            "tax_finalization": "Maksude lõplik vormistamine"
+          },
+          "expirable_balance_info": "Osa teie saldost aegub tulevikus",
+          "expirable_amount_label": "Aegumistähtaeg kokku",
+          "expirable_amounts_info": "Varem aeguvad summad rakendatakse kassas esimesena",
+          "expirable_amounts_button": "Vaade",
+          "expired_amounts_button": "Kuva aegunud summad",
+          "pagination": {
+            "load_more_label": "Laadi rohkem",
+            "load_more_accessibility_label": "Laadi rohkem aeguvaid summasid"
+          }
+        }
+      },
+      "payment_details": {
+        "title": "Makseviisi üksikasjad",
+        "credit_card_details_accessibility_label": "lõpeb {{lastDigits}} ga",
+        "billing_title": "Arveldusaadress",
+        "card_info_title": "Kaardi andmed",
+        "payment_method_expiring_on": "Aegub {{expiryDate}}",
+        "payment_method_expired_on": "Aegunud {{expiryDate}}",
+        "preauthorized_payments": "Eelnevalt autoriseeritud maksed",
+        "close_payment_modal": "Sule",
+        "close_payment_modal_accessibility_label": "Makseviisi üksikasjade modaalakna sulgemine",
+        "payment_method_not_found_error": "Makseviisi ei leitud",
+        "payment_details_loading": "Makseviisi andmete laadimine",
+        "pre_authorized_payments": "Eelnevalt autoriseeritud maksed",
+        "total_amount_of_subscription_line_items_left": "ja veel {{total}}",
+        "total_amount_of_subscription_line_items_left_accessibility_label": "Kokku {{totalItems}} eset, kuvatud on {{totalItemsToDisplay}} eset.",
+        "next_payment_due": "Järgmise makse tähtaeg on {{dueDateInMonthDayYear}}",
+        "edit_payment_method_button": "Redigeeri",
+        "edit_payment_method_button_accessibility_label": "Muuda makseviisi, mis lõpeb numbritega {{lastDigits}}",
+        "loading_shop_pay": "Laadin Shop Pay'd",
+        "invalid_payment_method": "Kehtetu makseviis",
+        "invalid_payment_method_message": "Kasutage uut krediitkaarti, et jätkata tulevaste tellimuste saamist.",
+        "replace_payment_method": "Asenda makseviis",
+        "checkout_card_banner": "Seda makseviisi saab kasutada ainult eelnevalt autoriseeritud maksete puhul. Kui olete sellesse poodi sisse logitud, siis see kassas ei ilmu.",
+        "default_checkbox": "Määra vaikeseadeks",
+        "default_checkbox_accessibility_label": "Määra see makseviis vaikemakseviisiks"
+      },
+      "edit_payment_method": {
+        "title": "Muuda makseviisi",
+        "save_payment_method_button": "Salvesta",
+        "cancel_edit_payment_method_button": "Tühista",
+        "payment_method_updated_toast": "Makseviis on uuendatud",
+        "billing_address": "Arveldusaadress",
+        "billing_address_add_new": "Lisa uus",
+        "billing_address_choose_from_list": "Vali nimekirjast",
+        "future_purchases_notice": "See makseviis salvestatakse tulevaste ostude jaoks.",
+        "generic_error": "Värskendamisel tekkis probleem. Palun proovige uuesti."
+      },
+      "card_fields": {
+        "card_number_label": "Kaardi number",
+        "card_number_placeholder": "Kaardi number",
+        "name_on_card_label": "Nimi kaardil",
+        "name_on_card_placeholder": "Nimi kaardil",
+        "card_expiry_label": "Aegumiskuupäev (KK/AA)",
+        "card_expiry_placeholder": "Aegumiskuupäev (KK/AA)",
+        "card_verification_value_label": "Turvakood",
+        "card_verification_value_placeholder": "Turvakood",
+        "card_start_label": "Väljaandmise kuupäev (KK/AA)",
+        "card_start_placeholder": "Väljaandmise kuupäev (KK/AA)",
+        "tooltip": {
+          "tooltip_accessibility_label": "Lisateave",
+          "card_verification_value_explanation_amex": "4-kohaline turvakood teie kaardi esiküljel",
+          "card_verification_value_explanation_other": "3-kohaline turvakood teie kaardi tagaküljel",
+          "card_verification_value_explanation": "3-kohaline turvakood, mis tavaliselt asub kaardi tagaküljel. American Expressi kaartidel on 4-kohaline kood, mis asub esiküljel.",
+          "card_security_notice": "Kõik tehingud on turvalised ja krüpteeritud."
+        },
+        "field_errors": {
+          "credit_card_name_invalid": "Sisesta oma nimi täpselt nii, nagu see on kaardil kirjas",
+          "credit_card_number_invalid": "Sisestage kehtiv kaardi number",
+          "credit_card_expiry_invalid": "Sisestage kehtiv kaardi kehtivusaeg",
+          "credit_card_verification_value_blank": "Sisestage oma kaardil olev CVV-kood või turvakood"
+        },
+        "unavailable": {
+          "text": "Krediit- ja deebetkaardimaksed pole praegu saadaval.",
+          "link_text": "Värskenda seda lehte",
+          "suffix": "või proovi hiljem uuesti."
+        }
+      }
     },
     "payment_method_brands": {
       "visa": "Viisa",
