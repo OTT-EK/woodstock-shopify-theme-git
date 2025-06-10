@@ -1985,6 +1985,40 @@
       "tracking_number": "Jälgimisnumber",
       "subtotal": "Vahesumma",
       "total_duties": "Kohustused"
+    },
+    "orders": {
+      "title": "Tellimuste ajalugu",
+      "order_number": "Telli",
+      "order_number_link": "Tellimuse number {{ number }}",
+      "date": "Kuupäev",
+      "payment_status": "Makse staatus",
+      "fulfillment_status": "Täitmise staatus",
+      "total": "Kokku",
+      "none": "Sa pole veel ühtegi tellimust esitanud."
+    },
+    "recover_password": {
+      "title": "Lähtesta oma parool",
+      "subtext": "Saadame teile parooli lähtestamiseks e-kirja",
+      "success": "Saatsime teile e-kirja lingiga parooli uuendamiseks."
+    },
+    "register": {
+      "title": "Loo konto",
+      "first_name": "Eesnimi",
+      "last_name": "Perekonnanimi",
+      "email": "E-post",
+      "password": "Parool",
+      "submit": "Loo"
+    },
+    "reset_password": {
+      "title": "Konto parooli lähtestamine",
+      "subtext": "Sisesta uus parool",
+      "password": "Parool",
+      "password_confirm": "Kinnita parool",
+      "submit": "Parooli lähtestamine"
+    },
+    "password_visibility": {
+      "show": "Näita parooli",
+      "hide": "Peida parool"
     }
   },
   "sections": {
@@ -2223,6 +2257,36 @@
       "show_filter": "Näita filtrit",
       "hide_filter": "Peida filter",
       "categories_block_label": "Kategooriad"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Siin on teie {{ value }} kinkekaart {{ shop }} jaoks!",
+      "subtext": "Teie kinkekaart",
+      "gift_card_code": "Kinkekaardi kood",
+      "shop_link": "Jätka ostlemist",
+      "remaining_html": "Järelejäänud {{ balance }}",
+      "add_to_apple_wallet": "Lisa Apple Walletisse",
+      "qr_image_alt": "QR-kood – skannige kinkekaardi lunastamiseks",
+      "copy_code": "Kopeeri kood",
+      "expired": "Aegunud",
+      "copy_code_success": "Kood kopeeriti edukalt",
+      "print_gift_card": "Prindi"
+    }
+  },
+  "recipient": {
+    "form": {
+      "checkbox": "Ma tahan selle kingitusena saata",
+      "email_label": "Saaja e-posti aadress",
+      "email_label_optional_for_no_js_behavior": "Saaja e-posti aadress (valikuline)",
+      "email": "E-post",
+      "name_label": "Saaja nimi (valikuline)",
+      "name": "Nimi",
+      "message_label": "Sõnum (valikuline)",
+      "message": "Sõnum",
+      "max_characters": "Maksimaalselt {{ max_chars }} tähemärki",
+      "send_on": "AAAA-KK-PP",
+      "send_on_label": "Saada edasi (valikuline)"
     }
   }
 }
