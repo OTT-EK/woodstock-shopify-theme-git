@@ -660,6 +660,265 @@
         "search_button": "Otsi",
         "address_label": "Aadress",
         "selector_tabs": "Pealevõtupunkti valija"
+      },
+      "order_summary": {
+        "shipping_discount_title": "Saatmissoodustus",
+        "shipping_pending_message": "Pole veel saadaval",
+        "shipping_policy_link": "Saatmiskulud",
+        "taxes_label": "Maksud",
+        "estimated_taxes_label": "Hinnangulised maksud",
+        "information_estimated_taxes_label": "Maksud (hinnanguline)",
+        "estimated_taxes_finalization_tooltip_content": "Lõplik käibemaks ja kogusumma kinnitatakse pärast tellimuse esitamist e-posti või tekstisõnumi teel.",
+        "order_total_label": "Tellimuse kogusumma",
+        "price_before_discount_aria_text": "Algne hind",
+        "price_after_discount_aria_text": "Soodushind",
+        "discount_code_aria_text": "Sooduskood",
+        "total_savings": "Kokkuhoid",
+        "total_label": "Kokku",
+        "total_outstanding_label": "Makstav summa",
+        "deposit_label": "Deposiit",
+        "total_due_today_label": "Tänaseks kokku makstav summa",
+        "total_due_later_label": "Hiljem tasumisele kuuluv summa",
+        "partial_total_label": "Kokku",
+        "free_total_label": "Tasuta",
+        "free_shipping_total_label": "Tasuta",
+        "paid_label": "Tasuline",
+        "payment_due_label": "Maksetähtaeg",
+        "vat_label_html": "Sealhulgas %{amount} maksudest",
+        "duties_included_label": "Kogusumma sisaldab makse ja tollimakse. Kohaletoimetamise eest lisatasusid ei võeta.",
+        "discount_and_gift_card_savings_notice": "Pärast %{discount_amount} allahindlusi ja %{gift_card_amount} kinkekaarte",
+        "discount_savings_notice": "Pärast %{discount_amount} allahindlust",
+        "gift_card_savings_notice": "Pärast kinkekaartide %{gift_card_amount} kogumist",
+        "cost_table_title": "Kulude kokkuvõte",
+        "cost_table_item_column_header": "Ese",
+        "cost_table_value_column_header": "Väärtus",
+        "description_label": "Kirjeldus",
+        "price_label": "Hind",
+        "price_per_item": {
+          "accessibility_label": "%{price} üksuse kohta",
+          "label": "%{hind}/tk"
+        },
+        "quantity_label": "Kogus",
+        "product_change_label": "Muutus",
+        "product_image_label": "Toote pilt",
+        "product_image_quantity_label": "Kogus",
+        "scroll_order_summary": "Kerige, et näha rohkem üksusi",
+        "expand_order_summary_short": "Näita",
+        "collapse_order_summary_short": "Peida",
+        "expand_order_summary": "Näita tellimuse kokkuvõtet",
+        "collapse_order_summary": "Peida tellimuse kokkuvõte",
+        "original_price": "Algne hind",
+        "sale_price": "Allahindlushind",
+        "total_updated_label": "Uuendatud koguhind:",
+        "order_total_updated_label": "Uuendatud kogusumma",
+        "total_already_paid_label": "Tasuline",
+        "unit_price": {
+          "accessible_separator": "iga",
+          "per_item": {
+            "single": "%{price} tükk",
+            "one": "%{price} ühiku kohta (%)",
+            "other": "%{price} iga %{count} üksuse kohta"
+          },
+          "per_unit": {
+            "single": "%{hind}/%{ühik}",
+            "plural": "%{hind}/%{loendus}%{ühik}"
+          }
+        },
+        "gift_card_ending": "Kinkekaart, mis lõpeb %{last_characters}-ga",
+        "estimated_tax_label": "Hinnanguline maks",
+        "multiple_shipping_lines_label": "Saatmiskulude kogusumma",
+        "recurring_subtotal_label": "Korduv vahesumma",
+        "recurring_total_label": "Korduv kogusumma",
+        "recurring_total_tooltip": "Ei sisalda saatmiskulusid, makse, tollimakse ega muid kohaldatavaid allahindlusi.",
+        "confirmation_number_label": "Kinnitus #%{confirmation_number}",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> ei saanud teie olemasolevate allahindlustega koos kasutada.",
+        "percent_off_shipping": "%{percent}% soodustust saatmiskuludele",
+        "amount_off_shipping": "%{amount} soodustust saatmiskuludele",
+        "deferred_payment_info": {
+          "title": "Makse summas %{amount_due} tuleb tasuda kuupäeval %{due_at}",
+          "description_html": "Küsimuste korral oma tellimuse kohta võtke meiega ühendust, %{contact_us}.",
+          "paid_today": "Täna makstud kokku",
+          "due_on_fulfillment_title": "%{amount_due} tuleb tasuda tellimuse täitmisel",
+          "due_on_receipt_title": "Summa %{amount_due} tuleb tasuda kättesaamisel"
+        },
+        "deferred_balance_info": {
+          "title": "Summa {{amount_due}} tuleb tasuda {{due_at}}",
+          "due_on_fulfillment_title": "Summa {{amount_due}} tuleb tasuda tellimuse täitmisel"
+        },
+        "payment_terms_totals": {
+          "due_today": "Tänaseks kokku makstav summa",
+          "due_today_next": "Tähtaeg täna",
+          "due_later": "Kokku tasumisele kuuluv %{due_at}",
+          "due_on_fulfillment": "Täitmisel tasumisele kuuluv summa",
+          "due_on_receipt": "Kokku tasumisele kviitungil",
+          "due_later_checkout_to_draft": "Hiljem tasumisele kuuluv summa",
+          "total_paid": "Kokku makstud"
+        },
+        "maximum_discount_code_limit_reached": "Olete saavutanud sooduskoodide maksimaalse arvu. Eemaldage olemasolev kood, et kasutada koodi <strong style=\"text-transform:uppercase\">%{code}</strong> .",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> ei tööta praegu. Abi saamiseks võtke meiega ühendust.",
+        "due_on_fulfillment": "Täitmise tähtaeg",
+        "gift_card_masked": "•••• %{viimased_tähed}",
+        "subscriptions": "Tellimused",
+        "duties_label": "Kohustused",
+        "duties_and_taxes_label": "Tollimaksud ja maksud",
+        "error_duties_tooltip": "See tellimus saadetakse teisest riigist, seega võidakse kohaletoimetamisel arvestada tollimakse ja makse.",
+        "may_be_charged_on_delivery": "Võib olla tasutud kohaletoimetamisel",
+        "total_updated_label_with_price": "Uuendatud koguhind: %{totalPrice}",
+        "updated_shipping_method": "Uuendatud saatmisviis: %{shipping_method}",
+        "recurring_payments": "Korduvad maksed",
+        "recurring_total_multiple_label": "Sellel tellimusel on korduv tasu mitme toote eest.",
+        "deferred_total_due_date_label": "Kokku tasumisele kuuluv summa {{date}}",
+        "deferred_total_due_date_label_next": "Tähtaeg %{kuupäev}",
+        "full_price": "Täishind: %{price}",
+        "custom_discount": "Kohandatud allahindlus",
+        "expand_component_information": {
+          "one": "Näita %{count} üksust",
+          "other": "Näita %{count} üksust"
+        },
+        "collapse_component_information": {
+          "one": "Peida %{count} üksus",
+          "other": "Peida %{count} üksust"
+        }
+      }
+    },
+    "addresses": {
+      "emirate": "Emiraat",
+      "governorate": "Kubermangu",
+      "confirm": "Kas olete kindel, et soovite selle aadressi kustutada?"
+    },
+    "collections": {
+      "sorting": {
+        "manual": "Esiletõstetud",
+        "best_selling": "Enimmüüdud",
+        "az": "Tähestikulises järjekorras, AZ",
+        "za": "Tähestikulises järjekorras, ZA",
+        "price_ascending": "Hind, madalamast kõrgemani",
+        "price_descending": "Hind, kõrgemast madalamani",
+        "date_ascending": "Kuupäev, vanast uueni",
+        "date_descending": "Kuupäev, uuest vanaks"
+      }
+    },
+    "errors": {
+      "blank": "ei saa olla tühi",
+      "blocked_address": "Seda asukohta ei toetata",
+      "credit_card_session_expired": "Krediitkaardi autoriseerimine on aegunud, palun sisestage oma makseteave uuesti. Teie kaardilt pole raha maha võetud.",
+      "empty": "ei saa olla tühi",
+      "invalid_email": "peab olema kehtiv e-posti aadress",
+      "discount_disabled": "See allahindlus on keelatud",
+      "discount_expired": "See allahindlus ei kehti enam",
+      "discount_limit_reached": "See allahindlus on saavutanud oma kasutuslimiidi",
+      "discount_not_found": "Sisestatud koodile vastavat kehtivat allahindlust ei leitud",
+      "customer_already_used_once_per_customer_discount_notice": "See allahindlus on saavutanud oma kasutuslimiidi",
+      "gift_card_already_applied": "Kood on juba teie kassasse lisatud",
+      "gift_card_code_invalid": "Kood on kehtetu",
+      "gift_card_currency_mismatch": "Teie kinkekaart on valuutas %{gift_card_currency}. Võtke meiega ühendust, et see uuesti väljastada valuutas %{checkout_currency}.",
+      "gift_card_depleted": "Sellel kinkekaardil pole raha alles",
+      "gift_card_disabled": "Kinkekaart on keelatud",
+      "gift_card_expired": "Kinkekaart on aegunud",
+      "invalid": "on kehtetu",
+      "bad_domain": "sisaldab sobimatut domeeninime",
+      "taken": "on juba võetud",
+      "contains_html_tags": "ei tohi sisaldada HTML-silte",
+      "too_short": "on liiga lühike (miinimum on %{count} tähemärki)",
+      "too_long": "on liiga pikk (maksimaalne arv on %{count} tähemärki)",
+      "password_mismatch": "peab vastama sisestatud paroolile",
+      "contains_spaces": "algab või lõpeb tühikutega.",
+      "email_domain_invalid": "pakkujat ei toetata",
+      "invalid_for_country": "ei kehti %{riigi} jaoks",
+      "invalid_for_country_and_province": "ei kehti %{province} ja %{country} jaoks",
+      "invalid_province_in_country": "ei ole riigis %{country} kehtiv provints",
+      "invalid_state_in_country": "ei ole riigis %{country} kehtiv osariik",
+      "invalid_region_in_country": "ei ole riigis %{country} kehtiv piirkond",
+      "less_than_or_equal_to": "peab olema väiksem või võrdne %{count}-ga",
+      "not_supported": "ei ole toetatud",
+      "full_name_required": "Sisestage eesnimi ja perekonnanimi",
+      "invalid_for_card_type": "ei ole kehtiv",
+      "invalid_type": "Vabandust, me ei aktsepteeri seda tüüpi kaarte",
+      "invalid_format": "vorming ei ole kehtiv",
+      "expired": "on aegunud",
+      "invalid_start_date_or_issue_number_for_debit": "kehtiv alguskuupäev või väljaande number on nõutav",
+      "invalid_expiry_year": "ei ole kehtiv aegumisaasta",
+      "reset_password_html": "See e-posti aadress on juba kontoga seotud. Kui see konto on teie oma, saate <a href=\"/account/login#recover\">oma parooli lähtestada.</a>",
+      "verify_email": "Saatsime e-kirja aadressile %{customer_email}, palun klõpsake lisatud lingil oma e-posti aadressi kinnitamiseks.",
+      "product_not_available": "Toodet pole sellele kliendile avaldatud.",
+      "shop_404": {
+        "title": "Loo e-kaubanduse veebisait ja müü veebis! Shopify e-kaubanduse tarkvara",
+        "heros": {
+          "store_unavailable": "Vabandust, see pood pole hetkel saadaval.",
+          "store_not_exist": "Seda poodi ei eksisteeri.",
+          "no_storefront": "Sellel poel pole veel veebisaiti."
+        },
+        "links": {
+          "explore_other_stores": "Avastage teisi poode",
+          "start_free_trial": "Alusta tasuta prooviperioodi"
+        },
+        "owner_ctas": {
+          "header": "Kas teie olete poe omanik?",
+          "fix_domain": "Lõpeta oma uue veebiaadressi seadistamine, mine aadressile %{domain_settings_link}. Klõpsa nupul „Ühenda domeen“ ja sisesta: %{domain}.<br> Kui teil on probleeme oma poodi sisenemisega, proovige lehte %{forgot_your_store_link}.",
+          "fix_domain_link_text": "teie domeeni seaded",
+          "forgot_your_store_link_text": "unustasid oma poe",
+          "add_storefront": "Saate oma veebisaidi seadistada, lisades veebipoe kanali oma %{admin_link} lehele. Kui teil on probleeme oma poodi sisenemisega, proovige lehte %{forgot_your_store_link}.",
+          "admin_link_text": "administraator"
+        },
+        "ctas": {
+          "sell_in_person": {
+            "header": "Müü isiklikult",
+            "caption": "Hankige funktsioonid, mida vajate oma jaemüügipoe haldamiseks, olenemata sellest, kas alustate või laiendate oma tegevust.",
+            "link_text": "Alusta tasuta prooviperioodi"
+          },
+          "open_a_store": {
+            "header": "Ava uus Shopify pood",
+            "caption": "Alusta 3-päevast tasuta prooviperioodi ja jätka seejärel järgmise 3 kuu jooksul hinnaga 1 dollar kuus.",
+            "link_text": "Registreeru kohe"
+          },
+          "editions": {
+            "header": "Tutvu Shopify Editionsiga",
+            "caption": "100+ tooteuuendusega saad olla kaubanduses produktiivsem, loomingulisem ja võimsam, kui sa kunagi ette kujutasid.",
+            "link_text": "Avasta uusimad väljaanded"
+          },
+          "store_owner": {
+            "header": "Kas teie olete poe omanik?",
+            "caption": "Kas teil on probleeme oma poodi sisenemisega? Proovige funktsiooni %{forgot_your_store_link}. Kui soovite oma poodi uuesti aktiveerida, võtke ühendust aadressil %{shopify_support_link}.",
+            "shopify_support_link_text": "Shopify tugi"
+          }
+        }
+      }
+    },
+    "notices": {
+      "customer": {
+        "password_reset_error": "Parooli lähtestamise viga",
+        "subscribe_error": "Tellimisviga",
+        "unsubscribe_error": "Tellimuse tühistamise viga",
+        "no_account_found": "Selle e-posti aadressiga kontot ei leitud.",
+        "invalid_credentials": "Vale e-posti aadress või parool.",
+        "denylisted_reset_password": "Teie kontole ei pääsetud ligi, kuna praegune parool pole turvaline. Parooli uuendamiseks saadetakse teile e-kiri.",
+        "signup_disabled": "Kliendikonto loomine on keelatud."
+      },
+      "address": {
+        "updated": "Aadress edukalt uuendatud.",
+        "error_updating": "Viga aadressi värskendamisel",
+        "created": "Aadress edukalt loodud",
+        "error_creating": "Viga aadressi loomisel.",
+        "deleted": "Aadress edukalt kustutatud",
+        "error_deleting": "Viga aadressi kustutamisel."
+      },
+      "line_item": {
+        "item_status": {
+          "add_variant": "Lisatud %{delta}",
+          "increment_item": "Lisatud %{delta}",
+          "decrement_item": "Eemaldas %{delta} %{total}-st",
+          "decrement_fulfilled_line_item": "Tagastatud %{delta} kogusummast %{total}",
+          "decrement_return_line_item": "Tagastusväärtusest eemaldati %{delta}"
+        }
+      },
+      "order": {
+        "not_available": "See tellimus pole saadaval",
+        "financial_status": {
+          "authorized": "Volitatud",
+          "pending": "Ootel",
+          "paid": "Tasuline",
+          "unpaid": "Tasumata"
+        }
       }
     }
   },
