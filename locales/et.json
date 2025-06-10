@@ -3515,8 +3515,8 @@
       "price": {
         "from_price_html": "Alates {{ price }}",
         "regular_price": "Tavaline hind",
-        "sale_price": "Allahindlushind",
-        "unit_price": "Ühikuhind"
+        "sale_price": "Soodushind",
+        "unit_price": "Hind"
       },
       "share": "Jaga seda toodet",
       "sold_out": "Välja müüdud",
