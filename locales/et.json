@@ -1307,7 +1307,26 @@
       },
       "three_d_secure": {
         "title": "3D-turvaline"
-      }
+      },
+      "title": "Makseviisid",
+      "add_payment_method_button": "Lisa makseviis",
+      "add_payment_method_banner": "Kiiremaks maksmiseks või eelnevalt autoriseeritud teenuste kasutamiseks lisage makseviis",
+      "no_payment_methods_banner": "Makseviise pole lisatud",
+      "edit_payment_method_button_accessibility_label": "Muuda maksemeetodit {{paymentMethodName}} mis lõpeb numbritega {{lastDigits}}",
+      "edit_payment_method_brand_button_accessibility_label": "Muuda {{paymentMethodName}}",
+      "delete_payment_method_button": "Kustuta",
+      "delete_payment_method_button_accessibility_label": "Kustuta {{paymentMethodName}}",
+      "back_button": "Tagasi",
+      "back_button_accessibility_label": "Tagasi {{paymentMethodStepTitle}} juurde",
+      "default": "Vaikimisi",
+      "generic_card": "Kaart",
+      "expiration_warning_button_accessibility_label": "Kuva aegumishoiatus makseviisi {{paymentMethodName}} puhul, mis lõpeb numbritega {{lastDigits}}",
+      "expires_soon": "See kaart aegub peagi",
+      "expired": "See kaart on aegunud",
+      "card_update_consent": "See makseviis salvestatakse tulevaste ostude jaoks.",
+      "card_update_consent_subscriptions": "See makseviis salvestatakse tulevaste ostude jaoks ja seda saab kasutada korduvate või edasilükatud ostude puhul.",
+      "digital_wallet_title": "Digitaalne rahakott",
+      "credit_or_debit_card_title": "Krediit- või deebetkaart"
     },
     "payment_method_brands": {
       "visa": "Viisa",
@@ -1847,6 +1866,155 @@
         "free": "Tasuta",
         "free_shipping_discount": "Tasuta saatmine",
         "one_time": "Ühekordne saatmine"
+      }
+    },
+    "B2B": {
+      "draft_order_details": {
+        "payment_status": {
+          "pending": {
+            "description_waiting_for_manual_payment": "Sellel tellimusel on ootel makse. Saldo uuendatakse pärast makse laekumist.",
+            "description_due_on_receipt": "Saate arve, kui makse on tasutud.",
+            "description_due_on_receipt_partially_paid": "See tellimus on osaliselt tasutud. Teil on allesjäänud jääksumma. Saate arve, kui maksetähtpäev on saabunud.",
+            "description_due_on_fulfillment": "Makse tuleb tasuda pärast kõigi selle tellimuse punktide täitmist.",
+            "description_due_on_fulfillment_partially_paid": "See tellimus on osaliselt tasutud. Teil on allesjäänud jääk. Makse tuleb tasuda pärast kõigi selle tellimuse esemete täitmist."
+          },
+          "draft": {
+            "description": "Makseandmed lepitakse kokku tellimuse kinnitamisel.",
+            "title": "Maksetähtaeg pole veel saabunud",
+            "in_review": {
+              "description": "Makseandmed lepitakse kokku tellimuse kinnitamisel.",
+              "title": "Maksetähtaeg pole veel saabunud"
+            },
+            "submitted": {
+              "description": "Selle tellimuse kinnitamiseks esitage makse.",
+              "title": "Maksa kinnitamiseks",
+              "deposit": {
+                "title": "Maksetähtaeg on",
+                "due_later": "Jääksumma on tasutud {{translatedName}} tingimuste kohaselt ja tuleb tasuda {{dueDate}} .",
+                "due_on_fulfillment": "Jääksumma tuleb tasuda pärast kõigi selle tellimuse esemete täitmist.",
+                "due_on_receipt": "Saate arve ülejäänud summa eest.",
+                "due_on_date": "Jääksumma tuleb tasuda {{dueDate}} ."
+              }
+            },
+            "deposit": {
+              "due_later": "{{depositAmount}} tuleb tasuda pärast tellimuse kinnitamist. Ülejäänud summa tasutakse {{translatedName}} tingimuste kohaselt.",
+              "due_on_fulfillment": "{{depositAmount}} tuleb tasuda pärast tellimuse kinnitamist. Ülejäänud summa tuleb tasuda pärast tellimuse täitmist.",
+              "due_on_receipt": "{{depositAmount}} tuleb tasuda pärast tellimuse kinnitamist. Ülejäänud summa tuleb tasuda hiljem.",
+              "due_on_date": "{{depositAmount}} tuleb tasuda pärast tellimuse kinnitamist. Ülejäänud summa tuleb tasuda {{dueDate}} ."
+            }
+          },
+          "paid": {
+            "title": "Tasuline",
+            "title_with_date": "Tasutud {{date}}",
+            "description": "Teie tellimus on täielikult tasutud."
+          },
+          "refund": {
+            "title": "Tagasimakstud",
+            "title_with_date": "Tagasimakstud {{date}}",
+            "description_full_refund": "Saite selle tellimuse eest täieliku tagasimakse.",
+            "description_single_refund": "Saite selle tellimuse eest osalise tagasimakse.",
+            "description_multiple_refunds": "Saite selle tellimuse eest osalise tagasimakse."
+          },
+          "canceled": {
+            "title": "Makse tühistatud",
+            "description": "Teilt ei võetud tasu."
+          },
+          "pay_now": "Maksa kohe",
+          "pay_now_accessibility_label": "Maksa kohe tellimuse {{orderName}} eest",
+          "title": "Makse staatus"
+        },
+        "order_timeline": {
+          "expand_events_label": "Näita üksikasju",
+          "expand_events_accessibility_label": "Kuva tellimuse mustandi üksikasjad",
+          "hide_events_label": "Peida üksikasjad",
+          "hide_events_accessibility_label": "Peida tellimuse mustandi üksikasjad"
+        },
+        "subtitle": "Esitatud {{date}}",
+        "title": "Tellimus {{name}}"
+      },
+      "payment_methods": {
+        "payment_delete": {
+          "description_without_replacement": "See makseviis ei ole sellest asukohast tulevaste ostude puhul enam saadaval.",
+          "description_with_replacement": "Selle makseviisi kustutamine mõjutab selle asukoha eelnevalt autoriseeritud makseid. Asendage see alternatiivse makseviisiga, et jätkata eelseisvate tellimuste saamist."
+        },
+        "payment_details": {
+          "order_label": "Tellimus {{name}}",
+          "draft_label": "Tellimuse {{name}}"
+        }
+      },
+      "purchase_order_number": {
+        "add_accessibility_label": "Lisa ostutellimuse number",
+        "add_modal_title": "Lisa ostutellimuse number",
+        "cancel": "Tühista",
+        "close_modal_accessibility_label": "Ostutellimuse numbri modaalakna sulgemine",
+        "discard": "Äraviska",
+        "discard_changes_modal_title": "Kas tühistada muudatused?",
+        "edit_accessibility_label": "Muuda ostutellimuse numbrit",
+        "edit_modal_title": "Muuda ostutellimuse numbrit",
+        "empty_state": "Ostutellimuse numbrit pole",
+        "modal_po_number_input_label": "Ostutellimuse number",
+        "modal_po_number_input_max_length_error": "Ostutellimuse numbrite maksimaalne pikkus on {{maxLength}} tähemärki.",
+        "save": "Salvesta",
+        "title": "Ostutellimuse nr {{poNumber}}"
+      }
+    },
+    "errors": {
+      "address_deletion_error": {
+        "description": "Selle aadressi kustutamisel tekkis probleem. Proovige uuesti või värskendage lehte."
+      },
+      "addresses_loading_issue": {
+        "description": "Ühenduse viga. Kontrollige oma internetiühendust ja proovige uuesti."
+      },
+      "banner_title": {
+        "one": "Esines {{count}} viga",
+        "other": "Esineb {{count}} viga"
+      },
+      "failed_address_creation": {
+        "description": "Teie aadressi loomisel tekkis probleem. Proovige seda lehte värskendada või kontrollige oma internetiühendust."
+      },
+      "failed_address_update": {
+        "description": "Teie aadressi värskendamisel ilmnes probleem. Proovige seda lehte värskendada või kontrollige oma internetiühendust."
+      },
+      "load_orders_error": {
+        "title": "Tellimuste laadimine ebaõnnestus",
+        "description": "Proovi uuesti või tule hiljem tagasi.",
+        "retry_button": "Proovi uuesti"
+      },
+      "load_paypal_error": {
+        "description": "PayPali laadimisel tekkis probleem. Palun proovige uuesti."
+      },
+      "logout_everywhere": {
+        "description": "Väljalogimisel läks midagi valesti. Palun proovi uuesti."
+      },
+      "no_access_to_locations": {
+        "description": "Teil pole juurdepääsu ühelegi asukohale"
+      },
+      "not_found": {
+        "description": "Kontrollige URL-i või proovige mõne minuti pärast uuesti.",
+        "title": "Selle lehe laadimisel on probleem"
+      },
+      "order_not_found": {
+        "description": "Seda tellimust pole olemas või teil pole selle vaatamiseks luba.",
+        "title": "Tellimust ei leitud"
+      },
+      "profile_update_error": {
+        "description": "Profiili värskendamisel ilmnes probleem. Proovige seda lehte värskendada või kontrollige oma internetiühendust."
+      },
+      "retry_action_label": "Proovi uuesti",
+      "resend_link": {
+        "too_many_requests": "Liiga palju päringuid. Proovige hiljem uuesti.",
+        "generic": "Ebaõnnestunud taotlus"
+      },
+      "load_extension_error": {
+        "title": "Viga",
+        "description": "Värskenda seda lehte või proovi uuesti mõne minuti pärast.",
+        "refresh_button": "Värskenda lehte"
+      }
+    },
+    "throttle": {
+      "too_many_attempts": {
+        "message": "Liiga palju katseid",
+        "description": "Palun proovige mõne minuti pärast uuesti"
       }
     }
   },
