@@ -1190,6 +1190,145 @@
         "enabled": "Kliendid saavad tagastusi ise taotleda ja hallata.",
         "disabled": "Tagastuse taotlemiseks peavad kliendid kaupmehega ühendust võtma."
       }
+    },
+    "orders": {
+      "order_list": {
+        "empty_state_order_source_description": "Siin kuvatakse ainult {{email}} poolt esitatud tellimused.",
+        "empty_state_subtitle": "Tellimuse esitamiseks minge poodi.",
+        "empty_state_title": "Tellimusi pole veel",
+        "empty_state_with_location_title": "Asukohas {{locationName}} pole tellimusi",
+        "empty_state_title_for_pending_orders": "Ootel tellimusi pole",
+        "no_order_banner": "Laienduse testimiseks tellimuse oleku lehel looge tellimus.",
+        "estimated_shortform": "Eeldatav kuupäev: {{date}}",
+        "estimated_delivery": "Eeldatav {{date}}",
+        "one_images_accessibility_label": "Tellimus sisaldab {{lineItemName1}}",
+        "two_images_accessibility_label": "Tellimus sisaldab {{lineItemName1}} ja {{lineItemName2}}",
+        "three_images_accessibility_label": "Tellimus sisaldab {{lineItemName1}} , {{lineItemName2}} ja {{lineItemName3}}",
+        "four_images_accessibility_label": "Tellimus sisaldab järgmisi elemente {{lineItemName1}} , {{lineItemName2}} , {{lineItemName3}} , {{lineItemName4}}",
+        "more_than_three_products_accessibility_label": "Tellimus sisaldab {{lineItemName1}} , {{lineItemName2}} ja veel {{numberOfAdditionalProducts}} toodet",
+        "more_than_four_products_accessibility_label": "Tellimus sisaldab {{lineItemName1}} , {{lineItemName2}} , {{lineItemName3}} ja veel {{numberOfAdditionalProducts}} toodet",
+        "plus_more": "+ {{numberOfAdditionalProducts}}",
+        "plus_more_products": "+ {{numberOfAdditionalProducts}} toodet",
+        "carousel": {
+          "one_products_accessibility_label": "Tellimus sisaldab {{lineItemName1}} kogust {{lineItemQuantity1}}",
+          "two_products_accessibility_label": "Tellimus sisaldab {{lineItemName1}} kogust {{lineItemQuantity1}} , {{lineItemName2}} kogust {{lineItemQuantity2}}",
+          "three_products_accessibility_label": "Tellimus sisaldab {{lineItemName1}} kogust {{lineItemQuantity1}} , {{lineItemName2}} kogust {{lineItemQuantity2}} , {{lineItemName3}} kogust {{lineItemQuantity3}}",
+          "four_products_accessibility_label": "Tellimus sisaldab {{lineItemName1}} kogust {{lineItemQuantity1}} , {{lineItemName2}} kogust {{lineItemQuantity2}} , {{lineItemName3}} kogust {{lineItemQuantity3}} , {{lineItemName4}} kogust {{lineItemQuantity4}}",
+          "five_products_accessibility_label": "Tellimus sisaldab järgmist kogust {{lineItemName1}} kogus {{lineItemQuantity1}} , {{lineItemName2}} kogus {{lineItemQuantity2}} , {{lineItemName3}} kogus {{lineItemQuantity3}} , {{lineItemName4}} kogus {{lineItemQuantity4}} , {{lineItemName5}} kogus {{lineItemQuantity5}}",
+          "six_products_accessibility_label": "Tellimus sisaldab {{lineItemName1}} kogust {{lineItemQuantity1}} , {{lineItemName2}} kogust {{lineItemQuantity2}} , {{lineItemName3}} kogust {{lineItemQuantity3}} , {{lineItemName4}} kogust {{lineItemQuantity4}} , {{lineItemName5}} kogust {{lineItemQuantity5}} , {{lineItemName6}} kogust {{lineItemQuantity6}}",
+          "six_and_more_products_accessibility_label": "Tellimus sisaldab {{lineItemName1}} kogus {{lineItemQuantity1}} , {{lineItemName2}} kogus {{lineItemQuantity2}} , {{lineItemName3}} kogus {{lineItemQuantity3}} , {{lineItemName4}} kogus {{lineItemQuantity4}} , {{lineItemName5}} kogus {{lineItemQuantity5}} , {{lineItemName6}} kogus {{lineItemQuantity6}} ja palju muud.",
+          "view_order_details": "Kuva tellimuse üksikasjad",
+          "previous": "Eelmine",
+          "next": "Järgmine"
+        },
+        "items": {
+          "one": "{{count}} üksus",
+          "other": "{{count}} eset"
+        },
+        "list_view": "Kuva loendivaade",
+        "no_filtered_results_description": "Tellimuste nägemiseks eemaldage või kohandage filtreid",
+        "no_filtered_results_title": "Filtreeritud tulemusi pole",
+        "order_link": "Vaata tellimust {{name}}",
+        "order_number": "Tellimus {{name}}",
+        "orders_title": "Kinnitatud",
+        "pagination": {
+          "nav_accessibility_label": "Tellimuste navigeerimisnupud",
+          "next": "Järgmine",
+          "next_accessibility_label": "Järgmised tellimused",
+          "previous": "Eelmine",
+          "previous_accessibility_label": "Eelmised tellimused",
+          "load_more": "Laadi rohkem",
+          "load_more_accessibility_label": "Laadi rohkem tellimusi"
+        },
+        "order_status_message": {
+          "list_view": {
+            "view_order_for_details": "Vaata tellimuse üksikasju",
+            "estimated_delivery": "Eeldatav {{date}}",
+            "last_updated": "Viimati uuendatud {{date}}"
+          },
+          "table_view": {
+            "estimated_delivery": "Eeldatav tarneaeg {{date}}"
+          }
+        },
+        "payment_status": {
+          "list_view": {
+            "overdue": "Maksetähtajast möödunud",
+            "due": "Maksetähtaeg {{date}}",
+            "due_today": "Maksetähtaeg täna",
+            "due_without_date": "Maksetähtaeg",
+            "due_on_fulfillment": "Makse täitmisel",
+            "pay_to_confirm": "Maksa kinnitamiseks",
+            "payment_not_due": "Maksetähtaeg pole veel saabunud"
+          },
+          "table_view": {
+            "overdue": "Tähtaja ületanud",
+            "due": "Tähtaeg {{date}}",
+            "due_today": "Tähtaeg täna",
+            "paid": "Tasuline",
+            "due_without_date": "Tähtaeg",
+            "due_on_fulfillment": "Täitmise tähtaeg",
+            "pay_to_confirm": "Maksa kinnitamiseks",
+            "payment_not_due": "Pole veel tähtaega"
+          }
+        },
+        "sort_by": "Sorteeri: {{option}}",
+        "sort_hide_options_accessibility_label": "Peida kinnitatud tellimuste sortimisvalikud.",
+        "sort_show_options_accessibility_label": "Kuva kinnitatud tellimuste sortimisvalikud.",
+        "sort_currently_sorted_by_accessibility_label": "Praegu sorteeritud: {{option}}",
+        "sort_title": "Sorteeri",
+        "sort": {
+          "date": {
+            "newest": "Uusimast vanimani",
+            "oldest": "Vanimast uusimani"
+          },
+          "location": {
+            "ascending": "Asukoht (AZ)",
+            "descending": "Asukoht (ZA)"
+          },
+          "order_number": {
+            "ascending": "Tellimuse number (madalamast kõrgemani)",
+            "descending": "Tellimuse number (suuremast väiksemani)"
+          },
+          "order_total": {
+            "ascending": "Tellimuse kogusumma (madalamast kõrgeimani)",
+            "descending": "Tellimuse kogusumma (kõrgemast madalamani)"
+          }
+        },
+        "location_filter_picker": {
+          "all_location": "Kõik asukohad",
+          "current_location": "Praegune asukoht",
+          "switch_view": "Vaate vahetamine"
+        },
+        "filter": {
+          "clear_section": "Tühjenda jaotis",
+          "clear_all": "Tühjenda kõik",
+          "apply": "Kandideeri",
+          "date": {
+            "start_date": "Alguskuupäev",
+            "end_date": "Lõppkuupäev",
+            "title": "Tellimuse kuupäev",
+            "today": "Täna",
+            "last_7_days": "Viimased 7 päeva",
+            "last_30_days": "Viimased 30 päeva",
+            "last_90_days": "Viimased 90 päeva",
+            "last_365_days": "Viimased 12 kuud",
+            "custom": "Kohandatud"
+          }
+        },
+        "table_view": "Näita tabelivaadet",
+        "show_order_actions_accessibility_label": "Näita tellimuse {{name}} toiminguid"
+      },
+      "order_status": {
+        "attempted_delivery_label": "Kohaletoimetamise katse",
+        "attempted_delivery_description": "Kohaletoimetamise katse ebaõnnestus.",
+        "attempted_to_deliver_label": "Püüdis kohale toimetada",
+        "confirmed_description": "Oleme teie tellimuse kätte saanud.",
+        "on_its_way_description": "See saadetis on teel.",
+        "out_for_delivery_description": "See saadetis on kättetoimetamiseks väljas.",
+        "preparing_for_shipping_label": "Saatmiseks ettevalmistumine",
+        "preparing_for_shipping_description": "Neid esemeid valmistatakse ette saatmiseks.",
+        "ready_for_pickup_label": "Valmis järeletulemiseks"
+      }
     }
   },
   "templates": {
