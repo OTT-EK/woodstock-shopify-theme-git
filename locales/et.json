@@ -512,10 +512,90 @@
         },
         "order_updates_description_missing": "Te ei saa saatmisteabe värskendusi.",
         "order_updates_subscribe_to_email_notifications": "Saate saatmisvärskendusi e-posti teel",
-        "order_updates_subscribe_to_email_or_phone_notifications": "Saate saatmisvärskendusi e-posti või tekstisõnumi teel"
+        "order_updates_subscribe_to_email_or_phone_notifications": "Saate saatmisvärskendusi e-posti või tekstisõnumi teel",
+        "order_updates_subscribe_to_phone_notifications": "Saate saatmisvärskendusi tekstisõnumi teel",
+        "order_updates_submit_subscription": "Esita",
+        "track_shipment": "Saadetise jälgimine",
+        "other_options": "Muud valikud",
+        "delivery_information_label": "Kohaletoimetamise teave:",
+        "gift_card_sent_confirmation": "Kinkekaardid saadetud",
+        "qr_code": {
+          "send_link_to_phone": "Või saatke link oma telefoni",
+          "title": "Jälgi oma telefonis"
+        },
+        "shop_qr_with_sms_upsell": {
+          "qr_code": {
+            "title": "Skannige oma telefoniga"
+          },
+          "sms": {
+            "title": "Või saatke link oma telefoni"
+          }
+        },
+        "view_business_customer_account": "Kuva konto",
+        "breadcrumbs_submitted": "Esitatud",
+        "breadcrumbs_in_review": "Ülevaatusel",
+        "breadcrumbs_confirmed": "Kinnitatud",
+        "missing_shipping_address_banner": {
+          "title": "Tellimusel puudub saatmisaadress",
+          "text_html": "%{contact_us} aadressi lisamiseks"
+        },
+        "first_payment_complete": "Esimene makse sooritatud",
+        "in_store_purchase": "Poes ostmine",
+        "location_title": "Asukoht",
+        "thank_you_ready_for_picked_up": "Teie tellimus võeti peale aadressil %{address}.",
+        "ready_for_delivery": "Tarnevalmis",
+        "order_updates_subscribe_to_email_notifications_failed": "Me ei saa seda e-posti aadressi värskenduste jaoks salvestada. Palun proovige uuesti või kasutage teist e-posti aadressi.",
+        "order_updates_subscribe_to_email_notifications_email_already_exists": "Sisestatud e-posti aadress on juba olemas.",
+        "subscriptions_management": {
+          "title": "Tellimus",
+          "description": "Tellimuste vaatamiseks ja haldamiseks minge oma kontole.",
+          "button_label": "Tellimuse haldamine"
+        },
+        "manage_order_label": "Halda oma tellimust",
+        "gift_card_confirmation_by_text_typ": {
+          "one": "Saate mõne minuti pärast SMS-i oma kinkekaardiga.",
+          "other": "Saate mõne minuti pärast SMS-i oma kinkekaartidega."
+        },
+        "gift_card_confirmation_by_email_typ": {
+          "one": "Saate mõne minuti pärast e-kirja oma kinkekaardiga.",
+          "other": "Saate mõne minuti pärast e-kirja oma kinkekaartidega."
+        },
+        "gift_card_email_title": {
+          "one": "Kinkekaart saadeti e-posti teel",
+          "other": "Kinkekaardid saadeti e-posti teel"
+        },
+        "gift_card_text_title": {
+          "one": "Kinkekaart saadeti tekstisõnumiga",
+          "other": "Kinkekaardid saadeti tekstisõnumiga"
+        },
+        "resend_gift_cards_by_email": "Saada e-kiri uuesti",
+        "resend_gift_cards_by_text": "Saada tekstsõnum uuesti",
+        "gift_card_resent_confirmation": {
+          "one": "Kinkekaart saadeti uuesti.",
+          "other": "Kinkekaardid saadeti uuesti."
+        },
+        "gift_card_resend_failure": {
+          "one": "Kinkekaardi uuesti saatmisel tekkis probleem. Proovige uuesti või võtke meiega ühendust.",
+          "other": "Kinkekaartide uuesti saatmisel tekkis probleem. Proovige uuesti või võtke meiega ühendust."
+        },
+        "vat_invoices": {
+          "title": "Käibemaksuarved"
+        },
+        "verify_shop_account_title": "Kinnitage oma poe konto",
+        "verify_shop_account_message": "Teie teave salvestati Shopiga, kinnitage oma konto, et seda automaatselt miljonites poodides kasutada.",
+        "verify_shop_account_cta": "Kinnitage oma konto",
+        "verify_shop_account_confirmation": "Kassa üksikasjad salvestatud"
       },
       "shop_policies": {
-        "purchase_options_cancellation_policy": "Tühistamispoliitika"
+        "purchase_options_cancellation_policy": "Tühistamispoliitika",
+        "refund_policy": "Tagasimaksepoliitika",
+        "privacy_policy": "Privaatsuspoliitika",
+        "legal_notice": "Õiguslik teade",
+        "shipping_policy": "Saatmispoliitika",
+        "terms_of_sale": "Müügitingimused",
+        "subscription_policy": "Tühistamispoliitika",
+        "purchase_options_policy": "Ostuvõimaluste poliitika",
+        "contact_information": "Kontaktandmed"
       },
       "mor_policies": {
         "terms_and_conditions": "Registreeritud kaupmehe tingimused",
@@ -895,6 +975,70 @@
         "credit_card_name_blank": "Sisesta oma nimi täpselt nii, nagu see on kaardil kirjas",
         "credit_card_name_invalid": "Sisesta oma nimi täpselt nii, nagu see on kaardil kirjas",
         "credit_card_number_invalid": "Sisestage kehtiv kaardi number"
+      },
+      "vaulted": {
+        "change_button": "Muutus"
+      },
+      "review": {
+        "title": "Ülevaade",
+        "review_title": "Vaadake üle ja makske",
+        "review_and_confirm_title": "Vaadake üle ja kinnitage",
+        "checkout_as_guest": "Kassasse külalisena",
+        "checkout_a_different_way": "Maksa kassasse teistmoodi",
+        "blocks": {
+          "contact_method_title": "Kontakt",
+          "billing_address_title": "Arveldamine",
+          "shipping_address_title": "Saada aadressile",
+          "shipping_method_title": "Saatmisviis",
+          "payment_method_title": "Makseviis",
+          "change_link_label": "Muutus",
+          "change_contact_method_link_label": "Kontaktandmete muutmine",
+          "change_billing_address_link_label": "Arveldusaadressi muutmine",
+          "change_shipping_address_link_label": "Tarneaadressi muutmine",
+          "change_shipping_method_link_label": "Muuda saatmisviisi",
+          "change_payment_method_link_label": "Makseviisi muutmine",
+          "pick_up_in_store_shipping_method_html": "Kauplusest järeletulemine · %{location_name}",
+          "purchase_order_number_title": "Ostutellimuse number",
+          "change_purchase_order_number_label": "Muuda ostutellimuse numbrit",
+          "change_delivery_method_link_label": "Muuda kättetoimetamisviisi",
+          "no_address": "(Aadressi pole)",
+          "no_purchase_order_number": "(Postitellimuse numbrit pole)",
+          "due_after_order_reviewed_html": "Tähtaeg pärast tellimuse ülevaatamist",
+          "review_title_free_order": "Vaadake oma tellimus üle ja viige lõpule",
+          "payment_method_saved_company_location": "Salvesta kaart selle asukoha jaoks",
+          "company_location": "Ettevõtte asukoht"
+        },
+        "block_title": "Vaadake oma teave üle",
+        "item_header": {
+          "change_value": "Muuda väärtust",
+          "section": "Jaotis",
+          "value": "Väärtus"
+        }
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Saatke mulle uudiseid ja pakkumisi e-postiga",
+        "post_accept_marketing_checkbox_label": "Olete registreerunud uudiste ja pakkumiste saamiseks e-posti teel",
+        "pending_accept_marketing_checkbox_label": "Kontrollige oma e-posti, et kinnitada uudiste ja pakkumiste tellimus",
+        "accept_sms_checkbox_label": "Saada mulle uudiseid ja pakkumisi sõnumina",
+        "disclaimer": {
+          "privacy_policy": "Privaatsuspoliitika",
+          "terms_of_service": "Teenusetingimused"
+        },
+        "sms": {
+          "disclaimer": {
+            "privacy_policy": "Privaatsuspoliitika",
+            "terms_of_service": "Teenusetingimused",
+            "description_html": "Tekstisõnumi teel registreerudes nõustute saama korduvaid automaatseid turundussõnumeid, sh ostukorvi meeldetuletusi, esitatud telefoninumbrile. Nõusolek ei ole ostu sooritamise tingimus. Tellimuse tühistamiseks vastake STOP. Abi saamiseks vastake HELP. Sõnumite saatmise sagedus on erinev. Võivad kehtida sõnumi- ja andmesidetasud. Vaadake meie %{privacy_policy_link} ja %{terms_of_service_link}.",
+            "description_transactional_html": "Võite saada tellimuse kinnituse ja saatmise värskendustega seotud tekstsõnumeid. Tellimuse tühistamiseks vastake STOP. Abi saamiseks vastake HELP. Sõnumite saatmise sagedus on erinev. Võivad kehtida sõnumi- ja andmesidetasud. Vaadake meie %{privacy_policy_modal_link} ja %{terms_of_service_modal_link}."
+          },
+          "mobile_phone_number": "Mobiiltelefoni number",
+          "get_offers_by_text": "Saa pakkumisi tekstisõnumi teel"
+        },
+        "unsubscribe": {
+          "title": "Olete tellimuse tühistanud",
+          "description": "Te ei saa meilt enam ostukorvi meeldetuletusi."
+        },
+        "accept_shop_pay_marketing_checkbox_label": "Registreeru selle poe uudiste ja pakkumiste saamiseks"
       }
     },
     "addresses": {
@@ -1327,7 +1471,149 @@
         "out_for_delivery_description": "See saadetis on kättetoimetamiseks väljas.",
         "preparing_for_shipping_label": "Saatmiseks ettevalmistumine",
         "preparing_for_shipping_description": "Neid esemeid valmistatakse ette saatmiseks.",
-        "ready_for_pickup_label": "Valmis järeletulemiseks"
+        "ready_for_pickup_label": "Valmis järeletulemiseks",
+        "ready_for_pickup_description": "Need kaubad on kättesaamiseks valmis. Palun võtke tellimuse kinnitus kaasa, kui tellimusele järele tulete.",
+        "ready_for_pickup_location": "Teie tellimus on kohapeal kättesaamiseks valmis",
+        "picked_up_label": "Korjatud üles",
+        "picked_up_description": "Need esemed on ära korjatud.",
+        "canceled_description": "Teie tellimus tühistati kuupäeval {{date}} .",
+        "canceled_label": "Tühistatud",
+        "canceled_title": "Teie tellimus on tühistatud",
+        "come_back": "Saadetise staatuse värskenduste nägemiseks tulge sellele lehele tagasi.",
+        "company_tracking_number": "{{company}} jälgimisnumber:",
+        "confirmed_label": "Kinnitatud",
+        "confirmed_title": "Teie tellimus on kinnitatud",
+        "confirmed_description_pickup": "Saate e-kirja, kui teie tellimus on kättesaamiseks valmis.",
+        "confirmed_description_digital": "Saate e-kirja, kui teie tellimus on valmis.",
+        "confirmed_description_gift_card_text": "Saate SMS-i, kui teie tellimus on valmis.",
+        "delivered_description": "See saadetis on kohale toimetatud.",
+        "complete_label": "Lõpetatud",
+        "delivered_label": "Kohale toimetatud",
+        "delivered_title": "Teie saadetis on kohale toimetatud",
+        "delivered_description_digital": {
+          "one": "See üksus on valmis.",
+          "other": "Need esemed on valmis."
+        },
+        "delivered_description_gift_card": {
+          "one": "Kinkekaart saadeti e-posti teel.",
+          "other": "Kinkekaardid saadeti e-posti teel."
+        },
+        "delivered_description_gift_card_text": {
+          "one": "Kinkekaart saadeti SMS-iga.",
+          "other": "Kinkekaardid saadeti SMS-iga."
+        },
+        "gift_card_label": {
+          "one": "Kinkekaart",
+          "other": "Kinkekaardid"
+        },
+        "gift_card_resend_button": {
+          "one": "Saada kinkekaart uuesti",
+          "other": "Saada kinkekaarte uuesti"
+        },
+        "gift_resend_success": {
+          "one": "Kinkekaart saadeti uuesti",
+          "other": "Kinkekaardid saadetakse uuesti välja"
+        },
+        "gift_resend_failure": {
+          "one": "Kinkekaardi uuesti saatmisel tekkis probleem. Proovige uuesti või võtke meiega ühendust.",
+          "other": "Kinkekaartide uuesti saatmisel tekkis probleem. Proovige uuesti või võtke meiega ühendust."
+        },
+        "confirmed_gift_card_additional_description": {
+          "one": "Kinkekaart saadetakse eraldi e-kirjaga.",
+          "other": "Iga kinkekaart saadetakse eraldi e-kirjaga."
+        },
+        "confirmed_gift_card_additional_description_text": {
+          "one": "Kinkekaart saadetakse eraldi SMS-iga.",
+          "other": "Iga kinkekaart saadetakse eraldi tekstisõnumina."
+        },
+        "status_timestamp": "Uuendatud {{date}}",
+        "estimated_delivery": "Eeldatav {{date}}",
+        "delivered": "{{date}}",
+        "buy_with_prime_logo_accessibility_label": "Amazon Buy Prime'i logoga",
+        "in_review_description": "Anname teile teada, kui vajame lisateavet või kui teie tellimus on kinnitatud.",
+        "in_review_label": "Ülevaatusel",
+        "in_review_title": "Teie tellimust vaadatakse üle",
+        "last_updated": "Viimati uuendatud {{date}}",
+        "multiple_shipments_label": "Mitmed saadetised",
+        "multiple_statuses_label": "Mitme tellimuse staatused",
+        "no_tracking_number": "Sellel saadetisel puudub jälgimisnumber.",
+        "tracking_number": {
+          "one": "Jälgimisnumber",
+          "other": "Jälgimisnumbrid"
+        },
+        "on_its_way_label": "Teel",
+        "on_its_way_title": "Teie saadetis on teel",
+        "out_for_delivery_label": "Kohaletoimetamiseks väljas",
+        "out_for_delivery_title": "Teie saadetis on kättetoimetamiseks väljas",
+        "resume_tracking": "CV jälgimine",
+        "submitted_label": "Esitatud",
+        "submitted_description": "Vaadake üle tellimuse ja makse üksikasjad.",
+        "there_was_a_problem_label": "Tekkis probleem",
+        "track_shipment": "Saadetise jälgimine",
+        "request_return": "Tagastustaotlus",
+        "view_order_for_details": "Vaata tellimuse üksikasju",
+        "external_promise_manage_button_label": {
+          "buy_with_prime": "Halda Amazonis"
+        },
+        "amazon_buy_with_prime": {
+          "order_tracking_link": {
+            "text": "Halda Amazoniga",
+            "new_window_disclaimer": "(avaneb uues aknas)"
+          }
+        },
+        "delivery_promise_v2": {
+          "promise_line": {
+            "shop_promise_brand_label": "Kohaletoimetamine garanteeritud",
+            "external_promise_brand_label": "Kohaletoimetamine",
+            "not_delivered_by_label": "Kohale toimetatud pärast {{date}}",
+            "delivery_guarantee_expired_label": "Tarnegarantii on aegunud",
+            "modal_accessibility_button_label": "Tarne lubaduse üksikasjad",
+            "download_shop_app_button_label": "Laadi alla pood jälgimiseks",
+            "track_with_shop_button_label": "Jälgi poe abil",
+            "claim_shop_cash_button_label": "Nõua poe sularaha"
+          },
+          "details_modal": {
+            "title": "Tarne garantii",
+            "active_delivery_guarantee_label": "Tarneaeg kuni {{date}}",
+            "expired_delivery_guarantee_description": "Selle tellimuse 30-päevane Shop Promise garantii on aegunud.",
+            "expired_badge_label": "Aegunud",
+            "order_includes_guarantees_label": "Teie tellimus sisaldab {{deliveryAgreementsCount}} garantiid",
+            "order_includes_guarantees_description": "Shop Promise garanteerib kiire ja usaldusväärse kohaletoimetamise. Saa Shop Cash, kui sinu tellimus saabub pärast {{date}} .",
+            "delivered_after_label": "Kohale toimetatud pärast {{date}}",
+            "delivered_after_description": "Kuna teie tellimus saabus hilja, on teil õigus saada ostusummat {{amount}} .",
+            "claimed_shop_cash_description": "Kuna see tellimus saabus hilja, nõudsite ostusummat {{amount}} Shop Cash.",
+            "eligible_to_claim_shop_cash_description": "Kuna teie tellimus saabus hilja, on teil õigus saada ostusummat {{amount}} .",
+            "learn_more_button_label": "Lisateave",
+            "claim_shop_cash_button_label": "Nõua poe sularaha",
+            "view_balance_in_shop_button_label": "Vaata saldot poes",
+            "scan_to_claim_shop_cash_label": "Skanneeri, et saada {{amount}} Osta sularaha"
+          }
+        },
+        "delivery_promise": {
+          "promise_line": {
+            "single_brand_label": "Kohaletoimetamine tagatud",
+            "mixed_brands_label": "Kohaletoimetamine garanteeritud",
+            "not_delivered_by_label": "Ei ole kohale toimetatud hiljemalt {{date}}",
+            "modal_accessibility_button_label": "Tarne lubaduse üksikasjad"
+          },
+          "claim_shop_cash_cta": {
+            "has_shop_app_label": "Nõua oma poe sularaha",
+            "no_shop_app_label": "{{appDownloadLink}} et saada Shop Cash'i",
+            "download_shop_app_label": "Laadi alla pood"
+          },
+          "details_modal": {
+            "title": "Kohaletoimetamine tagatud",
+            "modal_accessiblity_label": "Tarne lubaduse üksikasjad",
+            "delivery_guarantee_label": "Tarne garantii",
+            "delivery_by_label": "Tarneaeg kuni {{date}}",
+            "delivery_guaranteed_by_label": "Kohaletoimetamine garanteeritud hiljemalt {{date}}",
+            "shop_cash_claim": {
+              "may_be_eligible_label": "Shop Promise garanteerib kiire ja usaldusväärse kohaletoimetamise. Kui teie tellimus saabub hilja, saate Shop Cashi.",
+              "may_be_eligible_not_authorized_label": "Teil võib olla õigus saada osturaha, kuna see tellimus saabus hilja. Lisateabe vaatamiseks logige sisse.",
+              "redeemed_label": "Olete juba Shop Cashi välja nõudnud, kuna see tellimus saabus hilja."
+            }
+          }
+        }
       }
     }
   },
