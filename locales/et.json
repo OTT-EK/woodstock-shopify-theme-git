@@ -13,5 +13,249 @@
     "language_label": "Keel",
     "update_language": "Uuenda keel",
     "update_country": "Uuenda riik"
+  },
+  "shopify": {
+    "sentence": {
+      "two_words_connector": " ja ",
+      "last_word_connector": "ja "
+    },
+    "checkout": {
+      "address_management": {
+        "confirm_address_deletion": "Kas olete kindel, et soovite aadressi {{address}} kustutada?"
+      },
+      "general": {
+        "page_title": "Kassasse",
+        "error_page_title": "Viga",
+        "skip_to_content": "Jäta sisukord vahele",
+        "breadcrumb": "Leivapuru",
+        "continue_button_label": "Jätka",
+        "complete_purchase_button_label": "Täida tellimus",
+        "pay_now_button_label": "Maksa kohe",
+        "authenticate_purchase_button_label": "Makse autentimine",
+        "edit_link_label": "Redigeeri",
+        "all_rights_reserved": "Kõik õigused kaitstud %{shop_name}",
+        "print_policies_link_label": "Prindi",
+        "cart": "Ostukorv",
+        "close_modal_label": "Sule",
+        "close_notice_label": "Sule",
+        "expand_notice_label": "Vaata lähemalt",
+        "continue_to_shipping_method": "Jätka saatmisega",
+        "continue_to_payment_method": "Jätka maksmisega",
+        "continue_to_review": "Vaata tellimus üle",
+        "back_to_cart": "Tagasi ostukorvi",
+        "back_to_contact_information": "Tagasi teabe juurde",
+        "back_to_shipping_method": "Tagasi saatmisse",
+        "back_to_payment_method": "Tagasi makse juurde",
+        "choose_shipping_method": "Valige saatmisviis",
+        "choose_payment_method": "Valige makseviis",
+        "choose_billing_address": "Valige arveldusaadress",
+        "contact_us_html": "Lisateabe saamiseks võtke meiega ühendust",
+        "autocomplete_title": "Soovitused",
+        "autocomplete_single_item": "1 toode saadaval",
+        "autocomplete_multi_item": "{{number}} eset saadaval",
+        "autocomplete_close": "Sule soovitused",
+        "forwarding_indicator": {
+          "new_window": "Avaneb uues aknas.",
+          "external": "Avab välise veebisaidi.",
+          "external_and_new_window": "Avab välise veebisaidi uues aknas."
+        },
+        "checkout_context": {
+          "step_one": "%{shop_name} - Kassasse"
+        },
+        "tooltip_accessibility_label": "Lisateave",
+        "qr_code": "QR-kood",
+        "errors": {
+          "only_empty_terms_accepted": "See poliitika aktsepteerib ainult tühje termineid.",
+          "session_identifier_not_unique_error": "Teie tellimusega läks midagi valesti, proovige uuesti kassasse minna.",
+          "line_item_limit_reached": "Reaüksuste maksimaalne arv on saavutatud.",
+          "session_is_already_finished": "See kassasseanss on juba lõpule viidud.",
+          "merchandise": {
+            "only_value_constraint": "Kauba sisestamisel on lubatud ainult täpsed väärtused.",
+            "merchandise_not_found": "Toodet ei leitud.",
+            "merchandise_variant_not_found": "Tootevarianti ei leitud.",
+            "merchandise_not_applicable": "Tootevarianti ei saa osta.",
+            "mixed_currencies": "Kassas on erinevate valuutadega reaartiklid.",
+            "bundle_products_not_supported_for_b2b": "Selle asukoha B2B-tellimustele ei saa komplekteeritud esemeid lisada.",
+            "gift_card_quantity_mismatch": "Kinkekaardikoodide määramisel peavad rea kaubaartikli kogus ja kinkekaardikoodide arv ühtima.",
+            "gift_card_not_supported": "Kinkekaarte selles kassas ei toetata.",
+            "gift_card_not_unique": "Kinkekaart koodiga {{code}} esineb selles kassas mitu korda. Koodid vormindatakse enne võrdlemist.",
+            "gift_card_used": "Kinkekaardi kood {{code}} on juba kinkekaardile määratud. Koodid vormindatakse enne võrdlemist.",
+            "gift_card_invalid": "Kinkekaardi kood {{code}} on kehtetu.",
+            "gift_card_code_changed": "Kinkekaardi kood {{proposed_code}} muudeti koodiks {{formatted_code}} et see vastaks vormindusreeglitele.",
+            "gift_card_with_attributes_not_supported": "Kohandatud atribuutidega kinkekaarte selles kassas ei toetata.",
+            "gift_card_with_components_not_supported": "Selle kassas ei toetata komponentidega kinkekaarte.",
+            "selling_plan_mismatch": "Tellimus on uuendatud.",
+            "selling_plan_not_supported": "Tellimusi ei toetata.",
+            "selling_plan_not_supported_b2b": "B2B-makse puhul tellimusi ei toetata.",
+            "price_mismatch": "Selle kauba eelnevalt pakutud hind oli kehtetu ja seda on uuendatud.",
+            "inventory_not_found": "Selle kauba kohta ei leitud laoseisu.",
+            "product_not_published": "Toodet ei avaldata.",
+            "product_not_published_in_buyer_location": "Toodet ei avaldata ostja asukohas.",
+            "duplicated_stable_id": "Sellel kaubasarjal on sama tall-ID kui teisel sarjal.",
+            "minimum_quantity_not_met": "Mõne eseme kogus ei vasta miinimumnõudele.",
+            "maximum_quantity_exceeded": "Mõne eseme kogus ületab lubatud maksimumi.",
+            "quantity_increment_not_met": "Mõne kauba kogus ei vasta tellimuse piirangutele.",
+            "quantity_rules_not_met": "Mõne kauba kogus ei vasta tellimuse piirangutele.",
+            "bundle_requires_components": "Sellel komplektil puuduvad komponendid.",
+            "title_too_long": "Kauba pealkiri on liiga pikk.",
+            "title_empty": "Kauba pealkiri on tühi."
+          },
+          "buyer_identity": {
+            "business_customer_does_not_match_company": "Ettevõtte kontaktil puudub juurdepääs ettevõttele.",
+            "customer_account_required": "Jätkamiseks peab klient sisse logima.",
+            "company_location_required": "Jätkamiseks peab klient valima ettevõtte asukoha.",
+            "company_purchase_permission_required": "Kliendil puudub luba ettevõtte tellimuste esitamiseks.",
+            "personal_order_not_allowed": "Isiklikud tellimused sellesse poodi ei ole lubatud.",
+            "lost_access_to_company": "Klient kaotas juurdepääsu igale ettevõttele.",
+            "contact_info_does_not_match_customer_account": "Määratud kliendi andmed peavad vastama sisselogitud kliendikonto andmetele.",
+            "phone_number_does_not_match_expected_pattern": "Määratud telefoninumber ei vasta oodatud mustrile.",
+            "email_required": "Tellimuse kaudu kauba ostmisel on vaja e-posti aadressi.",
+            "email_domain_is_invalid": "Seda määratud domeeni ei saa lahendada.",
+            "missing_contact_method": "Puudub kehtiv kontaktmeetod.",
+            "checkout_completion_target_is_missing": "Kassasse jõudmise sihtmärk puudub.",
+            "invalid_customer_profile": "Esitati kehtetu kliendiprofiil.",
+            "customer_profile_access_restricted": "Kassal pole kliendiprofiilile juurdepääsu õigust.",
+            "checkout_completion_target_is_invalid_proc": "Kehtetu kassasse jõudmise eesmärk.",
+            "buyer_identity_presentment_currency_does_not_match": "Teie tellimuse töötlemisel tekkis probleem. Proovige mõne minuti pärast uuesti."
+          },
+          "delivery": {
+            "only_one_delivery_line_allowed": "Ostukorvil peab olema ainult üks tarnerida.",
+            "wrong_number_of_delivery_lines": "Iga kaubagrupi jaoks tuleb määrata tarneliin.",
+            "external_delivery_promise_error": "Välise edastuslubaduse toomise viga.",
+            "options_instructions_invalid": "Määratud juhised ei vasta oodatud mustrile.",
+            "destination_address_required": "Jätkamiseks on vaja sihtkoha aadressi.",
+            "pickup_points_unavailable": "Pealevõtupunktid pole hetkel saadaval.",
+            "local_pickup_delivery_line_detail_changed": "Jätkamiseks tuleb muuta praegust kohalikku kättetoimetamise strateegiat.",
+            "local_pickup_no_delivery_strategy_available": "Kohalikku kättetoimetamise strateegiat ei leitud.",
+            "origin_location_id_required": "JAEMÜÜGI kättetoimetamismeetodi taotlemisel on nõutav päritolukoha ID.",
+            "invalid_origin_location_id": "Alguskoha ID-le vastavat asukohta ei leitud.",
+            "origin_location_id_not_allowed": "Taotletud kättetoimetamisviisid ei toeta lähtekoha ID-d."
+          },
+          "captcha": {
+            "token_invalid": "Esitatud captcha token oli kehtetu. Jätkamiseks sisestage uus captcha.",
+            "token_not_valid_for_session": "Esitatud captchat ei saa selle ostu sooritamisel kasutada."
+          },
+          "fx_reconciliation_override": {
+            "shop_currency_mismatch": "Saadud summa peab olema poe valuutas."
+          },
+          "checkout_source": {
+            "revoked": "See kassa pole enam saadaval."
+          }
+        },
+        "full_price": "Täishind:",
+        "title": "Kassasse - {{shopName}}",
+        "full_title": "{{pageTitle}} - {{shopName}} - Kassasse",
+        "loading": "Laadimine…",
+        "loading_title": "Kassasse - {{shopName}}",
+        "google_map_title": "Google'i kaart",
+        "confirm_order_button_label": "Kinnita tellimus",
+        "submit_order_button_label": "Esita tellimus",
+        "submit_for_review_button_label": "Esita ülevaatamiseks",
+        "submit_for_review_notice_label": "Makse ei kuulu tasumisele enne, kui teie tellimus on üle vaadatud",
+        "continue_to_payment_plans_button_label": "Jätka makseplaanide juurde",
+        "back_button_label": "Tagasi",
+        "choose_delivery_strategy": "Valige kättetoimetamisviis",
+        "autocomplete_zero_item": "Pole ühtegi eset saadaval",
+        "autocomplete_powered_by_google": "{{brandName}} poolt loodud",
+        "submit": "Esita",
+        "processing": "Töötlemine…",
+        "stepper": {
+          "increase": "Suurenda {{type}}",
+          "decrease": "Vähenda {{type}}",
+          "minimum_reached": "Minimaalne summa {{value}} on saavutatud",
+          "maximum_reached": "Maksimaalne summa {{value}} on saavutatud"
+        },
+        "remove_item": "Eemalda %{label}",
+        "remove_tag": "Eemalda silt",
+        "dates": {
+          "weekdays": {
+            "monday": "Esmaspäev",
+            "tuesday": "Teisipäev",
+            "wednesday": "Kolmapäev",
+            "thursday": "Neljapäev",
+            "friday": "Reede",
+            "saturday": "Laupäev",
+            "sunday": "Pühapäev"
+          },
+          "weekdays_abbreviation": {
+            "tuesday": "Teisipäev",
+            "wednesday": "Meie",
+            "thursday": "N",
+            "friday": "R",
+            "sunday": "P"
+          },
+          "months": {
+            "january": "Jaanuar",
+            "february": "Veebruar",
+            "march": "Märts",
+            "april": "Aprill",
+            "may": "Mai",
+            "june": "Juuni",
+            "july": "Juuli",
+            "october": "Oktoober",
+            "december": "Detsember"
+          }
+        },
+        "datepicker": {
+          "show_previous_month": "Näita eelmist kuud, {{month}} {{year}}",
+          "show_next_month": "Näita järgmist kuud, {{month}} {{year}}",
+          "range_start": "Vahemiku algus",
+          "in_range": "Leviala piires",
+          "range_end": "Vahemiku lõpp"
+        },
+        "map": {
+          "cluster_title": {
+            "one": "{{number}} markeri kobar",
+            "other": "{{number}} markerite kobar"
+          }
+        },
+        "sheet": {
+          "expand": "Laienda"
+        },
+        "dropzone": {
+          "add_file": "Lisa fail",
+          "invalid_file_type": "Failitüüpi ei toetata",
+          "dragged_over": "Lohista fail üleslaadimiseks"
+        }
+      },
+      "contact": {
+        "title": "Teave",
+        "address_title": "Aadress",
+        "shipping_used_as_billing_notice": "Seda aadressi kasutatakse ka selle tellimuse arveldusaadressina.",
+        "delivery_option_title": "Tarneviis",
+        "contact_method_title": "Kontakt",
+        "email_label": "E-post",
+        "email_placeholder": "E-post",
+        "email_or_phone_label": "E-post või mobiiltelefoni number",
+        "email_or_phone_placeholder": "E-post või mobiiltelefoni number",
+        "stored_addresses_label": "Salvestatud aadressid",
+        "available_addresses_label": "Saadaval olevad aadressid",
+        "new_address_label": "Kasutage uut aadressi",
+        "first_name_label": "Eesnimi",
+        "optional_first_name_label": "Eesnimi (valikuline)",
+        "last_name_label": "Perekonnanimi",
+        "company_label": "Ettevõte",
+        "company_attention_label": "Ettevõte/Tähelepanu",
+        "optional_company_attention_label": "Ettevõte/Tähelepanu (valikuline)",
+        "optional_company_label": "Ettevõte (valikuline)",
+        "address1_label": "Aadress",
+        "address2_label": "Korter, sviit jne.",
+        "optional_address2_label": "Korter, sviit jne (valikuline)",
+        "city_label": "Linn",
+        "country_label": "Riik/regioon",
+        "country_code": "Riigi/regiooni kood",
+        "province_label": "Provints",
+        "province_placeholder": "Provints",
+        "county_label": "Maakond",
+        "county_placeholder": "Maakond",
+        "state_label": "Riik",
+        "state_placeholder": "Riik",
+        "region_label": "Piirkond",
+        "region_placeholder": "Piirkond",
+        "region_none": "Pole valitud",
+        "prefecture_label": "Prefektuur",
+        "prefecture_placeholder": "Prefektuur"
+      }
+    }
   }
 }
