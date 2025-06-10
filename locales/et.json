@@ -1865,8 +1865,75 @@
         "summary": "Saatmine",
         "free": "Tasuta",
         "free_shipping_discount": "Tasuta saatmine",
-        "one_time": "Ühekordne saatmine"
-      }
+        "one_time": "Ühekordne saatmine",
+        "subscription": "Tellimuse saatmine"
+      },
+      "pickup": {
+        "pickup": "Pealevõtmine",
+        "pickup_location": "Pealevõtmiskoht",
+        "pickup_point": "Pealevõtmispunkt"
+      },
+      "show_items": "Kuva üksused",
+      "show_order_summary": "Näita tellimuse kokkuvõtet",
+      "hide_order_summary": "Peida tellimuse kokkuvõte",
+      "subtitle": "Kinnitatud {{date}}",
+      "subtotal": "Vahesumma",
+      "summary_list_title_accessibility_label": "Telli esemeid",
+      "summary_title": "Tellimuse kokkuvõte",
+      "summary_totals_title_accessibility_label": "Tellimuste kogusummad",
+      "shop_order_tracking": {
+        "download_shop_to_track": "Paki jälgimiseks laadige alla pood",
+        "track_order_with_shop": "Jälgi tellimust Shopis",
+        "title_header": "Skannige oma telefoniga",
+        "real_time_delivery_updates": "Pood saadab sulle reaalajas kohaletoimetamise värskendusi, kui sinu tellimus on teele pandud."
+      },
+      "edit_summary": {
+        "added": "Lisatud",
+        "added_with_quantity": "Lisatud {{quantity}}",
+        "removed": "Eemaldatud",
+        "removed_with_quantity": "Eemaldatud {{quantity}}",
+        "updated_at": "Teie tellimust uuendati {{date}}",
+        "returned": "Tagastatud",
+        "returned_with_quantities": "Tagastatud on {{delta}} kokku {{total}}",
+        "removed_with_quantities": "Eemaldas {{delta}} kokku {{total}}",
+        "return_line_item_removed": "Eemaldatud tagastusest",
+        "return_line_item_removed_with_quantities": "Tagastusloendist eemaldati {{delta}}"
+      },
+      "shop_pay": {
+        "order_completed_with": "Tellimus täidetud",
+        "learn_more": "Lisateave"
+      },
+      "taxes": "Maksud",
+      "taxes_included": "Sealhulgas {{amount}} maksudena",
+      "duties_and_taxes_included": "Kogusumma sisaldab tollimakse ja makse. Kohaletoimetamise eest lisatasusid ei võeta.",
+      "duties": "Kohustused",
+      "ok_duties_tooltip": "See tellimus saadetakse teisest riigist, seega on teie tellimuse kogusummale lisatud tollimaksud.",
+      "error_duties_tooltip": "See tellimus saadetakse teisest riigist, seega võidakse kohaletoimetamisel arvestada tollimakse ja makse.",
+      "zero_duties_tooltip": "See tellimus saadetakse teisest riigist. Selle väärtusega tellimustelt tollimakse ei võeta.",
+      "tip": "Jootraha",
+      "title": "Tellimus {{name}}",
+      "total": "Kokku",
+      "unit_price": "{{price}} /tk",
+      "pagination": {
+        "load_more": "Laadi rohkem",
+        "load_more_accessibility_label": "Laadi rohkem üksusi",
+        "loading_accessibility_label": "Esemete laadimine"
+      },
+      "login_to_view_all_order_details": "Kõikide tellimuse üksikasjade vaatamiseks logige sisse.",
+      "log_in": "Logi sisse",
+      "logged_in_account_no_permission_to_order": "Oled sisse logitud kui {{email}} . Sellel kontol pole selle tellimuse haldamiseks luba.",
+      "log_in_to_a_different_account": "Logi sisse teisele kontole",
+      "fees": {
+        "restocking_fee": "Varude täiendamise tasu",
+        "return_shipping_fee": "Tagastus saatmine"
+      },
+      "vat_invoices": {
+        "title": "Käibemaksuarved"
+      },
+      "link_sent": "Link saadetud",
+      "cash_rounding": "Sularaha ümardamine",
+      "adjusted_payment": "Korrigeeritud makse",
+      "adjusted_total": "Korrigeeritud kogusumma"
     },
     "B2B": {
       "draft_order_details": {
@@ -2141,7 +2208,62 @@
       "save": "Salvesta",
       "save_accessibility_label": "Salvesta aadress {{address}}",
       "section_title_accessibility_label": "Lisa aadress",
-      "update_success_notification": "Aadress uuendatud"
+      "update_success_notification": "Aadress uuendatud",
+      "attention": "Tähelepanu",
+      "attention_company": "Ettevõte/tähelepanu",
+      "attention_help_text": "Isiku või osakonna nimi",
+      "auto_complete_close_accessibility_label": "Sule soovitused",
+      "auto_complete_title": "Soovitused",
+      "billing_address": "Kasuta arveldusaadressina",
+      "cancel": "Tühista",
+      "cancel_accessibility_label": "Tühista aadressi {{address}} muutmine",
+      "creation_success_notification": "Aadress lisatud",
+      "default_address": "See on minu vaike-aadress",
+      "default_address_creation_success_notification": "Vaikimisi aadress lisatud"
+    },
+    "addresses": {
+      "add_button": "Lisa aadress",
+      "add_button_text": "Lisa",
+      "add_button_accessibility_label": "Lisa aadress",
+      "back_button": "Tagasi",
+      "back_button_accessibility_label": "Tagasi aadressi {{address}} muutmise juurde",
+      "add_address_banner": "Lisage kassas kasutamiseks aadressid",
+      "no_addresses_banner": "Aadresse pole lisatud",
+      "address_deleted_notification": "Aadress kustutatud",
+      "cancel_adding_address_accessibility_label": "Tühista aadressi lisamine",
+      "cancel_deletion_button": "Tühista",
+      "cancel_deletion_button_accessibility_label": "Tühista {{address}} kustutamine",
+      "default_address": {
+        "title": "Vaikimisi aadress",
+        "title_accessibility_label": "Vaikimisi aadress: {{address}}"
+      },
+      "delete_button": "Kustuta",
+      "delete_button_accessibility_label": "Kustuta {{address}}",
+      "delete_confirmation_button": "Kustuta aadress",
+      "delete_confirmation_button_accessibility_label": "Kustuta {{address}}",
+      "delete_confirmation_message": "Kas kustutada aadress? Olemasolevaid tellimusi see ei mõjuta.",
+      "delete_confirmation_title": "Kustutada aadress?",
+      "delete_confirmation_description": "Olemasolevad tellimused jäävad kehtima.",
+      "edit_button": "Redigeeri",
+      "edit_button_accessibility_label": "Muuda {{address}}",
+      "edit_section_accessibility_label": "Muuda {{address}}",
+      "edit_modal_title": {
+        "default": "Muuda aadressi",
+        "billing": "Arveldusaadressi muutmine",
+        "shipping": "Muuda saatmisaadressi"
+      },
+      "loading_accessibility_message": "Aadressi laadimine",
+      "loading_addresses_accessibility_message": "Aadresside laadimine",
+      "loading_billing_accessibility_message": "Arveldusaadressi laadimine",
+      "loading_finished_accessibility_message": "Uus aadresside leht on laaditud",
+      "loading_shipping_accessibility_message": "Tarneaadressi laadimine",
+      "pagination": {
+        "load_more": "Laadi rohkem",
+        "load_more_accessibility_label": "Laadi rohkem aadresse"
+      },
+      "save_new_address_accessibility_label": "Salvesta aadress",
+      "title": "Aadressid",
+      "billing_address_dropdown_placeholder": "Arveldusaadress"
     }
   },
   "templates": {
