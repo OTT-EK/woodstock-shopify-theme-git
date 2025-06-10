@@ -1709,10 +1709,144 @@
             "shop_cash_claim": {
               "may_be_eligible_label": "Shop Promise garanteerib kiire ja usaldusväärse kohaletoimetamise. Kui teie tellimus saabub hilja, saate Shop Cashi.",
               "may_be_eligible_not_authorized_label": "Teil võib olla õigus saada osturaha, kuna see tellimus saabus hilja. Lisateabe vaatamiseks logige sisse.",
-              "redeemed_label": "Olete juba Shop Cashi välja nõudnud, kuna see tellimus saabus hilja."
+              "redeemed_label": "Olete juba Shop Cashi välja nõudnud, kuna see tellimus saabus hilja.",
+              "expired_label": "Selle tellimuse puhul ei saa esitada hilinenud kohaletoimetamise nõuet, kuna 30-päevane garantii on aegunud.",
+              "no_shop_cash_label": "Selle tellimuse eest ei saa hilinenud kohaletoimetamise nõude esitada, kuna selle eest ei tasutud Shop Pay kaudu.",
+              "no_longer_guaranteed_label": "Nendele toodetele ei kehti enam tarnegarantii.",
+              "claim_shop_cash_title": "Skanneeri, et saada Shop Cashis {{amount}}",
+              "claim_shop_cash_description": "Saate oma Shop Cashi kasutada tulevaste ostude puhul Shopi rakenduses."
             }
           }
         }
+      },
+      "status_mark_as_delivered": "Märgi kohaletoimetatuks",
+      "fulfillment_status_title": "Täitmise staatus: {{status}}",
+      "buy_again": "Osta uuesti",
+      "buy_again_accessibility_label": "Osta uuesti tellimuse {{orderId}} alusel",
+      "manage": "Halda",
+      "manage_accessiblity_label": "Halda tellimust {{orderId}}"
+    },
+    "order_details": {
+      "shipment_timeline": {
+        "expand_events_label": "Näita üksikasju",
+        "expand_events_accessibility_label": "Kuva tellimuse saatmise üksikasjad",
+        "hide_events_label": "Peida üksikasjad",
+        "hide_events_accessibility_label": "Peida tellimuse saatmise üksikasjad"
+      },
+      "addresses_section_title": "Arveldamine ja saatmine",
+      "order_details": "Tellimuse üksikasjad",
+      "order_details_skeleton_accessibility_label": "Kõikide tellimuse üksikasjade vaatamiseks logige sisse.",
+      "billing_address": "Arveldusaadress",
+      "card_ending_with": "lõpeb numbritega {{lastDigits}}",
+      "contact": "Kontakt",
+      "contact_information": "Kontaktandmed",
+      "company": "Ettevõte",
+      "fully_refunded_label": "TAGASTATUD",
+      "group_title_label": "Osa grupist: {{groupTitle}}",
+      "grouped_view_components": {
+        "expand_line_items": "Näita {{count}} eset",
+        "collapse_line_items": "Peida {{count}} üksust",
+        "line_item_summary_list_accessibility_label": "Tooted {{productTitle}} komplektis"
+      },
+      "discount": "Allahindlus",
+      "hide_items": "Peida üksused",
+      "loading": "Tellimuse üksikasjade laadimine",
+      "loading_finished_accessibility_message": "Tellimuse üksikasjad on laaditud",
+      "location": "Asukoht",
+      "image_gallery": {
+        "next": "Näita järgmisi üksusi",
+        "previous": "Kuva eelmised üksused",
+        "load_more_items": {
+          "one": "Laadi veel {{count}} eset",
+          "other": "Laadi veel {{count}} eset"
+        }
+      },
+      "mobile_summary_toggle_button": {
+        "open": "Näita tellimuse kokkuvõtet",
+        "closed": "Peida tellimuse kokkuvõte"
+      },
+      "no_data": "Puudub",
+      "no_data_provided_accessibility_label": "{{fieldName}} on tühi",
+      "not_applicable": "Pole kohaldatav",
+      "paid_amount": "Tasuline",
+      "partially_refunded_label": "OSALISELT TAGASTATUD",
+      "payment": {
+        "status_in_review": "Maksetähtaeg pärast ülevaatamist",
+        "status_unpaid": "Maksetähtaeg on {{date}}",
+        "title": "Makse",
+        "payment_type": {
+          "gift_card": "Kinkekaart",
+          "store_credit": "Poe krediit",
+          "money_order": "Rahaülekanne",
+          "cash_on_delivery": "Sularaha kättesaamisel (COD)",
+          "bank_deposit": "Pangahoius",
+          "manual": "Kasutusjuhend"
+        },
+        "card_payment_details": "lõppedes numbritega {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "lõppedes numbritega {{lastDigits}} - {{formattedTransactionAmount}}",
+        "store_credit_payment_details": "Poe krediit - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Makstud Shop Pay osamaksetega",
+          "view_schedule": "Vaata ajakava"
+        },
+        "manual_payment_methods": {
+          "money_order": "Rahaülekanne - {{formattedTransactionAmount}}",
+          "cash_on_delivery": "Sularaha kättesaamisel (COD) - {{formattedTransactionAmount}}",
+          "bank_deposit": "Pangakorraldus - {{formattedTransactionAmount}}",
+          "manual": "Käsitsi - {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "show_all": "Näita kõiki",
+          "show_less": "Näita vähem",
+          "details": "Detailid",
+          "payment_details": "Makseandmed"
+        },
+        "emv_details": {
+          "auth": "AUTORISEERIMINE:",
+          "aid": "ABI:",
+          "source": "ALLIKAS:"
+        }
+      },
+      "paid_with_shop_pay_installments_card": {
+        "paid_with_shop_pay_installments": "Makstud Shop Pay osamaksetega",
+        "description": "Püsi oma maksegraafikuga kursis Shopi rakenduse meeldetuletuste abil.",
+        "payment_reminders_button": "Saa maksemeeldetuletusi",
+        "desktop_qr_code_content": {
+          "title": "Meeldetuletuste otsimine",
+          "description": "Saa Shopiga meeldetuletusi oma osamaksete kohta."
+        }
+      },
+      "refunded_amount": "Tagasimakstud",
+      "request_return_failed": "Teie taotluse töötlemisel tekkis probleem. Palun proovige uuesti.",
+      "login_card": {
+        "resend_link_and_login": "Tellimuse üksikasjade vaatamiseks logige sisse või saatke uus link kassas kasutatud e-posti aadressile või telefoninumbrile.",
+        "resend_link_only": "Tellimuse üksikasjade vaatamiseks saatke uus link kassas kasutatud e-posti aadressile või telefoninumbrile.",
+        "log_in": "Logi sisse",
+        "resend_link": "Saada uus link",
+        "link_expired": "Link on aegunud"
+      },
+      "remaining_amount": "Järelejäänud",
+      "marketing_section_title": "Uudised ja pakkumised",
+      "marketing_description": "Saate turunduskirju. Saate igal ajal tellimuse tühistada.",
+      "marketing_checkbox_label": "Saatke mulle uudiseid ja pakkumisi e-postiga",
+      "marketing_checkmark_label": "Olete registreerunud uudiste ja pakkumiste saamiseks e-posti teel",
+      "returns": {
+        "expand_events_label": "Näita üksikasju",
+        "hide_events_label": "Peida üksikasjad",
+        "ineligible_return_message": "Selles tellimuses olevad tooted ei ole tagastamiseks kõlblikud.",
+        "ineligible_return_message_when_returned": "Selle tellimuse täiendavaid esemeid ei saa tagastada.",
+        "print_shipping_label": "Prindi saatmissilt",
+        "return_and_refund_modal_header": "Tagasimaksepoliitika",
+        "tracking_number": "Jälgimisnumber:"
+      },
+      "shipping": {
+        "address": "Saatmisaadress",
+        "address_map_marker": "Saatmisaadress",
+        "method": "Saatmisviis",
+        "summary": "Saatmine",
+        "free": "Tasuta",
+        "free_shipping_discount": "Tasuta saatmine",
+        "one_time": "Ühekordne saatmine"
       }
     }
   },
