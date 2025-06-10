@@ -1143,7 +1143,53 @@
       "dropzoneDraggedOver": "Lohista fail üleslaadimiseks"
     },
     "profile_preview_bar": {
-      "customize_button": "Kohanda"
+      "customize_button": "Kohanda",
+      "hide_bar": "Peida riba",
+      "navigate_to_admin": "Navigeeri administraatori juurde",
+      "close_preview": "Sule eelvaade",
+      "previewing": "Eelvaadet vaatate:",
+      "saved_at": "Salvestatud {{date}} kell {{time}}",
+      "viewing": "Sa vaatad:",
+      "not_available": "Profiiliandmed pole saadaval",
+      "actions_button": "Toimingud"
+    },
+    "active_inspector": {
+      "extension": {
+        "select": "Valige laiendus nimega {{extensionName}}",
+        "unselect": "Tühjendage laienduse {{extensionName}} valik",
+        "move_down": "Liiguta laiendus järgmisse asendisse",
+        "move_up": "Liiguta laiendus eelmisele positsioonile",
+        "remove": "Eemalda laiendus",
+        "move_down_tooltip": "Liigu järgmisele positsioonile",
+        "move_up_tooltip": "Liigu eelmisele positsioonile",
+        "remove_tooltip": "Eemalda"
+      }
+    },
+    "editor": {
+      "link_new_tab_confirmation": "Seda linki ei saa redaktoris avada. See avatakse uues aknas ( {{resolved_to_link}} ). Jätkamiseks klõpsake nuppu OK."
+    },
+    "settings": {
+      "title": "Seaded",
+      "loading_accessibility_message": "Seadete lehe laadimine",
+      "log_out_everywhere": {
+        "title": "Logi välja kõikjal",
+        "description": "Kui olete seadme kaotanud või teil on turvaprobleeme, logige oma konto turvalisuse tagamiseks kõikjalt välja.",
+        "button": "Logi välja kõikjal",
+        "warning_message": "Teid logitakse välja ka sellest seadmest."
+      }
+    },
+    "shop_ads": {
+      "title": "Eksklusiivsed pakkumised poest",
+      "subtitle": "Saadaval piiratud aja jooksul",
+      "button": "Avasta poes",
+      "previous_button": "Eelmine",
+      "next_button": "Järgmine"
+    },
+    "knowledge_base": {
+      "self_serve_returns": {
+        "enabled": "Kliendid saavad tagastusi ise taotleda ja hallata.",
+        "disabled": "Tagastuse taotlemiseks peavad kliendid kaupmehega ühendust võtma."
+      }
     }
   },
   "templates": {
@@ -1277,6 +1323,118 @@
       "tracking_number": "Jälgimisnumber",
       "subtotal": "Vahesumma",
       "total_duties": "Kohustused"
+    }
+  },
+  "sections": {
+    "header": {
+      "announcement": "Teadaanne",
+      "menu": "Menüü",
+      "cart_count": {
+        "one": "{{ count }} üksus",
+        "other": "{{ count }} eset"
+      },
+      "breadcrumbs": {
+        "home": "Avaleht"
+      },
+      "go_to_link": "Mine pealkirja juurde {{ title }}"
+    },
+    "cart": {
+      "title": "Teie ostukorv",
+      "caption": "Ostukorvi üksused",
+      "remove_title": "Eemalda {{ title }}",
+      "subtotal": "Vahesumma",
+      "new_subtotal": "Uus vahesumma",
+      "note": "Telli erijuhised",
+      "note_drawer": "Märkus",
+      "note_label": "Lisa tellimuse märkus",
+      "apply": "Kandideeri",
+      "shipping": "Saatmine",
+      "checkout": "Kassasse",
+      "view_cart": "Vaata ostukorvi",
+      "empty": "Teie ostukorv on tühi",
+      "cart_error": "Ostukorvi uuendamisel ilmnes viga. Palun proovige uuesti.",
+      "cart_quantity_error_html": "Ostukorvi saab seda toodet lisada ainult {{ quantity }} ühikut.",
+      "cart_success": "Toode on ostukorvi lisatud.",
+      "taxes_and_shipping_policy_at_checkout_html": "Maksud ja <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">saatmiskulud</a> arvutatakse kassas",
+      "taxes_included_but_shipping_at_checkout": "Käibemaks on hinna sees ja saatmiskulud arvutatakse kassas",
+      "taxes_included_and_shipping_policy_html": "Käibemaks on hinna sees. <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">Saatmiskulud</a> arvutatakse kassas.",
+      "taxes_and_shipping_at_checkout": "Maksud ja saatmiskulud arvutatakse kassas",
+      "headings": {
+        "product": "Toode",
+        "price": "Hind",
+        "total": "Kokku",
+        "quantity": "Kogus",
+        "image": "Toote pilt"
+      },
+      "update": "Värskendus",
+      "login": {
+        "title": "Kas teil on konto?",
+        "paragraph_html": "Kiiremaks kassasse pääsemiseks <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\" class=\"link underlined-link\">logi sisse</a> ."
+      },
+      "cart_totals": "Ostukorvi kogusumma"
+    },
+    "footer": {
+      "payment": "Makseviisid"
+    },
+    "featured_blog": {
+      "view_all": "Kuva kõik",
+      "onboarding_title": "Blogipostitus",
+      "onboarding_content": "Andke oma klientidele oma ajaveebipostituse kokkuvõte"
+    },
+    "featured_collection": {
+      "view_all": "Kuva kõik",
+      "view_all_label": "Vaata kõiki tooteid kollektsioonis {{ collection_name }}",
+      "slider": "Liuguri"
+    },
+    "gallery": {
+      "list": "Galerii üksused",
+      "item_id_label": "Galerii üksuse nr {{ item_number }}"
+    },
+    "collection_list": {
+      "view_all": "Kuva kõik"
+    },
+    "collection_banner": {
+      "load_collection_icon": "Kollektsioon ikooniga",
+      "slider": "Liuguri"
+    },
+    "collection_template": {
+      "empty": "Tooteid ei leitud",
+      "title": "Kollektsioon",
+      "use_fewer_filters_html": "Kasutage vähem filtreid või <a class=\"&lt;span class='notranslate'&gt;{{ class }}&lt;/span&gt;\" href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">eemaldage kõik</a>"
+    },
+    "video": {
+      "load_video": "Laadi video: {{ description }}"
+    },
+    "slideshow": {
+      "load_slide": "Laadi slaid",
+      "previous_slideshow": "Eelmine slaid",
+      "next_slideshow": "Järgmine slaid",
+      "pause_slideshow": "Peata slaidiseanss",
+      "play_slideshow": "Esita slaidiseanss",
+      "carousel": "Karussell",
+      "slide": "Slaid"
+    },
+    "page": {
+      "title": "Lehe pealkiri"
+    },
+    "background-color-swatches": {
+      "preview_title": "Värviproovide eelvaade",
+      "preview_description": "See eelvaade on nähtav ainult teemaredaktori lehel, et aidata teil värvikoode hõlpsalt lisada/muuta/eemaldada. Poe aknas seda eelvaadet ei kuvata, käivitatakse ainult värvikoodid.",
+      "group_item": "Grupi nr {{ index }}"
+    },
+    "google_maps": {
+      "coordinate_empty_error_html": "Palun sisesta oma koordinaadid. <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">Siit saad teada, kuidas oma aadressi koordinaate hankida</a> .",
+      "api_key_empty_error_html": "Palun sisesta oma API-võti. Veendu, et võti on lisatud Maps Embed API-sse. <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">Vaata, kuidas API-võtit hankida</a> ."
+    }
+  },
+  "general": {
+    "password_page": {
+      "login_form_heading": "Sisene poodi parooliga:",
+      "login_password_button": "Sisesta parooliga",
+      "login_form_password_label": "Parool",
+      "login_form_password_placeholder": "Teie parool",
+      "login_form_error": "Vale parool!",
+      "login_form_submit": "Sisesta"
     }
   }
 }
