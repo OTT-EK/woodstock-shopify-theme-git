@@ -3215,14 +3215,116 @@
       "login_form_password_label": "Parool",
       "login_form_password_placeholder": "Teie parool",
       "login_form_error": "Vale parool!",
-      "login_form_submit": "Sisesta"
+      "login_form_submit": "Sisesta",
+      "admin_link_html": "Kas olete poe omanik? <a href=\"/admin\" class=\"link underlined-link\">Logige sisse siit</a>",
+      "powered_by_shopify_html": "Seda poodi haldab {{ shopify }}"
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "Jaga Facebookis",
+        "share_on_twitter": "Säutsu Twitteris",
+        "share_on_pinterest": "Pin Pinterestis",
+        "share_by_email": "Jaga e-posti teel"
+      },
+      "links": {
+        "youtube": "YouTube'i",
+        "linkedin": "LinkedIn"
+      }
+    },
+    "continue_shopping": "Jätka ostlemist",
+    "pagination": {
+      "label": "Lehekülgede arv",
+      "page": "Lehekülg {{ number }}",
+      "next": "Järgmine leht",
+      "previous": "Eelmine leht",
+      "load_more": "Laadi rohkem",
+      "load_previous_items": "Laadi eelmised üksused"
+    },
+    "search": {
+      "search": "Otsi",
+      "clear": "Selge",
+      "view_all_results": "Kuva kõik tulemused",
+      "type": {
+        "products": "Tooted",
+        "articles": "Artiklid",
+        "collections": "Kollektsioonid",
+        "pages": "Lehed",
+        "suggestions": "Soovitused"
+      }
+    },
+    "cart": {
+      "view": "Vaata minu ostukorvi ( {{ count }} )",
+      "item_added": "Toode on ostukorvi lisatud"
+    },
+    "share": {
+      "close": "Sule jagamine",
+      "copy_to_clipboard": "Kopeeri link",
+      "success_message": "Link kopeeriti lõikelauale"
+    },
+    "slider": {
+      "of": "kohta",
+      "next_slide": "Libista paremale",
+      "previous_slide": "Libista vasakule",
+      "name": "Liuguri"
+    },
+    "shipping_calculator": {
+      "heading": "Saatmiskulude kalkulaator",
+      "errors_heading": "Vead",
+      "carriers": "Saadaval olevad kullerid",
+      "button": "Arvuta",
+      "do_not_ship": "Me ei saada sellesse sihtkohta kaupa.",
+      "delivery_date_one": "{{ count }} tööpäev",
+      "delivery_date_many": "{{ count }} tööpäeva",
+      "delivery_date_range": "{{ minimum }} kuni {{ maximum }} tööpäeva"
+    },
+    "countdown": {
+      "days": "Päevad",
+      "hours": "Tunnid",
+      "minutes": "Minutid",
+      "seconds": "Sekundid",
+      "error_msg": "Vale süntaks. Palun sisestage kuupäev järgmise süntaksiga: aaaa-kk-pp või aaaa-kk-pp hh:ii. Näide: 2023-01-15 või 2023-01-15 23:00.",
+      "expired_msg": "Tagasiloenduri aeg on lõppenud."
+    },
+    "floating_bar": {
+      "recently_viewed": "Hiljuti vaadatud",
+      "recently_viewed_empty": "Hiljuti vaadatud tooteid pole.",
+      "recently_viewed_open": "Ava hiljuti vaadatud kast",
+      "back_to_top": "Tagasi üles"
+    },
+    "boolean": {
+      "true": "Jah",
+      "false": "Ei"
+    },
+    "gift_wrapping": {
+      "button_label": "Kinkepaber",
+      "checkbox_label_html": "Soovin neid tooteid kinkepakendis - {{ price }}",
+      "note_placeholder": "Lisa oma tellimusele isikupärastatud kinkekaart:",
+      "variant_picker_button": "Valige pakkepaber"
     }
   },
   "blogs": {
     "article": {
       "next": "Järgmine",
       "tags_all": "Kõik",
-      "continue": "Jätka"
+      "continue": "Jätka",
+      "blog": "Blogi",
+      "read_more_title": "Loe lähemalt: {{ title }}",
+      "comments": {
+        "one": "{{ count }} kommentaar",
+        "other": "{{ count }} kommentaari"
+      },
+      "author_html": "Postitas <strong>{{ author }}</strong>",
+      "moderated": "Pane tähele, et kommentaarid tuleb enne avaldamist kinnitada.",
+      "comment_form_title": "Jäta kommentaar",
+      "name": "Nimi",
+      "email": "E-post",
+      "message": "Kommentaar",
+      "post": "Postita kommentaar",
+      "back_to_blog": "Tagasi blogisse",
+      "share": "Jaga seda artiklit",
+      "success": "Teie kommentaar postitati edukalt! Aitäh!",
+      "success_moderated": "Teie kommentaar postitati edukalt. Avaldame selle varsti, kuna meie blogi modereeritakse.",
+      "previous": "Eelmine"
     }
   },
   "onboarding": {
@@ -3373,5 +3475,30 @@
       "send_on": "AAAA-KK-PP",
       "send_on_label": "Saada edasi (valikuline)"
     }
+  },
+  "newsletter": {
+    "label": "E-post",
+    "success": "Täname tellimuse eest",
+    "button_label": "Telli"
+  },
+  "accessibility": {
+    "skip_to_text": "Jäta sisukord vahele",
+    "skip_to_product_info": "Jäta tooteinfo vahele",
+    "skip_to_product_grid": "Jäta tootevõrk vahele",
+    "close": "Sule",
+    "unit_price_separator": "iga",
+    "vendor": "Müüja:",
+    "error": "Viga",
+    "refresh_page": "Valiku tegemine toob kaasa kogu lehe värskendamise.",
+    "link_messages": {
+      "new_window": "Avaneb uues aknas.",
+      "external": "Avab välise veebisaidi."
+    },
+    "loading": "Laadimine...",
+    "total_reviews": "arvustuste koguarv",
+    "star_reviews_info": "{{ rating_value }} tärni {{ rating_max }} tärnist",
+    "collapsible_content_title": "Kokkupandav sisu",
+    "complementary_products": "Täiendavad tooted",
+    "navigation_toggle": "Navigeerimislüliti kleepuvas päises"
   }
 }
