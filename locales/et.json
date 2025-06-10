@@ -3142,7 +3142,7 @@
       "password": "Parool",
       "password_confirm": "Kinnita parool",
       "submit": "Aktiveeri konto",
-      "cancel": "Keeldu kutse"
+      "cancel": "Keeldu kutsest"
     },
     "addresses": {
       "title": "Aadressid",
