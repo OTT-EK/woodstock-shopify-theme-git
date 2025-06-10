@@ -3255,7 +3255,7 @@
     },
     "cart": {
       "title": "Teie ostukorv",
-      "caption": "Ostukorvi üksused",
+      "caption": "Ostukorvi tooted",
       "remove_title": "Eemalda {{ title }}",
       "subtotal": "Vahesumma",
       "new_subtotal": "Uus vahesumma",
