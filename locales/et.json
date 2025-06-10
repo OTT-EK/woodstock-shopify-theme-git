@@ -254,7 +254,36 @@
         "region_placeholder": "Piirkond",
         "region_none": "Pole valitud",
         "prefecture_label": "Prefektuur",
-        "prefecture_placeholder": "Prefektuur"
+        "prefecture_placeholder": "Prefektuur",
+        "governorate_label": "Kubermangu",
+        "governorate_placeholder": "Kubermangu",
+        "emirate_label": "Emiraat",
+        "emirate_placeholder": "Emiraat",
+        "state_and_territory_label": "Osariik/territoorium",
+        "state_and_territory_placeholder": "Osariik/territoorium",
+        "phone_label": "Telefon",
+        "optional_phone_label": "Telefon (valikuline)",
+        "phone_placeholder": "Telefon",
+        "phone_tooltip": "Juhul kui meil on vaja teiega teie tellimuse osas ühendust võtta",
+        "zip_code_label": "Postiindeks",
+        "optional_zip_code_label": "Postiindeks (valikuline)",
+        "zip_code_placeholder": "Postiindeks",
+        "postal_code_label": "Postiindeks",
+        "optional_postal_code_label": "Postiindeks (valikuline)",
+        "postal_code_placeholder": "Postiindeks",
+        "postcode_label": "Postiindeks",
+        "optional_postcode_label": "Postiindeks (valikuline)",
+        "postcode_placeholder": "Postiindeks",
+        "pincode_label": "PIN-kood",
+        "optional_pincode_label": "PIN-kood (valikuline)",
+        "pincode_placeholder": "PIN-kood",
+        "civic_number_warning": "Lisage majanumber, kui teil see on",
+        "optional_last_name_label": "Perekonnanimi (valikuline)",
+        "different_shipping_address_label": "Saada teisele aadressile",
+        "different_shipping_address_text": "Kasutage selle tellimuse jaoks ühekordset aadressi",
+        "change_company_location_link_label": "Muuda ettevõtte asukohta",
+        "change_location_link_label": "Asukoha muutmine",
+        "ship_to_company": "Saada aadressile {{companyName}}"
       },
       "shipping": {
         "subscription_delivery_description": {
@@ -1229,7 +1258,8 @@
             "one": "See toode eemaldatakse teie ostukorvist, kuna teie aadressile pole saadaval ühtegi kättetoimetamisviisi.",
             "other": "Need tooted eemaldatakse teie ostukorvist, kuna teie aadressile pole saadaval ühtegi kättetoimetamisviisi."
           },
-          "status_column_header": "Kohaletoimetamist ei toimu"
+          "status_column_header": "Kohaletoimetamist ei toimu",
+          "title": "Kohaletoimetamine pole saadaval"
         },
         "price_update": {
           "title": "Hinnavärskendus",
@@ -1242,6 +1272,56 @@
         "out_of_stock": {
           "description": "Need tooted pole enam saadaval ja on teie ostukorvist eemaldatud.",
           "items_unavailable": "Mõned tooted pole enam saadaval ja on teie ostukorvist eemaldatud."
+        },
+        "page_title": "Laoseisuprobleemid",
+        "title": "Laost otsas",
+        "items_unavailable_notice": "Mõned tooted pole enam saadaval.",
+        "product_column_header": "Tooted",
+        "quantity_column_header": "Kogus",
+        "price_column_header": "Hind",
+        "status_column_header": "Staatus",
+        "removed_from_cart_notice": "Ostukorvist eemaldatud",
+        "sold_out_label": "Välja müüdud",
+        "reduced_label": "Vähendatud",
+        "reduced_with_quantity_label": "Ainult %{quantity_available} alles",
+        "remove_from_cart_button_label": "Eemalda ostukorvist",
+        "continue_shopping_button_label": "Jätka",
+        "go_back_to_cart_button_label": "Mine tagasi minu ostukorvi",
+        "remove": "Eemalda",
+        "return_to_store_label": "Tagasi poodi",
+        "continue_cta_label": "Jätka kassasse",
+        "item_label": {
+          "one": "{{count}} üksus",
+          "other": "{{count}} eset"
+        },
+        "empty_cart_label": "Teie ostukorv on tühi",
+        "quantity_update": {
+          "page_title": "Koguse uuendamine",
+          "title": "Koguse uuendamine",
+          "description": "Nende toodete saadaolevad kogused on muutunud ja on teie ostukorvis uuendatud."
+        },
+        "unpurchasable_product": {
+          "title": "Ostmatu toode",
+          "header": "Mõned tooted eemaldati teie ostukorvist",
+          "message": "Need tooted ei ole B2B tellimuste jaoks saadaval.",
+          "status_column_header": "Pole saadaval"
+        },
+        "unpurchasable_product_generic": {
+          "title": "Ostmatu toode",
+          "header": "Mõned tooted eemaldati teie ostukorvist",
+          "message": "Need esemed pole saadaval.",
+          "status_column_header": "Pole saadaval"
+        },
+        "unfulfillable_product": {
+          "title": "Kohaletoimetamine pole saadaval",
+          "message": {
+            "one": "%{delivery_method} pole selle kauba jaoks enam saadaval.",
+            "other": "%{delivery_method} pole nende toodete jaoks enam saadaval."
+          },
+          "default_message": {
+            "one": "Valitud kättetoimetamisviis pole selle toote jaoks enam saadaval.",
+            "other": "Valitud kättetoimetamisviis pole nende toodete jaoks enam saadaval."
+          }
         }
       },
       "contextual_availability": {
@@ -1289,6 +1369,46 @@
           },
           "label": "Kohaletoimetamist ei toimu"
         }
+      },
+      "delivery_options": {
+        "free_total_label": "Tasuta",
+        "ship": "Laev",
+        "ship_to_address": "Saada aadressile",
+        "shipping_address": "Saatmisaadress",
+        "pick_up": "Korja üles",
+        "pick_up_from_store": "Kauplusest järeletulemine",
+        "pick_up_locations": "Poe asukohad",
+        "pick_up_in_one_hour": "Tavaliselt valmis 1 tunniga",
+        "pick_up_in_two_hours": "Tavaliselt valmis 2 tunniga",
+        "pick_up_in_four_hours": "Tavaliselt valmis 4 tunniga",
+        "pick_up_in_twenty_four_hours": "Tavaliselt valmis 24 tunni jooksul",
+        "pick_up_in_two_to_four_days": "Tavaliselt valmis 2-4 päeva jooksul",
+        "pick_up_in_five_or_more_days": "Tavaliselt valmis 5+ päeva jooksul",
+        "pick_up_in_zero_to_two_hours": "Kättesaamiseks valmis 2 tunni pärast",
+        "pick_up_in_two_to_four_hours": "Kättetoimetamiseks valmis 4 tunni pärast",
+        "pick_up_immediately": "Kohe kättesaamiseks valmis",
+        "pick_up_next_day": "Järgmisel päeval kättesaamiseks valmis",
+        "pickup_point_method_definition": "Saada pealevõtmispunkti",
+        "retail_method_definition": "Jaekaubanduse saatmine",
+        "none_method_definition": "Saatmist ei toimu",
+        "subscription_pickup_information": "See tarneviis kehtib kõigile selle tellimuse toodetele ja kõigile selle tellimuse tulevastele tellimustele."
+      },
+      "customer_account": {
+        "not_user_label": "Mitte %{first_name}?",
+        "have_an_account_label": "Kas teil on konto?",
+        "sign_in_link_label": "Logi sisse",
+        "sign_out_link_label": "Logi välja",
+        "save_my_information_label": "Salvesta see teave järgmiseks korraks",
+        "invalid_address": "Valitud aadress on kehtetu. %{update_address_link} või valige mõni teine ​​aadress.",
+        "incomplete_address": "Valitud aadress on poolik. %{update_address_link} või valige teine ​​aadress.",
+        "rollup_label": "Konto",
+        "invalid_shipping_method_summary": "Saadaolevate saatmisviiside kuvamiseks valige kehtiv saatmisaadress.",
+        "saved_address_option_description": {
+          "one": "Teil on {{count}} salvestatud aadress.",
+          "other": "Teil on {{count}} salvestatud aadressi."
+        },
+        "saved_address_option_link": "Kasutage salvestatud aadressi",
+        "saved_address_modal_title": "Kasuta minu salvestatud aadressi"
       }
     },
     "addresses": {
