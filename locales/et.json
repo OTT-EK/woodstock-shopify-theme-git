@@ -1876,7 +1876,23 @@
             "description_due_on_receipt": "Saate arve, kui makse on tasutud.",
             "description_due_on_receipt_partially_paid": "See tellimus on osaliselt tasutud. Teil on allesjäänud jääksumma. Saate arve, kui maksetähtpäev on saabunud.",
             "description_due_on_fulfillment": "Makse tuleb tasuda pärast kõigi selle tellimuse punktide täitmist.",
-            "description_due_on_fulfillment_partially_paid": "See tellimus on osaliselt tasutud. Teil on allesjäänud jääk. Makse tuleb tasuda pärast kõigi selle tellimuse esemete täitmist."
+            "description_due_on_fulfillment_partially_paid": "See tellimus on osaliselt tasutud. Teil on allesjäänud jääk. Makse tuleb tasuda pärast kõigi selle tellimuse esemete täitmist.",
+            "banner_overdue": {
+              "one": "Teie makse on {{count}} päeva hilinenud",
+              "other": "Teie makse on {{count}} päeva hilinenud"
+            },
+            "banner_due": {
+              "one": "Teie makse tähtaeg on {{count}} päeva pärast",
+              "other": "Teie makse tähtaeg on {{count}} päeva pärast"
+            },
+            "banner_due_today": "Teie maksetähtaeg on täna",
+            "title": "Maksetähtaeg",
+            "title_with_date": "Maksetähtaeg {{date}}",
+            "title_due_on_receipt": "Maksetähtaeg pole veel käes",
+            "title_due_on_fulfillment": "Makse täitmisel",
+            "description_overdue": "Teie makse on hilinenud.",
+            "description_partially_paid": "See tellimus on osaliselt tasutud. Teil on allesjäänud saldo.",
+            "description_authorized": "Teie makseviisilt võetakse tasu maksetähtpäeval või saate maksta kohe."
           },
           "draft": {
             "description": "Makseandmed lepitakse kokku tellimuse kinnitamisel.",
@@ -1930,7 +1946,10 @@
           "hide_events_accessibility_label": "Peida tellimuse mustandi üksikasjad"
         },
         "subtitle": "Esitatud {{date}}",
-        "title": "Tellimus {{name}}"
+        "title": "Tellimus {{name}}",
+        "draft_order_subtitle": "Kinnitatud {{date}} tellimusest {{draftOrderName}}",
+        "loading": "Tellimuse üksikasjade laadimine",
+        "loading_finished_accessibility_message": "Tellimuse üksikasjad on laaditud"
       },
       "payment_methods": {
         "payment_delete": {
@@ -1956,6 +1975,102 @@
         "modal_po_number_input_max_length_error": "Ostutellimuse numbrite maksimaalne pikkus on {{maxLength}} tähemärki.",
         "save": "Salvesta",
         "title": "Ostutellimuse nr {{poNumber}}"
+      },
+      "account_information": {
+        "company_card_name_label": "Ettevõtte nimi",
+        "company_card_section_accessibility_label": "Ettevõte"
+      },
+      "locations": {
+        "contact_email": "E-post",
+        "contact_list_title": "Inimesed",
+        "contact_name": "Nimi",
+        "contact_permissions": "Õigused",
+        "contact_phone_number": "Telefoninumber",
+        "location_picker_label": "Asukoha nimi",
+        "location_picker_accessibility_label": "Asukoha nimi: {{locationName}}",
+        "net_payment_terms_description": "{{name}} : maksetähtpäevad {{numberOfDays}} päeva jooksul",
+        "deposit_percentage": "{{percentage}} sissemakse",
+        "own_role_contact_name": "Sina",
+        "pagination": {
+          "load_more": "Laadi rohkem",
+          "load_more_accessibility_label": "Laadi rohkem asukohti"
+        },
+        "payment_details_title": "Makseandmed",
+        "payment_terms": "Maksetingimused",
+        "permissions_label": "Teie õigused",
+        "permissions_title": "Õigused",
+        "section_title": "Asukoht",
+        "shipping_address_required": "Tellimuste esitamise alustamiseks lisage sellele asukohale tarneaadress.",
+        "staff_and_permissions_title": "Personal ja load",
+        "tax_details_title": "Maksuandmed",
+        "tax_id": "Maksu-ID",
+        "tax_exemptions": "Maksuvabastused",
+        "multiple_tax_exemptions": "{{taxExemptionsCount}} veel",
+        "multiple_tax_exemptions_and": "ja",
+        "tax_exemptions_modal_close": "Sule",
+        "taxes_none": "Puudub",
+        "tax_exemption_not_applicable": "Pole kohaldatav",
+        "tax_exemptions_modal_button_accessibility_label": "Kuva kõik maksuvabastused"
+      },
+      "location_selection": {
+        "continue_to_store": "Jätka poodi",
+        "description": "Kui teie ostukorvis on juba tooteid, võib asukoha muutmine mõjutada hindu ja koguseid.",
+        "list_accessibility_label": "Asukohtade loend",
+        "list_item_without_address_accessibility_label": "{{name}} : Aadressi pole",
+        "list_loading_accessibility_message": "Asukohtade loendi laadimine",
+        "list_loading_address_accessibility_message": "Aadressi {{locationName}} laadimine",
+        "list_loading_finished_accessibility_message": "Asukohtade loend on laaditud",
+        "loading_store_accessibility_message": "Lähen poodi",
+        "no_location_title": "Ainult isiklikud tellimused",
+        "no_location_description": "Teil pole enam luba ettevõttele {{company}} tellimusi esitada. Saate endiselt esitada isiklikke tellimusi.",
+        "no_locations_found": "Asukohti ei leitud",
+        "search": "Asukoha otsimine",
+        "search_location_title": "Valige asukoht",
+        "selection_cancel_button": "Tühista",
+        "selection_confirmation_button": "Valige asukoht",
+        "selection_continue_button": "Jätka",
+        "title": "Millise asukoha jaoks te ostate?",
+        "clear_search": "Tühjenda otsing",
+        "try_new_search": "Proovi uut otsingut"
+      },
+      "addresses": {
+        "add_billing_address_button": "Lisa arveldusaadress",
+        "add_billing_address_section_accessibility_label": "Lisa arveldusaadress",
+        "add_shipping_address_button": "Lisa saatmisaadress",
+        "add_shipping_address_section_accessibility_label": "Lisa saatmisaadress",
+        "billing_address_card_title": "Arveldusaadress",
+        "cancel_adding_billing_address_accessibility_label": "Tühista arveldusaadressi lisamine",
+        "cancel_adding_shipping_address_accessibility_label": "Tühista saatmisaadressi lisamine",
+        "save_new_billing_address_accessibility_label": "Salvesta arveldusaadress",
+        "save_new_shipping_address_accessibility_label": "Salvesta saatmisaadress",
+        "shipping_address_card_title": "Saatmisaadress"
+      },
+      "orders": {
+        "draft_order_list": {
+          "hide_all": "Peida kõik",
+          "show_all": "Näita kõiki",
+          "hide_all_accessibility_label": "Peida kõik ülevaadatavad tellimused",
+          "show_all_accessibility_label": "Kuva kõik ülevaadatavad tellimused",
+          "show_all_orders_in_review": "Kuva kõik ülevaadatavad tellimused",
+          "show_less_orders_in_review": "Näita vähem ülevaadatavaid tellimusi",
+          "title": "Ootel",
+          "pending_tab_accessibility_label": {
+            "no_pending_orders": "Teil pole ühtegi ootel olevat tellimust",
+            "pending_orders": {
+              "one": "Teil on {{count}} ootel tellimus",
+              "other": "Teil on {{count}} ootel tellimust"
+            },
+            "more_than_pagination_length": "Teil on ootel rohkem kui {{count}} tellimust"
+          },
+          "pending_orders_count_more_than_pagination_length": "{{count}} +",
+          "pagination": {
+            "nav_accessibility_label": "Ülevaadatavate tellimuste navigeerimisnupud"
+          }
+        },
+        "order_list_column_headers_location": "Asukoht",
+        "order_list_column_headers_contact": "Kontakt",
+        "order_list_column_headers_status": "Staatus",
+        "removed_company_contact_tooltip": "Ettevõttest eemaldatud"
       }
     },
     "errors": {
@@ -2016,6 +2131,17 @@
         "message": "Liiga palju katseid",
         "description": "Palun proovige mõne minuti pärast uuesti"
       }
+    },
+    "address_form": {
+      "default_address_update_success_notification": "Vaikimisi aadress on uuendatud",
+      "loading_add_form_accessibility_message": "Uue aadressivormi laadimine",
+      "loading_edit_form_accessibility_message": "Aadressi muutmise vormi laadimine",
+      "loading_form_accessibility_message": "Aadressivormi laadimine",
+      "loading_finished_accessibility_message": "Aadressivorm on laaditud",
+      "save": "Salvesta",
+      "save_accessibility_label": "Salvesta aadress {{address}}",
+      "section_title_accessibility_label": "Lisa aadress",
+      "update_success_notification": "Aadress uuendatud"
     }
   },
   "templates": {
