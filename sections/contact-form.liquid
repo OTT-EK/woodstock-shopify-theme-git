@@ -238,10 +238,9 @@
             {%- endfor -%} 
           {%- endif -%}
           {%- if section.settings.show_social_contact-form -%}
-              {%- assign social_media_icons_block = social_media_icons | first -%}
-              {%- if social_media_icons_block.settings.title != blank -%}
+              {%- if section.settings.title_social_contact-form != blank -%}
                 <div class="flex justify-space-between w100 align-center title__gap por w100 contact__address-wrapper__title">
-                  <h{{ heading_tag | plus: 1 }} class="h3 font-heading-bold margin0 title__heading--before-line">{{ social_media_icons_block.settings.title }}</h{{ heading_tag | plus: 1 }}>
+                  <h{{ heading_tag | plus: 1 }} class="h3 font-heading-bold margin0 title__heading--before-line">{{ section.settings.title_social_contact-form }}</h{{ heading_tag | plus: 1 }}>
                   <hr class="title__line flex-grow-1 margin0">
                 </div>
                 <ul class="list-unstyled flex list-social flex-wrap{% if has_link_bkg %} list-social--has-background{% endif %} footer__list-social justify-right" role="list">
@@ -510,7 +509,7 @@
         },
         {
           "type": "text",
-          "id": "title",
+          "id": "title_social_contact-form",
           "label": "t:sections.contact-form.blocks.social_media_icons.settings.title.label",
           "default": "Follow us"
         },
