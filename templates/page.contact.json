@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "882ae9d2-b3e9-4bb3-b7c2-a3083565f24f": {
@@ -100,7 +109,15 @@
         "c17536c2-bac0-4885-834f-6f3efc3850fa": {
           "type": "social_media_icons",
           "settings": {
-            "title": "Follow us"
+            "title_social_contact-form": "Follow us",
+            "show_social_contact-form": true,
+            "manta_ott-ct-social_fb_link": "https://www.facebook.com/OttenstenLietuva/",
+            "manta_ott-ct-social_x_link": "",
+            "manta_ott-ct-social_pinterest_link": "",
+            "manta_ott-ct-social_ig_link": "",
+            "manta_ott-ct-social_yt_link": "",
+            "manta_ott-ct-social_tik_link": "",
+            "manta_ott-ct-social_li_link": ""
           }
         }
       },
@@ -124,7 +141,8 @@
     "3e50a7fa-ef6f-4125-90d4-609ab7b2f2b5": {
       "type": "spacer",
       "settings": {
-        "height": 40
+        "height": 40,
+        "bg_color": "#ffffff"
       }
     }
   },
