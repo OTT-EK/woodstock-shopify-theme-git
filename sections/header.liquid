@@ -486,7 +486,7 @@
                         </ul>
                       </div>
                     {%- endif -%}  
-
+                    {%- if section.settings.enable_social_links -%}
                     <div class="menu-drawer__utility-links menu-drawer__block menu-drawer__background">
                       <ul class="list-unstyled flex list-social flex-wrap{% if has_link_bkg %} list-social--has-background{% endif %} list list-social--in-drawer" role="list">
                         {%- if section.settings.manta_ott-m-social_x_link != blank -%}
@@ -547,7 +547,7 @@
                         {%- endif -%}
                       </ul>
                     </div>
-                    
+                  {%- endif -%}
                     {%- if has_localization and section.settings.show_country_language_selector_drawer_mobile -%}
                       {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
                         <div class="menu-drawer__localization menu-drawer__block menu-drawer__background">
