@@ -238,7 +238,6 @@
             {%- endfor -%} 
           {%- endif -%}
           {%- if section.settings.show_social_contact-form -%}
-            {%- if social_media_icons.size > 0 -%}
               {%- assign social_media_icons_block = social_media_icons | first -%}
               {%- if social_media_icons_block.settings.title != blank -%}
                 <div class="flex justify-space-between w100 align-center title__gap por w100 contact__address-wrapper__title">
@@ -304,7 +303,6 @@
                   {%- endif -%}
                 </ul>
               {%- endif -%}  
-            {%- endif -%}
           {%- endif -%}  
         </div>
       {%- endif -%}  
