@@ -236,17 +236,7 @@
                 {{ block.settings.content }}
               </div>
             {%- endfor -%} 
-          {%- endif -%}
-          {%- if social_media_icons.size > 0 -%}
-            {%- assign social_media_icons_block = social_media_icons | first -%}
-            {%- if social_media_icons_block.settings.title != blank -%}
-              <div class="flex justify-space-between w100 align-center title__gap por w100 contact__address-wrapper__title">
-                <h{{ heading_tag | plus: 1 }} class="h3 font-heading-bold margin0 title__heading--before-line">{{ social_media_icons_block.settings.title }}</h{{ heading_tag | plus: 1 }}>
-                <hr class="title__line flex-grow-1 margin0">
-              </div>
-              {%- render 'social-media-icons', icon_width: 24 -%}
-            {%- endif -%}  
-          {%- endif -%}  
+          {%- endif -%} 
         </div>
       {%- endif -%}  
     </div>
