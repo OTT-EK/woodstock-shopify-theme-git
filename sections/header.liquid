@@ -488,7 +488,64 @@
                     {%- endif -%}  
 
                     <div class="menu-drawer__utility-links menu-drawer__block menu-drawer__background">
-                      {%- render 'social-media-icons', add_classes: 'list list-social--in-drawer', has_link_bkg: true -%}
+                      <ul class="list-unstyled flex list-social flex-wrap{% if has_link_bkg %} list-social--has-background{% endif %} list list-social--in-drawer" role="list">
+                        {%- if section.settings.manta_ott-m-social_x_link != blank -%}
+                          <li class="list-social__item flex align-center">
+                            <a href="{{ section.settings.manta_ott-m-social_x_link }}" class="link flex justify-center align-center por tap-area-icon {% if has_link_bkg %}list-social__link list-social__link--twitter{% else %}list-social__transparent{% endif %}" target="_blank" data-no-instant>
+                              {%- render 'icon-twitter', icon_width: icon_width -%}
+                              <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
+                            </a>
+                          </li>
+                        {%- endif -%}
+                        {%- if section.settings.manta_ott-m-social_fb_link != blank -%}
+                          <li class="list-social__item flex align-center">
+                            <a href="{{ section.settings.manta_ott-m-social_fb_link }}" class="link flex justify-center align-center por tap-area-icon {% if has_link_bkg %}list-social__link list-social__link--facebook{% else %}list-social__transparent{% endif %}" target="_blank" data-no-instant>
+                              {%- render 'icon-facebook', icon_width: icon_width -%}
+                              <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+                            </a>
+                          </li>
+                        {%- endif -%}
+                        {%- if section.settings.manta_ott-m-social_pinterest_link != blank -%}
+                          <li class="list-social__item flex align-center">
+                            <a href="{{ section.settings.manta_ott-m-social_pinterest_link }}" class="link flex justify-center align-center por tap-area-icon {% if has_link_bkg %}list-social__link list-social__link--pinterest{% else %}list-social__transparent{% endif %}" target="_blank" data-no-instant>
+                              {%- render 'icon-pinterest', icon_width: icon_width -%}
+                              <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
+                            </a>
+                          </li>
+                        {%- endif -%}
+                        {%- if section.settings.manta_ott-m-social_ig_link != blank -%}
+                          <li class="list-social__item flex align-center">
+                            <a href="{{ section.settings.manta_ott-m-social_ig_link }}" class="link flex justify-center align-center por tap-area-icon {% if has_link_bkg %}list-social__link list-social__link--instagram{% else %}list-social__transparent{% endif %}" target="_blank" data-no-instant>
+                              {%- render 'icon-instagram', icon_width: icon_width -%}
+                              <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+                            </a>
+                          </li>
+                        {%- endif -%}
+                        {%- if section.settings.manta_ott-m-social_yt_link != blank -%}
+                          <li class="list-social__item flex align-center">
+                            <a href="{{ section.settings.manta_ott-m-social_yt_link }}" class="link flex justify-center align-center por tap-area-icon {% if has_link_bkg %}list-social__link list-social__link--youtube{% else %}list-social__transparent{% endif %}" target="_blank" data-no-instant>
+                              {%- render 'icon-youtube', icon_width: icon_width -%}
+                              <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
+                            </a>
+                          </li>
+                        {%- endif -%}
+                        {%- if section.settings.manta_ott-m-social_tik_link != blank -%}
+                          <li class="list-social__item flex align-center">
+                            <a href="{{ section.settings.manta_ott-m-social_tik_link }}" class="link flex justify-center align-center por tap-area-icon {% if has_link_bkg %}list-social__link list-social__link--tiktok{% else %}list-social__transparent{% endif %}" target="_blank" data-no-instant>
+                              {%- render 'icon-tiktok', icon_width: icon_width -%}
+                              <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
+                            </a>
+                          </li>
+                        {%- endif -%}
+                        {%- if section.settings.manta_ott-m-social_li_link != blank -%}
+                          <li class="list-social__item flex align-center">
+                            <a href="{{ section.settings.manta_ott-m-social_li_link }}" class="link flex justify-center align-center por tap-area-icon {% if has_link_bkg %}list-social__link list-social__link--linkedin{% else %}list-social__transparent{% endif %}" target="_blank" data-no-instant>
+                              {%- render 'icon-linkedin', icon_width: icon_width -%}
+                              <span class="visually-hidden">{{ 'general.social.links.linkedin' | t }}</span>
+                            </a>
+                          </li>
+                        {%- endif -%}
+                      </ul>
                     </div>
                     
                     {%- if has_localization and section.settings.show_country_language_selector_drawer_mobile -%}
@@ -957,11 +1014,51 @@
       "default": "on_scroll_up"
     },
     {
+      "type": "header",
+      "content": "Mobile social icons",
+      "info": "Mobile social media icons are displayed in the hamburger menu."
+    },
+    {
       "type": "checkbox",
+      "label": "Enable in mobile hamburger menu social media links",
       "id": "enable_social_links",
       "default": true,
-      "label": "t:sections.header.settings.enable_social_links.label",
       "info": "t:sections.header.settings.enable_social_links.info"
+    },
+    {
+      "type": "url",
+      "label": "Facebook",
+      "id": "manta_ott-m-social_fb_link",
+    },
+    {
+      "type": "url",
+      "label": "X (Twitter)",
+      "id": "manta_ott-m-social_x_link",
+    },
+    {
+      "type": "url",
+      "label": "Pinterest",
+      "id": "manta_ott-m-social_pinterest_link",
+    },
+    {
+      "type": "url",
+      "label": "Instagram",
+      "id": "manta_ott-m-social_ig_link",
+    },
+    {
+      "type": "url",
+      "label": "YouTube",
+      "id": "manta_ott-m-social_yt_link",
+    },
+    {
+      "type": "url",
+      "label": "TikTok",
+      "id": "manta_ott-m-social_tik_link",
+    },
+    {
+      "type": "url",
+      "label": "LinkedIn",
+      "id": "manta_ott-m-social_li_link",
     },
     {
       "type": "header",
