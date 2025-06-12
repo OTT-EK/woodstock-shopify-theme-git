@@ -16,19 +16,21 @@
   {%- render 'section-heading-styles' -%}
 </style>
 
-{%-liquid
+{%- liquid
   if page and request.page_type == 'page' and template.suffix == 'contact'
     assign heading_tag = 1
   else
     assign heading_tag = 2
   endif  
-  assign addresses = section.blocks | where: 'type', 'address'
-  assign opening_hours = section.blocks | where: 'type', 'opening_hour'
-  assign additional_fields = section.blocks | where: 'type', 'additional_field'
+
+  assign addresses          = section.blocks | where: 'type', 'address'
+  assign opening_hours      = section.blocks | where: 'type', 'opening_hour'
+  assign additional_fields  = section.blocks | where: 'type', 'additional_field'
+  assign custom_texts       = section.blocks | where: 'type', 'custom_text'
   assign social_media_icons = section.blocks | where: 'type', 'social_media_icons'
-  assign custom_texts = section.blocks | where: 'type', 'custom_text'
+
   assign has_sidebar = false
-  if addresses.size > 0 or opening_hours.size > 0 or custom_texts.size > 0 or social_media_icons
+  if addresses.size > 0 or opening_hours.size > 0 or custom_texts.size > 0 or social_media_icons.size > 0
     assign has_sidebar = true
   endif
 -%}
@@ -36,29 +38,42 @@
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="contact page-width{% unless has_sidebar %} page-width--narrow{% endunless %} section-{{ section.id }}-padding">
     <div class="grid grid--1-col{% if has_sidebar %} grid--3-col-desktop{% endif %}">
+
+      <!-- CONTACT FORM COLUMN -->
       <div class="grid__item flex-grow-1{% if has_sidebar %} contact__form-with-address{% endif %}">
         {%- if section.settings.title != blank -%}
           <div class="title">
             <div class="flex justify-space-between w100 align-center title__gap por">
               {%- unless section.settings.subtitle != blank -%}
-                <h{{ heading_tag }} class="title__heading h{{ section.settings.heading_size | replace: 'h', '' | plus: 1 }} font-heading-extra-bold margin0 lh1 title__heading--before-line">{{ section.settings.title | escape }}</h{{ heading_tag }}>	
+                <h{{ heading_tag }} class="title__heading h{{ section.settings.heading_size | replace: 'h', '' | plus: 1 }} font-heading-extra-bold margin0 lh1 title__heading--before-line">
+                  {{ section.settings.title | escape }}
+                </h{{ heading_tag }}>  
                 <hr class="title__line flex-grow-1 margin0">
               {%- else -%}
                 <div class="flex flex-column justify-right align-start">
-                  <h{{ heading_tag }} class="title__heading title__back title__back--{{ section.settings.heading_size }} font-heading-bold margin0 lh1">{{ section.settings.title | escape }}</h{{ heading_tag }}>
-                  <h{{ heading_tag | plus: 1 }} class="title__subtitle margin0 title__front {% if section.settings.heading_size != 'h2' %}h{{ section.settings.heading_size | replace: 'h', '' | plus: 1 }}{% else %}title__front--small{% endif %} lh1">{{ section.settings.subtitle }}</h{{ heading_tag | plus: 1 }}>
+                  <h{{ heading_tag }} class="title__heading title__back title__back--{{ section.settings.heading_size }} font-heading-bold margin0 lh1">
+                    {{ section.settings.title | escape }}
+                  </h{{ heading_tag }}>
+                  <h{{ heading_tag | plus: 1 }} class="title__subtitle margin0 title__front {% if section.settings.heading_size != 'h2' %}h{{ section.settings.heading_size | replace: 'h', '' | plus: 1 }}{% else %}title__front--small{% endif %} lh1">
+                    {{ section.settings.subtitle }}
+                  </h{{ heading_tag | plus: 1 }}>
                 </div>
-              {%- endunless -%}	
+              {%- endunless -%}  
             </div>
           </div>
-        {%- endif -%}  
+        {%- endif -%}
+
         {%- form 'contact', id: 'ContactForm', class: 'isolate' -%}
           {%- if form.posted_successfully? -%}
-            <h2 class="form__message alert alert--success alert--small small-margin-bottom" tabindex="-1">{% render 'icon-success' %} {{ 'templates.contact.form.post_success' | t }}</h2>
+            <h2 class="form__message alert alert--success alert--small small-margin-bottom" tabindex="-1">
+              {% render 'icon-success' %} {{ 'templates.contact.form.post_success' | t }}
+            </h2>
           {%- elsif form.errors -%}
             <div class="alert alert--error aler--small small-margin-bottom">
               <div class="form__message">
-                <h2 class="form-status text-small text-body" role="alert" tabindex="-1">{% render 'icon-error' %} {{ 'templates.contact.form.error_heading' | t }}</h2>
+                <h2 class="form-status text-small text-body" role="alert" tabindex="-1">
+                  {% render 'icon-error' %} {{ 'templates.contact.form.error_heading' | t }}
+                </h2>
               </div>
               <ul class="form-status-list text-small" role="list">
                 <li>
@@ -69,13 +84,19 @@
               </ul>
             </div>
           {%- endif -%}
+
           <div class="contact__fields{% if has_sidebar %} contact__fields--with-address{% endif %}">
             <div class="field">
-              <label class="field__label text-small font-body-semi-bold uppercase" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
+              <label class="field__label text-small font-body-semi-bold uppercase" for="ContactForm-name">
+                {{ 'templates.contact.form.name' | t }}
+              </label>
               <input class="field__input" autocomplete="name" type="text" id="ContactForm-name" name="contact[{{ 'templates.contact.form.name' | t }}]" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" placeholder="{{ 'templates.contact.form.name' | t }}">
             </div>
+
             <div class="field field--with-error">
-              <label class="field__label text-small font-body-semi-bold uppercase" for="ContactForm-email">{{ 'templates.contact.form.email' | t }} <span aria-hidden="true">*</span></label>
+              <label class="field__label text-small font-body-semi-bold uppercase" for="ContactForm-email">
+                {{ 'templates.contact.form.email' | t }} <span aria-hidden="true">*</span>
+              </label>
               <input
                 autocomplete="email"
                 type="email"
@@ -100,82 +121,92 @@
                 </small>
               {%- endif -%}
             </div>
+
             <div class="field">
-              <label class="field__label text-small font-body-semi-bold uppercase" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+              <label class="field__label text-small font-body-semi-bold uppercase" for="ContactForm-phone">
+                {{ 'templates.contact.form.phone' | t }}
+              </label>
               <input type="tel" id="ContactForm-phone" class="field__input" autocomplete="tel" name="contact[{{ 'templates.contact.form.phone' | t }}]" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}" placeholder="{{ 'templates.contact.form.phone' | t }}">
             </div>
+
             <div class="field field--full">
-              <label class="field__label text-small font-body-semi-bold uppercase" for="ContactForm-body">{{ 'templates.contact.form.comment' | t }}</label>
+              <label class="field__label text-small font-body-semi-bold uppercase" for="ContactForm-body">
+                {{ 'templates.contact.form.comment' | t }}
+              </label>
               <textarea
                 rows="10"
                 id="ContactForm-body"
                 class="text-area field__input"
                 name="contact[{{ 'templates.contact.form.comment' | t }}]"
                 placeholder="{{ 'templates.contact.form.comment' | t }}"
-              >
-                {{- form.body -}}
-              </textarea>
+              >{{- form.body -}}</textarea>
             </div>
+
             {%- if additional_fields.size > 0 -%}
               {%- for field in additional_fields -%}
                 {%- assign information_id = field.settings.information_id | default: field.settings.title -%}
                 {%- if information_id != blank -%}
                   <div class="field{% if field.settings.type == 'textarea' %} field--full{% endif %}">
                     {%- if field.settings.title != blank -%}
-                      {%- if field.settings.type != 'checkboxes' or field.settings.type == 'checkboxes' and field.settings.options != blank -%}
-                        <label class="field__label text-small font-body-semi-bold uppercase" for="ContactForm-field-{{ field.id }}">{{ field.settings.title }}{% if field.settings.required %} <span aria-hidden="true">*</span>{% endif %}</label>
+                      {%- if field.settings.type != 'checkboxes' or (field.settings.type == 'checkboxes' and field.settings.options != blank) -%}
+                        <label class="field__label text-small font-body-semi-bold uppercase" for="ContactForm-field-{{ field.id }}">
+                          {{ field.settings.title }}{% if field.settings.required %} <span aria-hidden="true">*</span>{% endif %}
+                        </label>
                       {%- endif -%}
                     {%- endif -%}
+
                     {%- case field.settings.type -%}
-                    {%- when 'text' -%}
-                      <input type="text" id="ContactForm-field-{{ field.id }}" name="contact[{{ information_id | escape }}]" class="field__input"{% if field.settings.required %} aria-required="true" required="required"{% endif %}/>
-                    {%- when 'textarea' -%}
-                      <textarea id="ContactForm-field-{{ field.id }}" name="contact[{{ information_id | escape }}]" class="text-area field__input" rows="10"{% if field.settings.required %} aria-required="true" required="required"{% endif %}></textarea>    
-                    {%- when 'checkboxes' -%}
-                      {%- if field.settings.options != blank -%}
-                        {%- assign options = field.settings.options | split: ';' -%}
-                        <ul class="list-unstyled contact__list-option field__list-option flex flex-wrap">
-                          {%- for option in options -%}
-                            <li>
-                              <div class="por flex virtual-checkbox">
-                                <input type="checkbox" name="contact[{{ information_id | escape }}{% if options.size > 1 %}_{{ forloop.index }}{% endif %}]" id="contact-field-{{ field.id }}-option-{{ forloop.index }}" value="{{ option | strip | escape }}"{% if field.settings.required and options.size == 1 %} aria-required="true" required="required"{% endif %} class="virtual-checkbox__checkbox margin0"/>
-                                <label for="contact-field-{{ field.id }}-option-{{ forloop.index }}"class="virtual-checkbox__label db {% unless field.settings.title != blank %}contact__checkbox-large-label{% else %}text-small{% endunless %}">
-                                  <svg class="virtual-checkbox__icon-checkmark icon icon-checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 4.00002L3.83333 6.33335L8.5 1.66669" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </svg>
-                                  <span class="first-letter-uppercase db">{{ option }}{% if field.settings.title == blank and field.settings.required and options.size == 1 %} <span aria-hidden="true">*</span>{% endif %}</span>
-                                </label>
-                              </div>  
-                            </li>
-                          {%- endfor -%}  
-                        </ul>
+                      {%- when 'text' -%}
+                        <input type="text" id="ContactForm-field-{{ field.id }}" name="contact[{{ information_id | escape }}]" class="field__input"{% if field.settings.required %} aria-required="true" required="required"{% endif %}/>
+                      {%- when 'textarea' -%}
+                        <textarea id="ContactForm-field-{{ field.id }}" name="contact[{{ information_id | escape }}]" class="text-area field__input" rows="10"{% if field.settings.required %} aria-required="true" required="required"{% endif %}></textarea>
+                      {%- when 'checkboxes' -%}
+                        {%- if field.settings.options != blank -%}
+                          <ul class="list-unstyled contact__list-option field__list-option flex flex-wrap">
+                            {%- assign options = field.settings.options | split: ';' -%}
+                            {%- for option in options -%}
+                              <li>
+                                <div class="por flex virtual-checkbox">
+                                  <input type="checkbox" name="contact[{{ information_id | escape }}{% if options.size > 1 %}_{{ forloop.index }}{% endif %}]" id="contact-field-{{ field.id }}-option-{{ forloop.index }}" value="{{ option | strip | escape }}"{% if field.settings.required and options.size == 1 %} aria-required="true" required="required"{% endif %} class="virtual-checkbox__checkbox margin0"/>
+                                  <label for="contact-field-{{ field.id }}-option-{{ forloop.index }}" class="virtual-checkbox__label db {% unless field.settings.title != blank %}contact__checkbox-large-label{% else %}text-small{% endunless %}">
+                                    <svg class="virtual-checkbox__icon-checkmark icon icon-checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M1.5 4.00002L3.83333 6.33335L8.5 1.66669" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span class="first-letter-uppercase db">{{ option }}{% if field.settings.title == blank and field.settings.required and options.size == 1 %} <span aria-hidden="true">*</span>{% endif %}</span>
+                                  </label>
+                                </div>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- else -%}
+                          <div class="por flex virtual-checkbox">
+                            <input type="checkbox" name="contact[{{ information_id | escape }}]" id="contact-field-{{ field.id }}-option-1" value="Yes"{% if field.settings.required %} aria-required="true" required="required"{% endif %} class="virtual-checkbox__checkbox margin0"/>
+                            <label for="contact-field-{{ field.id }}-option-1" class="virtual-checkbox__label db contact__checkbox-large-label">
+                              <svg class="virtual-checkbox__icon-checkmark icon icon-checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.5 4.00002L3.83333 6.33335L8.5 1.66669" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                              <span class="first-letter-uppercase db">{{ field.settings.title | default: information_id }}{% if field.settings.required %} <span aria-hidden="true">*</span>{% endif %}</span>
+                            </label>
+                          </div>
+                        {%- endif -%}
                       {%- else -%}
-                        <div class="por flex virtual-checkbox">
-                          <input type="checkbox" name="contact[{{ information_id | escape }}]" id="contact-field-{{ field.id }}-option-{{ forloop.index }}" value="Yes"{% if field.settings.required %} aria-required="true" required="required"{% endif %} class="virtual-checkbox__checkbox margin0"/>
-                          <label for="contact-field-{{ field.id }}-option-{{ forloop.index }}" class="virtual-checkbox__label db contact__checkbox-large-label">
-                            <svg class="virtual-checkbox__icon-checkmark icon icon-checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M1.5 4.00002L3.83333 6.33335L8.5 1.66669" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span class="first-letter-uppercase db">{{ field.settings.title | default: field.settings.information_id }}{% if field.settings.required %} <span aria-hidden="true">*</span>{% endif %}</span>
-                          </label>
-                        </div> 
-                      {%- endif -%}
-                    {%- else -%}
-                      {%- assign options = field.settings.options | split: ';' -%}
-                      <div class="select">
-                        <select id="ContactForm-field-{{ field.id }}" name="contact[{{ information_id | escape }}]" class="select__select"{% if field.settings.required %} aria-required="true" required="required"{% endif %}>
-                          {%- for option in options -%}
-                            <option value="{{ option | strip | escape }}">{{ option }}</option>
-                          {%- endfor -%}  
-                        </select>
-                        {%- render 'icon-caret' -%}
-                      </div>
-                    {%- endcase -%}  
+                        <div class="select">
+                          <select id="ContactForm-field-{{ field.id }}" name="contact[{{ information_id | escape }}]" class="select__select"{% if field.settings.required %} aria-required="true" required="required"{% endif %}>
+                            {%- assign options = field.settings.options | split: ';' -%}
+                            {%- for option in options -%}
+                              <option value="{{ option | strip | escape }}">{{ option }}</option>
+                            {%- endfor -%}
+                          </select>
+                          {%- render 'icon-caret' -%}
+                        </div>
+                    {%- endcase -%}
                   </div>
                 {%- endif -%}
-              {%- endfor -%}  
-            {%- endif -%}    
+              {%- endfor -%}
+            {%- endif -%}
+
           </div>
+
           <div class="contact__button left">
             <button type="submit" class="button">
               <span>{{ 'templates.contact.form.send' | t }}</span>
@@ -183,128 +214,161 @@
           </div>
         {%- endform -%}
       </div>
+
+      <!-- SIDEBAR COLUMN -->
       {%- if has_sidebar -%}
         <div class="grid__item contact__address-wrapper background-input flex flex-column align-start">
+
+          <!-- Addresses -->
           {%- if addresses.size > 0 -%}
             <div class="flex justify-space-between w100 align-center title__gap por contact__address-wrapper__title">
-              <h{{ heading_tag | plus: 1 }} class="h3 font-heading-bold margin0 title__heading--before-line">{{ 'templates.contact.address.heading' | t }}</h{{ heading_tag | plus: 1 }}>
+              <h{{ heading_tag | plus: 1 }} class="h3 font-heading-bold margin0 title__heading--before-line">
+                {{ 'templates.contact.address.heading' | t }}
+              </h{{ heading_tag | plus: 1 }}>
               <hr class="title__line flex-grow-1 margin0">
-            </div>  
+            </div>
             <ul class="list-unstyled contact__address-list flex flex-column align-start w100">
               {%- for block in addresses -%}
                 {%- unless forloop.first -%}
                   <li class="w100"><hr class="contact__address-list__line"></li>
-                {%- endunless -%}  
+                {%- endunless -%}
                 <li class="flex flex-column contact__address-item">
                   <h{{ heading_tag | plus: 2 }} class="h5 font-heading-bold margin0 w100">
                     {{ block.settings.name }}
                   </h{{ heading_tag | plus: 2 }}>
                   {%- if block.settings.phone != blank -%}
-                    <a href="tel:{{ block.settings.phone | escape }}" class="link link--text font-body-large-bold w100 lh1" data-no-instant>{{ block.settings.phone }}</a>
+                    <a href="tel:{{ block.settings.phone | escape }}" class="link link--text font-body-large-bold w100 lh1" data-no-instant>
+                      {{ block.settings.phone }}
+                    </a>
                   {%- endif -%}
                   {%- if block.settings.direction != blank -%}
                     <p class="margin0 w100">{{ block.settings.direction }}</p>
                   {%- endif -%}
                   {%- if block.settings.email != blank -%}
-                    <a href="mailto:{{ block.settings.email | escape }}" class="db highlight link w100" data-no-instant>{{ block.settings.email }}</a>
-                  {%- endif -%} 
+                    <a href="mailto:{{ block.settings.email | escape }}" class="db highlight link w100" data-no-instant>
+                      {{ block.settings.email }}
+                    </a>
+                  {%- endif -%}
                 </li>
               {%- endfor -%}
             </ul>
           {%- endif -%}
+
+          <!-- Opening Hours -->
           {%- if opening_hours.size > 0 -%}
             <div class="flex justify-space-between w100 align-center title__gap por w100 contact__address-wrapper__title">
-              <h{{ heading_tag | plus: 1 }} class="h3 font-heading-bold margin0 title__heading--before-line">{{ 'templates.contact.opening_hour.heading' | t }}</h{{ heading_tag | plus: 1 }}>
+              <h{{ heading_tag | plus: 1 }} class="h3 font-heading-bold margin0 title__heading--before-line">
+                {{ 'templates.contact.opening_hour.heading' | t }}
+              </h{{ heading_tag | plus: 1 }}>
               <hr class="title__line flex-grow-1 margin0">
-            </div>  
+            </div>
             <ul class="list-unstyled w100">
               {%- for block in opening_hours -%}
                 <li class="flex w100 contact__opening-hour__item">
                   <span class="font-body-large-bold">{{ block.settings.weekdays }}:</span>
                   <span>{{ block.settings.working_hour }}</span>
                 </li>
-              {%- endfor -%}  
+              {%- endfor -%}
             </ul>
           {%- endif -%}
+
+          <!-- Custom Text Blocks -->
           {%- if custom_texts.size > 0 -%}
             {%- for block in custom_texts -%}
               <div class="flex justify-space-between w100 align-center title__gap por w100 contact__address-wrapper__title">
-                <h{{ heading_tag | plus: 1 }} class="h3 font-heading-bold margin0 title__heading--before-line">{{ block.settings.title }}</h{{ heading_tag | plus: 1 }}>
+                <h{{ heading_tag | plus: 1 }} class="h3 font-heading-bold margin0 title__heading--before-line">
+                  {{ block.settings.title }}
+                </h{{ heading_tag | plus: 1 }}>
                 <hr class="title__line flex-grow-1 margin0">
-              </div>  
+              </div>
               <div class="rte">
                 {{ block.settings.content }}
               </div>
-            {%- endfor -%} 
+            {%- endfor -%}
           {%- endif -%}
-          {%- if section.settings.show_social_contact-form -%}
-              {%- if section.settings.title_social_contact-form != blank -%}
+
+          <!-- Social Media Icons -->
+          {%- for block in social_media_icons -%}
+            {%- if block.settings.show_social_contact-form -%}
+              {%- if block.settings.title_social_contact-form != blank -%}
                 <div class="flex justify-space-between w100 align-center title__gap por w100 contact__address-wrapper__title">
-                  <h{{ heading_tag | plus: 1 }} class="h3 font-heading-bold margin0 title__heading--before-line">{{ section.settings.title_social_contact-form }}</h{{ heading_tag | plus: 1 }}>
+                  <h{{ heading_tag | plus: 1 }} class="h3 font-heading-bold margin0 title__heading--before-line">
+                    {{ block.settings.title_social_contact-form }}
+                  </h{{ heading_tag | plus: 1 }}>
                   <hr class="title__line flex-grow-1 margin0">
                 </div>
-                <ul class="list-unstyled flex list-social flex-wrap{% if has_link_bkg %} list-social--has-background{% endif %} footer__list-social justify-right" role="list">
-                  {%- if section.settings.manta_ott-ct-social_x_link != blank -%}
-                    <li class="list-social__item flex align-center">
-                      <a href="{{ section.settings.manta_ott-ct-social_x_link }}" class="link flex justify-center align-center por tap-area-icon {% if has_link_bkg %}list-social__link list-social__link--twitter{% else %}list-social__transparent{% endif %}" target="_blank" data-no-instant>
-                        {%- render 'icon-twitter', icon_width: 24 -%}
-                        <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
-                      </a>
-                    </li>
-                  {%- endif -%}
-                  {%- if section.settings.manta_ott-ct-social_fb_link != blank -%}
-                    <li class="list-social__item flex align-center">
-                      <a href="{{ section.settings.manta_ott-ct-social_fb_link }}" class="link flex justify-center align-center por tap-area-icon {% if has_link_bkg %}list-social__link list-social__link--facebook{% else %}list-social__transparent{% endif %}" target="_blank" data-no-instant>
-                        {%- render 'icon-facebook', icon_width: 24 -%}
-                        <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
-                      </a>
-                    </li>
-                  {%- endif -%}
-                  {%- if section.settings.manta_ott-ct-social_pinterest_link != blank -%}
-                    <li class="list-social__item flex align-center">
-                      <a href="{{ section.settings.manta_ott-ct-social_pinterest_link }}" class="link flex justify-center align-center por tap-area-icon {% if has_link_bkg %}list-social__link list-social__link--pinterest{% else %}list-social__transparent{% endif %}" target="_blank" data-no-instant>
-                        {%- render 'icon-pinterest', icon_width: 24 -%}
-                        <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
-                      </a>
-                    </li>
-                  {%- endif -%}
-                  {%- if section.settings.manta_ott-ct-social_ig_link != blank -%}
-                    <li class="list-social__item flex align-center">
-                      <a href="{{ section.settings.manta_ott-ct-social_ig_link }}" class="link flex justify-center align-center por tap-area-icon {% if has_link_bkg %}list-social__link list-social__link--instagram{% else %}list-social__transparent{% endif %}" target="_blank" data-no-instant>
-                        {%- render 'icon-instagram', icon_width: 24 -%}
-                        <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
-                      </a>
-                    </li>
-                  {%- endif -%}
-                  {%- if section.settings.manta_ott-ct-social_yt_link != blank -%}
-                    <li class="list-social__item flex align-center">
-                      <a href="{{ section.settings.manta_ott-ct-social_yt_link }}" class="link flex justify-center align-center por tap-area-icon {% if has_link_bkg %}list-social__link list-social__link--youtube{% else %}list-social__transparent{% endif %}" target="_blank" data-no-instant>
-                        {%- render 'icon-youtube', icon_width: 24 -%}
-                        <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
-                      </a>
-                    </li>
-                  {%- endif -%}
-                  {%- if section.settings.manta_ott-ct-social_tik_link != blank -%}
-                    <li class="list-social__item flex align-center">
-                      <a href="{{ section.settings.manta_ott-ct-social_tik_link }}" class="link flex justify-center align-center por tap-area-icon {% if has_link_bkg %}list-social__link list-social__link--tiktok{% else %}list-social__transparent{% endif %}" target="_blank" data-no-instant>
-                        {%- render 'icon-tiktok', icon_width: 24 -%}
-                        <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
-                      </a>
-                    </li>
-                  {%- endif -%}
-                  {%- if section.settings.manta_ott-ct-social_li_link != blank -%}
-                    <li class="list-social__item flex align-center">
-                      <a href="{{ section.settings.manta_ott-ct-social_li_link }}" class="link flex justify-center align-center por tap-area-icon {% if has_link_bkg %}list-social__link list-social__link--linkedin{% else %}list-social__transparent{% endif %}" target="_blank" data-no-instant>
-                        {%- render 'icon-linkedin', icon_width: 24 -%}
-                        <span class="visually-hidden">{{ 'general.social.links.linkedin' | t }}</span>
-                      </a>
-                    </li>
-                  {%- endif -%}
-                </ul>
-              {%- endif -%}  
-          {%- endif -%}  
+              {%- endif -%}
+
+              <ul class="list-unstyled flex list-social flex-wrap footer__list-social justify-right" role="list">
+                {%- if block.settings.manta_ott-ct-social_x_link != blank -%}
+                  <li class="list-social__item flex align-center">
+                    <a href="{{ block.settings.manta_ott-ct-social_x_link }}" target="_blank" class="link por tap-area-icon">
+                      {%- render 'icon-twitter', icon_width: 24 -%}
+                      <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
+                    </a>
+                  </li>
+                {%- endif -%}
+
+                {%- if block.settings.manta_ott-ct-social_fb_link != blank -%}
+                  <li class="list-social__item flex align-center">
+                    <a href="{{ block.settings.manta_ott-ct-social_fb_link }}" target="_blank" class="link por tap-area-icon">
+                      {%- render 'icon-facebook', icon_width: 24 -%}
+                      <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+                    </a>
+                  </li>
+                {%- endif -%}
+
+                {%- if block.settings.manta_ott-ct-social_pinterest_link != blank -%}
+                  <li class="list-social__item flex align-center">
+                    <a href="{{ block.settings.manta_ott-ct-social_pinterest_link }}" target="_blank" class="link por tap-area-icon">
+                      {%- render 'icon-pinterest', icon_width: 24 -%}
+                      <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
+                    </a>
+                  </li>
+                {%- endif -%}
+
+                {%- if block.settings.manta_ott-ct-social_ig_link != blank -%}
+                  <li class="list-social__item flex align-center">
+                    <a href="{{ block.settings.manta_ott-ct-social_ig_link }}" target="_blank" class="link por tap-area-icon">
+                      {%- render 'icon-instagram', icon_width: 24 -%}
+                      <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+                    </a>
+                  </li>
+                {%- endif -%}
+
+                {%- if block.settings.manta_ott-ct-social_yt_link != blank -%}
+                  <li class="list-social__item flex align-center">
+                    <a href="{{ block.settings.manta_ott-ct-social_yt_link }}" target="_blank" class="link por tap-area-icon">
+                      {%- render 'icon-youtube', icon_width: 24 -%}
+                      <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
+                    </a>
+                  </li>
+                {%- endif -%}
+
+                {%- if block.settings.manta_ott-ct-social_tik_link != blank -%}
+                  <li class="list-social__item flex align-center">
+                    <a href="{{ block.settings.manta_ott-ct-social_tik_link }}" target="_blank" class="link por tap-area-icon">
+                      {%- render 'icon-tiktok', icon_width: 24 -%}
+                      <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
+                    </a>
+                  </li>
+                {%- endif -%}
+
+                {%- if block.settings.manta_ott-ct-social_li_link != blank -%}
+                  <li class="list-social__item flex align-center">
+                    <a href="{{ block.settings.manta_ott-ct-social_li_link }}" target="_blank" class="link por tap-area-icon">
+                      {%- render 'icon-linkedin', icon_width: 24 -%}
+                      <span class="visually-hidden">{{ 'general.social.links.linkedin' | t }}</span>
+                    </a>
+                  </li>
+                {%- endif -%}
+              </ul>
+            {%- endif -%}
+          {%- endfor -%}
+
         </div>
-      {%- endif -%}  
+      {%- endif -%}
+
     </div>
 
     {%- if page and request.page_type == 'page' and template.suffix == 'contact' and page.content != blank -%}
@@ -312,6 +376,7 @@
         {{ page.content }}
       </div>
     {%- endif -%}
+
   </div>
 </div>
 
