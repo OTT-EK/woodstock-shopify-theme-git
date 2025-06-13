@@ -17,7 +17,13 @@
       "settings": {
         "enable_language_selector": false
       },
-      "blocks": {}
+      "blocks": {
+        "7b2bd184-cb1b-47bf-8695-3f2bc023c78d": {
+          "settings": {
+            "title": "Free shipping on purchases over 150€"
+          }
+        }
+      }
     }
   }
 }
