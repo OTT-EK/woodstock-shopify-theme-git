@@ -8,20 +8,9 @@
  * ------------------------------------------------------------
  */
 {
-  "parent": "index.json",
+  "parent": "collection.sub-collection.json",
   "context": {
     "market": "estonia"
   },
-  "sections": {
-    "manta_best_collections_KM3JPm": {
-      "settings": {},
-      "blocks": {
-        "collection_gbFkbV": {
-          "settings": {
-            "manta_custom_title": "Sooduspakkumised"
-          }
-        }
-      }
-    }
-  }
+  "sections": {}
 }
