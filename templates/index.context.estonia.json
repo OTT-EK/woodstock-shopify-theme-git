@@ -47,6 +47,14 @@
           }
         }
       }
+    },
+    "manta_about_us_t3jzAj": {
+      "settings": {
+        "manta_aboutus_image": "shopify://shop_images/ottensten.jpg",
+        "manta_aboutus_description": "Ottensten Eesti OÜ alustas tegevust 1998. aasta kevadel Tartus, pakkudes tootmisettevőtetele üle Eesti pneumaatilisi tööriistu, kinnitusvahendeid ja kompressoreid. Aastate jooksul on meie tootevalik pidevalt laienenud ja tänasel päeval müüme kvaliteetseid tööriistu, seadmeid ja abimaterjale mööbli- ja kaubaalusetootjatele, ehitajatele, betoneerijatele, puidutöötlejatele ja pakendajatele. Lisaks teostame remonti ja hooldust meilt ostetud seadmetele.\n\nOttensten Eesti OÜ kuulub Ottensten Gruppi, kuhu kuuluvad esindused Taanis, Poolas, Lätis, Leedus ja Ukrainas.\n\nMeie missioon on läbi kvaliteetsete toodete ja sõbraliku teeninduse pakkumise olla usaldusväärseks partneriks oma klientidele.\n\nLugupidamine – suhtume klienti austusega\nAusus – oleme kliendi vastu avatud ja siirad\nKvaliteet – oleme oma tegevuses professionaalsed\nPaindlikkus – oleme valmis dialoogiks ja kompromissiks\nUuenduslikkus – oleme edasipüüdlikud toodetes ja teeninduses",
+        "manta_aboutus_button_label": "Loe lisaks"
+      },
+      "blocks": {}
     }
   }
 }
